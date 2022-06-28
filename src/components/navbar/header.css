@@ -1,0 +1,15 @@
+@media only screen and (max-width:765px){
+    .nav-link{
+        margin: 20px 0!important;
+        font-size: 22px;
+    }
+}
+
+.navbar{
+    padding: 8px 0!important;
+    transition: 0.4s;
+}
+
+.nav-sticky{
+    padding: 2px 0!important;
+}
