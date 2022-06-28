@@ -1,0 +1,45 @@
+.home-container{
+    background-color: #000;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+.home-left, .home-right {
+    margin-right: 3.5rem;
+    margin-left: 3.5rem;
+}
+
+.home-left img{
+    border-radius: 15% 30% ;
+    box-shadow: 1px 1px 7px 1px #f8f8ff;
+}
+
+@media only screen and (max-width:1000px){
+    .home-left, .home-right {
+        margin-right: 1.5rem!important;
+        margin-left: 1.5rem!important;
+    }
+}
+
+@media only screen and (max-width:765px){
+    .home-container{
+        flex-direction: column!important;
+    }
+
+    .home-left, .home-right {
+        margin: 5px!important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .home-left img{
+        width: 90%;
+    }
+
+    .home-right{
+        padding-top: 10px;
+    }
+}

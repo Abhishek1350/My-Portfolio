@@ -1,15 +1,30 @@
+
+.nav-link{
+    color: #adade4!important;
+}
+
+.nav-link:hover{
+    border-bottom:2px solid #e0dbdb!important;
+    color: #e0dbdb!important;
+}
+
+.nav-link.active{
+    border-bottom:3px solid #f8f8ff!important;
+    color: #f8f8ff!important;
+}
+
+.navbar{
+    padding: 8px 0!important;
+    transition: 0.5s;
+}
+
+.nav-sticky{
+    padding: 2px 0!important;
+}
+
 @media only screen and (max-width:765px){
     .nav-link{
         margin: 20px 0!important;
         font-size: 22px;
     }
-}
-
-.navbar{
-    padding: 8px 0!important;
-    transition: 0.4s;
-}
-
-.nav-sticky{
-    padding: 2px 0!important;
 }
