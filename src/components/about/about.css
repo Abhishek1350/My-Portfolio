@@ -1,0 +1,30 @@
+.about-container {
+    background-color: #15171a;
+}
+
+.about-info-left, .about-info-right {
+    flex: 1;
+}
+
+.about-info-left span {
+    color: ghostwhite;
+    letter-spacing: 2px;
+}
+
+.about-info-right p {
+    letter-spacing: 1px;
+    text-align: justify;
+}
+
+@media only screen and (max-width:1000px) {
+    .about-info {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width:500px) {
+    .about-info span {
+        letter-spacing: 1px;
+    }
+
+}

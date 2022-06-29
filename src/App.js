@@ -4,6 +4,7 @@ import Header from "./components/navbar/Header"
 import Home from "./components/home/Home"
 import Spinner from "./components/spinner/Spinner"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import About from "./components/about/About";
 
 const App = () => {
   return (
@@ -11,7 +12,7 @@ const App = () => {
       <Header />
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route exact path="/about" element={<Spinner />} />
+        <Route exact path="/about" element={<About />} />
         <Route exact path="/projects" element={<Spinner />} />
         <Route exact path="/blogs" element={<Spinner />} />
         <Route exact path="/contact" element={<Spinner />} />

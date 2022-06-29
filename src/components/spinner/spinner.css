@@ -15,19 +15,16 @@
     border-radius: 50%;
     text-align: center;
     line-height: 150px;
-    font-size: 30px;
-    /* color: #fff000; */
-    letter-spacing: 4px;
+    letter-spacing: 2px;
     text-transform: uppercase;
     box-shadow: 0 5px 20px rgba(255, 0, 0, 0.5);
 }
 
 .ring p {
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-family: 'Roboto Condensed', sans-serif;
     -webkit-text-fill-color: transparent;
     background: linear-gradient(90deg, #7f7dff, red, rgb(0, 255, 94));
     -webkit-background-clip: text;

@@ -11,31 +11,46 @@
     font-family: 'Baloo 2', cursive;
 }
 
-.home-right h2, h3 {
+
+.home-right h2 {
+    font-size: 50px;
+    color: #f8f8ff;
     font-weight: 600;
 }
 
-.home-right h2 {
-    font-size: 35px;
-}
-
 .home-right h3 {
-    font-size: 30px;
+    font-size: 40px;
+    color: #eeeef3;
+    font-weight: 500;
 }
 
 .home-right p {
-    font-size: 20px;
+    font-size: 30px;
+    font-weight: 400;
 }
 
 .home-left img {
     border-radius: 15% 30%;
     box-shadow: 1px 1px 7px 1px #f8f8ff;
+    width: 100%;
 }
 
 @media only screen and (max-width:1000px) {
     .home-left, .home-right {
         margin-right: 1.5rem !important;
         margin-left: 1.5rem !important;
+    }
+
+    .home-right h2 {
+        font-size: 35px;
+    }
+    
+    .home-right h3 {
+        font-size: 30px;
+    }
+    
+    .home-right p {
+        font-size: 20px;
     }
 }
 
@@ -53,7 +68,7 @@
     }
 
     .home-left img {
-        width: 80%;
+        width: 90%;
     }
 
     .home-right {

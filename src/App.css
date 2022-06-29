@@ -1,7 +1,59 @@
-@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600&display=swap");
 /* font-family: 'Baloo 2', cursive; */
 
-*{
+* {
     margin: 0;
-    padding:0;
+    padding: 0;
+}
+
+.heading {
+    font-size: 60px;
+    font-family: "Baloo 2", cursive;
+    font-weight: 600;
+}
+
+.heading-sm {
+    font-size: 45px;
+    font-family: "Baloo 2", cursive;
+    font-weight: 500;
+}
+
+.heading-ssm {
+    font-size: 35px;
+    font-family: "Baloo 2", cursive;
+    font-weight: 500;
+}
+
+.paragraph {
+    font-size: 25px;
+    font-family: "Baloo 2", cursive;
+}
+
+.paragraph-sm {
+    font-size: 20px;
+    font-family: "Baloo 2", cursive;
+}
+
+@media only screen and (max-width: 768px) {
+    .heading {
+        font-size: 50px;
+    }
+
+    .heading-sm {
+        font-size: 35px;
+    }
+
+    .heading-ssm {
+        font-size: 25px;
+    }
+
+    .paragraph {
+        font-size: 18px;
+        font-family: "Baloo 2", cursive;
+    }
+
+    .paragraph-sm {
+        font-size: 16px;
+        font-family: "Baloo 2", cursive;
+    }
 }
