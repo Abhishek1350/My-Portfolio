@@ -16,7 +16,7 @@
 }
 
 .home-right h2 {
-    font-size: 38px;
+    font-size: 35px;
 }
 
 .home-right h3 {
@@ -60,7 +60,7 @@
         padding-top: 20px;
     }
 
-    .home-right p {
+    .home-right p, h2, h3 {
         text-align: center;
     }
 }
