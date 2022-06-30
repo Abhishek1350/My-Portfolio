@@ -34,6 +34,26 @@
     font-family: "Baloo 2", cursive;
 }
 
+.animated-left{
+    opacity:0;
+    transform:translateX(-50px);
+    animation: move 0.6s linear forwards;
+}
+
+.animated-right{
+    opacity:0;
+    transform:translateX(50px);
+    animation: move 0.6s linear forwards;
+}
+
+@keyframes move{
+    100%{
+        opacity:1;
+        transform: translateX(0px);
+    }
+}
+
+
 @media only screen and (max-width: 768px) {
     .heading {
         font-size: 50px;
@@ -55,5 +75,24 @@
     .paragraph-sm {
         font-size: 16px;
         font-family: "Baloo 2", cursive;
+    }
+
+    .animated-left{
+        opacity:0;
+        transform:translateY(-50px);
+        animation: move 0.8s linear forwards;
+    }
+    
+    .animated-right{
+        opacity:0;
+        transform:translateY(50px);
+        animation: move 0.8s linear forwards;
+    }
+    
+    @keyframes move{
+        100%{
+            opacity:1;
+            transform: translateY(0px);
+        }
     }
 }

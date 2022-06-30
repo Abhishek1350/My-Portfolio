@@ -19,33 +19,31 @@ const Home = () => {
       className="home-container d-flex justify-content-center align-items-center pt-5"
     >
       <div className="home-left">
-        <img src={profilePic} alt="Abhishek" />
+        <img src={profilePic} className="animated-left" alt="Abhishek" />
       </div>
 
       <div className="home-right">
-        <h2 className="my-2">
+        <h2 className="my-2 animated-right" style={{ animationDelay: "0.1s" }}>
           Hey, This Is <span className="text-primary"> Abhishek</span>{" "}
         </h2>
-        <h3 className="mb-3">
-          I Am{" "}
-          <span className="text-danger">
+        <h3 className="mb-3 animated-right" style={{ animationDelay: ".3s" }}>
+          I Am <span className="text-danger">
             <Typed
               strings={["Designer", "Developer", "Coder"]}
               typeSpeed={100}
               backSpeed={80}
               loop={true}
             />
-          </span>{" "}
-          <span className="text-info">
+          </span> <span className="text-info">
             <FontAwesomeIcon icon={faReact} />
-          </span>{" "}
+          </span>
+
         </h3>
-        <p className="text-secondary mb-3">Wanna Know More About Me ?</p>
-        <Link
+        <p className="text-secondary mb-3 animated-right" style={{ animationDelay: "0.5s" }}>Wanna Know More About Me ? </p>
+        <Link style={{ animationDelay: "0.7s" }}
           to="/about"
-          className="btn btn-outline-primary mb-3 fw-bold fs-5 text-white"
+          className="btn btn-outline-primary mb-3 fw-bold fs-5 text-white animated-right"
         >
-          {" "}
           About Me <FontAwesomeIcon icon={faUser} />{" "}
         </Link>
       </div>
