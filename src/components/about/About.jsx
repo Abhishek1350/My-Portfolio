@@ -10,6 +10,7 @@ import reactImg from "../images/react.png"
 import mongoImg from "../images/mongo.png"
 import nodeImg from "../images/node.png"
 import bootstrapImg from "../images/bootstrap.png"
+import mysqlImg from "../images/mysql.png"
 
 const About = () => {
     return (
@@ -53,32 +54,36 @@ const About = () => {
                 </h1>
                 <div className="skills-img-box py-3 animated-left">
                     <div className="box">
-                        <img src={htmlImg} />
+                        <img src={htmlImg} alt="html" />
                         <h3 className="heading-ssm">html</h3>
                     </div>
                     <div className="box">
-                    <img src={cssImg}/>
+                    <img src={cssImg} alt="css"/>
                         <h3 className="heading-ssm">css</h3>
                     </div>
                     <div className="box">
-                        <img src={jsImg} />
+                        <img src={jsImg} alt="javascript" />
                         <h3 className="heading-ssm">javascript</h3>
                     </div>
                     <div className="box">
-                        <img src={reactImg} />
+                        <img src={bootstrapImg} alt="bootstrap" />
+                        <h3 className="heading-ssm">bootstrap</h3>
+                    </div>
+                    <div className="box">
+                        <img src={reactImg} alt="react" />
                         <h3 className="heading-ssm">react</h3>
                     </div>
                     <div className="box">
-                        <img src={mongoImg} />
-                        <h3 className="heading-ssm">mongodb</h3>
-                    </div>
-                    <div className="box">
-                        <img src={nodeImg} />
+                        <img src={nodeImg} alt="nodejs" />
                         <h3 className="heading-ssm">nodejs</h3>
                     </div>
                     <div className="box">
-                        <img src={bootstrapImg} />
-                        <h3 className="heading-ssm">bootstrap</h3>
+                        <img src={mongoImg} alt="mongodb" />
+                        <h3 className="heading-ssm">mongodb</h3>
+                    </div>
+                    <div className="box">
+                        <img src={mysqlImg} alt="mysql" />
+                        <h3 className="heading-ssm">mysql</h3>
                     </div>
                 </div>
             </Container>
