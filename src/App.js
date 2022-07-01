@@ -5,6 +5,7 @@ import Home from "./components/home/Home"
 import Spinner from "./components/spinner/Spinner"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import About from "./components/about/About";
+import Projects from "./components/projects/Projects";
 
 const App = () => {
   return (
@@ -13,7 +14,7 @@ const App = () => {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/about" element={<About />} />
-        <Route exact path="/projects" element={<Spinner />} />
+        <Route exact path="/projects" element={<Projects />} />
         <Route exact path="/blogs" element={<Spinner />} />
         <Route exact path="/contact" element={<Spinner />} />
       </Routes>

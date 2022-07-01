@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect} from "react";
 import { Container } from "react-bootstrap";
 import "./about.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -13,6 +13,11 @@ import bootstrapImg from "../images/bootstrap.png"
 import mysqlImg from "../images/mysql.png"
 
 const About = () => {
+    useEffect(() => {
+      window.scrollTo(0,0);
+      document.title="Abhshkek-About"
+    }, [])
+    
     return (
         <Container fluid className="pt-5 mt-5 about-container">
             <h1 className="heading text-center text-primary animated-left">
