@@ -16,7 +16,7 @@ const Porjects = () => {
         My <span className="text-primary">Projects</span> <span className="text-danger"><FontAwesomeIcon icon={faBriefcase} /></span>
       </h1>
 
-      <Container className="projects-cards-container py-3">
+      <Container className="projects-cards-container py-3 animated-right">
         <div className="projects-card">
           <Carousel>
             <Carousel.Item interval={1500}>
