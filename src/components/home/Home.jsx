@@ -27,7 +27,7 @@ const Home = () => {
           Hey, This Is <span className="text-primary"> Abhishek</span>{" "}
         </h2>
         <h3 className="mb-3 animated-right" style={{ animationDelay: ".3s" }}>
-          I Am <span className="text-danger">
+          I'm A <span className="text-danger">
             <Typed
               strings={["Designer", "Developer", "Coder"]}
               typeSpeed={100}

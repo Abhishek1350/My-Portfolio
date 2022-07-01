@@ -7,12 +7,16 @@
 }
 
 .about-info-left span {
-  color: ghostwhite;
+  color: #f8f8ff;
   letter-spacing: 2px;
+  margin-left: 5px;
+ 
 }
 
+
 .about-info-right p {
-  letter-spacing: 1px;
+  color: #f8f8ff;
+  letter-spacing: 2px;
   text-align: justify;
 }
 

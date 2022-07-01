@@ -25,16 +25,19 @@ const About = () => {
                         Name : <span> Abhishek </span>
                     </p>
                     <p className="paragraph text-warning">
-                        Date Of Birth : <span> May, 2001 </span>
+                        Birth Year : <span> 2001 </span>
                     </p>
                     <p className="paragraph text-warning">
-                        Address : <span> Chamba, Himachal Pradesh </span>
+                        Education : <span> Graduate </span>
                     </p>
                     <p className="paragraph text-warning">
                         Skill : <span> Web Developer </span>
                     </p>
                     <p className="paragraph text-warning">
                         Language : <span> Hindi, English </span>
+                    </p>
+                    <p className="paragraph text-warning">
+                        Address : <span> Chamba, Himachal Pradesh </span>
                     </p>
                 </div>
 
