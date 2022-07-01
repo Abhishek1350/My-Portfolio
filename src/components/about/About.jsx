@@ -25,7 +25,7 @@ const About = () => {
                         Name : <span> Abhishek </span>
                     </p>
                     <p className="paragraph text-warning">
-                        Email : <span> abhibhardwaj1350@gmail.com </span>
+                        Date Of Birth : <span> May, 2001 </span>
                     </p>
                     <p className="paragraph text-warning">
                         Address : <span> Chamba, Himachal Pradesh </span>
