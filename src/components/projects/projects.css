@@ -10,14 +10,14 @@
   }
 
   .projects-card{
-    width: 85%;
+    width: 85%!important;
     cursor: pointer;
     border-radius: 10px;
   }
 
   .projects-card img{
     border-radius: 10px;
-    transition: 0.5s;
+    transition: 0.3s;
     
   }
 
@@ -32,6 +32,7 @@
       gap: 1.5rem;
     }
     .projects-card{
-      width: 100%;
+      width: 100%!important;
+      padding: 0!important;
     }
   }
