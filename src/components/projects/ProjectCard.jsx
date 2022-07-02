@@ -34,7 +34,7 @@ const ProjectCard = () => {
                         alt="Third slide"
                     />
                     <Carousel.Caption>
-                        <a href="#" className="btn btn-outline-danger btn-lg my-4">Watch Live</a>
+                        <a href="#" className="btn btn-outline-danger btn-lg my-4 fw-bold">Watch Live</a>
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
