@@ -1,4 +1,4 @@
-import React,{useEffect} from "react";
+import React, { useEffect } from "react";
 import { Container } from "react-bootstrap";
 import "./about.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -11,13 +11,14 @@ import mongoImg from "../images/mongo.png"
 import nodeImg from "../images/node.png"
 import bootstrapImg from "../images/bootstrap.png"
 import mysqlImg from "../images/mysql.png"
+import {motion} from "framer-motion"
 
 const About = () => {
     useEffect(() => {
-      window.scrollTo(0,0);
-      document.title="Abhshkek-About"
+        window.scrollTo(0, 0);
+        document.title = "Abhshkek-About"
     }, [])
-    
+
     return (
         <Container fluid className="pt-5 mt-5 about-container">
             <h1 className="heading text-center text-primary animated-left">
@@ -61,38 +62,69 @@ const About = () => {
                     My <span className="text-primary">Skills</span> <span className="text-info"><FontAwesomeIcon icon={faUserNinja} /></span>
                 </h1>
                 <div className="skills-img-box py-3 animated-left">
-                    <div className="box">
+                    <motion.div
+                        whileInView={{ opacity: 1 }}
+                        transition={{ duration: 0.8, type: "spring" }}
+                        className="box">
                         <img src={htmlImg} alt="html" />
                         <h3 className="heading-ssm">html</h3>
-                    </div>
-                    <div className="box">
-                    <img src={cssImg} alt="css"/>
+                    </motion.div>
+
+                    <motion.div
+                        whileInView={{ opacity: 1 }}
+                        transition={{duration: 0.6, type: "spring" }}
+                        className="box">
+                        <img src={cssImg} alt="css" />
                         <h3 className="heading-ssm">css</h3>
-                    </div>
-                    <div className="box">
+                    </motion.div>
+
+                    <motion.div
+                        whileInView={{ opacity: 1 }}
+                        transition={{duration: 0.6, type: "spring" }}
+                        className="box">
                         <img src={jsImg} alt="javascript" />
                         <h3 className="heading-ssm">javascript</h3>
-                    </div>
-                    <div className="box">
+                    </motion.div>
+
+                    <motion.div
+                        whileInView={{ opacity: 1 }}
+                        transition={{duration: 0.6, type: "spring" }}
+                        className="box">
                         <img src={bootstrapImg} alt="bootstrap" />
                         <h3 className="heading-ssm">bootstrap</h3>
-                    </div>
-                    <div className="box">
+                    </motion.div>
+
+                    <motion.div
+                        whileInView={{ opacity: 1 }}
+                        transition={{duration: 0.6, type: "spring" }}
+                        className="box">
                         <img src={reactImg} alt="react" />
                         <h3 className="heading-ssm">react</h3>
-                    </div>
-                    <div className="box">
+                    </motion.div>
+
+                    <motion.div
+                        whileInView={{ opacity: 1 }}
+                        transition={{duration: 0.6, type: "spring" }}
+                        className="box">
                         <img src={nodeImg} alt="nodejs" />
                         <h3 className="heading-ssm">nodejs</h3>
-                    </div>
-                    <div className="box">
+                    </motion.div>
+
+                    <motion.div
+                        whileInView={{ opacity: 1 }}
+                        transition={{duration: 0.6, type: "spring" }}
+                        className="box">
                         <img src={mongoImg} alt="mongodb" />
                         <h3 className="heading-ssm">mongodb</h3>
-                    </div>
-                    <div className="box">
+                    </motion.div>
+
+                    <motion.div
+                        whileInView={{ opacity: 1 }}
+                        transition={{duration: 0.6, type: "spring" }}
+                        className="box">
                         <img src={mysqlImg} alt="mysql" />
                         <h3 className="heading-ssm">mysql</h3>
-                    </div>
+                    </motion.div>
                 </div>
             </Container>
 

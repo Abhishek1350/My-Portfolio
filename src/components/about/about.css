@@ -50,6 +50,10 @@
   font-size: 1.6rem;
 }
 
+.box {
+  opacity: 0;
+}
+
 @media only screen and (max-width:1000px) {
   .about-info {
     flex-direction: column;

@@ -12,6 +12,7 @@
       width: 350px;
       border-radius: 10px;
       box-shadow: 1px 1px 4px #f8f8ff;
+      opacity: 0;
   }
 
   .blogs-card-img img {

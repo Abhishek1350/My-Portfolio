@@ -58,8 +58,8 @@ const Contact = () => {
                 Contact <span className="text-primary">Me</span> <span className="text-danger"><FontAwesomeIcon icon={faContactCard} /></span>
             </h1>
 
-            <Container className="contact-container py-3 d-flex justify-content-around  animated-right">
-                <div className="contact-container-left my-0">
+            <Container className="contact-container py-3 d-flex justify-content-around ">
+                <div className="contact-container-left my-0 animated-left">
                     <h2 className="heading-sm text-warning mt-4" style={{ textAlign: "left" }}>Get In Touch</h2>
                     <p className="paragraph-sm text-white">Take A Cup Of Coffee And Let's Have A Chat</p>
                     <div className="contact-details mt-4">

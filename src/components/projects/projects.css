@@ -4,7 +4,9 @@
   gap: 2rem;
   place-items: center;
 }
-
+.project-card-motion{
+  opacity: 0;
+}
 .projects-card {
   width: 85% !important;
   cursor: pointer;
