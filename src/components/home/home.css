@@ -1,7 +1,4 @@
 .home-container {
-    background-color: #15171a;
-    background-size: cover;
-    background-position: center;
     height: 100vh;
 }
 
@@ -44,11 +41,11 @@
     .home-right h2 {
         font-size: 35px;
     }
-    
+
     .home-right h3 {
         font-size: 30px;
     }
-    
+
     .home-right p {
         font-size: 20px;
     }

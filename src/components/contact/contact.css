@@ -1,0 +1,48 @@
+.contact-container-left, .contact-container-right {
+    flex: 1;
+}
+
+.contact-container-right form input {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.contact-container-right form textarea {
+    font-size: 20px;
+    font-weight: 500;
+    resize: none;
+}
+
+@media only screen and (max-width:1000px) {
+    .contact-container {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width:500px) {
+
+    .social-icons {
+        justify-content: center;
+        margin: 0 !important;
+    }
+
+    .contact-container {
+        flex-direction: column;
+        padding: 5px !important;
+    }
+
+    .contact-container-right form input {
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .contact-container-right form textarea {
+        font-size: 16px;
+        font-weight: 500;
+        resize: none;
+    }
+
+    .contact-container-right form label {
+        font-size: 14px;
+    }
+}

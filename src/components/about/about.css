@@ -1,7 +1,3 @@
-.about-container {
-  background-color: #15171a;
-}
-
 .about-info-left, .about-info-right {
   flex: 1;
 }
@@ -10,7 +6,7 @@
   color: #f8f8ff;
   letter-spacing: 2px;
   margin-left: 5px;
- 
+
 }
 
 
@@ -69,8 +65,8 @@
     width: 5rem;
   }
 
-  .box{
-    padding: 1rem!important;
+  .box {
+    padding: 1rem !important;
     height: 150px;
   }
 
@@ -89,5 +85,5 @@
   .about-info {
     padding: 0 8px !important;
   }
-  
+
 }
