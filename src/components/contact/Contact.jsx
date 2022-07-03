@@ -78,8 +78,9 @@ const Contact = () => {
                             </div>
                         </div>
                         <div className="social-icons d-flex mt-0 mx-2">
-                            <p className="heading"><a href="#" className="text-info"><FontAwesomeIcon icon={faTwitter} /></a></p>
-                            <p className="heading mx-5"><a href="#" className="text-primary"><FontAwesomeIcon icon={faLinkedin} /></a></p>
+                            <p className="heading"><a href="https://twitter.com/abhishek1350" rel="noreferrer" className="text-info"><FontAwesomeIcon icon={faTwitter} /></a></p>
+
+                            <p className="heading mx-5"><a href="https://www.linkedin.com/in/abhishek-bhardwaj-76b9a721b" rel="noreferrer"  className="text-primary"><FontAwesomeIcon icon={faLinkedin} /></a></p>
                         </div>
                     </div>
                 </div>
