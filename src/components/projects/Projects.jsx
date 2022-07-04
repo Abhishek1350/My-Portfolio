@@ -10,6 +10,7 @@ import Spinner from "../spinner/Spinner"
 const Porjects = () => {
   const [projectData, setProjectData] = useState([])
   const [loading, setLoading] = useState(true)
+
   useEffect(() => {
     window.scrollTo(0, 0)
     document.title = "Abhishek-Projects"
@@ -19,15 +20,16 @@ const Porjects = () => {
         const fetchedProjectData = await client.fetch(query)
         setProjectData(fetchedProjectData)
         console.log(fetchedProjectData)
+        setLoading(false)
       }
       catch (err) {
         console.log(err)
       }
-      setLoading(false)
     }
     fetchProjectData();
   }, [])
   return (
+
     <Container fluid className="py-5 mt-5 projects-container">
       <h1 className="heading text-center text-white animated-left">
         My <span className="text-primary">Projects</span> <span className="text-danger"><FontAwesomeIcon icon={faBriefcase} /></span>
