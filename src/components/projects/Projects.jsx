@@ -25,12 +25,11 @@ const Porjects = () => {
       <h1 className="heading text-center text-white animated-left">
         My <span className="text-primary">Projects</span> <span className="text-danger"><FontAwesomeIcon icon={faBriefcase} /></span>
       </h1>
+      {
+        loading && <Spinner />
+      }
 
-      <Container className="projects-cards-container py-3 animated-right">
-        {
-          loading && <Spinner/>
-        }
-
+      <Container className="projects-cards-container py-3 ">
         {
           projectData.map((elem, index) => {
             const { project_name, project_dec, project_images, project_url, project_stack } = elem
