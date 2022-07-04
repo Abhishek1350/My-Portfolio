@@ -2,12 +2,12 @@ import React from "react";
 import "./App.css";
 import Header from "./components/navbar/Header"
 import Home from "./components/home/Home"
-import Spinner from "./components/spinner/Spinner"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import About from "./components/about/About";
 import Projects from "./components/projects/Projects";
 import Blogs from "./components/blogs/Blogs";
 import Contact from "./components/contact/Contact";
+import Spinner from "./components/spinner/Spinner";
 
 const App = () => {
   return (
@@ -19,6 +19,7 @@ const App = () => {
         <Route exact path="/projects" element={<Projects />} />
         <Route exact path="/blogs" element={<Blogs />} />
         <Route exact path="/contact" element={<Contact />} />
+        <Route exact path="*" element={<Spinner text="Page Not Found" hidden="hidden" show="show" />} />
       </Routes>
 
     </Router>

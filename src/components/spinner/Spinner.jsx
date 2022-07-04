@@ -1,14 +1,12 @@
 import React from "react"
 import "./spinner.css"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUserNinja } from '@fortawesome/free-solid-svg-icons'
 
-const Spinner = () => {
+const Spinner = ({ text, hidden, show }) => {
     return (
         <div className="spinner-container">
             <div className="ring">
-                <p className="Loading paragraph">Working_On_It</p>
-                <strong className="text-white heading-sm"><FontAwesomeIcon icon={faUserNinja}/></strong>
+                <p className={hidden}>Loading...</p>
+                <p className={show}>{text}</p>
                 <span></span>
             </div>
         </div>

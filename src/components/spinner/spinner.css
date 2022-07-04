@@ -8,23 +8,26 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 270px;
-    height: 270px;
+    width: 250px;
+    height: 250px;
     background: transparent;
     border: 3px solid #3c3c3c;
     border-radius: 50%;
     text-align: center;
     line-height: 150px;
-    letter-spacing: 2px;
+    font-size: 30px;
+    /* color: #fff000; */
+    letter-spacing: 4px;
     text-transform: uppercase;
     box-shadow: 0 5px 20px rgba(255, 0, 0, 0.5);
 }
 
 .ring p {
     position: absolute;
-    top: 55%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    font-family: 'Roboto Condensed', sans-serif;
     -webkit-text-fill-color: transparent;
     background: linear-gradient(90deg, #7f7dff, red, rgb(0, 255, 94));
     -webkit-background-clip: text;

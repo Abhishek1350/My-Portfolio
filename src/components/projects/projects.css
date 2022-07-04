@@ -1,27 +1,32 @@
 .projects-cards-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
-  gap: 2rem;
+  row-gap: 5rem;
   place-items: center;
+  
 }
 .project-card-motion{
   opacity: 0;
 }
+
 .projects-card {
-  width: 100% !important;
+  width: 83% !important;
   cursor: pointer;
   border-radius: 10px;
+  
 }
 
 .projects-card img {
   border-radius: 10px;
   transition: 0.3s;
+  border-radius: 10px;
+  background-blend-mode: darken;
+  
 
 }
 
 .projects-card img:hover {
-  filter: opacity(50%);
-  filter: blur(8px);
+  filter: blur(10px) opacity(50%);
 }
 
 @media screen and (max-width:500px) {
