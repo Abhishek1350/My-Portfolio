@@ -19,7 +19,6 @@ const Porjects = () => {
         const query = '*[_type=="projects"]'
         const fetchedProjectData = await client.fetch(query)
         setProjectData(fetchedProjectData)
-        console.log(fetchedProjectData)
         setLoading(false)
       }
       catch (err) {
