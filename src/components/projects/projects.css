@@ -8,7 +8,7 @@
   opacity: 0;
 }
 .projects-card {
-  width: 85% !important;
+  width: 100% !important;
   cursor: pointer;
   border-radius: 10px;
 }
