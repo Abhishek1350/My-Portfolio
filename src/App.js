@@ -19,7 +19,7 @@ const App = () => {
         <Route exact path="/about" element={<About />} />
         <Route exact path="/projects" element={<Projects />} />
         <Route exact path="/blogs" element={<Blogs />} />
-        <Route exact path="/blogs/:id" element={<Blog />} />
+        <Route exact path="/blogs/:slug" element={<Blog />} />
         <Route exact path="/contact" element={<Contact />} />
         <Route exact path="*" element={<Spinner text="Page Not Found" hidden="hidden" show="show" />} />
       </Routes>

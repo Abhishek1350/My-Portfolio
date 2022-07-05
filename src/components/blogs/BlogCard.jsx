@@ -1,5 +1,4 @@
 import React  from 'react'
-import profilePic from "../images/about.png";
 import { motion } from "framer-motion"
 import { Link } from 'react-router-dom';
 import { urlFor } from "../../client"

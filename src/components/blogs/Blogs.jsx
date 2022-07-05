@@ -17,8 +17,8 @@ const Blogs = () => {
         const fetchBlogsData = async () => {
             try {
                 const query = '*[_type=="blogs"]'
-                const fetchedProjectData = await client.fetch(query)
-                setBlogsData(fetchedProjectData)
+                const fetchedBlogsData = await client.fetch(query)
+                setBlogsData(fetchedBlogsData)
                 setLoading(false)
             }
             catch (err) {
@@ -26,7 +26,6 @@ const Blogs = () => {
             }
         }
         fetchBlogsData();
-        console.log(blogsData)
     }, [])
     return (
         <Container fluid className="pt-5 mt-5 blogs-container">
