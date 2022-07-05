@@ -38,7 +38,7 @@ const Blog = () => {
         }
       </h1>
 
-      <PortableText
+      {/* <PortableText
         // Pass in block content straight from Sanity.io
         content={blogData.content}
         projectId={process.env.REACT_APP_SANITY_PROJECT_ID}
@@ -50,7 +50,7 @@ const Blog = () => {
           h4: (props) => <h4 style={{ color: "white" }} {...props} />,
           li: ({ children }) => <li className="special-list-item">{children}</li>,
         }}
-      />
+      /> */}
     </Container>
   )
 }
