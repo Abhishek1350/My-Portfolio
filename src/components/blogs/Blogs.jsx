@@ -1,14 +1,32 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Container } from "react-bootstrap";
 import "./blogs.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBlog } from "@fortawesome/free-solid-svg-icons";
 import BlogCard from './BlogCard';
+import { client } from "../../client"
+import Spinner from "../spinner/Spinner"
 
 const Blogs = () => {
+    const [blogsData, setBlogsData] = useState([])
+    const [loading, setLoading] = useState(true)
+
     useEffect(() => {
         window.scrollTo(0, 0)
         document.title = "Abhishek-Blogs"
+        const fetchBlogsData = async () => {
+            try {
+                const query = '*[_type=="blogs"]'
+                const fetchedProjectData = await client.fetch(query)
+                setBlogsData(fetchedProjectData)
+                setLoading(false)
+            }
+            catch (err) {
+                console.log(err)
+            }
+        }
+        fetchBlogsData();
+        console.log(blogsData)
     }, [])
     return (
         <Container fluid className="pt-5 mt-5 blogs-container">
@@ -17,15 +35,12 @@ const Blogs = () => {
             </h1>
 
             <Container className="blogs-cards-container my-4">
-                <BlogCard />
-                <BlogCard />
-                <BlogCard />
-                <BlogCard />
-                <BlogCard />
-                <BlogCard />
-                <BlogCard />
-                <BlogCard />
-                <BlogCard />
+                {
+                    loading ? <Spinner /> : blogsData.map((elem) => {
+                        const { title, metadesc, blogimage, slug } = elem
+                        return <BlogCard title={title} metadesc={metadesc} blogimage={blogimage} slug={slug} content={content} key={slug.current} />
+                    })
+                }
             </Container>
 
         </Container>
