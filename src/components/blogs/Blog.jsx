@@ -22,7 +22,11 @@ const Blog = () => {
       }
     }
     fetchBlogData();
+    console.log("This is blogData");
     console.log(blogData);
+    console.log("This is blogData.Content");
+    console.log(blogData.content);
+    console.log("This is slug")
     console.log(slug)
   }, [slug])
 
@@ -34,7 +38,7 @@ const Blog = () => {
         }
       </h1>
 
-      {/* <PortableText
+      <PortableText
         // Pass in block content straight from Sanity.io
         content={blogData.content}
         projectId={process.env.REACT_APP_SANITY_PROJECT_ID}
@@ -44,11 +48,9 @@ const Blog = () => {
         serializers={{
           h3: (props) => <h3 style={{ color: "white" }} {...props} />,
           h4: (props) => <h4 style={{ color: "white" }} {...props} />,
-          h4: (props) => <h4 style={{ color: "white" }} {...props} />,
-          p: (props) => <p style={{color:"white"}} {...props}/>,
           li: ({ children }) => <li className="special-list-item">{children}</li>,
         }}
-      /> */}
+      />
     </Container>
   )
 }
