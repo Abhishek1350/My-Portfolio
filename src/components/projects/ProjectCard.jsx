@@ -7,7 +7,7 @@ const ProjectCard = ({project_stack, project_name, project_dec, project_images, 
         <Container className="projects-card">
             <motion.div
                 whileInView={{opacity:1}}
-                transition={{duration:0.6, type:"tween"}}
+                transition={{duration:0.8, type:"tween"}}
                 className="project-card-motion"
             >
                 <Carousel>

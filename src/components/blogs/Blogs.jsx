@@ -16,10 +16,7 @@ const Blogs = () => {
                 My <span className="text-primary">Blogs</span> <span className="text-danger"><FontAwesomeIcon icon={faBlog} /></span>
             </h1>
 
-            <Container className="blogs-cards-container py-3">
-                <BlogCard />
-                <BlogCard />
-                <BlogCard />
+            <Container className="blogs-cards-container my-4">
                 <BlogCard />
                 <BlogCard />
                 <BlogCard />
