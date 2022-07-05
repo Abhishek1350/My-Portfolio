@@ -38,6 +38,12 @@ const Blog = () => {
         }
       </h1>
 
+      <p className="paragraph text-white">
+        {
+          blogData.metadesc
+        }
+      </p>
+
       {/* <PortableText
         // Pass in block content straight from Sanity.io
         content={blogData.content}
