@@ -20,9 +20,10 @@
     padding-right: 8rem!important;
 }
 
-.blog-content h1, h2, h3, h4, h5, h6{
+.blog-content h1, h2, h3{
     color: #eef8ff;
     font-family: 'Baloo 2', cursive;
+    text-align: left!important;
 }
 
 .blog-content p,li{
@@ -71,7 +72,6 @@
     .blog-content{
         padding-left: 1rem!important;
         padding-right: 1rem!important;
-        text-align: left!important;
     }
     
     .blog-content img{
