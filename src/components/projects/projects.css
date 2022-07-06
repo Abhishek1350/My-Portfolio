@@ -3,9 +3,10 @@
   grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
   row-gap: 5rem;
   place-items: center;
-  
+
 }
-.project-card-motion{
+
+.project-card-motion {
   opacity: 0;
 }
 
@@ -13,7 +14,7 @@
   width: 83% !important;
   cursor: pointer;
   border-radius: 10px;
-  
+
 }
 
 .projects-card img {
@@ -21,7 +22,7 @@
   transition: 0.3s;
   border-radius: 10px;
   background-blend-mode: darken;
-  
+
 
 }
 

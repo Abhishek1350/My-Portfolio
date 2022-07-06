@@ -24,7 +24,7 @@ const Home = () => {
       </div>
 
       <div className="home-right">
-        <h2 className="my-2 animated-right" style={{ animationDelay: "0.1s" }}>
+        <h2 className="my-2 text-center animated-right" style={{ animationDelay: "0.1s" }}>
           Hey, This Is <span className="text-primary"> Abhishek</span>{" "}
         </h2>
         <h3 className="mb-3 animated-right" style={{ animationDelay: ".3s" }}>

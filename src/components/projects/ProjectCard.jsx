@@ -2,12 +2,12 @@ import React from 'react'
 import { Container, Carousel } from "react-bootstrap";
 import { motion } from "framer-motion"
 import { urlFor } from "../../client"
-const ProjectCard = ({project_stack, project_name, project_dec, project_images, project_url}) => {
+const ProjectCard = ({ project_stack, project_name, project_dec, project_images, project_url }) => {
     return (
         <Container className="projects-card">
             <motion.div
-                whileInView={{opacity:1}}
-                transition={{duration:0.8, type:"tween"}}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.8, type: "tween" }}
                 className="project-card-motion"
             >
                 <Carousel>

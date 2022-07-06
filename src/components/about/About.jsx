@@ -67,7 +67,7 @@ const About = () => {
                         transition={{ duration: 0.8, type: "spring" }}
                         className="box">
                         <img src={htmlImg} alt="html" />
-                        <h3 className="heading-ssm">html</h3>
+                        <h4 className="heading-ssm">html</h4>
                     </motion.div>
 
                     <motion.div
@@ -75,7 +75,7 @@ const About = () => {
                         transition={{duration: 0.6, type: "spring" }}
                         className="box">
                         <img src={cssImg} alt="css" />
-                        <h3 className="heading-ssm">css</h3>
+                        <h4 className="heading-ssm">css</h4>
                     </motion.div>
 
                     <motion.div
@@ -83,7 +83,7 @@ const About = () => {
                         transition={{duration: 0.6, type: "spring" }}
                         className="box">
                         <img src={jsImg} alt="javascript" />
-                        <h3 className="heading-ssm">javascript</h3>
+                        <h4 className="heading-ssm">javascript</h4>
                     </motion.div>
 
                     <motion.div
@@ -91,7 +91,7 @@ const About = () => {
                         transition={{duration: 0.6, type: "spring" }}
                         className="box">
                         <img src={bootstrapImg} alt="bootstrap" />
-                        <h3 className="heading-ssm">bootstrap</h3>
+                        <h4 className="heading-ssm">bootstrap</h4>
                     </motion.div>
 
                     <motion.div
@@ -99,7 +99,7 @@ const About = () => {
                         transition={{duration: 0.6, type: "spring" }}
                         className="box">
                         <img src={reactImg} alt="react" />
-                        <h3 className="heading-ssm">react</h3>
+                        <h4 className="heading-ssm">react</h4>
                     </motion.div>
 
                     <motion.div
@@ -107,7 +107,7 @@ const About = () => {
                         transition={{duration: 0.6, type: "spring" }}
                         className="box">
                         <img src={nodeImg} alt="nodejs" />
-                        <h3 className="heading-ssm">nodejs</h3>
+                        <h4 className="heading-ssm">nodejs</h4>
                     </motion.div>
 
                     <motion.div
@@ -115,7 +115,7 @@ const About = () => {
                         transition={{duration: 0.6, type: "spring" }}
                         className="box">
                         <img src={mongoImg} alt="mongodb" />
-                        <h3 className="heading-ssm">mongodb</h3>
+                        <h4 className="heading-ssm">mongodb</h4>
                     </motion.div>
 
                     <motion.div
@@ -123,7 +123,7 @@ const About = () => {
                         transition={{duration: 0.6, type: "spring" }}
                         className="box">
                         <img src={mysqlImg} alt="mysql" />
-                        <h3 className="heading-ssm">mysql</h3>
+                        <h4 className="heading-ssm">mysql</h4>
                     </motion.div>
                 </div>
             </Container>

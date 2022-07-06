@@ -51,13 +51,14 @@ const BlogPage = () => {
 
       <img src={urlFor(blogData.blogimage).url()} alt="" />
 
-      <Container className="blog-content py-4 my-2">
+      <Container className="blog-content py-2 my-2">
         <PortableText
           content={blogData.content}
           projectId={process.env.REACT_APP_SANITY_PROJECT_ID}
           dataset="production"
         />
       </Container>
+
     </Container>
   )
 }

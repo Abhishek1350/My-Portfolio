@@ -1,4 +1,3 @@
-
 .contact-container-right form input {
     font-size: 20px;
     font-weight: 500;
@@ -12,14 +11,14 @@
     resize: none;
 }
 
-.contact-container-right .form-label{
+.contact-container-right .form-label {
     font-weight: 400;
     font-family: 'Baloo 2', cursive;
 }
 
-.social-icons svg:hover{
-   transform:scale(1.195);
-   transition: 0.3s;
+.social-icons svg:hover {
+    transform: scale(1.195);
+    transition: 0.3s;
 }
 
 @media only screen and (max-width:1000px) {
@@ -39,16 +38,16 @@
         padding: 5px !important;
     }
 
-    .contact-container-left{
-        margin: 4px 0!important;
+    .contact-container-left {
+        margin: 4px 0 !important;
     }
 
-    .contact-container-left h2{
-        margin: 4px 0!important;
+    .contact-container-left h2 {
+        margin: 4px 0 !important;
     }
 
-    .contact-container-right h2{
-        margin: 4px 0!important;
+    .contact-container-right h2 {
+        margin: 4px 0 !important;
     }
 
     .contact-container-right form input {
@@ -66,20 +65,20 @@
         font-size: 14px;
     }
 
-    .contact-container-right .col{
-        flex: auto!important;
-        margin:0!important;
+    .contact-container-right .col {
+        flex: auto !important;
+        margin: 0 !important;
     }
 
-    .contact-container-right .row{
+    .contact-container-right .row {
         margin-bottom: 0;
     }
 
-    .contact-container-right .form-label{
+    .contact-container-right .form-label {
         margin-bottom: 0;
     }
 
-    .contact-container-right .form-control{
+    .contact-container-right .form-control {
         margin: 4px 0;
     }
 
