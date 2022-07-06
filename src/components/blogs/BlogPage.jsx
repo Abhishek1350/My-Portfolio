@@ -13,9 +13,9 @@ const BlogPage = () => {
   useEffect(() => {
     window.scrollTo(0, 0)
     document.title = slug
-    client
-      .fetch(
-        `*[slug.current == $slug]{
+    const fetchBlogData = async () => {
+      try {
+        const query = `*[slug.current == $slug]{
           title,
           metadesc,
           slug,
@@ -26,11 +26,15 @@ const BlogPage = () => {
              }
            },
          content
-       }`,
-        { slug }
-      )
-      .then((data) => setBlogData(data[0]))
-      .catch(console.error);
+       }`
+        const fetchedData = await client.fetch(query, { slug })
+        setBlogData(fetchedData[0])
+      }
+      catch (error) {
+        console.error(error)
+      }
+    }
+    fetchBlogData();
   }, [slug])
 
   if (!blogData) return <Spinner />

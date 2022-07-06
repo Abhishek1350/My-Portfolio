@@ -37,7 +37,7 @@ const Blogs = () => {
                 {
                     loading ? <Spinner /> : blogsData.map((elem) => {
                         const { title, metadesc, blogimage, slug } = elem
-                        return <BlogCard title={title} metadesc={metadesc} blogimage={blogimage} slug={slug}  key={slug.current} />
+                        return <BlogCard title={title} metadesc={metadesc} blogimage={blogimage} slug={slug} key={slug.current} />
                     })
                 }
             </Container>
