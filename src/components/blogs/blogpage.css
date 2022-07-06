@@ -5,7 +5,7 @@
 }
 
 .blog-container h1,p{ 
-    color: #b5bfeb;
+    color: #dfdfe8;
 }
 
 .blog-container img{ 
@@ -92,6 +92,11 @@
 
     .blog-content p,li{
         font-size: 16px;
+    }
+
+    .blog-content ul, ol{
+        padding-left: 0.3rem!important;
+        padding-right: 0.3rem!important;
     }
     
     .blog-content img{
