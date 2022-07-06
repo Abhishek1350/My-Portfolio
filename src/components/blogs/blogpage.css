@@ -5,7 +5,7 @@
 }
 
 .blog-container h1,p{ 
-    color: #f8f8ff;
+    color: #b5bfeb;
 }
 
 .blog-container img{ 
@@ -21,12 +21,12 @@
 }
 
 .blog-content h1, h2, h3, h4, h5, h6{
-    color: #e5eef5;
+    color: #d0e4f3;
     font-family: 'Baloo 2', cursive;
 }
 
 .blog-content p,li{
-    color: #c8d3dc;
+    color: #aebdca;
     font-family: 'Baloo 2', cursive;
     font-size: 18px;
 }
@@ -84,7 +84,7 @@
         height: 100%;
     }
     
-    .blog-content,ul{
+    .blog-content{
         padding-left: 0.1rem!important;
         padding-right: 0.1rem!important;
         
