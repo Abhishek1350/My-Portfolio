@@ -18,7 +18,7 @@ const ProjectCard = ({project_stack, project_name, project_dec, project_images, 
                             alt="First slide"
                         />
                         <Carousel.Caption>
-                            <h3 className="heading-ssm fw-bolder text-warning">{project_name}</h3>
+                            <h4 className="heading-ssm fw-bolder text-warning">{project_name}</h4>
                             <p className="paragraph fw-bold">{project_dec}</p>
                         </Carousel.Caption>
                     </Carousel.Item>
@@ -29,7 +29,7 @@ const ProjectCard = ({project_stack, project_name, project_dec, project_images, 
                             alt="Second slide"
                         />
                         <Carousel.Caption>
-                            <h3 className="heading-ssm fw-bolder text-warning">Tech Stack</h3>
+                            <h4 className="heading-ssm fw-bolder text-warning">Tech Stack</h4>
                             <p className="paragraph fw-bold">{project_stack}</p>
                         </Carousel.Caption>
                     </Carousel.Item>

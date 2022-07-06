@@ -71,6 +71,7 @@
     .blog-content{
         padding-left: 1rem!important;
         padding-right: 1rem!important;
+        text-align: left!important;
     }
     
     .blog-content img{
