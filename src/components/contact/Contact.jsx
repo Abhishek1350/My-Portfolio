@@ -34,7 +34,7 @@ const Contact = () => {
             Password: process.env.REACT_APP_PASSWORD,
             To: process.env.REACT_APP_TO_EMAIL,
             From: process.env.REACT_APP_FROM_EMAIL,
-            Subject: "New Query",
+            Subject: "Message From Portfolio",
             Body: "Name : " + name
                 + "<br> Email : " + email
                 + "<br> Phone Number : " + phone
