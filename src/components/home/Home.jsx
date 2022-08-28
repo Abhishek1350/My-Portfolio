@@ -20,7 +20,7 @@ const Home = () => {
       className="home-container d-flex justify-content-center align-items-center pt-5"
     >
       <div className="home-left">
-        <img src={profilePic} className="animated-left" alt="Abhishek" />
+        <img src={profilePic} className="animated-left" alt="Abhishek Bhardwaj" />
       </div>
 
       <div className="home-right">
