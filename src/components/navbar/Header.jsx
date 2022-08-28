@@ -16,7 +16,7 @@ const Header = () => {
     return (
         <Navbar className={`navbar ${navClassList}`} expanded={expanded} fixed="top" expand="md" bg="dark" variant='dark'>
             <Container>
-                <Navbar.Brand onClick={() => setExpanded(false)} as={NavLink} to="/"><img className='rounded-circle' style={{ width: "40px", filter: "invert(50%)" }} src={logo} alt="Abhishek" /></Navbar.Brand>
+                <Navbar.Brand onClick={() => setExpanded(false)} as={NavLink} to="/"><img className='rounded-circle' style={{ width: "40px", filter: "invert(50%)" }} src={logo} alt="Abhishek Bhardwaj" /></Navbar.Brand>
                 <Navbar.Toggle onClick={() => setExpanded(expanded ? false : "expanded")} aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto" style={{
