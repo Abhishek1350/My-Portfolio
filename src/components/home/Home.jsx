@@ -35,10 +35,9 @@ const Home = () => {
               backSpeed={80}
               loop={true}
             />
-          </span> <span className="text-info">
+          {/* </span> <span className="text-info">
             <FontAwesomeIcon icon={faReact} />
-          </span>
-
+          </span> */}
         </h3>
         <p className="text-secondary mb-3 animated-right" style={{ animationDelay: "0.5s" }}>Wanna Know More About Me ? </p>
         <Link style={{ animationDelay: "0.7s" }}
