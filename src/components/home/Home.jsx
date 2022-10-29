@@ -35,7 +35,8 @@ const Home = () => {
               backSpeed={80}
               loop={true}
             />
-          {/* </span> <span className="text-info">
+            </span> 
+          {/* <span className="text-info">
             <FontAwesomeIcon icon={faReact} />
           </span> */}
         </h3>
