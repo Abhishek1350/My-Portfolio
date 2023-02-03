@@ -3,7 +3,13 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Baloo 2', cursive!important;
+    font-family: 'Baloo 2', cursive !important;
+
+}
+
+.App {
+    background: var(--background_primary);
+    color: var(--textColor_primary);
 }
 
 .animated-left {
@@ -27,21 +33,21 @@
 }
 
 @media only screen and (max-width: 768px) {
-    .animated-left{
-        opacity:0;
-        transform:translateY(-50px);
+    .animated-left {
+        opacity: 0;
+        transform: translateY(-50px);
         animation: move 0.8s linear forwards;
     }
-    
-    .animated-right{
-        opacity:0;
-        transform:translateY(50px);
+
+    .animated-right {
+        opacity: 0;
+        transform: translateY(50px);
         animation: move 0.8s linear forwards;
     }
-    
-    @keyframes move{
-        100%{
-            opacity:1;
+
+    @keyframes move {
+        100% {
+            opacity: 1;
             transform: translateY(0px);
         }
     }
