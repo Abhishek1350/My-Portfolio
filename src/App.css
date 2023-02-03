@@ -1,87 +1,32 @@
 @import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600&display=swap");
-/* font-family: 'Baloo 2', cursive; */
 
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Baloo 2', cursive!important;
 }
 
-body{
-    background-color: #15171a!important;
-}
-
-.heading {
-    font-size: 60px;
-    font-family: "Baloo 2", cursive;
-    font-weight: 600;
-}
-
-.heading-sm {
-    font-size: 45px;
-    font-family: "Baloo 2", cursive;
-    font-weight: 500;
-}
-
-.heading-ssm {
-    font-size: 35px;
-    font-family: "Baloo 2", cursive;
-    font-weight: 500;
-}
-
-.paragraph {
-    font-size: 25px;
-    font-family: "Baloo 2", cursive;
-}
-
-.paragraph-sm {
-    font-size: 18px;
-    font-family: "Baloo 2", cursive;
-}
-
-.animated-left{
-    opacity:0;
-    transform:translateX(-50px);
+.animated-left {
+    opacity: 0;
+    transform: translateX(-50px);
     animation: move 0.6s linear forwards;
 }
 
-.animated-right{
-    opacity:0;
-    transform:translateX(50px);
+.animated-right {
+    opacity: 0;
+    transform: translateX(50px);
     animation: move 0.6s linear forwards;
 }
 
 
-@keyframes move{
-    100%{
-        opacity:1;
+@keyframes move {
+    100% {
+        opacity: 1;
         transform: translateX(0px);
     }
 }
 
-
 @media only screen and (max-width: 768px) {
-    .heading {
-        font-size: 50px;
-    }
-
-    .heading-sm {
-        font-size: 35px;
-    }
-
-    .heading-ssm {
-        font-size: 25px;
-    }
-
-    .paragraph {
-        font-size: 18px;
-        font-family: "Baloo 2", cursive;
-    }
-
-    .paragraph-sm {
-        font-size: 16px;
-        font-family: "Baloo 2", cursive;
-    }
-
     .animated-left{
         opacity:0;
         transform:translateY(-50px);
