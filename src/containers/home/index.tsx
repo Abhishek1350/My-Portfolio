@@ -1,19 +1,20 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchDetails } from "../../services/reducers/personalDetails";
+import { getPersonalDetails } from "../../services/actions/personalDetails";
 
 export const Home = () => {
   const dispatch = useDispatch();
-  const personalDetails = useSelector((state: any) => state.personalDetails);
+  const personalDetails = useSelector((state: any) => state.projects);
+
+  const state = useSelector((state: any) => state);
 
   useEffect(() => {
-    console.log(personalDetails)
-    dispatch(fetchDetails());
-    console.log(personalDetails)
+    // dispatch(getPersonalDetails('*[_type == "blogs"]'));
+    console.log(state)
   }, [dispatch]);
 
   if (personalDetails.loading) {
-    return <div>Loading...</div>
+    return <div>Loading..</div>
   }
 
   if (personalDetails.error) {
@@ -22,14 +23,22 @@ export const Home = () => {
   }
 
   if (personalDetails.data.length === 0) {
-    return <div>No </div>
+    return <div>No Data</div>
   }
 
 
   return (
     <div>
       {
-        personalDetails.data.length
+        personalDetails.data.map((item: any) => {
+          return (
+            <div key={item.id}>
+              <p>{item.project_name}</p>
+              <p>{item.project_stack}</p>
+              <p>{item.project_url}</p>
+            </div>
+          )
+        })
       }
     </div>
   )

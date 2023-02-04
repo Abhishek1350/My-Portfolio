@@ -1,17 +1,23 @@
-import sanityClient from "@sanity/client";
-import imageUrlBuilder from "@sanity/image-url";
-import { SanityImageSource } from "@sanity/image-url/lib/types/types";
+import { apiClient } from '../../sanity';
 
-export const apiClient = sanityClient({
-    projectId: process.env.REACT_APP_SANITY_PROJECT_ID,
-    dataset: "production",
-    apiVersion: "2022-02-01",
-    useCdn: true,
-    token: process.env.REACT_APP_SANITY_API_TOKEN,
-    ignoreBrowserTokenWarning: true
-});
+export const api = {
+    getPersonalDetails: async (query: string) => {
+        const response = await apiClient.fetch(query);
+        return response;
+    },
 
+    getProjects: async (query: string) => {
+        const response = await apiClient.fetch(query);
+        return response;
+    },
 
-const builder = imageUrlBuilder(apiClient);
+    getBlogs: async (query: string) => {
+        const response = await apiClient.fetch(query);
+        return response;
+    },
 
-export const urlFor = (source: SanityImageSource) => builder.image(source);
+    getBlog: async (query: string) => {
+        const response = await apiClient.fetch(query);
+        return response;
+    },
+}

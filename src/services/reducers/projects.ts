@@ -1,4 +1,4 @@
-import { GET_PERSONAL_DETAILS, GET_PERSONAL_DETAILS_SUCCESS, GET_PERSONAL_DETAILS_FAILURE } from '../actions/personalDetails';
+import { GET_PROJECTS, GET_PROJECTS_SUCCESS, GET_PROJECTS_FAILURE } from "../actions/projects";
 
 const initialState = {
     data: [],
@@ -6,23 +6,23 @@ const initialState = {
     error: null
 };
 
-const personalDetails = (data = initialState, action: any) => {
+const projects = (data = initialState, action: any) => {
     switch (action.type) {
-        case GET_PERSONAL_DETAILS:
+        case GET_PROJECTS:
             return {
                 ...data,
                 loading: true,
                 error: null,
             };
 
-        case GET_PERSONAL_DETAILS_SUCCESS:
+        case GET_PROJECTS_SUCCESS:
             return {
                 ...data,
                 loading: false,
                 data: action.payload
             };
 
-        case GET_PERSONAL_DETAILS_FAILURE:
+        case GET_PROJECTS_FAILURE:
             return {
                 ...data,
                 loading: false,
@@ -35,4 +35,4 @@ const personalDetails = (data = initialState, action: any) => {
     }
 }
 
-export default personalDetails;
+export default projects;

@@ -1,23 +1,16 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
-import { apiClient } from '../api';
-import { fetchDetails, fetchDetailsSuccess, fetchDetailsError } from '../reducers/personalDetails';
+import { api } from '../api';
+import { GET_PERSONAL_DETAILS, GET_PERSONAL_DETAILS_SUCCESS, GET_PERSONAL_DETAILS_FAILURE, } from '../actions/personalDetails';
 
-function* fetchPersonalDetailsSaga(): any {
+function* fetchPersonalDetailsSaga(action: any): any {
     try {
-        // const response = yield call(apiClient.fetch, '*[_type == "post"]');
-        console.log(apiClient)
-        const response = [
-            {
-                name: 'John',
-                age: 30
-            },
-        ]
-        yield put(fetchDetailsSuccess(response));
+        const response = yield call(api.getPersonalDetails, action.payload) as any;
+        yield put({ type: GET_PERSONAL_DETAILS_SUCCESS, payload: response });
     } catch (error) {
-        yield put(fetchDetailsError(error));
+        yield put({ type: GET_PERSONAL_DETAILS_FAILURE, payload: error });
     }
 }
 
 export default function* personalDetailsSaga() {
-    yield takeEvery(fetchDetails.type, fetchPersonalDetailsSaga);
+    yield takeEvery(GET_PERSONAL_DETAILS, fetchPersonalDetailsSaga);
 }
