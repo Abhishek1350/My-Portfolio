@@ -12,6 +12,7 @@ import { getPersonalDetails } from "../../services/actions/personalDetails";
 import { useSize } from "../../utils";
 import styles from "./style.module.css"
 import ExpandCircleDownIcon from '@mui/icons-material/ExpandCircleDown';
+import ReactTypingEffect from 'react-typing-effect';
 
 export const Home = () => {
   const { width } = useSize();
@@ -66,8 +67,19 @@ export const Home = () => {
                 <Typography variant={width > 768 ? "h2" : "h3"} component="p" gutterBottom className="animated-right">
                   Hi, I'm <span className={styles.name}>Abhishek</span>
                 </Typography>
-                <Typography variant="h5" component="p" gutterBottom pl={0.5} className="animated-right">
-                  I'm a <span className={styles.workText}>Software Engineer</span>
+                <Typography variant="h5" component="div" gutterBottom pl={0.5} className="animated-right">
+                  I'm a {" "}
+                  <span>
+                    <ReactTypingEffect
+                      text={["Software Engineer", "Programmer", "Developer", "Coder"]}
+                      className={styles.typingEffect}
+                      speed={110}
+                      eraseSpeed={90}
+                      typingDelay={300}
+                      eraseDelay={2000}
+                      cursor=""
+                    />
+                  </span>
                 </Typography>
                 <Typography variant="body1" component="p" gutterBottom pl={0.5} className="animated-right">
                   I am adept in React, Next.js, Redux, Material UI, and Bootstrap. Right now I'm toiling as a Software Engineer at an impressive startup.
