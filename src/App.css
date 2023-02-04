@@ -25,6 +25,10 @@ body {
     animation: move 0.6s linear forwards;
 }
 
+.MuiGrid-item {
+   padding-top: 0!important;
+}
+
 
 @keyframes move {
     100% {

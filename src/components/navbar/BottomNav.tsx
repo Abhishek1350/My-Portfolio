@@ -9,6 +9,7 @@ import WebhookIcon from '@mui/icons-material/Webhook';
 import RssFeedIcon from '@mui/icons-material/RssFeed';
 import ContactPhoneIcon from '@mui/icons-material/ContactPhone';
 import { useNavigate } from "react-router-dom";
+import HideNavOnScroll from './HideNavOnScroll';
 
 interface NavLinks {
     name: string;
@@ -48,43 +49,46 @@ const BottomNav = () => {
     }
 
     return (
-        <Paper sx={{
-            position: 'fixed',
-            bottom: 0,
-            left: 0,
-            right: 0,
-        }}
-            elevation={3}
-        >
-            <BottomNavigation
-                showLabels
-                value={navValue}
-                onChange={(event, newValue) => {
-                    setNavValue(newValue);
-                }}
-                sx={{
-                    background: "var(--background_secondary)",
-                    color: "var(--textColor_primary)",
-                }}
+        <HideNavOnScroll direction='up'>
+            <Paper sx={{
+                position: 'fixed',
+                bottom: 0,
+                left: 0,
+                right: 0,
+                zIndex: 9999,
+            }}
+                elevation={5}
             >
-                {
-                    navLinks.map((link: NavLinks) => (
-                        <BottomNavigationAction
-                            key={link.name}
-                            label={link.name}
-                            icon={link.icon}
-                            onClick={() => handleNavClick(link.pathname)}
-                            sx={{
-                                color: "var(--textColor_secondary)",
-                                fontWeight: "bold",
-                                textTransform: "uppercase",
-                            }}
-                        />
-                    ))
-                }
+                <BottomNavigation
+                    showLabels
+                    value={navValue}
+                    onChange={(event, newValue) => {
+                        setNavValue(newValue);
+                    }}
+                    sx={{
+                        background: "var(--background_secondary)",
+                        color: "var(--textColor_primary)",
+                    }}
+                >
+                    {
+                        navLinks.map((link: NavLinks) => (
+                            <BottomNavigationAction
+                                key={link.name}
+                                label={link.name}
+                                icon={link.icon}
+                                onClick={() => handleNavClick(link.pathname)}
+                                sx={{
+                                    color: "var(--textColor_secondary)",
+                                    fontWeight: "bold",
+                                    textTransform: "uppercase",
+                                }}
+                            />
+                        ))
+                    }
 
-            </BottomNavigation>
-        </Paper>
+                </BottomNavigation>
+            </Paper>
+        </HideNavOnScroll>
     );
 }
 

@@ -11,6 +11,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getPersonalDetails } from "../../services/actions/personalDetails";
 import { useSize } from "../../utils";
 import styles from "./style.module.css"
+import ExpandCircleDownIcon from '@mui/icons-material/ExpandCircleDown';
 
 export const Home = () => {
   const { width } = useSize();
@@ -77,8 +78,9 @@ export const Home = () => {
                   sx={{ mt: 2, ml: 0.5 }}
                   className="animated-right"
                   onClick={() => scrollToRef(aboutRef)}
+                  size="large"
                 >
-                  Know More
+                  Know More <ExpandCircleDownIcon sx={{ ml: 1 }} />
                 </Button>
               </Box>
             </Grid>
@@ -92,7 +94,6 @@ export const Home = () => {
         <Container maxWidth={width > 768 ? "lg" : "md"} sx={{ height: "100%" }}>
           <Grid
             container
-            spacing={2}
             sx={{
               height: "100%",
               alignItems: "center",
