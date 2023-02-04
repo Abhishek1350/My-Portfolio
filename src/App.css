@@ -4,12 +4,12 @@
     margin: 0;
     padding: 0;
     font-family: 'Baloo 2', cursive !important;
-
 }
 
-.App {
+body {
     background: var(--background_primary);
     color: var(--textColor_primary);
+    transition: all 0.3s ease;
 }
 
 .animated-left {
