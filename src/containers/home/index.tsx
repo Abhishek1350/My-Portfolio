@@ -13,6 +13,7 @@ import { useSize } from "../../utils";
 import styles from "./style.module.css"
 import ExpandCircleDownIcon from '@mui/icons-material/ExpandCircleDown';
 import ReactTypingEffect from 'react-typing-effect';
+import { About } from "../about";
 
 export const Home = () => {
   const { width } = useSize();
@@ -77,7 +78,6 @@ export const Home = () => {
                       eraseSpeed={90}
                       typingDelay={300}
                       eraseDelay={2000}
-                      cursor=""
                     />
                   </span>
                 </Typography>
@@ -102,40 +102,8 @@ export const Home = () => {
       </section>
 
       {/* About Section */}
-      <section className={styles.section} ref={aboutRef}>
-        <Container maxWidth={width > 768 ? "lg" : "md"} sx={{ height: "100%" }}>
-          <Grid
-            container
-            sx={{
-              height: "100%",
-              alignItems: "center",
-            }}
-          >
-            <Grid item xs={12} md={6} className={styles.homeTopGrid}>
-              <Box className={styles.homeTopImage + " animated-left"}>
-                <img src="/profile.webp" alt="" />
-              </Box>
-            </Grid>
-
-            <Grid item xs={12} md={6} className={styles.homeTopGrid}>
-              <Box className={styles.homeTopcontent}>
-                <Typography variant={width > 768 ? "h2" : "h3"} component="p" gutterBottom className="animated-right">
-                  Hi, I'm <span className={styles.name}>Abhishek</span>
-                </Typography>
-                <Typography variant="h5" component="p" gutterBottom pl={0.5} className="animated-right">
-                  I'm a <span className={styles.workText}>Software Engineer</span>
-                </Typography>
-                <Typography variant="body1" component="p" gutterBottom pl={0.5} className="animated-right">
-                  I am adept in React, Next.js, Redux, Material UI, and Bootstrap. Right now I'm toiling as a Software Engineer at an impressive startup.
-                </Typography>
-                <Button variant="outlined" color="primary" sx={{ mt: 2, ml: 0.5 }} className="animated-right">
-                  Know More
-                </Button>
-              </Box>
-            </Grid>
-
-          </Grid>
-        </Container>
+      <section className={styles.aboutSection} ref={aboutRef}>
+        <About />
       </section>
     </div>
   )

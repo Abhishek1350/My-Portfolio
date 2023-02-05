@@ -1,0 +1,22 @@
+.aboutHeading {
+    text-align: center;
+}
+
+.aboutHeading span {
+    word-break: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+}
+
+.highlight {
+    color: red;
+    text-transform: capitalize;
+    font-weight: 500;
+}
+
+.heading {
+    text-align: center;
+    font-weight: 500;
+    font-size: 2.2rem;
+}

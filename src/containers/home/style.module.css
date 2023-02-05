@@ -1,5 +1,5 @@
 .section {
-    height: calc(100vh - 60px);
+    height: calc(100vh - 20px);
 }
 
 .homeTopImage {
@@ -37,10 +37,14 @@
     color : red;
 }
 
+.aboutSection{
+    height: calc(100vh - 10px);
+}
+
 @media only screen and (max-width: 768px) {
-    .homeTop {
+    /* .homeTop {
         height: calc(100vh - 100px);
-    }
+    } */
 
     .homeTopImage {
         width: 300px;
@@ -66,4 +70,15 @@
         margin-bottom: 20px;
         margin-left: 0;
     }
+}
+
+@media only screen and (max-width:500px){
+    .section {
+        height: calc(100vh - 80px);
+    }
+
+    .homeTopImage {
+        width: 250px;
+        height: 280px;
+    }  
 }
