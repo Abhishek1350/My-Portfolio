@@ -1,5 +1,6 @@
 .aboutHeading {
     text-align: center;
+    padding: 20px 0;
 }
 
 .aboutHeading span {
@@ -17,6 +18,26 @@
 
 .heading {
     text-align: center;
-    font-weight: 500;
-    font-size: 2.2rem;
+    font-weight: 500 !important;
+    font-size: 2.2rem !important;
+    color: var(--textColor_secondary);
+}
+
+
+.personalDetailsItem {
+    font-size: 28px !important;
+    margin-bottom: 15px;
+}
+
+@media only screen and (max-width:500px) {
+    .aboutHeading {
+        padding: 0;
+
+    }
+
+    .personalDetailsItem {
+        font-size: 20px !important;
+        margin-bottom: 10px;
+
+    }
 }

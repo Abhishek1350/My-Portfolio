@@ -27,8 +27,8 @@ const BottomNav = () => {
             icon: <HomeIcon />
         },
         {
-            name: "Projects",
-            pathname: "/projects",
+            name: "Work",
+            pathname: "/work",
             icon: <WebhookIcon />
         },
         {

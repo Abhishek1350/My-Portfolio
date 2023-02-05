@@ -20,6 +20,7 @@ import { useSize } from "../../utils";
 import { useContext } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
 import HideNavOnScroll from "./HideNavOnScroll";
+import ReactTypingEffect from 'react-typing-effect';
 
 interface NavLinks {
     name: string;
@@ -35,8 +36,8 @@ const TopNav = () => {
             icon: <HomeIcon />
         },
         {
-            name: "projects",
-            pathname: "/projects",
+            name: "Work",
+            pathname: "/work",
             icon: <WebhookIcon />
         },
         {
@@ -145,11 +146,17 @@ const TopNav = () => {
                                     />
                                 </Box>
 
-                                <Box>
-                                    <Typography sx={{ fontSize: "20px" }}>
-                                        imabhishek.me
-                                    </Typography>
-                                </Box>
+
+                                <Typography variant="h5" component="div" gutterBottom pt={1}>
+                                    <ReactTypingEffect
+                                        text={["EAT", "SLEEP", "CODE", "COFFEE", "REPEAT"]}
+                                        speed={110}
+                                        eraseSpeed={90}
+                                        typingDelay={200}
+                                        eraseDelay={1000}
+                                    />
+                                </Typography>
+
 
                                 <Box>
                                     <Tooltip title={theme === "dark" ? "Light Mode" : "Dark Mode"}>

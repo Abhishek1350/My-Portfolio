@@ -14,11 +14,13 @@ import styles from "./style.module.css"
 import ExpandCircleDownIcon from '@mui/icons-material/ExpandCircleDown';
 import ReactTypingEffect from 'react-typing-effect';
 import { About } from "../about";
+import { Skills } from "../skills";
 
 export const Home = () => {
   const { width } = useSize();
   const dispatch = useDispatch();
   const aboutRef = useRef(null);
+  const skillsRef = useRef(null);
   const personalDetails = useSelector((state: any) => state.projects);
 
   const state = useSelector((state: any) => state);
@@ -91,8 +93,9 @@ export const Home = () => {
                   className="animated-right"
                   onClick={() => scrollToRef(aboutRef)}
                   size="large"
+                  endIcon={<ExpandCircleDownIcon />}
                 >
-                  Know More <ExpandCircleDownIcon sx={{ ml: 1 }} />
+                  Know More
                 </Button>
               </Box>
             </Grid>
@@ -104,7 +107,23 @@ export const Home = () => {
       {/* About Section */}
       <section className={styles.aboutSection} ref={aboutRef}>
         <About />
+        <Button
+          variant="outlined"
+          color="primary"
+          size="large"
+          onClick={() => scrollToRef(skillsRef)}
+          endIcon={<ExpandCircleDownIcon />}
+        >
+          Skills
+        </Button>
       </section>
+
+      {/* Skills Section */}
+      <section className={styles.skillsSection} ref={skillsRef}>
+        <Skills />
+      </section>
+
+
     </div>
   )
 }
