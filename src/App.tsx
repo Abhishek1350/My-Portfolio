@@ -1,7 +1,7 @@
 import './App.css';
 import { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import { Home } from "./containers"
+import { Home, Work, Blogs, Contact } from "./containers"
 import { Navbar } from './components';
 
 const ScrollToTop = () => {
@@ -22,6 +22,10 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/work" element={<Work />} />
+          <Route path="/blogs" element={<Blogs />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<Home/>} />
         </Routes>
       </Router>
     </div>

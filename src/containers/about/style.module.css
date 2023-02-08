@@ -1,16 +1,10 @@
 .aboutHeading {
     text-align: center;
-    padding: 20px 0;
+    margin-bottom: 5rem;
+    color: var(--textColor_secondary);
 }
 
 .aboutHeading span {
-    word-break: break-word;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: inline-block;
-}
-
-.highlight {
     color: red;
     text-transform: capitalize;
     font-weight: 500;
@@ -19,7 +13,7 @@
 .heading {
     text-align: center;
     font-weight: 500 !important;
-    font-size: 2.2rem !important;
+    font-size: 2rem !important;
     color: var(--textColor_secondary);
 }
 
@@ -31,8 +25,7 @@
 
 @media only screen and (max-width:500px) {
     .aboutHeading {
-        padding: 0;
-
+        margin-bottom: 3rem;
     }
 
     .personalDetailsItem {

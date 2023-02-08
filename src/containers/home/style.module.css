@@ -50,16 +50,39 @@
     background: var(--background_primary);
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:900px) {
+    .aboutSection, .skillsSection {
+        height: auto;
+        justify-content: flex-start;
+        padding: 50px 0
+    }
 
-    .homeTopImage {
-        width: 300px;
-        height: 300px;
+    .section {
+        height: auto;
+        padding: 50px 0;
     }
 
     .homeTopGrid {
         display: flex;
         justify-content: center;
+    }
+
+    .homeTopcontent {
+        text-align: center;
+        padding-bottom: 10px;
+    }
+
+}
+
+@media only screen and (max-width: 768px) {
+    .section {
+        padding: 0;
+        height: calc(100vh - 80px);
+    }
+
+    .homeTopImage {
+        width: 300px;
+        height: 300px;
     }
 
     .homeTopcontent {
@@ -79,17 +102,9 @@
 
 }
 
-@media only screen and (max-width:900px){
-    .aboutSection, .skillsSection {
-        height: auto;
-        justify-content: flex-start;
-        padding: 50px 0
-    }
-}
-
 @media only screen and (max-width:500px) {
     .section {
-        height: calc(100vh - 80px);
+        height: calc(100vh - 100px);
     }
 
     .homeTopImage {

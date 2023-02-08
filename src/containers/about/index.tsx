@@ -78,56 +78,24 @@ export const About = () => {
 
     return (
         <Container maxWidth={width > 768 ? "lg" : "md"}>
-            <Typography
-                variant={width > 500 ? "h2" : "h4"}
-                component="div"
-                gutterBottom
-                className={styles.aboutHeading}
-            >
-                <ReactTypingEffect
-                    text={["I Fix the cause, not the symptom", "Simplicity is the soul of efficiency", "Make it work, make it right, make it fast"]}
-                    speed={80}
-                    eraseSpeed={40}
-                    typingDelay={100}
-                    eraseDelay={2500}
-                    displayTextRenderer={(text: string, i: number) => {
-                        return (
-                            <div>
-                                {text.split(' ').map((word: string, i: number) => {
-                                    const key = `${i}`;
-                                    return (
-                                        <span
-                                            key={key}
-                                            className={
-                                                word === 'cause,' ||
-                                                    word === "symptom" ||
-                                                    word === "Simplicity" ||
-                                                    word === "soul" ||
-                                                    word === "efficiency" ||
-                                                    word === "work," ||
-                                                    word === "right," ||
-                                                    word === "fast"
-                                                    ? styles.highlight : ''
-                                            }
-                                        >
-                                            {word}
-                                            {i < text.split(' ').length - 1 ? '\u00A0' : ''}
-                                        </span>
-
-                                    );
-                                })}
-                            </div>
-                        );
-                    }}
-                />
-            </Typography>
+            <Box className={styles.aboutHeading}>
+                <Typography
+                    variant={width > 500 ? "h2" : "h3"}
+                    component="div"
+                >
+                    Make it {" "}
+                    <ReactTypingEffect
+                        text={["Work", "right", "fast"]}
+                        speed={80}
+                        eraseSpeed={40}
+                        typingDelay={100}
+                        eraseDelay={1800}
+                    />
+                </Typography>
+            </Box>
             <Grid
                 container
                 spacing={2}
-                sx={{
-                    // height: "100%",
-                    // alignItems: "center",
-                }}
             >
                 <Grid item xs={12} md={6} className={styles.personalDetails}>
                     <Typography
