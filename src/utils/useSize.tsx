@@ -27,6 +27,3 @@ const useSize = (): Size => {
 }
 
 export default useSize
-
-//usage
-// const windowWidth = useSize().width
