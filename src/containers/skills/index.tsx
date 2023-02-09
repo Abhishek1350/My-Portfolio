@@ -2,9 +2,10 @@ import {
     Grid,
     Box,
     Container,
-    Typography
+    Typography,
+    Button,
 } from "@mui/material";
-
+import ExpandCircleDownIcon from '@mui/icons-material/ExpandCircleDown';
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getPersonalDetails } from "../../services/actions/personalDetails";
@@ -12,8 +13,11 @@ import { useSize } from "../../utils";
 import styles from "./style.module.css"
 import ReactTypingEffect from 'react-typing-effect';
 
+interface Props {
+    buttonClick: () => void;
+}
 
-export const Skills = () => {
+export const Skills = (props: Props) => {
     const { width } = useSize();
     const dispatch = useDispatch();
 
@@ -123,6 +127,17 @@ export const Skills = () => {
                     </Box>
                 </Grid>
             </Grid>
+            <Box sx={{ display: "flex", justifyContent: "center!important" }}>
+                <Button
+                    variant="outlined"
+                    color="primary"
+                    size="large"
+                    onClick={props.buttonClick}
+                    endIcon={<ExpandCircleDownIcon />}
+                >
+                    Work
+                </Button>
+            </Box>
         </Container>
     )
 }

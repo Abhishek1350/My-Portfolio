@@ -2,9 +2,10 @@ import {
     Grid,
     Box,
     Container,
-    Typography
+    Typography,
+    Button,
 } from "@mui/material";
-
+import ExpandCircleDownIcon from "@mui/icons-material/ExpandCircleDown";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getPersonalDetails } from "../../services/actions/personalDetails";
@@ -18,7 +19,11 @@ interface PersonalDetails {
     value: string
 }
 
-export const About = () => {
+interface Props {
+    buttonClick: () => void;
+}
+
+export const About = (props: Props) => {
     const { width } = useSize();
     const dispatch = useDispatch();
 
@@ -155,6 +160,17 @@ export const About = () => {
                     </Box>
                 </Grid>
             </Grid>
+            <Box sx={{ display: "flex", justifyContent: "center!important", py: 3 }}>
+                <Button
+                    variant="outlined"
+                    color="primary"
+                    size="large"
+                    onClick={props.buttonClick}
+                    endIcon={<ExpandCircleDownIcon />}
+                >
+                    Skills
+                </Button>
+            </Box>
         </Container>
     )
 }

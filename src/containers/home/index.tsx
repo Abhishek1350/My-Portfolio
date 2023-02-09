@@ -21,6 +21,7 @@ export const Home = () => {
   const dispatch = useDispatch();
   const aboutRef = useRef(null);
   const skillsRef = useRef(null);
+  const workRef = useRef(null);
   const personalDetails = useSelector((state: any) => state.projects);
 
   const state = useSelector((state: any) => state);
@@ -106,21 +107,16 @@ export const Home = () => {
 
       {/* About Section */}
       <section className={styles.aboutSection} ref={aboutRef}>
-        <About />
-        <Button
-          variant="outlined"
-          color="primary"
-          size="large"
-          onClick={() => scrollToRef(skillsRef)}
-          endIcon={<ExpandCircleDownIcon />}
-        >
-          Skills
-        </Button>
+        <About buttonClick={() => scrollToRef(skillsRef)} />
       </section>
 
       {/* Skills Section */}
       <section className={styles.skillsSection} ref={skillsRef}>
-        <Skills />
+        <Skills buttonClick={() => scrollToRef(workRef)} />
+      </section>
+
+      <section className={styles.workSection} ref={workRef}>
+        work
       </section>
 
 
