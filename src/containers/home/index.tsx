@@ -21,8 +21,6 @@ export const Home = () => {
   const { width } = useSize();
   const dispatch = useDispatch();
   const aboutRef = useRef(null);
-  const skillsRef = useRef(null);
-  const workRef = useRef(null);
   const personalDetails = useSelector((state: any) => state.projects);
 
   const state = useSelector((state: any) => state);
@@ -108,15 +106,15 @@ export const Home = () => {
 
       {/* About Section */}
       <section className={styles.aboutSection} ref={aboutRef}>
-        <About buttonClick={() => scrollToRef(skillsRef)} />
+        <About />
       </section>
 
       {/* Skills Section */}
-      <section className={styles.skillsSection} ref={skillsRef}>
-        <Skills buttonClick={() => scrollToRef(workRef)} />
+      <section className={styles.skillsSection} >
+        <Skills />
       </section>
 
-      <section className={styles.workSection} ref={workRef}>
+      <section className={styles.workSection}>
         <Work />
       </section>
 

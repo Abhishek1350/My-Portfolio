@@ -19,11 +19,7 @@ interface PersonalDetails {
     value: string
 }
 
-interface Props {
-    buttonClick: () => void;
-}
-
-export const About = (props: Props) => {
+export const About = () => {
     const { width } = useSize();
     const dispatch = useDispatch();
 
@@ -160,17 +156,7 @@ export const About = (props: Props) => {
                     </Box>
                 </Grid>
             </Grid>
-            <Box sx={{ display: "flex", justifyContent: "center!important", py: 3 }}>
-                <Button
-                    variant="outlined"
-                    color="primary"
-                    size="large"
-                    onClick={props.buttonClick}
-                    endIcon={<ExpandCircleDownIcon />}
-                >
-                    Skills
-                </Button>
-            </Box>
+            
         </Container>
     )
 }

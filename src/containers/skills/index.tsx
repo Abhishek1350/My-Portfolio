@@ -13,11 +13,7 @@ import { useSize } from "../../utils";
 import styles from "./style.module.css"
 import ReactTypingEffect from 'react-typing-effect';
 
-interface Props {
-    buttonClick: () => void;
-}
-
-export const Skills = (props: Props) => {
+export const Skills = () => {
     const { width } = useSize();
     const dispatch = useDispatch();
 
@@ -127,17 +123,7 @@ export const Skills = (props: Props) => {
                     </Box>
                 </Grid>
             </Grid>
-            <Box sx={{ display: "flex", justifyContent: "center!important" }}>
-                <Button
-                    variant="outlined"
-                    color="primary"
-                    size="large"
-                    onClick={props.buttonClick}
-                    endIcon={<ExpandCircleDownIcon />}
-                >
-                    Work
-                </Button>
-            </Box>
+            
         </Container>
     )
 }
