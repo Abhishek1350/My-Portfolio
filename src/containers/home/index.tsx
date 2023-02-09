@@ -15,6 +15,7 @@ import ExpandCircleDownIcon from '@mui/icons-material/ExpandCircleDown';
 import ReactTypingEffect from 'react-typing-effect';
 import { About } from "../about";
 import { Skills } from "../skills";
+import { Work } from "../work";
 
 export const Home = () => {
   const { width } = useSize();
@@ -116,7 +117,7 @@ export const Home = () => {
       </section>
 
       <section className={styles.workSection} ref={workRef}>
-        work
+        <Work />
       </section>
 
 
