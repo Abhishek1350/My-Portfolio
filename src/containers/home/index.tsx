@@ -16,6 +16,7 @@ import ReactTypingEffect from 'react-typing-effect';
 import { About } from "../about";
 import { Skills } from "../skills";
 import { Work } from "../work";
+import { Blogs } from "../blogs";
 
 export const Home = () => {
   const { width } = useSize();
@@ -116,6 +117,10 @@ export const Home = () => {
 
       <section className={styles.workSection}>
         <Work />
+      </section>
+
+      <section className={styles.blogsSection}>
+        <Blogs />
       </section>
 
 

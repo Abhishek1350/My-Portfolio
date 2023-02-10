@@ -10,7 +10,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { getPersonalDetails } from "../../services/actions/personalDetails";
 import { useSize } from "../../utils";
 import styles from "./style.module.css"
-import ReactTypingEffect from 'react-typing-effect';
 import { Card } from "../../components";
 import { useNavigate, useLocation } from "react-router-dom";
 

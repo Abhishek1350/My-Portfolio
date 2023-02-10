@@ -37,7 +37,7 @@
     color: red;
 }
 
-.aboutSection, .skillsSection, .workSection {
+.aboutSection, .skillsSection, .workSection, .blogsSection {
     height: 100vh;
     background: var(--background_secondary);
     display: flex;
@@ -46,12 +46,12 @@
     flex-direction: column;
 }
 
-.skillsSection {
+.skillsSection, .blogsSection {
     background: var(--background_primary);
 }
 
 @media only screen and (max-width:1150px) {
-    .workSection {
+    .workSection, .blogsSection {
         height: auto;
         justify-content: flex-start;
         padding: 50px 0
