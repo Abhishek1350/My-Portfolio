@@ -61,7 +61,6 @@
     flex-direction: column;
     padding: 0.5rem;
     position: relative;
-    width: 100%;
 }
 
 .link {
@@ -102,4 +101,11 @@
     display: flex;
     justify-content: center;
 
+}
+
+@media only screen and (max-width :500px){
+    .card {
+        margin: 1.5rem;
+        padding: 0.5rem;
+    }
 }

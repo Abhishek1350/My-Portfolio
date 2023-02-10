@@ -50,8 +50,16 @@
     background: var(--background_primary);
 }
 
+@media only screen and (max-width:1150px) {
+    .workSection {
+        height: auto;
+        justify-content: flex-start;
+        padding: 50px 0
+    }
+}
+
 @media only screen and (max-width:900px) {
-    .aboutSection, .skillsSection, .workSection {
+    .aboutSection, .skillsSection {
         height: auto;
         justify-content: flex-start;
         padding: 50px 0
@@ -107,7 +115,7 @@
         height: calc(100vh - 100px);
     }
 
-    .skillsSection{
+    .skillsSection {
         padding: 30px 0;
     }
 

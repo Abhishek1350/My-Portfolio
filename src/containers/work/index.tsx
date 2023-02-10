@@ -2,6 +2,7 @@ import {
     Box,
     Container,
     Button,
+    Typography,
 } from "@mui/material";
 import ExpandCircleDownIcon from '@mui/icons-material/ExpandCircleDown';
 import { useEffect } from "react";
@@ -11,10 +12,13 @@ import { useSize } from "../../utils";
 import styles from "./style.module.css"
 import ReactTypingEffect from 'react-typing-effect';
 import { Card } from "../../components";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export const Work = () => {
     const { width } = useSize();
     const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const location = useLocation();
 
 
     const personalDetails = useSelector((state: any) => state.projects);
@@ -42,6 +46,15 @@ export const Work = () => {
 
     return (
         <Container maxWidth={width > 768 ? "lg" : "md"} >
+            <Box className={location.pathname==="/" ? styles.workHeadingHome : styles.workHeading}>
+                <Typography
+                    variant={width > 500 ? "h2" : "h4"}
+                    component={width > 500 ? "h2" : "h4"}
+                >
+                    My Work
+                </Typography>
+            </Box>
+
             <Box className={styles.workContainer}>
                 {
                     [1, 2, 3].map((item) => (
@@ -50,23 +63,28 @@ export const Work = () => {
                 }
             </Box>
 
+            {
+                location.pathname === "/" && (
+                    <Box sx={{
+                        display: "flex",
+                        justifyContent: "center!important",
+                        gap: "1rem",
+                        mt: "2rem"
+                    }}
+                    >
+                        <Button
+                            variant="outlined"
+                            color="primary"
+                            size="large"
+                            onClick={() => navigate("/work")}
+                            endIcon={<ExpandCircleDownIcon />}
+                        >
+                            View All
+                        </Button>
+                    </Box>
+                )
+            }
 
-            <Box sx={{
-                display: "flex",
-                justifyContent: "center!important",
-                gap: "1rem",
-            }}
-            >
-                <Button
-                    variant="outlined"
-                    color="primary"
-                    size="large"
-                    // onClick={props.buttonClick}
-                    endIcon={<ExpandCircleDownIcon />}
-                >
-                    View More
-                </Button>
-            </Box>
         </Container>
     )
 }
