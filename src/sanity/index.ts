@@ -14,4 +14,6 @@ export const apiClient = sanityClient({
 
 const builder = imageUrlBuilder(apiClient);
 
+// Helper function for generating URLs for Sanity images
 export const urlFor = (source: SanityImageSource) => builder.image(source);
+
