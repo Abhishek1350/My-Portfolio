@@ -55,7 +55,7 @@ export const Blogs = () => {
                         display: "flex",
                         justifyContent: "center!important",
                         gap: "1rem",
-                        mt: "2rem"
+                        mt: "3rem"
                     }}
                     >
                         <Button

@@ -38,7 +38,7 @@
 }
 
 .aboutSection, .skillsSection, .workSection, .blogsSection {
-    height: 100vh;
+    height: 105vh;
     background: var(--background_secondary);
     display: flex;
     justify-content: center;
@@ -59,7 +59,7 @@
 }
 
 @media only screen and (max-width:900px) {
-    .aboutSection, .skillsSection {
+    .aboutSection {
         height: auto;
         justify-content: flex-start;
         padding: 50px 0
@@ -116,7 +116,7 @@
     }
 
     .skillsSection {
-        padding: 30px 0;
+        padding: 20px 0;
     }
 
     .homeTopImage {
