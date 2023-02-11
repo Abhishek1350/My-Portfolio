@@ -10,17 +10,17 @@ export const Footer = () => {
                 Social Links
             </Typography>
             <Box className={styles.socialMedia}>
-                <a href="" target="_blank" rel="noreferrer">
+                <a href="https://www.linkedin.com/in/abhishek-bhardwaj-76b9a721b/" target="_blank" rel="noreferrer">
                     <LinkedIn />
                 </a>
-                <a href="" target="_blank" rel="noreferrer">
+                <a href="https://github.com/Abhishek1350" target="_blank" rel="noreferrer">
                     <GitHub />
                 </a>
-                <a href="" target="_blank" rel="noreferrer">
+                <a href="https://twitter.com/abhishek1350" target="_blank" rel="noreferrer">
                     <Twitter />
                 </a>
             </Box>
-            <Typography variant="body1" mt="20px" className={styles.footerText}>
+            <Typography variant="body1" component="div"  mt="20px" className={styles.footerText}>
                 Made with {" "}
                 <ReactTypingEffect
                     text={["❤️", "ReactJS", "Material UI", "TypeScript", "Sanity"]}
@@ -30,7 +30,7 @@ export const Footer = () => {
                     typingDelay={80}
                     eraseDelay={1500}
                     displayTextRenderer={(text, i) => {
-                        const colors = ["#FFA500", "#00aefff1", "#0000ff", "#3399FF"];
+                        const colors = ["#FFA500", "#00aefff1", "#1976D2", "#3399FF"];
                         return (
                             <span style={{ color: colors[i % colors.length] }}>
                                 {text}

@@ -9,7 +9,7 @@ import styles from "./style.module.css"
 import ReactTypingEffect from 'react-typing-effect';
 import { useSanityQuery, GET_SKILLS, GET_EXPERIENCES, sanityImage } from "../../utils";
 
-interface Skills {
+interface Skill {
     image: any,
     name: string,
     link: string
@@ -41,7 +41,7 @@ export const Skills = () => {
         return <div>Not found</div>
     }
 
-    const sortByName = (a: Skills, b: Skills) => {
+    const sortByName = (a: Skill, b: Skill) => {
         if (a.name < b.name) {
             return -1;
         }
@@ -79,7 +79,7 @@ export const Skills = () => {
                 <Grid item xs={12} md={6}>
                     <Box className={styles.skillsBox}>
                         {
-                            (skills as Array<Skills>).sort((a, b) => sortByName(a, b)).map((skill: Skills) => (
+                            (skills as Array<Skill>).sort((a, b) => sortByName(a, b)).map((skill: Skill) => (
                                 <Box className={styles.skillBox} key={skill.name}>
                                     <Box className={styles.skillBoxImg}>
                                         <img src={sanityImage(skill.image).url()} alt={skill.name} />

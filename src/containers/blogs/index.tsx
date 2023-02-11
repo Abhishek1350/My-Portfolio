@@ -11,7 +11,7 @@ import { BlogCard } from "../../components";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useSanityQuery, GET_BLOGS, sanityImage } from "../../utils";
 
-interface Blogs {
+interface Blog {
     blogimage: any;
     content: any;
     title: string;
@@ -58,7 +58,7 @@ export const Blogs = () => {
                     <>
                         <Box className={styles.blogsContainer}>
                             {
-                                (data as Array<Blogs>).slice(0, 3).map((blog: Blogs) => (
+                                (data as Array<Blog>).slice(0, 3).map((blog: Blog) => (
                                     <BlogCard
                                         key={blog.slug.current}
                                         title={blog.title}
@@ -92,7 +92,7 @@ export const Blogs = () => {
                 ) : (
                     <Box className={styles.blogs}>
                         {
-                            (data as Array<Blogs>).map((blog: Blogs) => (
+                            (data as Array<Blog>).map((blog: Blog) => (
                                 <BlogCard
                                     key={blog.slug.current}
                                     title={blog.title}
