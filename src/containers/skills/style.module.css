@@ -1,6 +1,10 @@
 .skillsHeading {
     text-align: center;
     margin-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .skillsHeading h2, h4 {
