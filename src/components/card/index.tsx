@@ -3,33 +3,57 @@ import {
     Typography
 } from "@mui/material";
 import styles from "./style.module.css"
-import { Visibility } from "@mui/icons-material"
+import { Visibility, GitHub } from "@mui/icons-material"
 
-export const Card = () => {
+interface CardProps {
+    name: string;
+    description: string;
+    image: any;
+    url: string | null;
+    githubUrl: string | null;
+    skill : string | null;
+}
+
+export const Card = (props: CardProps) => {
     return (
         <Box className={styles.card}>
             <Box className={styles.cardTop}>
-                <img src="/profile.webp" alt="" />
+                <img src={props.image} alt={props.name} />
                 <Box className={styles.cardLinks}>
-                    <a href="/" target="_blank" rel="noreferrer">
-                        <Box className={styles.link}>
-                            <Visibility />
-                        </Box>
-                    </a>
+                    {
+                        props.url && (
+                            <a href={props.url} target="_blank" rel="noreferrer">
+                                <Box className={styles.link}>
+                                    <Visibility />
+                                </Box>
+                            </a>
+                        )
+                    }
+
+                    {
+                        props.githubUrl && (
+                            <a href={props.githubUrl} target="_blank" rel="noreferrer">
+                                <Box className={styles.link}>
+                                    <GitHub />
+                                </Box>
+                            </a>
+                        )
+                    }
                 </Box>
             </Box>
 
             <Box className={styles.cardBottom}>
                 <Typography variant="h6" component="h6">
-                    Lorem ipsum dolor sit amet.
+                    {props.name}
                 </Typography>
                 <Typography variant="body2" component="p">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+                    {props.description}
                 </Typography>
 
                 <Box className={styles.tag}>
                     <Typography variant="body1" component="span">
-                        Reactjs
+                        {/* sanity reference to skills document */}
+                        {props?.skill}
                     </Typography>
                 </Box>
             </Box>

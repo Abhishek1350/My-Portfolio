@@ -7,10 +7,50 @@ import {
 import { useSize } from "../../utils";
 import styles from "./style.module.css"
 import ReactTypingEffect from 'react-typing-effect';
-import { useSanityQuery, GET_SKILLS, GET_EXPERIENCES } from "../../utils";
+import { useSanityQuery, GET_SKILLS, GET_EXPERIENCES, sanityImage } from "../../utils";
+
+interface Skills {
+    image: any,
+    name: string,
+    link: string
+}
+
+interface Experiences {
+    companyName: string,
+    position: string,
+    startDate: string,
+    endDate: string,
+}
+
 
 export const Skills = () => {
     const { width } = useSize();
+
+    const { data: skills, loading: skillsLoading, error: skillsErr } = useSanityQuery(GET_SKILLS);
+    const { data: experiences, loading: expLoading, error: expErr } = useSanityQuery(GET_EXPERIENCES);
+
+    if (skillsLoading || expLoading) {
+        return <div>Loading...</div>
+    }
+
+    if (skillsErr || expErr) {
+        return <div>Error</div>
+    }
+
+    if (!skills || !experiences) {
+        return <div>Not found</div>
+    }
+
+    const sortByName = (a: Skills, b: Skills) => {
+        if (a.name < b.name) {
+            return -1;
+        }
+        if (a.name > b.name) {
+            return 1;
+        }
+        return 0;
+    }
+
 
     return (
         <Container maxWidth={width > 768 ? "lg" : "md"} >
@@ -39,13 +79,13 @@ export const Skills = () => {
                 <Grid item xs={12} md={6}>
                     <Box className={styles.skillsBox}>
                         {
-                            [1, 2, 4, 4, 5].map((item,) => (
-                                <Box className={styles.skillBox}>
+                            (skills as Array<Skills>).sort((a, b) => sortByName(a, b)).map((skill: Skills) => (
+                                <Box className={styles.skillBox} key={skill.name}>
                                     <Box className={styles.skillBoxImg}>
-                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQc2Y2gmQB5zuaBd1AfN_AyEgoTgxPF65i7GwlvrbnnP_RUlubieG19WFnonCtS4ZfAox4&usqp=CAU" alt="react" />
+                                        <img src={sanityImage(skill.image).url()} alt={skill.name} />
                                     </Box>
-                                    <Typography variant="h6" component="div" mt={1} gutterBottom>
-                                        React
+                                    <Typography variant="body1" component="p" mt={1} gutterBottom>
+                                        {skill.name}
                                     </Typography>
                                 </Box>
                             ))
@@ -55,42 +95,29 @@ export const Skills = () => {
 
                 <Grid item xs={12} md={6}>
                     <Box className={styles.exp}>
-                        <Box className={styles.expBox}>
-                            <Box className={styles.expBoxYear}>
-                                <Typography variant="h6" component="div" mt={1} gutterBottom>
-                                    2022
-                                </Typography>
-                            </Box>
+                        {
+                            (experiences as Array<Experiences>).map((exp: Experiences) => (
+                                <Box className={styles.expBox} key={exp.endDate}>
+                                    <Box className={styles.expBoxYear}>
+                                        <Typography variant="h6" component="div" mt={1} gutterBottom>
+                                            {exp.startDate}
+                                        </Typography>
+                                    </Box>
 
-                            <Box className={styles.expBoxRoles}>
-                                <Box className={styles.expBoxRole}>
-                                    <Typography variant="h6" component="div" mt={1} gutterBottom>
-                                        Software Engineer Intern
-                                    </Typography>
-                                    <Typography variant="body1">
-                                        Edvolve
-                                    </Typography>
+                                    <Box className={styles.expBoxRoles}>
+                                        <Box className={styles.expBoxRole}>
+                                            <Typography variant="h6" component="div" mt={1} gutterBottom>
+                                                {exp.position}
+                                            </Typography>
+                                            <Typography variant="body1">
+                                                {exp.companyName}
+                                            </Typography>
+                                        </Box>
+                                    </Box>
                                 </Box>
-                            </Box>
-                        </Box>
-                        <Box className={styles.expBox}>
-                            <Box className={styles.expBoxYear}>
-                                <Typography variant="h6" component="div" mt={1} gutterBottom>
-                                    2023
-                                </Typography>
-                            </Box>
+                            ))
 
-                            <Box className={styles.expBoxRoles}>
-                                <Box className={styles.expBoxRole}>
-                                    <Typography variant="h6" component="div" mt={1} gutterBottom>
-                                        Software Engineer
-                                    </Typography>
-                                    <Typography variant="body1">
-                                        Edoutdoors
-                                    </Typography>
-                                </Box>
-                            </Box>
-                        </Box>
+                        }
                     </Box>
                 </Grid>
             </Grid>

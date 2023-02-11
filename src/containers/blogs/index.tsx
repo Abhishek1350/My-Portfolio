@@ -9,12 +9,37 @@ import { useSize } from "../../utils";
 import styles from "./style.module.css"
 import { BlogCard } from "../../components";
 import { useNavigate, useLocation } from "react-router-dom";
-import {useSanityQuery, GET_BLOGS} from "../../utils";
+import { useSanityQuery, GET_BLOGS, sanityImage } from "../../utils";
+
+interface Blogs {
+    blogimage: any;
+    content: any;
+    title: string;
+    metadesc: string;
+    slug: {
+        current: string;
+    };
+}
+
 
 export const Blogs = () => {
     const { width } = useSize();
     const navigate = useNavigate();
     const location = useLocation();
+
+    const { data, loading, error } = useSanityQuery(GET_BLOGS);
+
+    if (loading) {
+        return <div>Loading...</div>
+    }
+
+    if (error) {
+        return <div>Error</div>
+    }
+
+    if (!data) {
+        return <div>Not found</div>
+    }
 
     return (
         <Container maxWidth={width > 768 ? "lg" : "md"} >
@@ -28,37 +53,59 @@ export const Blogs = () => {
                 </Typography>
             </Box>
 
-            <Box className={location.pathname === "/" ? styles.blogsContainer : styles.blogs}>
-                {
-                    [1, 2, 3].map((item) => (
-                        <BlogCard />
-                    ))
-                }
-            </Box>
-
             {
-                location.pathname === "/" && (
-                    <Box sx={{
-                        display: "flex",
-                        justifyContent: "center!important",
-                        gap: "1rem",
-                        mt: "3rem"
-                    }}
-                    >
-                        <Button
-                            variant="outlined"
-                            color="primary"
-                            size="large"
-                            onClick={() => navigate("/blogs")}
-                            endIcon={<ExpandCircleDownIcon />}
+                location.pathname === "/" ? (
+                    <>
+                        <Box className={styles.blogsContainer}>
+                            {
+                                (data as Array<Blogs>).slice(0, 3).map((blog: Blogs) => (
+                                    <BlogCard
+                                        key={blog.slug.current}
+                                        title={blog.title}
+                                        content={blog.content}
+                                        metadesc={blog.metadesc}
+                                        image={sanityImage(blog.blogimage).url()}
+                                        slug={blog.slug.current}
+                                    />
+                                ))
+                            }
+                        </Box>
+
+                        <Box sx={{
+                            display: "flex",
+                            justifyContent: "center!important",
+                            gap: "1rem",
+                            mt: "3rem"
+                        }}
                         >
-                            View All
-                        </Button>
+                            <Button
+                                variant="outlined"
+                                color="primary"
+                                size="large"
+                                onClick={() => navigate("/blogs")}
+                                endIcon={<ExpandCircleDownIcon />}
+                            >
+                                View All
+                            </Button>
+                        </Box>
+                    </>
+                ) : (
+                    <Box className={styles.blogs}>
+                        {
+                            (data as Array<Blogs>).map((blog: Blogs) => (
+                                <BlogCard
+                                    key={blog.slug.current}
+                                    title={blog.title}
+                                    content={blog.content}
+                                    metadesc={blog.metadesc}
+                                    image={sanityImage(blog.blogimage).url()}
+                                    slug={blog.slug.current}
+                                />
+                            ))
+                        }
                     </Box>
                 )
             }
-
-
 
         </Container>
     )

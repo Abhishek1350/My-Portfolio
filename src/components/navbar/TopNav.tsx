@@ -12,7 +12,6 @@ import IntegrationInstructionsIcon from '@mui/icons-material/IntegrationInstruct
 import HomeIcon from '@mui/icons-material/Home';
 import WebhookIcon from '@mui/icons-material/Webhook';
 import RssFeedIcon from '@mui/icons-material/RssFeed';
-import ContactPhoneIcon from '@mui/icons-material/ContactPhone';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import { useNavigate, useLocation } from "react-router-dom";
@@ -44,11 +43,6 @@ const TopNav = () => {
             name: "Blogs",
             pathname: "/blogs",
             icon: <RssFeedIcon />
-        },
-        {
-            name: "Contact",
-            pathname: "/contact",
-            icon: <ContactPhoneIcon />
         },
     ]
     const { width } = useSize();

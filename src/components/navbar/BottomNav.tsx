@@ -7,7 +7,6 @@ import {
 import HomeIcon from '@mui/icons-material/Home';
 import WebhookIcon from '@mui/icons-material/Webhook';
 import RssFeedIcon from '@mui/icons-material/RssFeed';
-import ContactPhoneIcon from '@mui/icons-material/ContactPhone';
 import { useNavigate } from "react-router-dom";
 import HideNavOnScroll from './HideNavOnScroll';
 
@@ -35,11 +34,6 @@ const BottomNav = () => {
             name: "Blogs",
             pathname: "/blogs",
             icon: <RssFeedIcon />
-        },
-        {
-            name: "Contact",
-            pathname: "/contact",
-            icon: <ContactPhoneIcon />
         },
     ]
     const navigate = useNavigate();

@@ -14,7 +14,21 @@ import { About } from "../about";
 import { Skills } from "../skills";
 import { Work } from "../work";
 import { Blogs } from "../blogs";
-import { useSanityQuery, GET_PERSONAL_INFO } from "../../utils";
+import { useSanityQuery, GET_PERSONAL_INFO, sanityImage } from "../../utils";
+
+interface SanityData {
+  name: string;
+  slidingText: string;
+  image: any;
+  address: string;
+  dateOfBirth: string;
+  education: string;
+  languages: string;
+  moreInfo: [{ children: [{ text: string }] }];
+  oneLiner: string;
+  position: string;
+  totalExperience: string;
+}
 
 export const Home = () => {
   const { width } = useSize();
@@ -25,7 +39,22 @@ export const Home = () => {
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error...</div>;
-  console.log(data)
+  if (!data) return <div>Not found...</div>;
+
+  const {
+    name,
+    slidingText,
+    image,
+    address,
+    dateOfBirth,
+    education,
+    languages,
+    moreInfo,
+    oneLiner,
+    position,
+    totalExperience,
+  }: SanityData = data[0];
+
 
   return (
     <main>
@@ -42,20 +71,22 @@ export const Home = () => {
           >
             <Grid item xs={12} md={6} className={styles.homeTopGrid}>
               <Box className={styles.homeTopImage + " animated-left"}>
-                <img src="/profile.webp" alt="" />
+                <img src={sanityImage(image).url()} alt={name} />
               </Box>
             </Grid>
 
             <Grid item xs={12} md={6} className={styles.homeTopGrid}>
               <Box className={styles.homeTopcontent}>
                 <Typography variant={width > 768 ? "h2" : "h3"} component="p" gutterBottom className="animated-right">
-                  Hi, I'm <span className={styles.name}>Abhishek</span>
+                  Hi, I'm <span className={styles.name}>
+                    {name.split(" ")[0]}
+                  </span>
                 </Typography>
                 <Typography variant="h5" component="div" gutterBottom pl={0.5} className="animated-right">
                   I'm a {" "}
                   <span>
                     <ReactTypingEffect
-                      text={["Software Engineer", "Programmer", "Developer", "Coder"]}
+                      text={slidingText}
                       className={styles.typingEffect}
                       speed={110}
                       eraseSpeed={90}
@@ -65,7 +96,7 @@ export const Home = () => {
                   </span>
                 </Typography>
                 <Typography variant="body1" component="p" gutterBottom pl={0.5} className="animated-right">
-                  I am adept in React, Next.js, Redux, Material UI, and Bootstrap. Right now I'm toiling as a Software Engineer at an impressive startup.
+                  {oneLiner}
                 </Typography>
                 <Button
                   variant="outlined"
@@ -87,7 +118,17 @@ export const Home = () => {
 
       {/* About Section */}
       <section className={styles.aboutSection} ref={aboutRef}>
-        <About />
+        <About
+          name={name}
+          address={address}
+          dateOfBirth={dateOfBirth}
+          education={education}
+          languages={languages}
+          moreInfo={moreInfo}
+          oneLiner={oneLiner}
+          position={position}
+          totalExperience={totalExperience}
+        />
       </section>
 
       {/* Skills Section */}

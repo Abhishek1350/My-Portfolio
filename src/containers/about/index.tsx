@@ -14,21 +14,33 @@ interface PersonalDetails {
     value: string
 }
 
-export const About = () => {
+interface AboutProps {
+    name: string,
+    address: string,
+    dateOfBirth: string,
+    education: string,
+    languages: string,
+    moreInfo: [{ children: [{ text: string }] }],
+    oneLiner: string,
+    position: string,
+    totalExperience: string
+}
+
+export const About = (props: AboutProps) => {
     const { width } = useSize();
 
     const personalDetailsFields = [
         {
             name: "Full Name",
-            value: "Abhishek Bhardwaj"
+            value: props.name
         },
         {
             name: "Birth Year",
-            value: "2001"
+            value: props.dateOfBirth.replace("-05-21", "")
         },
         {
             name: "Education",
-            value: "BCA"
+            value: props.education
         },
         {
             name: "Skill",
@@ -36,15 +48,15 @@ export const About = () => {
         },
         {
             name: "Experience",
-            value: "1+ years"
+            value: props.totalExperience
         },
         {
             name: "Languages",
-            value: "English, Hindi"
+            value: props.languages
         },
         {
             name: "Address",
-            value: "Himachal Pradesh, India"
+            value: props.address
         }
     ] as PersonalDetails[]
 
@@ -122,7 +134,7 @@ export const About = () => {
                             gutterBottom
                             className={styles.personalDetailsItem}
                         >
-                            Started on June 2021 during Lockdown, All alone without any teacher or mentor. At that point I didn't know anything about Web development. So I grabbed that opportunity of learning something new in Lockdown. It was an amazing journey for me. I have learned so many things from the Internet. Now I am capable of making websites all by myself
+                            {props.moreInfo[0].children[0].text}
                         </Typography>
                     </Box>
                 </Grid>

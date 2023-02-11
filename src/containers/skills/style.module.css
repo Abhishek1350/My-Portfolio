@@ -45,9 +45,10 @@
 }
 
 .skillBoxImg img {
-    height: 60%;
-    width: 60%;
+    height: 80%;
+    width: 80%;
     border-radius: 50%;
+    object-fit: contain;
 }
 
 .exp {

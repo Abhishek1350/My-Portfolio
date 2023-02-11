@@ -2,7 +2,6 @@ import {
     Box,
     Typography,
     Card,
-    CardActionArea,
     CardMedia,
     CardContent,
     CardActions,
@@ -10,22 +9,29 @@ import {
 import styles from "./style.module.css"
 import { Link } from "react-router-dom";
 
-export const BlogCard = () => {
+interface BlogCardProps {
+    title: string;
+    content: string;
+    metadesc: string;
+    image: string;
+    slug: string;
+}
+
+export const BlogCard = (props: BlogCardProps) => {
     return (
-        <Card component={Link} to={"/blogs/2"} className={styles.blogCard}>
+        <Card component={Link} to={`/blogs/${props.slug}`} className={styles.blogCard}>
             <CardMedia
                 component="img"
                 height="140"
-                image="https://source.unsplash.com/random"
-                alt="green iguana"
+                image={props.image}
+                alt={props.title}
             />
             <CardContent>
                 <Typography gutterBottom variant="h5" component="h5">
-                    Lizard
+                    {props.title.slice(0, 50)}
                 </Typography>
                 <Typography variant="body2" component="p">
-                    Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                    across all continents except Antarctica
+                    {props.metadesc.slice(0, 100)}
                 </Typography>
             </CardContent>
             <CardActions>
@@ -35,7 +41,7 @@ export const BlogCard = () => {
                     width: "90%"
                 }}>
                     <Typography variant="body2">
-                        2 min read
+                        5 min read
                     </Typography>
                 </Box>
             </CardActions>
