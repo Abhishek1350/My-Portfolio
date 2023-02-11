@@ -1,0 +1,27 @@
+.workHeadingHome, .workHeading {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.workHeading {
+    margin: 2rem;
+}
+
+.workContainer, .work {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.work {
+    padding: 10px 0 50px 0;
+    align-items: flex-start;
+}
+
+@media only screen and (max-width: 500px) {
+    .workHeading {
+        margin-bottom: 2.5rem;
+    }
+
+}
