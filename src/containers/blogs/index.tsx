@@ -7,7 +7,6 @@ import {
 import ExpandCircleDownIcon from '@mui/icons-material/ExpandCircleDown';
 import { useSize } from "../../utils";
 import styles from "./style.module.css"
-import ReactTypingEffect from 'react-typing-effect';
 import { BlogCard } from "../../components";
 import { useNavigate, useLocation } from "react-router-dom";
 
@@ -26,21 +25,9 @@ export const Blogs = () => {
                 >
                     Blogs
                 </Typography>
-                <Typography variant={width > 500 ? "h5" : "h6"}>
-                    Good skills means Good {" "}
-                    <ReactTypingEffect
-                        text={["Business", "Work", "Life"]}
-                        className={styles.typingEffect}
-                        speed={80}
-                        eraseSpeed={80}
-                        typingDelay={180}
-                        eraseDelay={800}
-                    />
-
-                </Typography>
             </Box>
 
-            <Box className={styles.blogsContainer}>
+            <Box className={location.pathname === "/" ? styles.blogsContainer : styles.blogs}>
                 {
                     [1, 2, 3].map((item) => (
                         <BlogCard />

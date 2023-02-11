@@ -26,7 +26,7 @@
 @media only screen and (max-width:500px) {
     .blogCard {
         display: block;
-        width: 320px;
+        width: 300px;
         border-radius: 40px !important;
         transition: all 0.3s ease !important;
         text-decoration: none;

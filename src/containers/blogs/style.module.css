@@ -11,12 +11,17 @@
     color : red;
 }
 
-.blogsContainer {
+.blogsContainer, .blogs {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     gap : 3rem;
+}
+
+.blogs {
+    padding: 10px 0 100px 0;
+    align-items: flex-start;
 }
 
 @media only screen and (max-width: 500px) {

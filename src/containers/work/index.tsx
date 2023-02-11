@@ -26,7 +26,7 @@ export const Work = () => {
                 </Typography>
             </Box>
 
-            <Box className={styles.workContainer}>
+            <Box className={location.pathname === "/" ? styles.workContainer : styles.work}>
                 {
                     [1, 2, 3].map((item) => (
                         <Card />
