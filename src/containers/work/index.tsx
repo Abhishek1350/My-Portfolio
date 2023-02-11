@@ -9,6 +9,7 @@ import { useSize } from "../../utils";
 import styles from "./style.module.css"
 import { Card } from "../../components";
 import { useNavigate, useLocation } from "react-router-dom";
+import { useSanityQuery, GET_PROJECTS } from "../../utils";
 
 export const Work = () => {
     const { width } = useSize();

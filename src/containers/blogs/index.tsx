@@ -9,6 +9,7 @@ import { useSize } from "../../utils";
 import styles from "./style.module.css"
 import { BlogCard } from "../../components";
 import { useNavigate, useLocation } from "react-router-dom";
+import {useSanityQuery, GET_BLOGS} from "../../utils";
 
 export const Blogs = () => {
     const { width } = useSize();

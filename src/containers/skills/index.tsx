@@ -7,6 +7,7 @@ import {
 import { useSize } from "../../utils";
 import styles from "./style.module.css"
 import ReactTypingEffect from 'react-typing-effect';
+import { useSanityQuery, GET_SKILLS, GET_EXPERIENCES } from "../../utils";
 
 export const Skills = () => {
     const { width } = useSize();

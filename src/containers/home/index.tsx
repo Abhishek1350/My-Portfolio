@@ -14,12 +14,18 @@ import { About } from "../about";
 import { Skills } from "../skills";
 import { Work } from "../work";
 import { Blogs } from "../blogs";
+import { useSanityQuery, GET_PERSONAL_INFO } from "../../utils";
 
 export const Home = () => {
   const { width } = useSize();
   const aboutRef = useRef(null);
+  const { data, error, loading } = useSanityQuery(GET_PERSONAL_INFO);
 
   const scrollToRef = (ref: any) => window.scrollTo(0, ref.current.offsetTop);
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error...</div>;
+  console.log(data)
 
   return (
     <main>
