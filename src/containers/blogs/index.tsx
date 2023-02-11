@@ -5,7 +5,6 @@ import {
     Typography,
 } from "@mui/material";
 import ExpandCircleDownIcon from '@mui/icons-material/ExpandCircleDown';
-import { useEffect } from "react";
 import { useSize } from "../../utils";
 import styles from "./style.module.css"
 import ReactTypingEffect from 'react-typing-effect';

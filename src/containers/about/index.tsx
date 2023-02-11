@@ -4,7 +4,6 @@ import {
     Container,
     Typography,
 } from "@mui/material";
-import { useEffect } from "react";
 import { useSize } from "../../utils";
 import styles from "./style.module.css"
 import ReactTypingEffect from 'react-typing-effect';

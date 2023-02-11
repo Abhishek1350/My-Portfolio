@@ -5,7 +5,7 @@ import {
   Button,
   Typography
 } from "@mui/material";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { useSize } from "../../utils";
 import styles from "./style.module.css"
 import ExpandCircleDownIcon from '@mui/icons-material/ExpandCircleDown';

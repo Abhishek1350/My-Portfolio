@@ -1,6 +1,6 @@
 // for fetching data from Sanity
 import { useState, useEffect } from 'react';
-import { apiClient } from '../sanity';
+import { apiClient } from './sanityClient';
 
 
 const useSanityQuery = (query: string, params?: any) => {
