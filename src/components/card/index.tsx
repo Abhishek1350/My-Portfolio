@@ -11,7 +11,7 @@ interface CardProps {
     image: any;
     url: string | null;
     githubUrl: string | null;
-    skill : string | null;
+    skills : string | null;
 }
 
 export const Card = (props: CardProps) => {
@@ -53,7 +53,7 @@ export const Card = (props: CardProps) => {
                 <Box className={styles.tag}>
                     <Typography variant="body1" component="span">
                         {/* sanity reference to skills document */}
-                        {props?.skill}
+                        {props.skills}
                     </Typography>
                 </Box>
             </Box>

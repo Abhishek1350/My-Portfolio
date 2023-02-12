@@ -18,7 +18,7 @@ interface Projects {
     name: string;
     url: string | null;
     _createdAt: string;
-    skill : string | null;
+    skills : string | null;
 }
 
 export const Work = () => {
@@ -70,7 +70,7 @@ export const Work = () => {
                                         image={sanityImage(project.image).url()}
                                         url={project.url}
                                         githubUrl={project.githubUrl}
-                                        skill={project.skill}
+                                        skills={project.skills}
                                     />
                                 ))
                             }
@@ -104,7 +104,7 @@ export const Work = () => {
                                     image={sanityImage(project.image).url()}
                                     url={project.url}
                                     githubUrl={project.githubUrl}
-                                    skill={project.skill}
+                                    skills={project.skills}
                                 />
                             ))
                         }
