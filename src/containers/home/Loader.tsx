@@ -22,7 +22,7 @@ export const Loader = () => {
                 >
                     <Grid item xs={12} md={6} className={styles.homeTopGrid}>
                         <Box className={styles.homeTopImage + " animated-left"}>
-                            <Skeleton variant="rounded" width="100%" height="100%" sx={{ background: "var(--background_secondary)" }} />
+                            <Skeleton variant="circular" width="100%" height="100%" sx={{ background: "var(--background_secondary)" }} />
                         </Box>
                     </Grid>
 

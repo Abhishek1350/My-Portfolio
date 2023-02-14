@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {
     BottomNavigation,
     BottomNavigationAction,
@@ -9,6 +9,7 @@ import WebhookIcon from '@mui/icons-material/Webhook';
 import RssFeedIcon from '@mui/icons-material/RssFeed';
 import { useNavigate } from "react-router-dom";
 import HideNavOnScroll from './HideNavOnScroll';
+import { useLocation } from 'react-router-dom';
 
 interface NavLinks {
     name: string;
@@ -18,6 +19,7 @@ interface NavLinks {
 
 const BottomNav = () => {
     //for active state
+    const currentPath = useLocation().pathname;
     const [navValue, setNavValue] = useState<number>(0);
     const navLinks: NavLinks[] = [
         {
@@ -41,6 +43,23 @@ const BottomNav = () => {
     const handleNavClick = (pathname: string) => {
         navigate(pathname);
     }
+
+    useEffect(() => {
+        switch (currentPath) {
+            case "/":
+                setNavValue(0);
+                break;
+            case "/work":
+                setNavValue(1);
+                break;
+            case "/blogs":
+                setNavValue(2);
+                break;
+            default:
+                setNavValue(1);
+                break;
+        }
+    }, [currentPath])
 
     return (
         <HideNavOnScroll direction='up'>

@@ -1,6 +1,7 @@
 import {
     Container,
-    Box
+    Box,
+    CircularProgress
 } from "@mui/material";
 import styles from "./style.module.css"
 import { useParams } from "react-router-dom";
@@ -32,7 +33,11 @@ export const BlogPage = () => {
         })
     }, [slug, query])
 
-    if (!blogData) return <div>Loading...</div>
+    if (!blogData) return (
+        <Box sx={{height:"100vh", display:"flex", alignItems:"center", justifyContent:"center"}}>
+            <CircularProgress size={100}/>
+        </Box>
+    )
 
     return (
         <Container maxWidth={width > 768 ? "lg" : "md"}>
