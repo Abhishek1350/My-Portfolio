@@ -8,6 +8,7 @@ import { useSize } from "../../utils";
 import styles from "./style.module.css"
 import ReactTypingEffect from 'react-typing-effect';
 import { useSanityQuery, GET_SKILLS, GET_EXPERIENCES, sanityImage } from "../../utils";
+import { MotionWrapper } from "../../components";
 
 interface Skill {
     image: any,
@@ -23,7 +24,7 @@ interface Experiences {
 }
 
 
-export const Skills = () => {
+const Skills = () => {
     const { width } = useSize();
 
     const { data: skills, loading: skillsLoading, error: skillsErr } = useSanityQuery(GET_SKILLS);
@@ -125,3 +126,5 @@ export const Skills = () => {
         </Container>
     )
 }
+
+export default MotionWrapper(Skills);

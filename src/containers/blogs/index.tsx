@@ -10,6 +10,7 @@ import styles from "./style.module.css"
 import { BlogCard } from "../../components";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useSanityQuery, GET_BLOGS, sanityImage } from "../../utils";
+import { MotionWrapper } from "../../components";
 
 interface Blog {
     blogimage: any;
@@ -22,7 +23,7 @@ interface Blog {
 }
 
 
-export const Blogs = () => {
+const Blogs = () => {
     const { width } = useSize();
     const navigate = useNavigate();
     const location = useLocation();
@@ -110,3 +111,5 @@ export const Blogs = () => {
         </Container>
     )
 }
+
+export default MotionWrapper(Blogs);

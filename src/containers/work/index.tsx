@@ -10,6 +10,7 @@ import styles from "./style.module.css"
 import { Card } from "../../components";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useSanityQuery, GET_PROJECTS, sanityImage } from "../../utils";
+import { MotionWrapper } from "../../components";
 
 interface Projects {
     description: string;
@@ -21,7 +22,7 @@ interface Projects {
     skills : string | null;
 }
 
-export const Work = () => {
+ const Work = () => {
     const { width } = useSize();
     const navigate = useNavigate();
     const location = useLocation();
@@ -115,3 +116,5 @@ export const Work = () => {
         </Container>
     )
 }
+
+export default MotionWrapper(Work);
