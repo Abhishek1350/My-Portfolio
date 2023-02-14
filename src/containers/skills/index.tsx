@@ -30,16 +30,8 @@ const Skills = () => {
     const { data: skills, loading: skillsLoading, error: skillsErr } = useSanityQuery(GET_SKILLS);
     const { data: experiences, loading: expLoading, error: expErr } = useSanityQuery(GET_EXPERIENCES);
 
-    if (skillsLoading || expLoading) {
+    if (skillsLoading || expLoading || !skills || !experiences || skillsErr || expErr) {
         return <div>Loading...</div>
-    }
-
-    if (skillsErr || expErr) {
-        return <div>Error</div>
-    }
-
-    if (!skills || !experiences) {
-        return <div>Not found</div>
     }
 
     const sortByName = (a: Skill, b: Skill) => {

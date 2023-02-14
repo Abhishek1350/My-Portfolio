@@ -12,6 +12,7 @@ import ExpandCircleDownIcon from '@mui/icons-material/ExpandCircleDown';
 import ReactTypingEffect from 'react-typing-effect';
 import { About, Skills, Work, Blogs } from "../"
 import { useSanityQuery, GET_PERSONAL_INFO, sanityImage } from "../../utils";
+import { Loader } from "./Loader";
 
 interface SanityData {
   name: string;
@@ -34,9 +35,7 @@ export const Home = () => {
 
   const scrollToRef = (ref: any) => window.scrollTo(0, ref.current.offsetTop);
 
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error...</div>;
-  if (!data) return <div>Not found...</div>;
+  if (loading || error || !data) return <Loader />;
 
   const {
     name,

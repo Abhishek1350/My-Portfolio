@@ -52,7 +52,6 @@ export const Card = (props: CardProps) => {
 
                 <Box className={styles.tag}>
                     <Typography variant="body1" component="span">
-                        {/* sanity reference to skills document */}
                         {props.skills}
                     </Typography>
                 </Box>

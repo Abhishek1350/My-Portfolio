@@ -7,7 +7,7 @@ import {
 import ExpandCircleDownIcon from '@mui/icons-material/ExpandCircleDown';
 import { useSize } from "../../utils";
 import styles from "./style.module.css"
-import { Card } from "../../components";
+import { Card, Loader } from "../../components";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useSanityQuery, GET_PROJECTS, sanityImage } from "../../utils";
 import { MotionWrapper } from "../../components";
@@ -19,26 +19,18 @@ interface Projects {
     name: string;
     url: string | null;
     _createdAt: string;
-    skills : string | null;
+    skills: string | null;
 }
 
- const Work = () => {
+const Work = () => {
     const { width } = useSize();
     const navigate = useNavigate();
     const location = useLocation();
 
     const { data, loading, error } = useSanityQuery(GET_PROJECTS);
 
-    if (loading) {
-        return <div>Loading...</div>
-    }
-
-    if (error) {
-        return <div>Error</div>
-    }
-
-    if (!data) {
-        return <div>Not found</div>
+    if (loading || error || !data) {
+        return <Loader />
     }
 
     const sortByLatest = (a: Projects, b: Projects) => {
