@@ -1,11 +1,14 @@
 import {
     Typography
   } from "@mui/material";
+  import { MotionWrapper } from "../../components";
 
-export const Contact = () => {
+ const Contact = () => {
     return (
         <div className="Contact">
             <Typography>Contact</Typography>
         </div>
     )
 }
+
+export default MotionWrapper(Contact);

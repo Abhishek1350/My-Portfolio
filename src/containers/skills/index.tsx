@@ -8,6 +8,7 @@ import { useSize } from "../../utils";
 import styles from "./style.module.css"
 import ReactTypingEffect from 'react-typing-effect';
 import { useSanityQuery, GET_SKILLS, GET_EXPERIENCES, sanityImage } from "../../utils";
+import { MotionWrapper } from "../../components";
 
 interface Skill {
     image: any,
@@ -23,22 +24,14 @@ interface Experiences {
 }
 
 
-export const Skills = () => {
+const Skills = () => {
     const { width } = useSize();
 
     const { data: skills, loading: skillsLoading, error: skillsErr } = useSanityQuery(GET_SKILLS);
     const { data: experiences, loading: expLoading, error: expErr } = useSanityQuery(GET_EXPERIENCES);
 
-    if (skillsLoading || expLoading) {
+    if (skillsLoading || expLoading || !skills || !experiences || skillsErr || expErr) {
         return <div>Loading...</div>
-    }
-
-    if (skillsErr || expErr) {
-        return <div>Error</div>
-    }
-
-    if (!skills || !experiences) {
-        return <div>Not found</div>
     }
 
     const sortByName = (a: Skill, b: Skill) => {
@@ -125,3 +118,5 @@ export const Skills = () => {
         </Container>
     )
 }
+
+export default MotionWrapper(Skills);

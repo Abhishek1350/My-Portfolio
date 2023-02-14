@@ -7,9 +7,10 @@ import {
 import ExpandCircleDownIcon from '@mui/icons-material/ExpandCircleDown';
 import { useSize } from "../../utils";
 import styles from "./style.module.css"
-import { BlogCard } from "../../components";
+import { BlogCard, Loader } from "../../components";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useSanityQuery, GET_BLOGS, sanityImage } from "../../utils";
+import { MotionWrapper } from "../../components";
 
 interface Blog {
     blogimage: any;
@@ -22,23 +23,15 @@ interface Blog {
 }
 
 
-export const Blogs = () => {
+const Blogs = () => {
     const { width } = useSize();
     const navigate = useNavigate();
     const location = useLocation();
 
     const { data, loading, error } = useSanityQuery(GET_BLOGS);
 
-    if (loading) {
-        return <div>Loading...</div>
-    }
-
-    if (error) {
-        return <div>Error</div>
-    }
-
-    if (!data) {
-        return <div>Not found</div>
+    if (loading || error || !data) {
+        return <Loader />
     }
 
     return (
@@ -110,3 +103,5 @@ export const Blogs = () => {
         </Container>
     )
 }
+
+export default MotionWrapper(Blogs);

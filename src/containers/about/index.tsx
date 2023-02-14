@@ -7,6 +7,8 @@ import {
 import { useSize } from "../../utils";
 import styles from "./style.module.css"
 import ReactTypingEffect from 'react-typing-effect';
+import { MotionWrapper } from "../../components";
+import { useSanityQuery, GET_PERSONAL_INFO } from "../../utils";
 
 
 interface PersonalDetails {
@@ -14,7 +16,7 @@ interface PersonalDetails {
     value: string
 }
 
-interface AboutProps {
+interface SanityData {
     name: string,
     address: string,
     dateOfBirth: string,
@@ -26,21 +28,29 @@ interface AboutProps {
     totalExperience: string
 }
 
-export const About = (props: AboutProps) => {
+const About = () => {
     const { width } = useSize();
+
+    const { data, error, loading } = useSanityQuery(GET_PERSONAL_INFO);
+
+    if (loading) return <div>Loading...</div>;
+    if (error) return <div>Error...</div>;
+    if (!data) return <div>Not found...</div>;
+
+    const { name, address, dateOfBirth, education, languages, moreInfo, totalExperience } = data[0] as SanityData;
 
     const personalDetailsFields = [
         {
             name: "Full Name",
-            value: props.name
+            value: name
         },
         {
             name: "Birth Year",
-            value: props.dateOfBirth.replace("-05-21", "")
+            value: dateOfBirth.replace("-05-21", "")
         },
         {
             name: "Education",
-            value: props.education
+            value: education
         },
         {
             name: "Skill",
@@ -48,15 +58,15 @@ export const About = (props: AboutProps) => {
         },
         {
             name: "Experience",
-            value: props.totalExperience
+            value: totalExperience
         },
         {
             name: "Languages",
-            value: props.languages
+            value: languages
         },
         {
             name: "Address",
-            value: props.address
+            value: address
         }
     ] as PersonalDetails[]
 
@@ -134,7 +144,7 @@ export const About = (props: AboutProps) => {
                             gutterBottom
                             className={styles.personalDetailsItem}
                         >
-                            {props.moreInfo[0].children[0].text}
+                            {moreInfo[0].children[0].text}
                         </Typography>
                     </Box>
                 </Grid>
@@ -143,3 +153,5 @@ export const About = (props: AboutProps) => {
         </Container>
     )
 }
+
+export default MotionWrapper(About) 

@@ -10,11 +10,9 @@ import { useSize } from "../../utils";
 import styles from "./style.module.css"
 import ExpandCircleDownIcon from '@mui/icons-material/ExpandCircleDown';
 import ReactTypingEffect from 'react-typing-effect';
-import { About } from "../about";
-import { Skills } from "../skills";
-import { Work } from "../work";
-import { Blogs } from "../blogs";
+import { About, Skills, Work, Blogs } from "../"
 import { useSanityQuery, GET_PERSONAL_INFO, sanityImage } from "../../utils";
+import { Loader } from "./Loader";
 
 interface SanityData {
   name: string;
@@ -37,22 +35,13 @@ export const Home = () => {
 
   const scrollToRef = (ref: any) => window.scrollTo(0, ref.current.offsetTop);
 
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error...</div>;
-  if (!data) return <div>Not found...</div>;
+  if (loading || error || !data) return <Loader />;
 
   const {
     name,
     slidingText,
     image,
-    address,
-    dateOfBirth,
-    education,
-    languages,
-    moreInfo,
     oneLiner,
-    position,
-    totalExperience,
   }: SanityData = data[0];
 
 
@@ -118,17 +107,7 @@ export const Home = () => {
 
       {/* About Section */}
       <section className={styles.aboutSection} ref={aboutRef}>
-        <About
-          name={name}
-          address={address}
-          dateOfBirth={dateOfBirth}
-          education={education}
-          languages={languages}
-          moreInfo={moreInfo}
-          oneLiner={oneLiner}
-          position={position}
-          totalExperience={totalExperience}
-        />
+        <About />
       </section>
 
       {/* Skills Section */}

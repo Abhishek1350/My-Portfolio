@@ -3,16 +3,21 @@
 }
 
 .homeTopImage {
-    width: 400px;
-    height: 500px;
+    width: 460px;
+    height: 460px;
+    background: var(--background_secondary);
+    border-radius: 50%;
+    box-shadow: inset 0 0 10px var(--shadow_primary);
 }
 
 .homeTopImage img {
-    width: 100%;
-    height: 100%;
+    width: 95%;
+    height: 92%;
     object-fit: cover;
-    border-radius: 15% 30% 15% 30%;
-    box-shadow: var(--shadow_primary) .95px 2.95px 2.8px;
+    border-radius: 50%;
+    position: relative;
+    left: 20px;
+    top: 13px;
 }
 
 .homeTopcontent p:first-child {
@@ -89,8 +94,15 @@
     }
 
     .homeTopImage {
-        width: 300px;
-        height: 300px;
+        width: 350px;
+        height: 350px;
+    }
+
+    .homeTopImage img {
+        width: 90%;
+        height: 90%;
+        left: 27px;
+        top: 10px;
     }
 
     .homeTopcontent {
@@ -120,7 +132,11 @@
     }
 
     .homeTopImage {
-        width: 250px;
-        height: 280px;
+        width: 300px;
+        height: 300px;
+    }
+
+    .homeTopImage img {
+        left: 21px;
     }
 }

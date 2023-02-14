@@ -8,6 +8,7 @@
     padding: 1rem;
     transition: all .3s ease;
     width: 270px;
+    min-height: 365px;
     box-shadow: 0 0 3px var(--textColor_primary)
 }
 
@@ -103,6 +104,14 @@
     display: flex;
     justify-content: center;
 
+}
+
+.loader {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 @media only screen and (max-width :500px){
