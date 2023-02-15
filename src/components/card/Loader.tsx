@@ -12,7 +12,7 @@ export const Loader = () => {
             <Box className={styles.loader}>
                 {
                     [1, 2, 3, 4, 5, 6].map((index: number) => (
-                        <Box className={styles.card} key={index}>
+                        <Box className={styles.card} key={index} sx={{background:"var(--background_primary)"}}>
                             <Box className={styles.cardTop}>
                                 <Skeleton variant="rectangular" width="100%" height="100%" />
                                 <Box className={styles.cardLinks}>
