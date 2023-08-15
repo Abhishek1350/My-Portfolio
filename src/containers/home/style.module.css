@@ -11,13 +11,13 @@
 }
 
 .homeTopImage img {
-    width: 95%;
-    height: 92%;
+       border-radius: 50%;
+    height: 95%;
+    left: 12px;
     object-fit: cover;
-    border-radius: 50%;
     position: relative;
-    left: 20px;
-    top: 13px;
+    top: 11px;
+    width: 95%;
 }
 
 .homeTopcontent p:first-child {
@@ -99,10 +99,9 @@
     }
 
     .homeTopImage img {
-        width: 90%;
-        height: 90%;
-        left: 27px;
-        top: 10px;
+            height: 95%;
+    left: 9px;
+    top: 8px;
     }
 
     .homeTopcontent {
@@ -137,6 +136,9 @@
     }
 
     .homeTopImage img {
-        left: 21px;
+        left: 8px;
+    width: 95%;
+    height: 95%;
+    top: 7px;
     }
 }
