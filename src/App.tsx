@@ -1,7 +1,7 @@
 import './App.css';
 import { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import { Home, Work, Blogs, BlogPage } from "./containers"
+import { Home, Work, Blogs, BlogPage, Sitemap } from "./containers"
 import { Navbar, Footer } from './components';
 
 const ScrollToTop = () => {
@@ -25,6 +25,7 @@ function App() {
           <Route path="/work" element={<Work />} />
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/blogs/:slug" element={<BlogPage />} />
+          <Route path="/sitemap" element={<Sitemap />} />
           <Route path="*" element={<Home />} />
         </Routes>
         <Footer />

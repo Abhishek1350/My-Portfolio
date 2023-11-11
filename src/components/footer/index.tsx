@@ -2,6 +2,7 @@ import { Box, Typography } from "@mui/material";
 import styles from "./style.module.css"
 import { LinkedIn, GitHub, Twitter } from '@mui/icons-material';
 import ReactTypingEffect from "react-typing-effect";
+import { Link } from "react-router-dom";
 
 export const Footer = () => {
     return (
@@ -20,7 +21,7 @@ export const Footer = () => {
                     <Twitter />
                 </a>
             </Box>
-            <Typography variant="body1" component="div"  mt="20px" className={styles.footerText}>
+            <Typography variant="body1" component="div" mt="20px" className={styles.footerText}>
                 Made with {" "}
                 <ReactTypingEffect
                     text={["❤️", "ReactJS", "Material UI", "TypeScript", "Sanity"]}
@@ -38,6 +39,9 @@ export const Footer = () => {
                         );
                     }}
                 />
+                <Link to="/sitemap" hidden>
+                    Sitemap
+                </Link>
             </Typography>
         </footer>
     )

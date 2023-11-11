@@ -6,6 +6,11 @@
     text-decoration: none;
 }
 
+.blogCard a{
+    text-decoration: none;
+    color: inherit;
+}
+
 .blogCard:hover {
     box-shadow: 0 0 5px var(--shadow_primary);
 }

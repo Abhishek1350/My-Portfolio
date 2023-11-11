@@ -1,18 +1,26 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import { hydrateRoot, createRoot } from 'react-dom/client';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
 import { ThemeProvider } from "./context/ThemeContext";
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
-root.render(
-  <React.StrictMode>
-    <ThemeProvider>
-      <App />
-    </ThemeProvider>
-  </React.StrictMode>
-);
+const rootElement = document.getElementById('root') as HTMLElement
 
-reportWebVitals();
+if (rootElement.hasChildNodes()) {
+  hydrateRoot(
+    rootElement,
+    <React.StrictMode>
+      <ThemeProvider>
+        <App />
+      </ThemeProvider>
+    </React.StrictMode>
+  );
+} else {
+  createRoot(rootElement).render(
+    <React.StrictMode>
+      <ThemeProvider>
+        <App />
+      </ThemeProvider>
+    </React.StrictMode>
+  );
+}
+
