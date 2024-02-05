@@ -9,7 +9,7 @@ export function Hero() {
     const router = useRouter();
 
     return (
-        <Container size="md">
+        <Container size="lg">
             <Box className={classes.inner}>
                 <Box className={`${classes.content} animate-from-left`}>
                     <Title order={2} className={classes.subtitle}>

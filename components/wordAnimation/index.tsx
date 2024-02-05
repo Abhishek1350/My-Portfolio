@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Image, Container, Title, Button, Text } from '@mantine/core';
+import { Text } from '@mantine/core';
 
 interface WordAnimationProps {
     words: string[];

@@ -58,7 +58,7 @@ export function Footer() {
 
   return (
     <footer className={`${classes.footer} animate-from-bottom`}>
-      <Container className={classes.inner} size="md">
+      <Container className={classes.inner} size="lg">
         <Box className={classes.logo}>
           <Image
             src="/logo.svg"
@@ -71,7 +71,7 @@ export function Footer() {
         </Box>
         <Box className={classes.groups}>{groups}</Box>
       </Container>
-      <Container className={classes.afterFooter}>
+      <Container className={classes.afterFooter} size="lg">
         <Text c="dimmed" size="sm">
           © 2020 mantine.dev. All rights reserved.
         </Text>

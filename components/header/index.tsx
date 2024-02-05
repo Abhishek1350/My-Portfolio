@@ -9,7 +9,6 @@ import {
   ScrollArea,
   rem,
   Container,
-  Image,
   useMantineColorScheme
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
@@ -62,7 +61,7 @@ export function Header() {
   return (
     <>
       <header className={`${classes.header} animate-from-top`}>
-        <Container className={classes.cont} size="md">
+        <Container className={classes.cont} size="lg">
           <Group justify="space-between" h="100%">
             <Link href="/" className={classes.image}>
               ImAbhishek
