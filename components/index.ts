@@ -1,2 +1,4 @@
-export * from "./theme-toggler"
+export * from "./footer"
 export * from "./header"
+export * from "./home"
+export * from "./wordAnimation"

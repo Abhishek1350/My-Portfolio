@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import '@mantine/core/styles.css';
+import { ColorSchemeScript, MantineProvider } from '@mantine/core';
+import { Header, Footer } from "@/components";
 import "./globals.css";
-import { Providers } from "./providers";
-import { Header } from "@/components";
 import { Libre_Franklin } from "next/font/google";
 
 export const metadata: Metadata = {
@@ -19,16 +20,21 @@ const font = Libre_Franklin({
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
+      <head>
+        <ColorSchemeScript />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </head>
       <body className={font.className}>
-        <Providers>
+        <MantineProvider defaultColorScheme="auto">
           <Header />
           {children}
-        </Providers>
+          <Footer />
+        </MantineProvider>
       </body>
     </html>
   );
