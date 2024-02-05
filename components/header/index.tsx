@@ -9,7 +9,8 @@ import {
   ScrollArea,
   rem,
   Container,
-  useMantineColorScheme
+  useMantineColorScheme,
+  Text
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import {
@@ -23,20 +24,20 @@ import { usePathname } from 'next/navigation'
 
 const navLinks = [
   {
-    title: 'About Us',
-    link: '/about-us',
+    title: 'About',
+    link: '/about',
   },
   {
-    title: 'Careers',
-    link: '/careers',
+    title: 'Projects',
+    link: '/projects',
   },
   {
     title: 'Blogs',
     link: '/blogs',
   },
   {
-    title: 'Contact Us',
-    link: '/contact-us',
+    title: 'Contact',
+    link: '/contact',
   },
 ]
 
@@ -63,8 +64,15 @@ export function Header() {
       <header className={`${classes.header} animate-from-top`}>
         <Container className={classes.cont} size="lg">
           <Group justify="space-between" h="100%">
-            <Link href="/" className={classes.image}>
-              ImAbhishek
+            <Link href="/" className={classes.logoText}>
+              <Text
+                size="xl"
+                fw={900}
+                variant="gradient"
+                gradient={{ from: 'orange', to: 'red', deg: 360 }}
+              >
+                ImAbhishek
+              </Text>
             </Link>
 
             <Group h="100%" gap={0} visibleFrom="sm">
@@ -98,7 +106,7 @@ export function Header() {
         onClose={closeDrawer}
         size="100%"
         padding="sm"
-        title="FabWebStudio"
+        title="ImAbhishek"
         hiddenFrom="sm"
         zIndex={1000000}
         closeOnClickOutside

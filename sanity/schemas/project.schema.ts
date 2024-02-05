@@ -15,14 +15,14 @@ const schema = {
       type: "text",
     },
     {
-      title: "Url",
-      name: "url",
-      type: "string",
+      title: "Live Url",
+      name: "liveUrl",
+      type: "url",
     },
     {
       title: "Github Url",
       name: "githubUrl",
-      type: "string",
+      type: "url",
     },
     {
       name: "image",

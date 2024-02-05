@@ -45,12 +45,7 @@
   }
 }
 
-.image {
-  display: inline-flex;
-  align-items: center;
-  height: 100%;
-}
-
-.image img {
-  height: 70%;
+.logoText {
+  text-decoration: none;
+  letter-spacing: 1px;
 }
