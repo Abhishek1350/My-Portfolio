@@ -1,39 +1,43 @@
 const schema = {
-  name: 'projects',
-  title: 'Projects',
-  type: 'document',
+  name: "projects",
+  title: "Projects",
+  type: "document",
   fields: [
     {
-      name: 'title',
-      title: 'Title',
-      type: 'string',
-      validation: (Rule:any) => Rule.required(),
+      name: "title",
+      title: "Title",
+      type: "string",
+      validation: (Rule: any) => Rule.required(),
     },
     {
-      name: 'description',
-      title: 'Description',
-      type: 'text',
+      name: "description",
+      title: "Description",
+      type: "text",
     },
     {
-      name: 'url',
-      title: 'URL',
-      type: 'url',
+      title: "Url",
+      name: "url",
+      type: "string",
     },
     {
-      name: 'image',
-      title: 'Image',
-      type: 'image',
-      validation: (Rule:any) => Rule.required(),
-      Option :{
+      title: "Github Url",
+      name: "githubUrl",
+      type: "string",
+    },
+    {
+      name: "image",
+      title: "Image",
+      type: "image",
+      validation: (Rule: any) => Rule.required(),
+      Option: {
         hotspot: true,
-      }
+      },
     },
     {
-      name: 'technologies',
-      title: 'Technologies',
-      type: 'array',
-      of: [{ type: 'string' }],
-      validation: (Rule:any) => Rule.required(),
+      name: "technologies",
+      title: "Technologies",
+      type: "reference",
+      to: [{ type: "skills" }],
     },
   ],
 };
