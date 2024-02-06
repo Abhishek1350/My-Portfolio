@@ -2,7 +2,7 @@
 
 import { Image, Container, Title, Button, Text, Box } from '@mantine/core';
 import classes from './hero.module.css';
-import { WordAnimation } from '..';
+import { WordAnimation, TextAppearAnimation } from '..';
 import { useRouter } from 'next/navigation';
 
 export function Hero() {
@@ -12,22 +12,22 @@ export function Hero() {
         <Container size="lg">
             <Box className={classes.inner}>
                 <Box className={`${classes.content} animate-from-left`}>
-                    <Title order={2} className={classes.subtitle}>
-                        EXPERTS IN DESIGN, BUILD &
+                    <Title order={1} className={classes.title} mb="md">
+                        <TextAppearAnimation text='HI, I am Abhishek' />
                     </Title>
-                    <Title className={classes.title}>
+                    <Title order={2} className={classes.subtitle}>
                         <WordAnimation
                             words={[
-                                'LAUNCH',
-                                'SCALE',
-                                'GROW',
+                                'ReactJS Developer',
+                                'NextJS Developer',
                             ]}
                             className={classes.wordAnimation}
                         />
                     </Title>
-                    <Text c="dimmed" mt="md">
-                        OUR AIM IS TO ASSIST AND ADVISE—SO YOU CAN WORK SMARTER, NOT HARDER.
+                    <Text c="dimmed" mt="md" component="div">
+                        <TextAppearAnimation text='I am adept in React, Redux, Material UI, and Bootstrap. Right now I am toiling as a Software Engineer at an startup.' />
                     </Text>
+
                     <Button
                         variant="gradient"
                         gradient={{ from: 'lime', to: 'green', deg: 67 }}
@@ -35,14 +35,15 @@ export function Hero() {
                         size="md"
                         my="lg"
                         className={classes.control}
-                        onClick={() => router.push('/about-us')}
+                        onClick={() => router.push('/about')}
                     >
                         READ MORE
                     </Button>
                 </Box>
                 <Image
-                    src="/home/hero-image.svg"
+                    src="/home/profile.jpg"
                     className={`${classes.image} animate-from-right delay-5`}
+                    height={400}
                 />
             </Box>
         </Container>

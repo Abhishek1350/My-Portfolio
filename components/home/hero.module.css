@@ -21,14 +21,14 @@
   }
 }
 
-.subtitle {
+.title {
   font-size: 2.5rem;
   @media (max-width: $mantine-breakpoint-xs) {
     font-size: 2rem;
   }
 }
 
-.title {
+.subtitle {
   color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
   background-color: var(--mantine-color-blue-light);
   position: relative;
@@ -41,22 +41,23 @@
 
 .wordAnimation {
   line-height: 1.2;
-  font-size: 5rem;
+  font-size: 3.2rem;
   font-family: Greycliff CF, var(--mantine-font-family);
   min-width: 350px;
   @media (max-width: $mantine-breakpoint-xs) {
-    font-size: 4rem;
+    font-size: 2rem;
     min-width: auto;
   }
 }
 
 .image {
   width: 100%;
-  max-width: 500px;
   object-fit: contain;
   display: block;
   margin: auto;
+  border-radius: 50%;
   @media (max-width: $mantine-breakpoint-sm) {
     margin-top: max(var(--mantine-spacing-lg));
+    height: 100%;
   }
 }
