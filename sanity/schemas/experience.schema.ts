@@ -16,12 +16,12 @@ const schema = {
         {
             name: "startDate",
             title: "Start Date",
-            type: "string",
+            type: "date",
         },
         {
             name: "endDate",
             title: "End Date",
-            type: "string",
+            type: "date",
         },
     ],
 };

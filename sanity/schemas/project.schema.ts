@@ -36,8 +36,14 @@ const schema = {
     {
       name: "technologies",
       title: "Technologies",
-      type: "reference",
-      to: [{ type: "skills" }],
+      type: "array",
+      of: [
+        {
+          type: "reference",
+          to: [{ type: "skills" }],
+        }
+      ], 
+      
     },
   ],
 };
