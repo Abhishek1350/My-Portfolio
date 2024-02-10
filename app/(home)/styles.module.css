@@ -1,24 +1,28 @@
-.hero,
-.work {
+.hero {
+  padding: calc(var(--mantine-spacing-xl) * 2) 0;
+}
+
+.work, .skill {
   padding: calc(var(--mantine-spacing-xl) * 1) 0;
 }
 
-.work {
+.skill {
   background-color: light-dark(
     var(--mantine-color-gray-0),
     var(--mantine-color-dark-6)
   );
 }
 
-.work .title {
+.title {
   color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
   font-family: Greycliff CF, var(--mantine-font-family);
   line-height: 1.2;
   font-weight: 900;
   font-size: 2.5rem;
   text-align: center;
-  margin-bottom: var(--mantine-spacing-lg);
+  margin-bottom: var(--mantine-spacing-xl);
 }
+
 .work .slider {
   padding: calc(var(--mantine-spacing-sm) * 2) calc(var(--mantine-spacing-sm));
 }

@@ -1,4 +1,4 @@
-import { Hero, WorkSlider } from "@/components";
+import { Hero, Skills, WorkSlider } from "@/components";
 import styles from "./styles.module.css";
 import { Title, Box } from '@mantine/core';
 
@@ -8,9 +8,15 @@ export default function Home() {
       <section className={styles.hero}>
         <Hero />
       </section>
+      <section className={styles.skill}>
+        <Title order={2} className={styles.title}>
+          Skills and Experience
+        </Title>
+        <Skills />
+      </section>
       <section className={styles.work}>
         <Title order={2} className={styles.title}>
-          Our Work
+          My Recent Work
         </Title>
         <Box className={styles.slider}>
           <WorkSlider />
