@@ -1,6 +1,6 @@
-import { Hero, SkillsExperience, WorkSlider } from "@/components";
+import { Hero, SkillsExperience, RecentWork } from "@/components";
 import styles from "./styles.module.css";
-import { Title, Box } from '@mantine/core';
+import { Title, Container, Button } from '@mantine/core';
 
 export default function Home() {
   return (
@@ -18,9 +18,9 @@ export default function Home() {
         <Title order={2} className={styles.title}>
           My Recent Work
         </Title>
-        <Box className={styles.slider}>
-          <WorkSlider />
-        </Box>
+        <Container>
+          <RecentWork />
+        </Container>
       </section>
     </main>
   );

@@ -1,0 +1,47 @@
+.card {
+    position: relative;
+    height: rem(250px);
+    background-color: light-dark(
+      var(--mantine-color-gray-0),
+      var(--mantine-color-dark-6)
+    );
+  
+    & .title {
+      color: var(--mantine-color-white);
+    }
+  
+    & .image {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      transition: transform 500ms ease;
+      background-position: center;
+    }
+  
+    & .content {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      gap: 0.5rem;
+      bottom: 0;
+      height: 100%;
+      left: 0;
+      opacity: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.726);
+      transition: all 0.3s ease;
+    }
+  
+    @mixin hover {
+      & .image {
+        transform: scale(1.03);
+      }
+      & .content {
+        opacity: 1;
+      }
+    }
+  }

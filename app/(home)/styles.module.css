@@ -22,7 +22,3 @@
   text-align: center;
   margin-bottom: var(--mantine-spacing-xl);
 }
-
-.work .slider {
-  padding: calc(var(--mantine-spacing-sm) * 2) calc(var(--mantine-spacing-sm));
-}

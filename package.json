@@ -3,8 +3,8 @@
   "version": "3.0.0",
   "private": true,
   "author": {
-    "name":"Abhishek",
-    "github":"https://github.com/abhishek1350"
+    "name": "Abhishek",
+    "github": "https://github.com/abhishek1350"
   },
   "scripts": {
     "dev": "next dev",
@@ -27,8 +27,7 @@
     "react": "^18",
     "react-dom": "^18",
     "sanity": "^3.26.1",
-    "styled-components": "^6.1.8",
-    "swiper": "^11.0.5"
+    "styled-components": "^6.1.8"
   },
   "devDependencies": {
     "@types/node": "^20",
