@@ -1,3 +1,3 @@
 export * from "./hero"
 export * from "./workSlider"
-export * from "./skills"
+export * from "./skills-experience"
