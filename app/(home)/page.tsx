@@ -18,7 +18,7 @@ export default function Home() {
         <Title order={2} className={styles.title}>
           My Recent Work
         </Title>
-        <Container>
+        <Container size="lg">
           <RecentWork />
         </Container>
       </section>

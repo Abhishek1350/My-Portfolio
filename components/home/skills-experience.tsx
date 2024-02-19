@@ -66,7 +66,7 @@ export function SkillsExperience() {
   ));
 
   return (
-    <Container className={classes.wrapper}>
+    <Container className={classes.wrapper} size="lg">
       <Container size={660} p={0}>
         <Text c="dimmed" className={classes.description}>
           I'm proficient in a wide range of skills and technologies. Here are a few of them:

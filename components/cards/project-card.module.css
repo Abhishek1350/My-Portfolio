@@ -1,47 +1,47 @@
 .card {
-    position: relative;
-    height: rem(250px);
-    background-color: light-dark(
-      var(--mantine-color-gray-0),
-      var(--mantine-color-dark-6)
-    );
-  
-    & .title {
-      color: var(--mantine-color-white);
-    }
-  
+  background-color: light-dark(
+    var(--mantine-color-white),
+    var(--mantine-color-dark-7)
+  );
+  min-height: 400px;
+  cursor: pointer;
+  position: relative;
+
+  & .section {
+    border-bottom: rem(1px) solid
+      light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
+    padding-left: var(--mantine-spacing-md);
+    padding-right: var(--mantine-spacing-md);
+    padding-bottom: var(--mantine-spacing-md);
+  }
+
+  & .image {
+    transition: transform 300ms ease;
+  }
+
+  & .links {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: all 600ms ease;
+  }
+
+  @mixin hover {
     & .image {
-      position: absolute;
-      inset: 0;
-      background-size: cover;
-      transition: transform 500ms ease;
-      background-position: center;
+      transform: scale(1.03);
     }
-  
-    & .content {
-      align-items: center;
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      gap: 0.5rem;
-      bottom: 0;
-      height: 100%;
-      left: 0;
-      opacity: 0;
-      position: absolute;
-      right: 0;
-      top: 0;
-      width: 100%;
-      background-color: rgba(0, 0, 0, 0.726);
-      transition: all 0.3s ease;
-    }
-  
-    @mixin hover {
-      & .image {
-        transform: scale(1.03);
-      }
-      & .content {
-        opacity: 1;
-      }
+    & .links {
+      opacity: 1;
     }
   }
+}
