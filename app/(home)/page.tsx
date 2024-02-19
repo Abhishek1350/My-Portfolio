@@ -1,6 +1,7 @@
 import { Hero, SkillsExperience, RecentWork } from "@/components";
 import styles from "./styles.module.css";
-import { Title, Container, Button } from '@mantine/core';
+import { Title, Container, Button } from "@mantine/core";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -21,6 +22,17 @@ export default function Home() {
         <Container size="lg">
           <RecentWork />
         </Container>
+        <Button
+          component={Link}
+          href="/projects"
+          variant="outline"
+          color="blue"
+          size="lg"
+          className={styles.workButton}
+          mt={50}
+        >
+          View All
+        </Button>
       </section>
     </main>
   );
