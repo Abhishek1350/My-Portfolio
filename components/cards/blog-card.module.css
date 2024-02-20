@@ -1,0 +1,24 @@
+.card {
+  position: relative;
+  background-color: var(--mantine-color-body);
+  min-height: 350px;
+  cursor: pointer;
+  transition: transform 300ms ease;
+
+  @mixin hover {
+    transform: scale(1.01);
+  }
+}
+
+.tag {
+  position: absolute;
+  top: var(--mantine-spacing-xs);
+  right: rem(12px);
+  pointer-events: none;
+}
+
+.title {
+  display: block;
+  margin-top: var(--mantine-spacing-md);
+  margin-bottom: rem(5px);
+}

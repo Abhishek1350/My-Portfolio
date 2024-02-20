@@ -2,11 +2,11 @@
   padding: calc(var(--mantine-spacing-xl) * 2) 0;
 }
 
-.work, .skills {
+.work, .skills, .blogs {
   padding: calc(var(--mantine-spacing-xl) * 1.5) 0;
 }
 
-.skills {
+.skills, .blogs {
   background-color: light-dark(
     var(--mantine-color-gray-0),
     var(--mantine-color-dark-6)
@@ -23,7 +23,8 @@
   margin-bottom: var(--mantine-spacing-xl);
 }
 
-.work a {
+.work a,
+.blogs a {
   display: block;
   margin: auto;
   width: fit-content;
