@@ -1,4 +1,4 @@
-import { Image, Text, Container, ThemeIcon, SimpleGrid, Box } from '@mantine/core';
+import { Image, Text, Container, ThemeIcon, SimpleGrid } from '@mantine/core';
 import classes from './skills-experience.module.css';
 import { ExpTimeline } from './exp-timeline';
 
@@ -66,7 +66,7 @@ export function SkillsExperience() {
   ));
 
   return (
-    <Container className={classes.wrapper} size="lg">
+    <Container size="lg">
       <Container size={660} p={0}>
         <Text c="dimmed" className={classes.description}>
           I'm proficient in a wide range of skills and technologies. Here are a few of them:

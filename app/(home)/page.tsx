@@ -1,4 +1,4 @@
-import { Hero, SkillsExperience, RecentWork, Blogs } from "@/components";
+import { Hero, SkillsExperience, RecentWork, Blogs, Contact } from "@/components";
 import styles from "./styles.module.css";
 import { Title, Container, Button } from "@mantine/core";
 import Link from "next/link";
@@ -52,6 +52,12 @@ export default function Home() {
         >
           View All
         </Button>
+      </section>
+      <section className={styles.contact}>
+        <Title order={2} className={styles.title}>
+          Contact
+        </Title>
+        <Contact />
       </section>
     </main>
   );

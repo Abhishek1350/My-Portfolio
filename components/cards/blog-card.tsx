@@ -3,9 +3,6 @@ import {
   Image,
   Text,
   Badge,
-  Group,
-  Center,
-  Avatar,
 } from '@mantine/core';
 import classes from './blog-card.module.css';
 
