@@ -8,7 +8,7 @@ import {
     hasLength,
     matches,
 } from "@mantine/form";
-import { Button, Group, TextInput, NumberInput, Box } from "@mantine/core";
+import { Button, Group, TextInput, Box } from "@mantine/core";
 
 export function HomeContactForm() {
     const form = useForm({

@@ -57,7 +57,7 @@ export function Footer() {
   });
 
   return (
-    <footer className={`${classes.footer} animate-from-bottom`}>
+    <footer className={classes.footer}>
       <Container className={classes.inner} size="lg">
         <Box className={classes.logo}>
           <Image

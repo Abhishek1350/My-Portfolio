@@ -61,7 +61,7 @@ export function Header() {
 
   return (
     <>
-      <header className={`${classes.header} animate-from-top`}>
+      <header className={classes.header}>
         <Container className={classes.cont} size="lg">
           <Group justify="space-between" h="100%">
             <Link href="/" className={classes.logoText}>
