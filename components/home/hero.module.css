@@ -8,6 +8,11 @@
 
   @media (max-width: $mantine-breakpoint-sm) {
     flex-wrap: wrap;
+    flex-direction: column-reverse;
+    & .control {
+      display: block;
+      margin: auto;
+    }
   }
 }
 
@@ -36,13 +41,14 @@
   overflow: hidden;
   border-radius: var(--mantine-radius-sm);
   padding: rem(4px) rem(4px);
-  
+  @media (max-width: $mantine-breakpoint-sm) {
+    justify-content: center;
+  }
 }
 
 .wordAnimation {
   line-height: 1.2;
   font-size: 3.2rem;
-  font-family: Greycliff CF, var(--mantine-font-family);
   min-width: 350px;
   @media (max-width: $mantine-breakpoint-xs) {
     font-size: 2rem;
@@ -57,7 +63,8 @@
   margin: auto;
   border-radius: 50%;
   @media (max-width: $mantine-breakpoint-sm) {
-    margin-top: max(var(--mantine-spacing-lg));
-    height: 100%;
+    margin-bottom: max(var(--mantine-spacing-xl));
+    height: 85%;
+    width: 85%;
   }
 }
