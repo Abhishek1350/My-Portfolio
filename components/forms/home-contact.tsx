@@ -38,7 +38,7 @@ export function HomeContactForm() {
     return (
         <Box
             component="form"
-            maw={400}
+            maw={600}
             mx="auto"
             onSubmit={form.onSubmit(() => { })}
         >
