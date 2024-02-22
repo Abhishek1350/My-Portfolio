@@ -1,4 +1,4 @@
-import { Hero, SkillsExperience, RecentWork, Contact } from "@/components";
+import { Hero, SkillsExperience, RecentWork, Testimonials, Contact } from "@/components";
 import styles from "./styles.module.css";
 import { Box, Title, Container, Button } from "@mantine/core";
 import Link from "next/link";
@@ -9,6 +9,7 @@ export default function Home() {
       <section className={styles.hero}>
         <Hero />
       </section>
+
       <section className={styles.skills}>
         <Box w="100%">
           <Title order={2} className={styles.title}>
@@ -17,6 +18,7 @@ export default function Home() {
           <SkillsExperience />
         </Box>
       </section>
+
       <section className={styles.work}>
         <Container size="lg">
           <Title order={2} className={styles.title}>
@@ -35,27 +37,17 @@ export default function Home() {
             View All
           </Button>
         </Container>
-
       </section>
-      {/* <section className={styles.blogs}>
+
+      <section className={styles.testimonials}>
         <Container size="lg">
           <Title order={2} className={styles.title}>
-            Blogs
+            Few Nice Words
           </Title>
-          <Blogs />
-          <Button
-            component={Link}
-            href="/projects"
-            variant="outline"
-            color="blue"
-            size="lg"
-            className={styles.workButton}
-            mt={50}
-          >
-            View All
-          </Button>
+          <Testimonials />
         </Container>
-      </section> */}
+      </section>
+
       <section className={styles.contact}>
         <Container size="lg">
           <Title order={2} className={styles.title}>

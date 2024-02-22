@@ -2,11 +2,16 @@
   min-height: calc(100dvh - 61px);
   display: flex;
   align-items: center;
+
+  @media (max-width: $mantine-breakpoint-md) {
+    padding-top: calc(var(--mantine-spacing-lg) * 2);
+    padding-bottom: calc(var(--mantine-spacing-xl) * 2);
+  }
 }
 
 .work,
 .skills,
-.blogs,
+.testimonials,
 .contact {
   min-height: 100dvh;
   display: flex;
@@ -18,7 +23,7 @@
 }
 
 .skills,
-.blogs {
+.testimonials {
   background-color: light-dark(
     var(--mantine-color-gray-0),
     var(--mantine-color-dark-6)
