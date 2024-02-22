@@ -1,13 +1,13 @@
-import { Text, Container } from '@mantine/core';
-import { HomeContactForm } from ".."
+import { Title, Container } from '@mantine/core';
+import { HomeContactForm, TextAppearAnimation } from ".."
 
 export function Contact() {
     return (
         <>
             <Container size={660} p={0}>
-                <Text c="dimmed" mb={20}>
-                    I am always open to new opportunities and meeting new people.
-                </Text>
+                <Title c="dimmed" order={5} fw={400} mb={20}>
+                    <TextAppearAnimation text='I am always open to new opportunities and meeting new people.' />
+                </Title>
             </Container>
             <HomeContactForm />
         </>

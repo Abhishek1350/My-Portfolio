@@ -1,6 +1,7 @@
-import { Image, Text, Container, ThemeIcon, SimpleGrid } from '@mantine/core';
+import { Image, Text, Title, Container, ThemeIcon, SimpleGrid } from '@mantine/core';
 import classes from './skills-experience.module.css';
 import { ExpTimeline } from './exp-timeline';
+import { TextAppearAnimation, StaggerItem } from '..';
 
 const Skillsdata = [
   {
@@ -54,23 +55,28 @@ const timeLineData = [
 
 export function SkillsExperience() {
   const SkillItems = Skillsdata.map((item, index) => (
-    <div className={classes.item} key={index}>
-      <ThemeIcon variant="light" className={classes.itemIcon} size={60} radius="md">
-        <Image src="/home/profile.jpg" />
-      </ThemeIcon>
+    <StaggerItem index={index} key={index}>
+      <div className={classes.item}>
+        <ThemeIcon variant="light" className={classes.itemIcon} size={60} radius="md">
+          <Image src="/home/profile.jpg" />
+        </ThemeIcon>
 
-      <Text fw={600} size="sm" className={classes.itemTitle}>
-        {item.title}
-      </Text>
-    </div>
+        <Text fw={600} size="sm" className={classes.itemTitle}>
+          {item.title}
+        </Text>
+      </div>
+    </StaggerItem>
+
   ));
 
   return (
     <Container size="lg">
       <Container size={660} p={0}>
-        <Text c="dimmed" className={classes.description}>
-          I'm proficient in a wide range of skills and technologies. Here are a few of them:
-        </Text>
+        <Title c="dimmed" order={5} fw={400} className={classes.description}>
+          <TextAppearAnimation
+            text=' I am proficient in a wide range of skills and technologies. Here are a few of them:'
+          />
+        </Title>
       </Container>
 
       <SimpleGrid cols={{ base: 1, sm: 2 }} spacing={50} mt={50}>

@@ -7,6 +7,7 @@ import {
     IconMessageDots,
 } from "@tabler/icons-react";
 import classes from './skills-experience.module.css';
+import { StaggerItem } from "..";
 
 interface TimeLineData {
     company: string;
@@ -17,7 +18,7 @@ interface TimeLineData {
 
 export function ExpTimeline({ data }: { data: TimeLineData[] }) {
     return (
-        <Timeline color="red" active={1} bulletSize={30}>
+        <Timeline color="red" active={data.length} bulletSize={50}>
             {data.map((item, index) => (
                 <Timeline.Item
                     bullet={
@@ -35,15 +36,17 @@ export function ExpTimeline({ data }: { data: TimeLineData[] }) {
                     key={index}
                     className={classes.timelineItem}
                 >
-                    <Text c="dimmed" size="sm">
-                        {item.role}
-                    </Text>
-                    <Text c="dimmed" size="sm">
-                        {item.description}
-                    </Text>
-                    <Text size="xs" mt={4}>
-                        {item.duration}
-                    </Text>
+                    <StaggerItem index={index} key={index}>
+                        <Text c="dimmed" size="sm">
+                            {item.role}
+                        </Text>
+                        <Text c="dimmed" size="sm">
+                            {item.description}
+                        </Text>
+                        <Text size="xs" mt={4}>
+                            {item.duration}
+                        </Text>
+                    </StaggerItem>
                 </Timeline.Item>
             ))}
         </Timeline>

@@ -34,7 +34,7 @@ export function RecentWork() {
         <SimpleGrid cols={{ base: 1, xs: 2, md: 3 }} spacing={30} mt={50}>
             {data.map((item, index) => {
                 return (
-                    <StaggerItem index={index}>
+                    <StaggerItem index={index} key={index}>
                         <ProjectCard item={item} />
                     </StaggerItem>
                 );
