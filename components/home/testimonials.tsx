@@ -1,14 +1,6 @@
-"use client";
 
-import { motion } from "framer-motion"
-import { TestimonialCard } from ".."
+import { TestimonialCard, MotionDiv } from ".."
 import { SimpleGrid } from "@mantine/core"
-
-const stagger = 0.50;
-const variants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1 },
-};
 
 const data = [
     {
@@ -42,19 +34,9 @@ export function Testimonials() {
         <SimpleGrid cols={{ base: 1, xs: 2, md:3 }} spacing={30} mt={50}>
             {data.map((item, index) => {
                 return (
-                    <motion.div
-                        variants={variants}
-                        initial="hidden"
-                        animate="visible"
-                        transition={{
-                            delay: index * stagger,
-                            ease: "easeInOut",
-                            duration: 0.5,
-                        }}
-                        key={index}
-                    >
+                    <MotionDiv index={index}>
                         <TestimonialCard item={item}/>
-                    </motion.div>
+                    </MotionDiv>
                 );
             })}
         </SimpleGrid>
