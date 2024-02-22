@@ -1,4 +1,4 @@
-import { MotionDiv, BlogCard } from "@/components";
+import { StaggerItem, BlogCard } from "@/components";
 import { SimpleGrid } from "@mantine/core";
 import { Container, Title } from "@mantine/core";
 import styles from "./styles.module.css";
@@ -43,9 +43,9 @@ export default function Blogs() {
                 <SimpleGrid cols={{ base: 1, xs: 2, md: 3 }} spacing={30} mt={50}>
                     {data.map((item, index) => {
                         return (
-                            <MotionDiv index={index} key={index}>
+                            <StaggerItem index={index} key={index}>
                                 <BlogCard item={item} />
-                            </MotionDiv>
+                            </StaggerItem>
                         );
                     })}
                 </SimpleGrid>

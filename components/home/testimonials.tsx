@@ -1,5 +1,5 @@
 
-import { TestimonialCard, MotionDiv } from ".."
+import { TestimonialCard, StaggerItem } from ".."
 import { SimpleGrid } from "@mantine/core"
 
 const data = [
@@ -34,9 +34,9 @@ export function Testimonials() {
         <SimpleGrid cols={{ base: 1, xs: 2, md:3 }} spacing={30} mt={50}>
             {data.map((item, index) => {
                 return (
-                    <MotionDiv index={index}>
+                    <StaggerItem index={index}>
                         <TestimonialCard item={item}/>
-                    </MotionDiv>
+                    </StaggerItem>
                 );
             })}
         </SimpleGrid>

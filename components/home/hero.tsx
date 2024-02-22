@@ -2,7 +2,7 @@
 
 import { Image, Container, Title, Button, Text, Box } from '@mantine/core';
 import classes from './hero.module.css';
-import { WordAnimation, TextAppearAnimation } from '..';
+import { WordAnimation, TextAppearAnimation, MotionDiv } from '..';
 import { useRouter } from 'next/navigation';
 import { useSize } from '@/hooks';
 
@@ -26,8 +26,9 @@ export function Hero() {
                             className={classes.wordAnimation}
                         />
                     </Title>
+
                     <Text c="dimmed" mt="md" component="div">
-                        <TextAppearAnimation text='I am adept in React, Redux, Material UI, and Bootstrap. Right now I am toiling as a Software Engineer at an startup.' center={width < 768 ? true : false}/>
+                        <TextAppearAnimation text='I am adept in React, Redux, Material UI, and Bootstrap. Right now I am toiling as a Software Engineer at an startup.' center={width < 768 ? true : false} />
                     </Text>
 
                     <Button
@@ -42,11 +43,13 @@ export function Hero() {
                         READ MORE
                     </Button>
                 </Box>
-                <Image
-                    src="/home/profile.jpg"
-                    className={classes.image}
-                    height={400}
-                />
+                <MotionDiv>
+                    <Image
+                        src="/home/profile.jpg"
+                        className={classes.image}
+                        height={400}
+                    />
+                </MotionDiv>
             </Box>
         </Container>
     )

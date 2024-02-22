@@ -1,4 +1,4 @@
-import { ProjectCard, MotionDiv } from ".."
+import { ProjectCard, StaggerItem } from ".."
 import { SimpleGrid } from "@mantine/core"
 
 
@@ -34,9 +34,9 @@ export function RecentWork() {
         <SimpleGrid cols={{ base: 1, xs: 2, md: 3 }} spacing={30} mt={50}>
             {data.map((item, index) => {
                 return (
-                    <MotionDiv index={index}>
+                    <StaggerItem index={index}>
                         <ProjectCard item={item} />
-                    </MotionDiv>
+                    </StaggerItem>
                 );
             })}
         </SimpleGrid>
