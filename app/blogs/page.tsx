@@ -1,16 +1,7 @@
-"use client";
-
-import { motion } from "framer-motion";
-import { BlogCard } from "@/components";
+import { MotionDiv, BlogCard } from "@/components";
 import { SimpleGrid } from "@mantine/core";
 import { Container, Title } from "@mantine/core";
 import styles from "./styles.module.css";
-
-const stagger = 0.5;
-const variants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1 },
-};
 
 const data = [
     {
@@ -52,19 +43,9 @@ export default function Blogs() {
                 <SimpleGrid cols={{ base: 1, xs: 2, md: 3 }} spacing={30} mt={50}>
                     {data.map((item, index) => {
                         return (
-                            <motion.div
-                                variants={variants}
-                                initial="hidden"
-                                animate="visible"
-                                transition={{
-                                    delay: index * stagger,
-                                    ease: "easeInOut",
-                                    duration: 0.5,
-                                }}
-                                key={index}
-                            >
+                            <MotionDiv index={index} key={index}>
                                 <BlogCard item={item} />
-                            </motion.div>
+                            </MotionDiv>
                         );
                     })}
                 </SimpleGrid>

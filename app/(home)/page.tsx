@@ -1,4 +1,4 @@
-import { Hero, SkillsExperience, RecentWork, Testimonials, Contact } from "@/components";
+import { Hero, SkillsExperience, RecentWork, Testimonials, Contact, TextAppearAnimation } from "@/components";
 import styles from "./styles.module.css";
 import { Box, Title, Container, Button } from "@mantine/core";
 import Link from "next/link";
@@ -13,7 +13,7 @@ export default function Home() {
       <section className={styles.skills}>
         <Box w="100%">
           <Title order={2} className={styles.title}>
-            Skills and Experience
+            <TextAppearAnimation text='Skills and Experience' center={true} />
           </Title>
           <SkillsExperience />
         </Box>
@@ -22,7 +22,7 @@ export default function Home() {
       <section className={styles.work}>
         <Container size="lg">
           <Title order={2} className={styles.title}>
-            My Recent Work
+            <TextAppearAnimation text='My Recent Work' center={true} />
           </Title>
           <RecentWork />
           <Button
@@ -42,7 +42,7 @@ export default function Home() {
       <section className={styles.testimonials}>
         <Container size="lg">
           <Title order={2} className={styles.title}>
-            Few Nice Words
+            <TextAppearAnimation text='Few Nice Words' center={true} />
           </Title>
           <Testimonials />
         </Container>
@@ -51,7 +51,7 @@ export default function Home() {
       <section className={styles.contact}>
         <Container size="lg">
           <Title order={2} className={styles.title}>
-            Contact
+          <TextAppearAnimation text='Contact' center={true} />
           </Title>
           <Contact />
         </Container>

@@ -1,10 +1,15 @@
-import { Container } from "@mantine/core"
+import { RecentWork } from "@/components";
+import { Container, Title } from "@mantine/core";
+import styles from "./styles.module.css";
 
-export default function CareersPage() {
+export default function Blogs() {
     return (
-        <main>
+        <main className={styles.section}>
             <Container size="lg">
-                Careers Page
+                <Title order={2} className={styles.title}>
+                    Projects
+                </Title>
+                <RecentWork/>
             </Container>
         </main>
     );
