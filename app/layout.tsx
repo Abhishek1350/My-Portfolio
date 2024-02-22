@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import '@mantine/core/styles.css';
-import { ColorSchemeScript, MantineProvider } from '@mantine/core';
+import "@mantine/core/styles.css";
+import { ColorSchemeScript, MantineProvider } from "@mantine/core";
 import { Header, Footer } from "@/components";
 import "./globals.css";
 import { Libre_Franklin } from "next/font/google";

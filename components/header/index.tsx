@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import {
   Group,
@@ -10,54 +10,52 @@ import {
   rem,
   Container,
   useMantineColorScheme,
-  Text
-} from '@mantine/core';
-import { useDisclosure } from '@mantine/hooks';
-import {
-  IconSun,
-  IconMoon,
-} from '@tabler/icons-react';
-import classes from './styles.module.css';
-import Link from 'next/link';
-import { useEffect } from 'react';
-import { usePathname } from 'next/navigation'
+  Text,
+} from "@mantine/core";
+import { useDisclosure } from "@mantine/hooks";
+import { IconSun, IconMoon } from "@tabler/icons-react";
+import classes from "./styles.module.css";
+import Link from "next/link";
+import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 const navLinks = [
   {
-    title: 'About',
-    link: '/about',
+    title: "About",
+    link: "/about",
   },
   {
-    title: 'Projects',
-    link: '/projects',
+    title: "Projects",
+    link: "/projects",
   },
   {
-    title: 'Blogs',
-    link: '/blogs',
+    title: "Blogs",
+    link: "/blogs",
   },
   {
-    title: 'Contact',
-    link: '/contact',
+    title: "Contact",
+    link: "/contact",
   },
-]
+];
 
 export function Header() {
-  const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] = useDisclosure(false);
+  const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] =
+    useDisclosure(false);
   const { setColorScheme, colorScheme } = useMantineColorScheme();
   const pathname = usePathname();
 
   const toggleTheme = () => {
-    if (colorScheme === 'light') {
-      setColorScheme('dark');
+    if (colorScheme === "light") {
+      setColorScheme("dark");
     } else {
-      setColorScheme('light');
+      setColorScheme("light");
     }
     if (drawerOpened) closeDrawer();
-  }
+  };
 
   useEffect(() => {
     closeDrawer();
-  }, [pathname])
+  }, [pathname]);
 
   return (
     <>
@@ -69,34 +67,35 @@ export function Header() {
                 size="xl"
                 fw={900}
                 variant="gradient"
-                gradient={{ from: 'orange', to: 'red', deg: 360 }}
+                gradient={{ from: "orange", to: "red", deg: 360 }}
               >
                 ImAbhishek
               </Text>
             </Link>
 
             <Group h="100%" gap={0} visibleFrom="sm">
-              {
-                navLinks.map(({ title, link }) => (
-                  <Link href={link} className={classes.link} key={title}>
-                    {title}
-                  </Link>
-                ))
-              }
+              {navLinks.map(({ title, link }) => (
+                <Link href={link} className={classes.link} key={title}>
+                  {title}
+                </Link>
+              ))}
 
-              {
-                colorScheme === 'light' ?
-                  <Button onClick={() => toggleTheme()} variant='transparent'>
-                    <IconMoon style={{ width: rem(24), height: rem(24) }} />
-                  </Button>
-                  :
-                  <Button onClick={() => toggleTheme()} variant='transparent'>
-                    <IconSun style={{ width: rem(24), height: rem(24) }} />
-                  </Button>
-              }
+              {colorScheme === "light" ? (
+                <Button onClick={() => toggleTheme()} variant="transparent">
+                  <IconMoon style={{ width: rem(24), height: rem(24) }} />
+                </Button>
+              ) : (
+                <Button onClick={() => toggleTheme()} variant="transparent">
+                  <IconSun style={{ width: rem(24), height: rem(24) }} />
+                </Button>
+              )}
             </Group>
 
-            <Burger opened={drawerOpened} onClick={toggleDrawer} hiddenFrom="sm" />
+            <Burger
+              opened={drawerOpened}
+              onClick={toggleDrawer}
+              hiddenFrom="sm"
+            />
           </Group>
         </Container>
       </header>
@@ -113,27 +112,19 @@ export function Header() {
       >
         <ScrollArea h={`calc(100vh - ${rem(80)})`} mx="-md">
           <Divider my="sm" />
-          {
-            navLinks.map(({ title, link }) => (
-              <Link href={link} className={classes.link} key={title}>
-                {title}
-              </Link>
-            ))
-          }
+          {navLinks.map(({ title, link }) => (
+            <Link href={link} className={classes.link} key={title}>
+              {title}
+            </Link>
+          ))}
 
           <Group pb="xl" px="md">
-            {
-              colorScheme === 'light' ?
-                <Button onClick={() => toggleTheme()}>
-                  Dark Mode
-                </Button>
-                :
-                <Button onClick={() => toggleTheme()}>
-                  Light Mode
-                </Button>
-            }
+            {colorScheme === "light" ? (
+              <Button onClick={() => toggleTheme()}>Dark Mode</Button>
+            ) : (
+              <Button onClick={() => toggleTheme()}>Light Mode</Button>
+            )}
           </Group>
-
         </ScrollArea>
       </Drawer>
     </>
