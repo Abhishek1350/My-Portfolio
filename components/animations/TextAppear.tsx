@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 interface TextAppearAnimationProps {
     text: string;
     className?: string;
-    colorChangeIndex?: number;
     center?: boolean;
 }
 
@@ -40,7 +39,7 @@ const child = {
     },
 };
 
-export function TextAppearAnimation({ text, className, colorChangeIndex = 0, center }: TextAppearAnimationProps) {
+export function TextAppearAnimation({ text, className, center }: TextAppearAnimationProps) {
     const words = text.split(" ");
 
     return (
@@ -57,7 +56,6 @@ export function TextAppearAnimation({ text, className, colorChangeIndex = 0, cen
                     variants={child}
                     style={{ marginRight: "6px", fontFamily: "inherit" }}
                     key={index}
-                    className={index >= colorChangeIndex ? "textColorPrimary fw-bold" : ""}
                 >
                     {word}
                 </motion.span>

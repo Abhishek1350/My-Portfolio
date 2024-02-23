@@ -1,40 +1,22 @@
 import {
-  Image,
-  Text,
   Title,
   Container,
-  ThemeIcon,
   SimpleGrid,
 } from "@mantine/core";
 import classes from "./skills-experience.module.css";
 import { ExpTimeline } from "./exp-timeline";
 import { TextAppearAnimation, StaggerItem } from "..";
+import { SkillCard } from "../cards/skill-card";
 
 const Skillsdata = [
-  {
-    image: "auditors",
-    title: "Pharmacists",
-  },
-  {
-    image: "lawyers",
-    title: "Lawyers",
-  },
-  {
-    image: "accountants",
-    title: "Bank owners",
-  },
-  {
-    image: "others",
-    title: "Others",
-  },
-  {
-    image: "others",
-    title: "Others",
-  },
-  {
-    image: "others",
-    title: "Others",
-  },
+  { title: 'NextJS', icon: "https://avatars.githubusercontent.com/u/72749432?v=4", url: "https://iabhishek.tech" },
+  { title: 'ReactJS', icon: "https://avatars.githubusercontent.com/u/72749432?v=4", url: "https://iabhishek.tech" },
+  { title: 'TypeScript', icon: "https://avatars.githubusercontent.com/u/72749432?v=4", url: "https://iabhishek.tech" },
+  { title: 'JavaScript', icon: "https://avatars.githubusercontent.com/u/72749432?v=4", url: "https://iabhishek.tech" },
+  { title: 'NodeJS', icon: "https://avatars.githubusercontent.com/u/72749432?v=4", url: "https://iabhishek.tech" },
+  { title: 'Material UI', icon: "https://avatars.githubusercontent.com/u/72749432?v=4", url: "https://iabhishek.tech" },
+  { title: 'Bootstrap', icon: "https://avatars.githubusercontent.com/u/72749432?v=4", url: "https://iabhishek.tech" },
+  { title: 'Tailwind', icon: "https://avatars.githubusercontent.com/u/72749432?v=4", url: "https://iabhishek.tech" },
 ];
 
 const timeLineData = [
@@ -62,24 +44,6 @@ const timeLineData = [
 ];
 
 export function SkillsExperience() {
-  const SkillItems = Skillsdata.map((item, index) => (
-    <StaggerItem index={index} key={index}>
-      <div className={classes.item}>
-        <ThemeIcon
-          variant="light"
-          className={classes.itemIcon}
-          size={60}
-          radius="md"
-        >
-          <Image src="/home/profile.jpg" />
-        </ThemeIcon>
-
-        <Text fw={600} size="sm" className={classes.itemTitle}>
-          {item.title}
-        </Text>
-      </div>
-    </StaggerItem>
-  ));
 
   return (
     <Container size="lg">
@@ -94,12 +58,18 @@ export function SkillsExperience() {
 
       <SimpleGrid
         cols={{ base: 1, sm: 2 }}
-        spacing={50}
+        spacing={80}
         mt={50}
         style={{ height: "fit-content" }}
       >
         <SimpleGrid cols={{ base: 3, xs: 4 }} spacing={50}>
-          {SkillItems}
+          {
+            Skillsdata.map((item, index) => (
+              <StaggerItem index={index} key={index}>
+                <SkillCard item={item} />
+              </StaggerItem>
+            ))
+          }
         </SimpleGrid>
         <ExpTimeline data={timeLineData} />
       </SimpleGrid>

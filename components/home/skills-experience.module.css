@@ -1,56 +1,7 @@
-.item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: fit-content;
-  cursor: pointer;
-
-  &:hover {
-    .itemIcon {
-      transform: scale(1.1);
-    }
-  }
-}
-
-.itemIcon {
-  transition: all 0.5s ease;
-  border-radius: 50%;
-  & > img {
-    border-radius: 50%;
-  }
-}
-
-.itemTitle {
-  margin-top: calc(var(--mantine-spacing-xs) / 2);
-}
-
-.supTitle {
-  text-align: center;
-  text-transform: uppercase;
-  font-weight: 800;
-  font-size: var(--mantine-font-size-sm);
-  color: var(--mantine-color-blue-light-color);
-  letter-spacing: rem(0.5px);
-}
-
-.title {
-  line-height: 1;
-  text-align: center;
-  margin-top: var(--mantine-spacing-xl);
-}
 
 .description {
   text-align: center;
   margin-top: var(--mantine-spacing-xs);
-}
-
-.highlight {
-  background-color: var(--mantine-color-blue-light);
-  padding: rem(5px);
-  padding-top: 0;
-  border-radius: var(--mantine-radius-sm);
-  display: inline-block;
-  color: light-dark(inherit, var(--mantine-color-white));
 }
 
 .timelineItem {
