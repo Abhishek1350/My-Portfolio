@@ -23,11 +23,11 @@ export function Footer() {
           </Text>
         </Link>
 
-        <Title order={6} size={20} miw={250}>
+        <Title order={6} size={20} miw={250} ta="center">
           Made with <TypingEffect />
         </Title>
 
-        <Group gap="xs" justify="flex-end" wrap="nowrap">
+        <Group gap="lg" justify="flex-end" wrap="nowrap" className={classes.social}>
           <ActionIcon
             size="lg"
             radius="xl"

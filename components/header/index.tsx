@@ -21,10 +21,6 @@ import { usePathname } from "next/navigation";
 
 const navLinks = [
   {
-    title: "About",
-    link: "/about",
-  },
-  {
     title: "Projects",
     link: "/projects",
   },
@@ -53,6 +49,8 @@ export function Header() {
     if (drawerOpened) closeDrawer();
   };
 
+  console.log(pathname)
+
   useEffect(() => {
     closeDrawer();
   }, [pathname]);
@@ -75,7 +73,11 @@ export function Header() {
 
             <Group h="100%" gap={0} visibleFrom="sm">
               {navLinks.map(({ title, link }) => (
-                <Link href={link} className={classes.link} key={title}>
+                <Link
+                  href={link}
+                  className={pathname === link ? classes.activeLink : classes.link}
+                  key={title}
+                >
                   {title}
                 </Link>
               ))}
@@ -112,8 +114,18 @@ export function Header() {
       >
         <ScrollArea h={`calc(100vh - ${rem(80)})`} mx="-md">
           <Divider my="sm" />
+          <Link
+            href="/"
+            className={pathname === "/" ? classes.activeLink : classes.link}
+          >
+            Home
+          </Link>
           {navLinks.map(({ title, link }) => (
-            <Link href={link} className={classes.link} key={title}>
+            <Link
+              href={link}
+              className={pathname === link ? classes.activeLink : classes.link}
+              key={title}
+            >
               {title}
             </Link>
           ))}
