@@ -11,6 +11,7 @@ import {
   Container,
   useMantineColorScheme,
   Text,
+  Avatar
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { IconSun, IconMoon } from "@tabler/icons-react";
@@ -49,8 +50,6 @@ export function Header() {
     if (drawerOpened) closeDrawer();
   };
 
-  console.log(pathname)
-
   useEffect(() => {
     closeDrawer();
   }, [pathname]);
@@ -60,7 +59,13 @@ export function Header() {
       <header className={classes.header}>
         <Container className={classes.cont} size="lg">
           <Group justify="space-between" h="100%">
-            <Link href="/" className={classes.logoText}>
+            <Link href="/" className={classes.logo}>
+              <Avatar
+                radius="xl"
+                src="/logo.webp"
+                alt="Abhishek Bhardwaj Portfolio Logo"
+                size={35}
+              />
               <Text
                 size="xl"
                 fw={900}
@@ -71,7 +76,7 @@ export function Header() {
               </Text>
             </Link>
 
-            <Group h="100%" gap={0} visibleFrom="sm">
+            <Group h="100%" gap={0} visibleFrom="sm" >
               {navLinks.map(({ title, link }) => (
                 <Link
                   href={link}

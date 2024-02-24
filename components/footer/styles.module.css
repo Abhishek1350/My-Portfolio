@@ -23,6 +23,10 @@
   }
 }
 
-.logoText {
+.logo {
   text-decoration: none;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: var(--mantine-spacing-xs);
 }

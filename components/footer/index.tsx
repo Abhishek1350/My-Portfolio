@@ -1,4 +1,4 @@
-import { Container, Group, ActionIcon, rem, Title, Text } from "@mantine/core";
+import { Container, Group, ActionIcon, rem, Title, Text, Avatar } from "@mantine/core";
 import {
   IconBrandGithub,
   IconBrandTwitter,
@@ -12,7 +12,13 @@ export function Footer() {
   return (
     <footer className={classes.footer}>
       <Container size="lg" className={classes.inner}>
-        <Link href="/" className={classes.logoText}>
+        <Link href="/" className={classes.logo}>
+          <Avatar
+            radius="xl"
+            src="/logo.webp"
+            alt="Abhishek Bhardwaj Portfolio Logo"
+            size={35}
+          />
           <Text
             size="xl"
             fw={900}

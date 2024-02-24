@@ -7,7 +7,7 @@
     light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
 }
 
-.link {
+.link, .activeLink {
   display: flex;
   align-items: center;
   height: 100%;
@@ -32,26 +32,16 @@
 }
 
 .activeLink {
-  display: flex;
-  align-items: center;
-  height: 100%;
-  padding-left: var(--mantine-spacing-md);
-  padding-right: var(--mantine-spacing-md);
-  text-decoration: none;
   background: linear-gradient(to right, orange, red);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 900;
-  font-size: var(--mantine-font-size-sm);
-  border-bottom: 1px solid var(--mantine-color-primary);
-
-  @media (max-width: $mantine-breakpoint-sm) {
-    height: rem(42px);
-    width: 100%;
-  }
 }
 
-.logoText {
+.logo {
   text-decoration: none;
   letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: var(--mantine-spacing-xs);
 }
