@@ -1,0 +1,12 @@
+.progress-bar-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: 0% 0% / auto auto
+    linear-gradient(126deg, #ff8800 24%, #ff0000 100%);
+  transform-origin: 0%;
+  z-index: 999;
+  border-radius: 10px;
+}
