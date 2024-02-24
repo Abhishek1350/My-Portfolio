@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "@mantine/core/styles.css";
 import { ColorSchemeScript, MantineProvider } from "@mantine/core";
-import { Header, Footer, ScrollProgress } from "@/components";
+import { Header, Footer, ScrollProgress, ScrollToTop } from "@/components";
 import "./globals.css";
 import { Libre_Franklin } from "next/font/google";
 
@@ -34,6 +34,7 @@ export default function RootLayout({
           <ScrollProgress />
           <Header />
           {children}
+          <ScrollToTop />
           <Footer />
         </MantineProvider>
       </body>

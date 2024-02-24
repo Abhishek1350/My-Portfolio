@@ -10,3 +10,19 @@
   z-index: 999;
   border-radius: 10px;
 }
+
+.scrollToTop-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 2rem;
+  height: 2rem;
+  background: linear-gradient(126deg, #ff8800 24%, #ff0000 100%);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+}
