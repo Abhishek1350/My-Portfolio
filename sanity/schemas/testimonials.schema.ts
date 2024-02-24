@@ -1,6 +1,6 @@
 const schema = {
-    name: "skills",
-    title: "Skills",
+    name: "testimonials",
+    title: "Testimonials",
     type: "document",
     fields: [
         {
@@ -17,14 +17,15 @@ const schema = {
             },
         },
         {
-            name: "totalExperience",
-            title: "Total Experience",
+            name: "position",
+            title: "Position",
             type: "string",
         },
         {
-            name: "link",
-            title: "Link",
-            type: "string",
+            name: "company",
+            title: "Company",
+            type: "reference",
+            to: [{ type: "experiences" }],
         },
         {
             name: "description",

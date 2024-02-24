@@ -16,14 +16,19 @@ const schema = {
             validation: (Rule: any) => Rule.required(),
         },
         {
-            name: "minRead",
-            type: "string",
-            title: "Minutes To Read",
-            validation: (Rule: any) => Rule.required(),
+            name: "tags",
+            type: "array",
+            title: "Tags",
+            of: [
+                {
+                    type: "reference",
+                    to: [{ type: "blogTags" }],
+                },
+            ],
         },
         {
-            title: "Blog Image",
-            name: "blogimage",
+            title: "Hero Image",
+            name: "heroImage",
             type: "image",
             options: {
                 hotspot: true, // <-- Defaults to false
@@ -68,6 +73,12 @@ const schema = {
                     ],
                 },
             ],
+        },
+        {
+            name: "minRead",
+            type: "string",
+            title: "Minutes To Read",
+            validation: (Rule: any) => Rule.required(),
         },
     ],
 };

@@ -74,8 +74,8 @@ const schema = {
             type: "string",
         },
         {
-            name: "image",
-            title: "Image",
+            name: "profleImage",
+            title: "Profile Image",
             type: "image",
             validation: (Rule: any) => Rule.required(),
             options: {

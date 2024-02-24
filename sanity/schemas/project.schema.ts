@@ -25,8 +25,8 @@ const schema = {
       type: "url",
     },
     {
-      name: "image",
-      title: "Image",
+      name: "heroImage",
+      title: "Hero Image",
       type: "image",
       validation: (Rule: any) => Rule.required(),
       Option: {
@@ -41,9 +41,14 @@ const schema = {
         {
           type: "reference",
           to: [{ type: "skills" }],
-        }
-      ], 
-      
+        },
+      ],
+    },
+    {
+      name: "priority",
+      title: "Priority",
+      type: "number",
+      validation: (Rule: any) => Rule.required().min(1).max(10),
     },
   ],
 };

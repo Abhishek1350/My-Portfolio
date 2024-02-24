@@ -4,9 +4,9 @@ const schema = {
     title: "Blog Tags",
     fields: [
         {
-            name: "name",
+            name: "title",
             type: "string",
-            title: "Name",
+            title: "Title",
             validation: (Rule: any) => Rule.required(),
         },
     ],
