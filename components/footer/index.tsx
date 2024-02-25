@@ -11,6 +11,7 @@ import {
   IconBrandGithub,
   IconBrandTwitter,
   IconBrandInstagram,
+  IconBrandLinkedin,
 } from "@tabler/icons-react";
 import classes from "./styles.module.css";
 import Link from "next/link";
@@ -18,7 +19,7 @@ import { TypingEffect } from "./Typing-Effect";
 import { getSocialLinks } from "@/sanity/lib/actions";
 
 interface SocialLink {
-  id: number;
+  _id: number;
   title: string;
   url: string;
 }
@@ -48,7 +49,7 @@ const getSocialIcons = (title: string) => {
       );
     default:
       return (
-        <IconBrandGithub
+        <IconBrandLinkedin
           style={{ width: rem(20), height: rem(20) }}
           stroke={1.5}
         />
@@ -69,11 +70,7 @@ const getGradient = (title: string) => {
     case "Instagram":
       return { from: "red", to: "grape", deg: 227 };
     default:
-      return {
-        from: "rgba(31, 30, 30, 1)",
-        to: "rgba(31, 31, 31, 1)",
-        deg: 0,
-      };
+      return { from: "blue", to: "indigo", deg: 73 };
   }
 };
 
@@ -83,7 +80,7 @@ export async function Footer() {
   const socialLinksList = socialLinks.map((link: SocialLink) => {
     return (
       <ActionIcon
-        key={link.id}
+        key={link._id}
         size="lg"
         radius="xl"
         component="a"
