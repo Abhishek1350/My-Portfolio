@@ -5,6 +5,7 @@ import skill from "./skill.schema";
 import blogTag from "./blog-tag.schema";
 import personalInfo from "./personal-info.schema";
 import testimonials from "./testimonials.schema";
+import socialLinks from "./social-links.schema";
 
 const schemas = [
     personalInfo,
@@ -12,6 +13,7 @@ const schemas = [
     experience,
     skill,
     testimonials,
+    socialLinks,
     blogTag,
     blog,
 ];
