@@ -1,4 +1,12 @@
-import { Container, Group, ActionIcon, rem, Title, Text, Avatar } from "@mantine/core";
+import {
+  Container,
+  Group,
+  ActionIcon,
+  rem,
+  Title,
+  Text,
+  Avatar,
+} from "@mantine/core";
 import {
   IconBrandGithub,
   IconBrandTwitter,
@@ -7,8 +15,89 @@ import {
 import classes from "./styles.module.css";
 import Link from "next/link";
 import { TypingEffect } from "./Typing-Effect";
+import { getSocialLinks } from "@/sanity/lib/actions";
 
-export function Footer() {
+interface SocialLink {
+  id: number;
+  title: string;
+  url: string;
+}
+
+const getSocialIcons = (title: string) => {
+  switch (title) {
+    case "GitHub":
+      return (
+        <IconBrandGithub
+          style={{ width: rem(20), height: rem(20) }}
+          stroke={1.5}
+        />
+      );
+    case "Twitter":
+      return (
+        <IconBrandTwitter
+          style={{ width: rem(20), height: rem(20) }}
+          stroke={1.5}
+        />
+      );
+    case "Instagram":
+      return (
+        <IconBrandInstagram
+          style={{ width: rem(20), height: rem(20) }}
+          stroke={1.5}
+        />
+      );
+    default:
+      return (
+        <IconBrandGithub
+          style={{ width: rem(20), height: rem(20) }}
+          stroke={1.5}
+        />
+      );
+  }
+};
+
+const getGradient = (title: string) => {
+  switch (title) {
+    case "GitHub":
+      return {
+        from: "rgba(31, 30, 30, 1)",
+        to: "rgba(31, 31, 31, 1)",
+        deg: 0,
+      };
+    case "Twitter":
+      return { from: "rgba(0, 170, 255, 1)", to: "blue", deg: 270 };
+    case "Instagram":
+      return { from: "red", to: "grape", deg: 227 };
+    default:
+      return {
+        from: "rgba(31, 30, 30, 1)",
+        to: "rgba(31, 31, 31, 1)",
+        deg: 0,
+      };
+  }
+};
+
+export async function Footer() {
+  const socialLinks: SocialLink[] = await getSocialLinks();
+
+  const socialLinksList = socialLinks.map((link: SocialLink) => {
+    return (
+      <ActionIcon
+        key={link.id}
+        size="lg"
+        radius="xl"
+        component="a"
+        href={link.url}
+        target="_black"
+        rel="noopener noreferrer"
+        variant="gradient"
+        gradient={getGradient(link.title)}
+      >
+        {getSocialIcons(link.title)}
+      </ActionIcon>
+    );
+  });
+
   return (
     <footer className={classes.footer}>
       <Container size="lg" className={classes.inner}>
@@ -33,53 +122,13 @@ export function Footer() {
           Made with <TypingEffect />
         </Title>
 
-        <Group gap="lg" justify="flex-end" wrap="nowrap" className={classes.social}>
-          <ActionIcon
-            size="lg"
-            radius="xl"
-            component="a"
-            href="https://iabhishek.tech"
-            target="_black"
-            variant="gradient"
-            gradient={{
-              from: "rgba(31, 30, 30, 1)",
-              to: "rgba(31, 31, 31, 1)",
-              deg: 0,
-            }}
-          >
-            <IconBrandGithub
-              style={{ width: rem(20), height: rem(20) }}
-              stroke={1.5}
-            />
-          </ActionIcon>
-          <ActionIcon
-            size="lg"
-            radius="xl"
-            component="a"
-            href="https://iabhishek.tech"
-            target="_black"
-            variant="gradient"
-            gradient={{ from: "rgba(0, 170, 255, 1)", to: "blue", deg: 270 }}
-          >
-            <IconBrandTwitter
-              style={{ width: rem(20), height: rem(20) }}
-              stroke={1.5}
-            />
-          </ActionIcon>
-          <ActionIcon
-            size="lg"
-            radius="xl"
-            component="a"
-            href="https://iabhishek.tech"
-            target="_black"
-            variant="gradient"
-            gradient={{ from: "red", to: "grape", deg: 227 }}
-          >
-            <IconBrandInstagram
-              style={{ width: rem(20), height: rem(20) }}
-              stroke={1.5}
-            />
-          </ActionIcon>
+        <Group
+          gap="lg"
+          justify="flex-end"
+          wrap="nowrap"
+          className={classes.social}
+        >
+          {socialLinksList}
         </Group>
       </Container>
     </footer>

@@ -6,3 +6,8 @@ export async function getPersonalInfo() {
     return client.fetch(query);
 }
 
+export async function getSocialLinks() {
+    const query = groq`*[_type == "socialLinks"] | order(priority asc)`;
+    return client.fetch(query);
+}
+
