@@ -1,23 +1,37 @@
-.section{
-    padding-top: calc(var(--mantine-spacing-xl) * 1);
-    padding-bottom: calc(var(--mantine-spacing-xl) * 2);
-    min-height: 100vh;
-}
+.wrapper {
+    min-height: rem(400px);
+    background-image: linear-gradient(
+      -60deg,
+      var(--mantine-color-blue-4) 0%,
+      var(--mantine-color-blue-7) 100%
+    );
+    border-radius: var(--mantine-radius-md);
+    padding: calc(var(--mantine-spacing-xl) * 2.5);
+  
+    @media (max-width: $mantine-breakpoint-sm) {
+      padding: calc(var(--mantine-spacing-xl) * 1.5);
+    }
+  }
   
   .title {
+    font-family:
+      Greycliff CF,
+      var(--mantine-font-family);
     color: var(--mantine-color-white);
     line-height: 1;
   }
   
   .description {
     color: var(--mantine-color-blue-0);
+    max-width: rem(300px);
+  
+    @media (max-width: $mantine-breakpoint-sm) {
+      max-width: 100%;
+    }
   }
   
   .form {
-    background-color: light-dark(
-    var(--mantine-color-gray-0),
-    var(--mantine-color-dark-6)
-  );
+    background-color: var(--mantine-color-white);
     padding: var(--mantine-spacing-xl);
     border-radius: var(--mantine-radius-md);
     box-shadow: var(--mantine-shadow-lg);

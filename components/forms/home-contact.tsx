@@ -1,36 +1,27 @@
 "use client";
 
-import {
-    useForm,
-    isNotEmpty,
-    isEmail,
-    isInRange,
-    hasLength,
-    matches,
-} from "@mantine/form";
-import { Button, Group, TextInput, Box } from "@mantine/core";
+import { useForm, isEmail, hasLength } from "@mantine/form";
+import { Button, Group, TextInput, Box, Textarea } from "@mantine/core";
 
 export function HomeContactForm() {
     const form = useForm({
         initialValues: {
             name: "",
-            job: "",
             email: "",
-            favoriteColor: "",
-            age: 18,
+            subject: "",
+            message: "",
         },
 
         validate: {
             name: hasLength({ min: 2, max: 10 }, "Name must be 2-10 characters long"),
-            job: isNotEmpty("Enter your current job"),
-            email: isEmail("Invalid email"),
-            favoriteColor: matches(
-                /^#([0-9a-f]{3}){1,2}$/,
-                "Enter a valid hex color"
+            email: isEmail("Please include a valid email address"),
+            subject: hasLength(
+                { min: 4 },
+                "Subject must be at least 4 characters long"
             ),
-            age: isInRange(
-                { min: 18, max: 99 },
-                "You must be 18-99 years old to register"
+            message: hasLength(
+                { min: 10, max: 200 },
+                "Message must be 10-200 characters long"
             ),
         },
     });
@@ -40,20 +31,15 @@ export function HomeContactForm() {
             component="form"
             maw={600}
             mx="auto"
-            onSubmit={form.onSubmit(() => { })}
+            onSubmit={form.onSubmit(() => {
+                console.log(form.values);
+            })}
         >
             <TextInput
-                label="Name"
-                placeholder="Name"
+                label="Your Name"
+                placeholder="Your Name"
                 withAsterisk
                 {...form.getInputProps("name")}
-            />
-            <TextInput
-                label="Your job"
-                placeholder="Your job"
-                withAsterisk
-                mt="md"
-                {...form.getInputProps("job")}
             />
             <TextInput
                 label="Your email"
@@ -63,11 +49,19 @@ export function HomeContactForm() {
                 {...form.getInputProps("email")}
             />
             <TextInput
-                label="Your favorite color"
-                placeholder="Your favorite color"
+                label="Subject"
+                placeholder="Subject"
                 withAsterisk
                 mt="md"
-                {...form.getInputProps("favoriteColor")}
+                {...form.getInputProps("subject")}
+            />
+            <Textarea
+                label="Your message"
+                placeholder="Please include all relevant information"
+                withAsterisk
+                mt="md"
+                minRows={5}
+                {...form.getInputProps("message")}
             />
             <Group justify="flex-end" mt="md">
                 <Button type="submit">Submit</Button>
