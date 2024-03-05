@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import "@mantine/core/styles.css";
 import { ColorSchemeScript, MantineProvider } from "@mantine/core";
-import { Header, Footer, ScrollProgress, ScrollToTop } from "@/components";
+import { Header, Footer, ScrollProgress, ScrollToTop, MainLoader } from "@/components";
 import "./globals.css";
 import { Libre_Franklin } from "next/font/google";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title:
@@ -31,11 +32,13 @@ export default function RootLayout({
       </head>
       <body className={font.className}>
         <MantineProvider defaultColorScheme="auto">
-          <ScrollProgress />
-          <Header />
-          {children}
-          <ScrollToTop />
-          <Footer />
+          <Suspense fallback={<MainLoader />}>
+            <ScrollProgress />
+            <Header />
+            {children}
+            <ScrollToTop />
+            <Footer />
+          </Suspense>
         </MantineProvider>
       </body>
     </html>
