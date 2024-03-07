@@ -1,7 +1,7 @@
 "use client";
 
 import { useForm, isEmail, hasLength } from "@mantine/form";
-import { Button, Group, TextInput, Box, Textarea } from "@mantine/core";
+import { Button, Group, TextInput, Textarea } from "@mantine/core";
 
 export function ContactForm() {
 

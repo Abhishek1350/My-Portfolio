@@ -114,7 +114,7 @@ export default async function ContactPage() {
               order={6}
               fw={400}
             >
-              <TextAppearAnimation text="Leave your email and we will get back to you within 24 hours" />
+              <TextAppearAnimation text="Leave your email and I will get back to you within 24 hours" />
             </Title>
             <ContactIconsList />
             <Group mt="xl">{socialLinksList}</Group>
