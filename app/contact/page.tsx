@@ -2,6 +2,7 @@ import {
   TextAppearAnimation,
   ContactForm,
   ContactIconsList,
+  StaggerItem
 } from "@/components";
 import {
   Title,
@@ -79,30 +80,31 @@ export default async function ContactPage() {
 
   const socialLinks: SocialLink[] = await getSocialLinks();
 
-  const socialLinksList = socialLinks.map((link: SocialLink) => {
+  const socialLinksList = socialLinks.map((link: SocialLink, index) => {
     return (
-      <ActionIcon
-        key={link._id}
-        size="lg"
-        radius="xl"
-        component="a"
-        href={link.url}
-        target="_black"
-        rel="noopener noreferrer"
-        variant="gradient"
-        gradient={getGradient(link.title)}
-      >
-        {getSocialIcons(link.title)}
-      </ActionIcon>
+      <StaggerItem index={index} key={link._id}>
+        <ActionIcon
+          size="lg"
+          radius="xl"
+          component="a"
+          href={link.url}
+          target="_black"
+          rel="noopener noreferrer"
+          variant="gradient"
+          gradient={getGradient(link.title)}
+        >
+          {getSocialIcons(link.title)}
+        </ActionIcon>
+      </StaggerItem>
     );
   });
 
   return (
     <main className={styles.section}>
       <Title className={styles.title}>
-        <TextAppearAnimation text="Contact us" center />
+        <TextAppearAnimation text="Contact" center />
       </Title>
-      <Container size="lg" className={styles.wrapper} mt={50}>
+      <Container size="lg" className={styles.wrapper}>
         <SimpleGrid cols={{ base: 1, sm: 2 }} spacing={50}>
           <div>
             <Title
