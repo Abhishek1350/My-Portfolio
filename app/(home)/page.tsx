@@ -6,16 +6,20 @@ import {
   Contact,
   TextAppearAnimation,
   MotionDiv,
+  PageLoader,
 } from "@/components";
 import styles from "./styles.module.css";
 import { Box, Title, Container, Button } from "@mantine/core";
 import Link from "next/link";
+import { Suspense } from "react";
 
 export default function Home() {
   return (
     <main>
       <section className={styles.hero}>
-        <Hero />
+        <Suspense fallback={<PageLoader />}>
+          <Hero />
+        </Suspense>
       </section>
 
       <section className={styles.skills}>
