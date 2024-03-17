@@ -5,6 +5,8 @@ import { Header, Footer, ScrollProgress, ScrollToTop, MainLoader } from "@/compo
 import "./globals.css";
 import { Libre_Franklin } from "next/font/google";
 import { Suspense } from "react";
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const metadata: Metadata = {
   title:
@@ -40,6 +42,8 @@ export default function RootLayout({
             <Footer />
           </Suspense>
         </MantineProvider>
+        <Analytics/>
+        <SpeedInsights/>
       </body>
     </html>
   );
