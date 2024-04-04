@@ -20,3 +20,35 @@ export interface IPersonalInfo {
     phoneNumber: string;
     _id: string;
 }
+
+export interface ISkill {
+    title: string;
+    image: {
+        asset: {
+            url: string;
+        };
+    };
+    link: string;
+    _id: string;
+    _type: string;
+    priority: number;
+    totalExperience: string;
+    description: string;
+}
+
+export interface IExperience {
+    companyName: string;
+    companyLogo: {
+        asset: {
+            url: string;
+        };
+    };
+    _id: string;
+    _type: string;
+    priority: number;
+    position: string;
+    description: string;
+    startDate: string;
+    endDate: string;
+    companyUrl: string
+}

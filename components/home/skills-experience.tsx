@@ -7,17 +7,7 @@ import classes from "./skills-experience.module.css";
 import { ExpTimeline } from "./exp-timeline";
 import { TextAppearAnimation, StaggerItem } from "..";
 import { SkillCard } from "../cards/skill-card";
-
-const Skillsdata = [
-  { title: 'NextJS', icon: "https://avatars.githubusercontent.com/u/72749432?v=4", url: "https://iabhishek.tech" },
-  { title: 'ReactJS', icon: "https://avatars.githubusercontent.com/u/72749432?v=4", url: "https://iabhishek.tech" },
-  { title: 'TypeScript', icon: "https://avatars.githubusercontent.com/u/72749432?v=4", url: "https://iabhishek.tech" },
-  { title: 'JavaScript', icon: "https://avatars.githubusercontent.com/u/72749432?v=4", url: "https://iabhishek.tech" },
-  { title: 'NodeJS', icon: "https://avatars.githubusercontent.com/u/72749432?v=4", url: "https://iabhishek.tech" },
-  { title: 'Material UI', icon: "https://avatars.githubusercontent.com/u/72749432?v=4", url: "https://iabhishek.tech" },
-  { title: 'Bootstrap', icon: "https://avatars.githubusercontent.com/u/72749432?v=4", url: "https://iabhishek.tech" },
-  { title: 'Tailwind', icon: "https://avatars.githubusercontent.com/u/72749432?v=4", url: "https://iabhishek.tech" },
-];
+import { ISkill, IExperience } from "@/sanity/lib/types";
 
 const timeLineData = [
   {
@@ -43,7 +33,12 @@ const timeLineData = [
   },
 ];
 
-export function SkillsExperience() {
+interface ISkillsExperienceProps {
+  skills: ISkill[];
+  experiences: IExperience[];
+}
+
+export function SkillsExperience({ skills, experiences }: ISkillsExperienceProps) {
 
   return (
     <Container size="lg">
@@ -64,7 +59,7 @@ export function SkillsExperience() {
       >
         <SimpleGrid cols={{ base: 3, xs: 4 }} spacing={50}>
           {
-            Skillsdata.map((item, index) => (
+            skills.map((item: ISkill, index: number) => (
               <StaggerItem index={index} key={index}>
                 <SkillCard item={item} />
               </StaggerItem>
