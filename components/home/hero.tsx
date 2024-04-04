@@ -5,10 +5,21 @@ import classes from "./hero.module.css";
 import { WordAnimation, TextAppearAnimation, MotionDiv } from "..";
 import { useRouter } from "next/navigation";
 import { useSize } from "@/hooks";
+import { IPersonalInfo } from "@/sanity/lib/types";
+import { urlForImage } from "@/sanity/lib/image";
 
-export function Hero() {
+interface IHeroProps {
+    data: IPersonalInfo;
+}
+
+export function Hero({ data }: IHeroProps) {
     const router = useRouter();
     const { width } = useSize();
+
+    const { profleImage, name, slidingText, oneLiner } = data;
+
+    const firstName = name.split(" ")[0];
+    const profileImage = urlForImage(profleImage.asset) ?? "/home/profile.jpg";
 
     return (
         <Container size="lg">
@@ -16,20 +27,20 @@ export function Hero() {
                 <Box className={classes.content}>
                     <Title order={1} className={classes.title} mb="md">
                         <TextAppearAnimation
-                            text="HI, I am Abhishek"
+                            text={`HI, I'm ${firstName}`}
                             center={width < 768 ? true : false}
                         />
                     </Title>
                     <Title order={2} className={classes.subtitle}>
                         <WordAnimation
-                            words={["ReactJS Developer", "NextJS Developer"]}
+                            words={slidingText}
                             className={classes.wordAnimation}
                         />
                     </Title>
 
                     <Text c="dimmed" mt="md" component="div">
                         <TextAppearAnimation
-                            text="I am adept in React, Redux, Material UI, and Bootstrap. Right now I am toiling as a Software Engineer at an startup."
+                            text={oneLiner}
                             center={width < 768 ? true : false}
                         />
                     </Text>
@@ -42,7 +53,7 @@ export function Hero() {
                             size="md"
                             my="lg"
                             className={classes.control}
-                            onClick={() => router.push("/about")}
+                            onClick={() => router.push("#skills")}
                         >
                             READ MORE
                         </Button>
@@ -50,9 +61,10 @@ export function Hero() {
                 </Box>
                 <MotionDiv>
                     <Image
-                        src="/home/profile.jpg"
+                        src={profileImage}
                         className={classes.image}
                         height={400}
+                        alt={name}
                     />
                 </MotionDiv>
             </Box>

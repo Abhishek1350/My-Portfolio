@@ -12,17 +12,22 @@ import styles from "./styles.module.css";
 import { Box, Title, Container, Button } from "@mantine/core";
 import Link from "next/link";
 import { Suspense } from "react";
+import { getPersonalInfo } from "@/sanity/lib/actions";
+import { IPersonalInfo } from "@/sanity/lib/types";
 
-export default function Home() {
+export default async function Home() {
+  const fullData = await getPersonalInfo() as IPersonalInfo[];
+  const data = fullData[0] ?? {};
+
   return (
     <main>
       <section className={styles.hero}>
         <Suspense fallback={<PageLoader />}>
-          <Hero />
+          <Hero data={data}/>
         </Suspense>
       </section>
 
-      <section className={styles.skills}>
+      <section className={styles.skills} id="skills">
         <Box w="100%">
           <Title order={2} className={styles.title}>
             <TextAppearAnimation text="Skills and Experience" center={true} />
