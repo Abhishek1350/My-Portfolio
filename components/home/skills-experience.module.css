@@ -4,8 +4,8 @@
   margin-top: var(--mantine-spacing-xs);
 }
 
-.timelineItem {
-  cursor: pointer;
+.timelineItem a img {
+  object-fit: cover;
 }
 
 .timeLineItemContent{

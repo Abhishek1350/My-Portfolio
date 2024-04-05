@@ -9,29 +9,6 @@ import { TextAppearAnimation, StaggerItem } from "..";
 import { SkillCard } from "../cards/skill-card";
 import { ISkill, IExperience } from "@/sanity/lib/types";
 
-const timeLineData = [
-  {
-    company: "Google",
-    role: "Software Engineer",
-    duration: "2017 - 2019",
-    description: "Worked on the Google search engine",
-    companyLogo: "https://avatars.githubusercontent.com/u/72749432?v=4",
-  },
-  {
-    company: "Facebook",
-    role: "Software Engineer",
-    duration: "2019 - 2021",
-    description: "Worked on the Facebook search engine",
-    companyLogo: "https://avatars.githubusercontent.com/u/72749432?v=4",
-  },
-  {
-    company: "Amazon",
-    role: "Software Engineer",
-    duration: "2021 - Present",
-    description: "Working on the Amazon search engine",
-    companyLogo: "https://avatars.githubusercontent.com/u/72749432?v=4",
-  },
-];
 
 interface ISkillsExperienceProps {
   skills: ISkill[];
@@ -66,7 +43,7 @@ export function SkillsExperience({ skills, experiences }: ISkillsExperienceProps
             ))
           }
         </SimpleGrid>
-        <ExpTimeline data={timeLineData} />
+        <ExpTimeline data={experiences} />
       </SimpleGrid>
     </Container>
   );

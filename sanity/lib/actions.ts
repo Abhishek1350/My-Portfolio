@@ -8,7 +8,7 @@ export async function fetchData() {
         "projects": *[_type == "projects"] | order(priority asc) [0...3],
         "testimonials": *[_type == "testimonials"] | order(priority asc),
         "skills": *[_type == "skills"] | order(priority asc),
-        "experience": *[_type == "experiences"] | order(priority asc)
+        "experience": *[_type == "experiences"] | order(startDate desc)
     }`;
     return client.fetch(query);
 }
