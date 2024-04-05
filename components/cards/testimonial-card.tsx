@@ -9,7 +9,8 @@ export function TestimonialCard({ item }: { item: ITestimonial }) {
       withBorder
       p="lg"
       bg="var(--mantine-color-body)"
-      mih={350}
+      mih={440}
+      mah={440}
     >
       <Avatar
         src={urlForImage(item.image.asset)}
@@ -22,7 +23,7 @@ export function TestimonialCard({ item }: { item: ITestimonial }) {
       </Text>
       <Box mt={5} mb={10}>
         <Text c="dimmed" fz="sm" ta="center">
-          {item.position} @{" "}
+          {item.position} <br/> @{" "}
           <Text
             ta="center"
             c="dimmed"
@@ -37,7 +38,7 @@ export function TestimonialCard({ item }: { item: ITestimonial }) {
           </Text>
         </Text>
       </Box>
-      <Text fz="sm" ta="center">
+      <Text fz="sm" ta="center" lineClamp={8}>
         {item.description}
       </Text>
     </Paper>

@@ -58,7 +58,7 @@ export function ProjectCard({ item }: { item: IProject }) {
                 <Text fz="lg" fw={500}>
                     {item.title}
                 </Text>
-                <Text fz="sm" mt="xs">
+                <Text fz="sm" mt="xs" lineClamp={2}>
                     {item.description}
                 </Text>
             </Card.Section>
