@@ -17,12 +17,7 @@ import classes from "./styles.module.css";
 import Link from "next/link";
 import { TypingEffect } from "./Typing-Effect";
 import { getSocialLinks } from "@/sanity/lib/actions";
-
-interface SocialLink {
-  _id: number;
-  title: string;
-  url: string;
-}
+import { ISocialLink } from "@/sanity/lib/types";
 
 const getSocialIcons = (title: string) => {
   switch (title) {
@@ -75,9 +70,9 @@ const getGradient = (title: string) => {
 };
 
 export async function Footer() {
-  const socialLinks: SocialLink[] = await getSocialLinks();
+  const socialLinks: ISocialLink[] = await getSocialLinks();
 
-  const socialLinksList = socialLinks.map((link: SocialLink) => {
+  const socialLinksList = socialLinks.map((link: ISocialLink) => {
     return (
       <ActionIcon
         key={link._id}

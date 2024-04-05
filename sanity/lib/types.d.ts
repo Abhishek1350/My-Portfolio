@@ -87,3 +87,9 @@ export interface ITestimonial {
     companyName: string;
     companyUrl: string;
 }
+
+export interface ISocialLink {
+    _id: string;
+    title: string;
+    url: string;
+}

@@ -6,7 +6,6 @@ import { ISkill, IProject, ITestimonial } from "./types";
 export async function fetchData() {
     const query = groq`{
         "personalInfo": *[_type == "personalInfo"][0],
-        "testimonials": *[_type == "testimonials"] | order(priority asc),
         "skills": *[_type == "skills"] | order(priority asc),
         "experience": *[_type == "experiences"] | order(startDate desc),
     }`;
