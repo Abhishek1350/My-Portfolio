@@ -12,7 +12,7 @@ import styles from "./styles.module.css";
 import { Box, Title, Container, Button } from "@mantine/core";
 import Link from "next/link";
 import { Suspense } from "react";
-import { fetchData, getProjects } from "@/sanity/lib/actions";
+import { fetchData, getProjects, getTestimonials } from "@/sanity/lib/actions";
 import {
   IPersonalInfo,
   ISkill,
@@ -26,6 +26,7 @@ export default async function Home() {
   const skillsData: ISkill[] = fullData.skills;
   const experienceData: IExperience[] = fullData.experience;
   const projectsData: IProject[] = (await getProjects()).slice(0, 3);
+  const testimonialsData = await getTestimonials();
 
   return (
     <main>
@@ -71,7 +72,7 @@ export default async function Home() {
           <Title order={2} className={styles.title}>
             <TextAppearAnimation text="Few Nice Words" center={true} />
           </Title>
-          <Testimonials />
+          <Testimonials data={testimonialsData}/>
         </Container>
       </section>
 

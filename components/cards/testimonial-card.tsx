@@ -1,15 +1,8 @@
 import { Avatar, Text, Paper, Box } from "@mantine/core";
+import { ITestimonial } from "@/sanity/lib/types";
+import { urlForImage } from "@/sanity/lib/image";
 
-interface TestimonialCardProps {
-  image: string;
-  title: string;
-  description: string;
-  url: string;
-  position: string;
-  company: string;
-}
-
-export function TestimonialCard({ item }: { item: TestimonialCardProps }) {
+export function TestimonialCard({ item }: { item: ITestimonial }) {
   return (
     <Paper
       radius="md"
@@ -18,7 +11,12 @@ export function TestimonialCard({ item }: { item: TestimonialCardProps }) {
       bg="var(--mantine-color-body)"
       mih={350}
     >
-      <Avatar src={item.image} size={120} radius={120} mx="auto" />
+      <Avatar
+        src={urlForImage(item.image.asset)}
+        size={120}
+        radius={120}
+        mx="auto"
+      />
       <Text ta="center" fz="lg" fw={500} mt="md">
         {item.title}
       </Text>
@@ -30,12 +28,12 @@ export function TestimonialCard({ item }: { item: TestimonialCardProps }) {
             c="dimmed"
             fz="sm"
             component="a"
-            href={item.url}
+            href={item.companyUrl}
             target="_blank"
             rel="noopener noreferrer"
             td="underline"
           >
-            {item.company}
+            {item.companyName}
           </Text>
         </Text>
       </Box>

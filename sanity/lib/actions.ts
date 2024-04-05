@@ -1,6 +1,6 @@
 import { groq } from "next-sanity";
 import { client } from "./client";
-import { ISkill, IProject } from "./types";
+import { ISkill, IProject, ITestimonial } from "./types";
 
 // Fetching data for homepage.
 export async function fetchData() {
@@ -8,7 +8,7 @@ export async function fetchData() {
         "personalInfo": *[_type == "personalInfo"][0],
         "testimonials": *[_type == "testimonials"] | order(priority asc),
         "skills": *[_type == "skills"] | order(priority asc),
-        "experience": *[_type == "experiences"] | order(startDate desc)
+        "experience": *[_type == "experiences"] | order(startDate desc),
     }`;
     return client.fetch(query);
 }
@@ -52,7 +52,26 @@ export async function getProjects() {
 
 export async function getTestimonials() {
     const query = groq`*[_type == "testimonials"] | order(priority asc)`;
-    return client.fetch(query);
+    const testimonials = await client.fetch(query);
+
+    const testimonialsWithCompany = await Promise.all(
+        testimonials.map(async (testimonial: ITestimonial) => {
+            const companyQuery = groq`*[_type == "experiences" && _id == $companyId]{
+                companyName,
+                companyUrl
+            }`;
+            const company = await client.fetch(companyQuery, { companyId: testimonial.company._ref });
+
+            return {
+                ...testimonial,
+                companyName: company[0].companyName,
+                companyUrl: company[0].companyUrl,
+            };
+        })
+    );
+
+    return testimonialsWithCompany;
+
 }
 
 export async function getSocialLinks() {

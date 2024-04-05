@@ -68,3 +68,22 @@ export interface IProject {
     liveUrl: string;
     technologies: string[];
 }
+
+export interface ITestimonial {
+    title: string;
+    description: string;
+    company: {
+        _ref: string
+    };
+    _id: string;
+    position: string;
+    priority: 1,
+    image: {
+        asset: {
+            url: string;
+        };
+    };
+    _type: 'testimonials'
+    companyName: string;
+    companyUrl: string;
+}
