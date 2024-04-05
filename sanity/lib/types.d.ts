@@ -52,3 +52,19 @@ export interface IExperience {
     endDate: string;
     companyUrl: string
 }
+
+export interface IProject {
+    title: string;
+    description: string;
+    heroImage: {
+        asset: {
+            url: string;
+        };
+    };
+    _id: string;
+    _type: string;
+    priority: number;
+    githubUrl: string;
+    liveUrl: string;
+    technologies: string[];
+}

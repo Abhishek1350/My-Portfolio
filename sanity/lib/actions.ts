@@ -1,11 +1,11 @@
 import { groq } from "next-sanity";
 import { client } from "./client";
+import { ISkill, IProject } from "./types";
 
 // Fetching data for homepage.
 export async function fetchData() {
     const query = groq`{
         "personalInfo": *[_type == "personalInfo"][0],
-        "projects": *[_type == "projects"] | order(priority asc) [0...3],
         "testimonials": *[_type == "testimonials"] | order(priority asc),
         "skills": *[_type == "skills"] | order(priority asc),
         "experience": *[_type == "experiences"] | order(startDate desc)
@@ -29,8 +29,25 @@ export async function getExperience() {
 }
 
 export async function getProjects() {
-    const query = groq`*[_type == "projects"] | order(priority asc)`;
-    return client.fetch(query);
+    const projectsQuery = groq`*[_type == "projects"] | order(priority asc)`;
+    const projects = await client.fetch(projectsQuery);
+
+    const projectsWithSkills = await Promise.all(
+        projects.map(async (project: IProject) => {
+            const technologyQuery = groq`*[_type == "skills" && _id in $technologyIds]{
+                title
+            }`;
+            const technologyIds = project.technologies.map((tech: any) => tech._ref);
+            const skills = await client.fetch(technologyQuery, { technologyIds });
+
+            return {
+                ...project,
+                technologies: skills.map((skill: ISkill) => skill.title),
+            };
+        })
+    );
+
+    return projectsWithSkills;
 }
 
 export async function getTestimonials() {
@@ -38,9 +55,7 @@ export async function getTestimonials() {
     return client.fetch(query);
 }
 
-
 export async function getSocialLinks() {
     const query = groq`*[_type == "socialLinks"] | order(priority asc)`;
     return client.fetch(query);
 }
-

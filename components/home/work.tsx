@@ -1,38 +1,11 @@
-import { ProjectCard, StaggerItem } from ".."
-import { SimpleGrid } from "@mantine/core"
+import { ProjectCard, StaggerItem } from "..";
+import { SimpleGrid } from "@mantine/core";
+import { IProject } from "@/sanity/lib/types";
 
-
-const data = [
-    {
-        image: 'https://cdn.sanity.io/images/wpw9cxdm/production/07aa735a1af9e47db2c14f122ffd8ccc4bba70a5-1903x931.png',
-        title: 'Free Games Hub',
-        description: 'A collection of free games to play online',
-        live: 'https://www.iabhishek.tech/',
-        gitUrl: 'https://www.iabhishek.tech/',
-        tech: ["ReactJs", "NextJs"]
-    },
-    {
-        image: 'https://cdn.sanity.io/images/wpw9cxdm/production/07aa735a1af9e47db2c14f122ffd8ccc4bba70a5-1903x931.png',
-        title: 'Free Games Hub',
-        description: 'A collection of free games to play online',
-        live: 'https://www.iabhishek.tech/',
-        gitUrl: 'https://www.iabhishek.tech/',
-        tech: ["ReactJs", "NextJs"]
-    },
-    {
-        image: 'https://cdn.sanity.io/images/wpw9cxdm/production/07aa735a1af9e47db2c14f122ffd8ccc4bba70a5-1903x931.png',
-        title: 'Free Games Hub',
-        description: 'A collection of free games to play online',
-        live: 'https://www.iabhishek.tech/',
-        gitUrl: 'https://www.iabhishek.tech/',
-        tech: ["ReactJs", "NextJs"]
-    },
-];
-
-export function RecentWork() {
+export function RecentWork({ projects }: { projects: IProject[] }) {
     return (
         <SimpleGrid cols={{ base: 1, xs: 2, md: 3 }} spacing={30} mt={50}>
-            {data.map((item, index) => {
+            {projects.map((item, index) => {
                 return (
                     <StaggerItem index={index} key={index}>
                         <ProjectCard item={item} />
@@ -41,4 +14,4 @@ export function RecentWork() {
             })}
         </SimpleGrid>
     );
-};
+}

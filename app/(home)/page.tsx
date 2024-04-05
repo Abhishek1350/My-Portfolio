@@ -12,14 +12,20 @@ import styles from "./styles.module.css";
 import { Box, Title, Container, Button } from "@mantine/core";
 import Link from "next/link";
 import { Suspense } from "react";
-import { fetchData } from "@/sanity/lib/actions";
-import { IPersonalInfo, ISkill, IExperience } from "@/sanity/lib/types";
+import { fetchData, getProjects } from "@/sanity/lib/actions";
+import {
+  IPersonalInfo,
+  ISkill,
+  IExperience,
+  IProject,
+} from "@/sanity/lib/types";
 
 export default async function Home() {
-  const fullData = await fetchData(); 
-  const heroData : IPersonalInfo = fullData.personalInfo
-  const skillsData : ISkill[] = fullData.skills;
-  const experienceData : IExperience[] = fullData.experience;
+  const fullData = await fetchData();
+  const heroData: IPersonalInfo = fullData.personalInfo;
+  const skillsData: ISkill[] = fullData.skills;
+  const experienceData: IExperience[] = fullData.experience;
+  const projectsData: IProject[] = (await getProjects()).slice(0, 3);
 
   return (
     <main>
@@ -34,7 +40,7 @@ export default async function Home() {
           <Title order={2} className={styles.title}>
             <TextAppearAnimation text="Skills and Experience" center={true} />
           </Title>
-          <SkillsExperience skills={skillsData} experiences={experienceData}/>
+          <SkillsExperience skills={skillsData} experiences={experienceData} />
         </Box>
       </section>
 
@@ -43,7 +49,7 @@ export default async function Home() {
           <Title order={2} className={styles.title}>
             <TextAppearAnimation text="My Recent Work" center={true} />
           </Title>
-          <RecentWork />
+          <RecentWork projects={projectsData} />
           <MotionDiv direction="up">
             <Button
               component={Link}
