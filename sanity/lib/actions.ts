@@ -1,9 +1,8 @@
+"use server";
+
 import { groq } from "next-sanity";
 import { client } from "./client";
 import { ISkill, IProject, ITestimonial } from "./types";
-
-// Revalidate time in seconds (1 hour).
-const revalidateTime = 3600;
 
 // Fetching data for homepage.
 export async function fetchData() {
@@ -12,7 +11,7 @@ export async function fetchData() {
         "skills": *[_type == "skills"] | order(priority asc),
         "experience": *[_type == "experiences"] | order(startDate desc),
     }`;
-    return client.fetch(query, { next: { revalidate: revalidateTime } });
+    return client.fetch(query);
 }
 
 export async function getPersonalInfo() {
@@ -22,12 +21,12 @@ export async function getPersonalInfo() {
 
 export async function getSkills() {
     const query = groq`*[_type == "skills"] | order(priority asc)`;
-    return client.fetch(query, { next: { revalidate: revalidateTime } });
+    return client.fetch(query);
 }
 
 export async function getExperience() {
     const query = groq`*[_type == "experiences"] | order(priority asc)`;
-    return client.fetch(query, { next: { revalidate: revalidateTime } });
+    return client.fetch(query);
 }
 
 export async function getProjects() {
@@ -40,7 +39,7 @@ export async function getProjects() {
                 title
             }`;
             const technologyIds = project.technologies.map((tech: any) => tech._ref);
-            const skills = await client.fetch(technologyQuery, { technologyIds, next: { revalidate: revalidateTime } });
+            const skills = await client.fetch(technologyQuery, { technologyIds });
 
             return {
                 ...project,
@@ -62,7 +61,7 @@ export async function getTestimonials() {
                 companyName,
                 companyUrl
             }`;
-            const company = await client.fetch(companyQuery, { companyId: testimonial.company._ref, next: { revalidate: revalidateTime } });
+            const company = await client.fetch(companyQuery, { companyId: testimonial.company._ref });
 
             return {
                 ...testimonial,
@@ -78,15 +77,15 @@ export async function getTestimonials() {
 
 export async function getSocialLinks() {
     const query = groq`*[_type == "socialLinks"] | order(priority asc)`;
-    return client.fetch(query, { next: { revalidate: revalidateTime } });
+    return client.fetch(query);
 }
 
 export async function getBlogs() {
     const query = groq`*[_type == "blog"] | order(publishedAt desc)`;
-    return client.fetch(query, { next: { revalidate: revalidateTime } });
+    return client.fetch(query);
 }
 
 export async function getBlogBySlug(slug: string) {
     const query = groq`*[_type == "blog" && slug.current == $slug]`;
-    return client.fetch(query, { slug, next: { revalidate: revalidateTime } });
+    return client.fetch(query);
 }

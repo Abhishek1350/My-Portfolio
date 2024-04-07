@@ -15,8 +15,6 @@ import { Suspense } from "react";
 import { fetchData } from "@/sanity/lib/actions";
 import { IPersonalInfo, ISkill, IExperience } from "@/sanity/lib/types";
 
-export const dynamic = "force-dynamic";
-
 export default async function Home() {
   const fullData = await fetchData();
   const heroData: IPersonalInfo = fullData.personalInfo;

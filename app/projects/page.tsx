@@ -4,6 +4,8 @@ import styles from "./styles.module.css";
 import { getProjects } from "@/sanity/lib/actions";
 import { IProject } from "@/sanity/lib/types";
 
+export const revalidate = 1
+
 export default async function Projects() {
     const projects: IProject[] = await getProjects();
 
