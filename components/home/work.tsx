@@ -3,6 +3,8 @@ import { SimpleGrid } from "@mantine/core";
 import { IProject } from "@/sanity/lib/types";
 import { getProjects } from "@/sanity/lib/actions";
 
+export const revalidate = 3600;
+
 export async function RecentWork() {
     const projects: IProject[] = (await getProjects()).slice(0, 3);
 

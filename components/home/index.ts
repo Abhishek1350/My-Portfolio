@@ -1,5 +1,5 @@
 export * from "./hero"
-export * from "./work"
+export { RecentWork } from "./work"
 export * from "./skills-experience"
 export * from "./testimonials"
 export * from "./contact"

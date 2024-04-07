@@ -27,6 +27,8 @@ interface SocialLink {
   url: string;
 }
 
+export const revalidate = 3600;
+
 export default async function ContactPage() {
   const getSocialIcons = (title: string) => {
     switch (title) {

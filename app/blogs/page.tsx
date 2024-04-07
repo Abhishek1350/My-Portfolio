@@ -3,6 +3,8 @@ import { SimpleGrid } from "@mantine/core";
 import { Container, Title } from "@mantine/core";
 import styles from "./styles.module.css";
 
+export const revalidate = 3600;
+
 const data = [
     {
         image:

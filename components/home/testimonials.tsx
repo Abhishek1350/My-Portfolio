@@ -3,6 +3,8 @@ import { SimpleGrid } from "@mantine/core";
 import { ITestimonial } from "@/sanity/lib/types";
 import { getTestimonials } from "@/sanity/lib/actions";
 
+export const revalidate = 3600;
+
 export async function Testimonials() {
     const testimonials: ITestimonial[] = await getTestimonials();
 
