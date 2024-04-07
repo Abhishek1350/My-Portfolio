@@ -7,7 +7,6 @@ import { urlForImage } from "@/sanity/lib/image";
 import moment from "moment";
 
 export function ExpTimeline({ data }: { data: IExperience[] }) {
-    console.log(data)
     return (
         <Timeline bulletSize={50}>
             {data.map((item, index) => (
