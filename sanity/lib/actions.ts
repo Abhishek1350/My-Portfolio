@@ -2,7 +2,8 @@ import { groq } from "next-sanity";
 import { client } from "./client";
 import { ISkill, IProject, ITestimonial } from "./types";
 
-const revalidateTime = 1;
+// Revalidate time in seconds (1 hour).
+const revalidateTime = 3600;
 
 // Fetching data for homepage.
 export async function fetchData() {
