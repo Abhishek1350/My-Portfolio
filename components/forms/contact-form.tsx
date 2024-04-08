@@ -3,7 +3,7 @@
 import { useForm, isEmail, hasLength } from "@mantine/form";
 import { Button, Group, TextInput, Box, Textarea } from "@mantine/core";
 
-export function HomeContactForm() {
+export function ContactForm() {
     const form = useForm({
         initialValues: {
             name: "",
@@ -38,8 +38,10 @@ export function HomeContactForm() {
 
             if (response.ok) {
                 const data = await response.json();
-                if(data.success) {
+                if (data.success) {
                     console.log("Email sent successfully");
+                    form.reset();
+                    // TODO: Show success message
                 } else {
                     console.log("Failed to send email");
                 }
@@ -49,7 +51,7 @@ export function HomeContactForm() {
         } catch (error) {
             console.log("Failed to send email", error);
         }
-    }
+    };
 
     return (
         <Box

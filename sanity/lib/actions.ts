@@ -59,7 +59,9 @@ export async function getTestimonials() {
                 companyName,
                 companyUrl
             }`;
-            const company = await client.fetch(companyQuery, { companyId: testimonial.company._ref });
+            const company = await client.fetch(companyQuery, {
+                companyId: testimonial.company._ref,
+            });
 
             return {
                 ...testimonial,
@@ -70,7 +72,6 @@ export async function getTestimonials() {
     );
 
     return testimonialsWithCompany;
-
 }
 
 export async function getSocialLinks() {
@@ -86,4 +87,19 @@ export async function getBlogs() {
 export async function getBlogBySlug(slug: string) {
     const query = groq`*[_type == "blog" && slug.current == $slug]`;
     return client.fetch(query);
+}
+
+export async function getContactPageData() {
+    const socialLinks = await getSocialLinks();
+    const contactDetailsQuery = groq`*[_type == "personalInfo"][0]{
+        email,
+        phoneNumber,
+        address,
+        workingHours
+    }`;
+    const contactDetails = await client.fetch(contactDetailsQuery);
+    return {
+        socialLinks,
+        contactDetails,
+    };
 }

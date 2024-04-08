@@ -1,5 +1,5 @@
 import { Title, Container } from '@mantine/core';
-import { HomeContactForm, TextAppearAnimation } from ".."
+import { ContactForm, TextAppearAnimation } from ".."
 
 export function Contact() {
     return (
@@ -12,7 +12,7 @@ export function Contact() {
                     />
                 </Title>
             </Container>
-            <HomeContactForm />
+            <ContactForm />
         </>
     );
 }

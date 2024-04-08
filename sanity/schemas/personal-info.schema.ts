@@ -87,6 +87,11 @@ const schema = {
             title: "More Information",
             type: "text",
         },
+        {
+            name: "workingHours",
+            title: "Working Hours",
+            type: "text",
+        }
     ],
 };
 

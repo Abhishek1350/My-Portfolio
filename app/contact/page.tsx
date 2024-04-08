@@ -19,17 +19,25 @@ import {
   IconBrandLinkedin,
 } from "@tabler/icons-react";
 import styles from "./styles.module.css";
-import { getSocialLinks } from "@/sanity/lib/actions";
+import { getContactPageData } from "@/sanity/lib/actions";
+import { ISocialLink } from "@/sanity/lib/types";
 
-interface SocialLink {
-  _id: number;
-  title: string;
-  url: string;
+interface ContactPage {
+  socialLinks: ISocialLink[];
+  contactDetails: {
+    email: string;
+    phoneNumber: string;
+    address: string;
+    workingHours: string;
+  }
 }
+
 
 export const revalidate = 3600;
 
 export default async function ContactPage() {
+  const { socialLinks, contactDetails } = await getContactPageData();
+
   const getSocialIcons = (title: string) => {
     switch (title) {
       case "GitHub":
@@ -80,9 +88,8 @@ export default async function ContactPage() {
     }
   };
 
-  const socialLinks: SocialLink[] = await getSocialLinks();
 
-  const socialLinksList = socialLinks.map((link: SocialLink, index) => {
+  const socialLinksList = socialLinks.map((link: ISocialLink, index: number) => {
     return (
       <StaggerItem index={index} key={link._id}>
         <ActionIcon
@@ -118,7 +125,7 @@ export default async function ContactPage() {
             >
               <TextAppearAnimation text="Leave your email and I will get back to you within 24 hours" />
             </Title>
-            <ContactIconsList />
+            <ContactIconsList contactDetails={contactDetails} />
             <Group mt="xl">{socialLinksList}</Group>
           </div>
           <div className={styles.form}>
