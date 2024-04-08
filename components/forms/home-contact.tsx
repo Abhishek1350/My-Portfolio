@@ -26,13 +26,38 @@ export function HomeContactForm() {
         },
     });
 
+    const handleSendEmail = async () => {
+        try {
+            const response = await fetch("/api/send-email", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(form.values),
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                if(data.success) {
+                    console.log("Email sent successfully");
+                } else {
+                    console.log("Failed to send email");
+                }
+            } else {
+                console.log("Failed to send email");
+            }
+        } catch (error) {
+            console.log("Failed to send email", error);
+        }
+    }
+
     return (
         <Box
             component="form"
             maw={600}
             mx="auto"
             onSubmit={form.onSubmit(() => {
-                console.log(form.values);
+                handleSendEmail();
             })}
         >
             <TextInput

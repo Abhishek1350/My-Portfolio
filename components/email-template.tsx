@@ -1,16 +1,36 @@
+import { Html, Heading, Text } from "@react-email/components";
+
 interface EmailTemplateProps {
-  name : string
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
 }
 
-export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
-  name,
-}) => (
-  <div>
-    <h1>Welcome, {name}!</h1>
-    <p>
-      Thanks for signing up to our platform. We're excited to have you on board.
-    </p>
-  </div>
-);
+export function EmailTemplateForUser({ name, subject, message }: EmailTemplateProps) {
+  return (
+    <Html lang="en">
+      <Heading as="h1">Thank You for Contacting</Heading>
+      <Text>Dear {name},</Text>
+      <Text>I have received your email</Text>
+      <Text>I appreciate your interest and will get back to you as soon as possible regarding your inquiry.</Text>
+      <Text>Subject: {subject}</Text>
+      <Text>Message: {message}</Text>
+      <Text>Best regards,</Text>
+      <Text>Abhishek Bhardwaj</Text>
+    </Html>
+  );
+};
 
-export default EmailTemplate;
+export function EmailTemplateForAdmin({ name, email, subject, message }: EmailTemplateProps) {
+  return (
+    <Html lang="en">
+      <Heading as="h1">New Inquiry from portfolio</Heading>
+      <Text>Subject: {subject}</Text>
+      <Text>Message: {message}</Text>
+      <Text>From: {name}, ({email})</Text>
+    </Html>
+  );
+};
+
+
