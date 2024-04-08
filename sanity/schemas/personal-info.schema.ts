@@ -90,7 +90,7 @@ const schema = {
         {
             name: "workingHours",
             title: "Working Hours",
-            type: "text",
+            type: "string",
         }
     ],
 };

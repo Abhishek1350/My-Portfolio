@@ -32,7 +32,6 @@ interface ContactPage {
   }
 }
 
-
 export const revalidate = 3600;
 
 export default async function ContactPage() {
@@ -87,7 +86,6 @@ export default async function ContactPage() {
         return { from: "blue", to: "indigo", deg: 73 };
     }
   };
-
 
   const socialLinksList = socialLinks.map((link: ISocialLink, index: number) => {
     return (
