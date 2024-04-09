@@ -76,7 +76,7 @@ export default async function Home() {
           <Title order={2} className={styles.title}>
             <TextAppearAnimation text="Contact" center={true} />
           </Title>
-          <Contact />
+          <Contact currentEmail={heroData?.email}/>
         </Container>
       </section>
     </main>

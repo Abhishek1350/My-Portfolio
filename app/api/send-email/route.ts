@@ -7,15 +7,15 @@ export async function POST(request: Request) {
   const formData = await request.json();
   try {
     const { error } = await resend.emails.send({
-      from: "hello@iabhishek.tech",
+      from: formData.currentEmail,
       to: [formData.email],
       subject: "IAbhishek.tech - Contact Form Submission",
       react: EmailTemplateForUser({ ...formData }) as React.ReactElement,
     });
 
     await resend.emails.send({
-      from: "hello@iabhishek.tech",
-      to: ["hello@iabhishek.tech"],
+      from: formData.currentEmail,
+      to: [formData.currentEmail],
       subject: "New Inquiry from portfolio",
       react: EmailTemplateForAdmin({ ...formData }) as React.ReactElement,
     });
@@ -24,6 +24,6 @@ export async function POST(request: Request) {
 
     return Response.json({ success: true });
   } catch (error) {
-    return Response.json({ success: false, error: "Something went wrong!"});
+    return Response.json({ success: false, error: "Something went wrong!" });
   }
 }

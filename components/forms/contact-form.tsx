@@ -3,13 +3,14 @@
 import { useForm, isEmail, hasLength } from "@mantine/form";
 import { Button, Group, TextInput, Box, Textarea } from "@mantine/core";
 
-export function ContactForm() {
+export function ContactForm({ currentEmail }: { currentEmail: string }) {
     const form = useForm({
         initialValues: {
             name: "",
             email: "",
             subject: "",
             message: "",
+            currentEmail,
         },
 
         validate: {

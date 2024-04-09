@@ -1,7 +1,7 @@
 import { Title, Container } from '@mantine/core';
 import { ContactForm, TextAppearAnimation } from ".."
 
-export function Contact() {
+export function Contact({ currentEmail }: { currentEmail: string }) {
     return (
         <>
             <Container size={660} p={0}>
@@ -12,7 +12,7 @@ export function Contact() {
                     />
                 </Title>
             </Container>
-            <ContactForm />
+            <ContactForm currentEmail={currentEmail}/>
         </>
     );
 }

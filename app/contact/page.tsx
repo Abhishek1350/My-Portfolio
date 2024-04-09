@@ -127,7 +127,7 @@ export default async function ContactPage() {
             <Group mt="xl">{socialLinksList}</Group>
           </div>
           <div className={styles.form}>
-            <ContactForm />
+            <ContactForm currentEmail={contactDetails?.email}/>
           </div>
         </SimpleGrid>
       </Container>
