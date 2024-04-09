@@ -80,13 +80,38 @@ export async function getSocialLinks() {
 }
 
 export async function getBlogs() {
-    const query = groq`*[_type == "blog"] | order(publishedAt desc)`;
-    return client.fetch(query);
+    const query = groq`*[_type == "blogs"]{
+        _id,
+        title,
+        metadesc,
+        heroImage,
+        slug,
+        tags,
+        minRead
+    } | order(publishedAt desc)`;
+    const blogs = await client.fetch(query);
+
+    const blogsWithTags = await Promise.all(
+        blogs.map(async (blog: any) => {
+            const tagsQuery = groq`*[_type == "blogTags" && _id in $tagIds]{
+                title
+            }`;
+            const tagIds = blog.tags.map((tag: any) => tag._ref);
+            const tags = await client.fetch(tagsQuery, { tagIds });
+
+            return {
+                ...blog,
+                tags: tags.map((tag: any) => tag.title),
+            };
+        })
+    );
+
+    return blogsWithTags;
 }
 
 export async function getBlogBySlug(slug: string) {
     const query = groq`*[_type == "blog" && slug.current == $slug]`;
-    return client.fetch(query);
+    return client.fetch(query, { slug });
 }
 
 export async function getContactPageData() {

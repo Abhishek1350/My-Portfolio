@@ -93,3 +93,21 @@ export interface ISocialLink {
     title: string;
     url: string;
 }
+
+export interface IBlog {
+    _id: string;
+    _type: string;
+    title: string;
+    metadesc: string;
+    tags: string[];
+    heroImage: {
+        asset: {
+            url: string;
+        };
+    };
+    slug: {
+        current: string;
+    };
+    minRead: string;
+    content: any[];
+}
