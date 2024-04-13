@@ -9,7 +9,7 @@ import {
   PageLoader,
 } from "@/components";
 import styles from "./styles.module.css";
-import { Box, Title, Container, Button } from "@mantine/core";
+import { Box, Title, Container, UnstyledButton } from "@mantine/core";
 import Link from "next/link";
 import { Suspense } from "react";
 import { fetchData } from "@/sanity/lib/actions";
@@ -47,17 +47,21 @@ export default async function Home() {
           </Title>
           <RecentWork />
           <MotionDiv direction="up">
-            <Button
-              component={Link}
-              href="/projects"
-              variant="outline"
-              color="blue"
-              size="lg"
-              className={styles.workButton}
-              mt={50}
-            >
-              View All
-            </Button>
+            <Box mt={50}>
+              <Link href="/projects" style={{textDecoration:"none"}}>
+                <UnstyledButton className={styles.workBtn}>
+                  <strong>View All</strong>
+                  <div className={styles.containerStars}>
+                    <div className={styles.stars}></div>
+                  </div>
+
+                  <div className={styles.glow}>
+                    <div className={styles.circle}></div>
+                    <div className={styles.circle}></div>
+                  </div>
+                </UnstyledButton>
+              </Link>
+            </Box>
           </MotionDiv>
         </Container>
       </section>
@@ -76,7 +80,7 @@ export default async function Home() {
           <Title order={2} className={styles.title}>
             <TextAppearAnimation text="Contact" center={true} />
           </Title>
-          <Contact currentEmail={heroData?.email}/>
+          <Contact currentEmail={heroData?.email} />
         </Container>
       </section>
     </main>

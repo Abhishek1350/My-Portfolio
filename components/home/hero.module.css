@@ -4,15 +4,8 @@
 
   @media (max-width: $mantine-breakpoint-md) {
     overflow: hidden;
-  }
-
-  @media (max-width: $mantine-breakpoint-sm) {
     flex-wrap: wrap;
     flex-direction: column-reverse;
-    & .control {
-      display: block;
-      margin: auto;
-    }
   }
 }
 
@@ -121,6 +114,5 @@
       transform: translate3d(0, 0, 0) scale(0.95);
       filter: blur(20px);
     }
-
   }
 }
