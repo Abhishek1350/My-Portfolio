@@ -11,18 +11,63 @@
   border-radius: 10px;
 }
 
-.scrollToTop-btn {
+.scrollToTop {
   display: flex;
   justify-content: center;
   align-items: center;
   position: fixed;
-  bottom: 1.5rem;
-  right: 1.5rem;
-  width: 2rem;
-  height: 2rem;
-  background: linear-gradient(126deg, #ff8800 24%, #ff0000 100%);
-  border: none;
-  border-radius: 50%;
-  color: white;
-  cursor: pointer;
+  bottom: 4rem;
+  right: 4rem;
+
+  & button {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: linear-gradient(126deg, #ff8800 24%, #ff0000 100%);
+    border: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition-duration: 0.3s;
+    overflow: hidden;
+    position: relative;
+
+    & .svgIcon {
+      width: 12px;
+      transition-duration: 0.3s;
+
+      & path {
+        fill: #fff;
+      }
+    }
+
+    &:hover {
+      width: 140px;
+      border-radius: 8px;
+      transition-duration: 0.3s;
+      align-items: center;
+
+      & .svgIcon {
+        transition-duration: 0.3s;
+        transform: translateY(-200%);
+      }
+
+      &::before {
+        font-size: 13px;
+        opacity: 1;
+        bottom: unset;
+        transition-duration: 0.3s;
+      }
+    }
+
+    &::before {
+      position: absolute;
+      bottom: -20px;
+      content: "Back to Top";
+      color: white;
+      font-size: 0px;
+    }
+  }
 }
