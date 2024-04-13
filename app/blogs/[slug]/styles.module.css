@@ -1,0 +1,55 @@
+.section {
+  padding-top: calc(var(--mantine-spacing-xl) * 1);
+  padding-bottom: calc(var(--mantine-spacing-xl) * 2);
+}
+
+.header {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.title {
+  max-width: 800px;
+  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+  line-height: 1.2;
+  font-weight: 900;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: var(--mantine-spacing-lg);
+}
+
+.portableText {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.portableText p,
+.portableText ul,
+.portableText ol,
+.portableText blockquote {
+  margin: 1.5em 0;
+}
+
+.portableText img {
+  max-width: 100%;
+  margin: 1.5em 0;
+}
+
+.portableText h2 {
+  margin: 2em 0 1em;
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+.portableText h3 {
+  margin: 1.5em 0 1em;
+  font-size: 1.25em;
+  font-weight: 700;
+}
+
+.portableText a {
+  color: var(--mantine-color-blue-600);
+}
+.portableText a:hover {
+  color: var(--mantine-color-blue-700);
+}
