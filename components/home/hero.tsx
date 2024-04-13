@@ -46,17 +46,15 @@ export function Hero({ data }: IHeroProps) {
                     </Text>
 
                     <MotionDiv direction="up">
-                        <Button
-                            variant="gradient"
-                            gradient={{ from: "lime", to: "green", deg: 67 }}
-                            radius="sm"
-                            size="md"
-                            my="lg"
-                            className={classes.control}
-                            onClick={() => router.push("#skills")}
-                        >
-                            READ MORE
-                        </Button>
+                        <Box my="lg">
+                            <button
+                                type="button"
+                                className={classes.readMoreBtn}
+                                onClick={() => router.push("#skills")}
+                            >
+                                READ MORE
+                            </button>
+                        </Box>
                     </MotionDiv>
                 </Box>
                 <MotionDiv>

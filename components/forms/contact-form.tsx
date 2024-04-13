@@ -1,7 +1,8 @@
 "use client";
 
 import { useForm, isEmail, hasLength } from "@mantine/form";
-import { Button, Group, TextInput, Box, Textarea } from "@mantine/core";
+import { Group, TextInput, Box, Textarea } from "@mantine/core";
+import styles from "./contact-form.module.css"
 
 export function ContactForm({ currentEmail }: { currentEmail: string }) {
     const form = useForm({
@@ -91,8 +92,13 @@ export function ContactForm({ currentEmail }: { currentEmail: string }) {
                 minRows={5}
                 {...form.getInputProps("message")}
             />
-            <Group justify="flex-end" mt="md">
-                <Button type="submit">Submit</Button>
+            <Group justify="flex-end" mt="lg">
+                <button
+                    type="submit"
+                    className={styles.submitBtn}
+                >
+                    Submit
+                </button>
             </Group>
         </Box>
     );
