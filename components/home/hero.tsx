@@ -1,6 +1,6 @@
 "use client";
 
-import { Image, Container, Title, Button, Text, Box } from "@mantine/core";
+import { Image, Container, Title, Text, Box } from "@mantine/core";
 import classes from "./hero.module.css";
 import { WordAnimation, TextAppearAnimation, MotionDiv } from "..";
 import { useRouter } from "next/navigation";

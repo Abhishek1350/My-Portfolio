@@ -1,3 +1,55 @@
+.wrapper {
+  position: relative;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 20px;
+  background-color: light-dark(
+    var(--mantine-color-white),
+    var(--mantine-color-dark-7)
+  );
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 40px;
+    background-image: linear-gradient(
+      180deg,
+      rgb(0, 183, 255),
+      rgb(255, 48, 255)
+    );
+    height: 130%;
+    animation: rotBGimg 2.5s linear infinite;
+    transition: all 0.5s linear;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    background-color: light-dark(
+      var(--mantine-color-white),
+      var(--mantine-color-dark-7)
+    );
+    inset: 3px;
+    border-radius: 15px;
+  }
+
+  &:hover:before {
+    background-image: linear-gradient(180deg, rgb(81, 255, 0), purple);
+  }
+
+  @keyframes rotBGimg {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
+
 .item {
   display: flex;
   flex-direction: column;
@@ -5,18 +57,15 @@
   justify-content: center;
   text-align: center;
   border-radius: var(--mantine-radius-md);
-  background-color: light-dark(
-    var(--mantine-color-white),
-    var(--mantine-color-dark-7)
-  );
   transition: all 500ms ease;
   padding: var(--mantine-spacing-sm);
   gap: 5px;
   width: 100%;
   min-height: 115px;
 
-  @mixin hover {
-    box-shadow: var(--mantine-shadow-md);
-    transform: scale(1.05);
+  & img {
+    height: 100%;
   }
+
+  z-index: 1;
 }

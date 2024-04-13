@@ -20,6 +20,7 @@ export function BlogCard({ item }: { item: IBlog }) {
           src={urlForImage(item.heroImage.asset)}
           height={180}
           className={classes.image}
+          alt={item.title}
         />
       </Card.Section>
 
