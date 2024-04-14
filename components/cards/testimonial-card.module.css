@@ -5,7 +5,7 @@
   place-items: center;
   overflow: hidden;
   border-radius: 20px;
-  background: var(--mantine-color-body);
+  background: transparent;
 
   &::before {
     content: "";
