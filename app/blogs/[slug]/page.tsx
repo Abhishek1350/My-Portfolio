@@ -1,26 +1,28 @@
 import { TextAppearAnimation } from "@/components";
 import { Container, Title } from "@mantine/core";
 import styles from "./styles.module.css";
-import { getBlogBySlug, getBlogs } from "@/sanity/lib/actions";
+import { getBlogBySlug, getBlogSlugs } from "@/sanity/lib/actions";
 import { IBlog } from "@/sanity/lib/types";
 import { PortableText, PortableTextReactComponents } from "next-sanity";
 import { urlForImage } from "@/sanity/lib/image";
 import Image from "next/image";
+import { redirect } from "next/navigation";
 
 export const revalidate = 3600;
 
 export async function generateStaticParams() {
-    const blogs: IBlog[] = await getBlogs();
-
-    return blogs.map((post) => ({
-        slug: post.slug.current,
-    }));
+    return await getBlogSlugs();
 }
 
 export default async function Blog({ params }: { params: { slug: string } }) {
     const { slug } = params;
 
     const blog: IBlog = await getBlogBySlug(slug);
+
+    if (!blog) {
+        redirect("/404");
+    }
+
 
     const myPortableTextComponents: Partial<PortableTextReactComponents> = {
         types: {

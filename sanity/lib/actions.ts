@@ -110,14 +110,17 @@ export async function getBlogs() {
 }
 
 export async function getBlogBySlug(slug: string) {
-    const query = groq`*[_type == "blogs" && defined(slug.current)][0]{
+    const query = groq`*[slug.current == $slug][0]{
         title,
         metadesc,
         heroImage,
         tags,
         content
-    }`
+     }`
     const blog = await client.fetch(query, { slug });
+
+    if(!blog) return null;
+   
     const tagsQuery = groq`*[_type == "blogTags" && _id in $tagIds]{
         title
     }`;
@@ -130,8 +133,14 @@ export async function getBlogBySlug(slug: string) {
         ...blog,
         tags: tags.map((tag: any) => tag.title),
     };
-    
-    // return blog
+}
+
+export async function getBlogSlugs() {
+    const query = groq`*[_type == "blogs"]{
+        "slug": slug.current
+    }`;
+    const blogs = await client.fetch(query);
+    return blogs;
 }
 
 export async function getContactPageData() {
