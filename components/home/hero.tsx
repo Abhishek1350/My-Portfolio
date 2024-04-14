@@ -24,35 +24,44 @@ export function Hero({ data }: IHeroProps) {
     return (
         <Container size="lg">
             <Box className={classes.inner}>
-                <Box className={classes.content}>
-                    <Title order={1} className={classes.title} mb="md">
-                        <TextAppearAnimation
-                            text={`HI, I'm ${firstName}`}
-                            center={width < 768 ? true : false}
-                        />
-                    </Title>
-                    <Title order={2} className={classes.subtitle}>
-                        <WordAnimation
-                            words={slidingText}
-                            className={classes.wordAnimation}
-                        />
-                    </Title>
+                <Box>
+                    <Box className={classes.content}>
+                        <Title order={1} className={classes.title} mb="md">
+                            <TextAppearAnimation
+                                text={`HI, I'm ${firstName}`}
+                                center={width < 768 ? true : false}
+                            />
+                        </Title>
+                        <Title order={2} className={classes.subtitle}>
+                            <WordAnimation
+                                words={slidingText}
+                                className={classes.wordAnimation}
+                            />
+                        </Title>
 
-                    <Text c="dimmed" mt="md" component="div">
-                        <TextAppearAnimation
-                            text={oneLiner}
-                            center={width < 768 ? true : false}
-                        />
-                    </Text>
-
-                    <MotionDiv direction="up">
+                        <Text c="dimmed" mt="md" component="div">
+                            <TextAppearAnimation
+                                text={oneLiner}
+                                center={width < 768 ? true : false}
+                            />
+                        </Text>
+                    </Box>
+                    <MotionDiv direction="right">
                         <Box my="lg">
                             <button
                                 type="button"
                                 className={classes.readMoreBtn}
                                 onClick={() => router.push("#skills")}
                             >
-                                READ MORE
+                                <strong>Read More</strong>
+                                <div className={classes.containerStars}>
+                                    <div className={classes.stars}></div>
+                                </div>
+
+                                <div className={classes.glow}>
+                                    <div className={classes.circle}></div>
+                                    <div className={classes.circle}></div>
+                                </div>
                             </button>
                         </Box>
                     </MotionDiv>

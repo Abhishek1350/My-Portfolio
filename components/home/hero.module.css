@@ -63,56 +63,180 @@
 }
 
 .readMoreBtn {
-  position: relative;
-  width: 120px;
-  height: 40px;
-  background-color: #000;
+  text-decoration: none;
   display: flex;
-  align-items: center;
-  color: white;
-  flex-direction: column;
   justify-content: center;
-  border: none;
-  padding: 12px;
-  gap: 12px;
+  align-items: center;
+  width: 13rem;
+  overflow: hidden;
+  height: 3rem;
+  background-size: 300% 300%;
+  backdrop-filter: blur(1rem);
   border-radius: 8px;
+  transition: 0.5s;
+  animation: gradient_301 5s ease infinite;
+  border: double 4px transparent;
   cursor: pointer;
+  background-image: linear-gradient(#212121, #212121),
+    linear-gradient(
+      137.48deg,
+      #ffdb3b 10%,
+      #fe53bb 45%,
+      #8f51ea 67%,
+      #0044ff 87%
+    );
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  text-transform: uppercase;
+  font-weight: 700;
 
-  &:hover::before {
-    transform: rotate(180deg);
-  }
-
-  &:hover::after {
-    filter: blur(30px);
-  }
-
-  &:active::before {
-    scale: 0.7;
-  }
-
-  &::before {
-    content: "";
+  & .containerStars {
     position: absolute;
-    inset: 0;
-    left: -4px;
-    top: -1px;
-    margin: auto;
-    width: 128px;
-    height: 48px;
-    border-radius: 10px;
-    background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100%);
-    z-index: -10;
-    pointer-events: none;
-    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transition: 0.5s;
+    backdrop-filter: blur(1rem);
+    border-radius: 8px;
+    background-color: #212121;
 
-    &::after {
-      content: "";
-      z-index: -1;
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100%);
-      transform: translate3d(0, 0, 0) scale(0.95);
-      filter: blur(20px);
+    & .stars {
+      position: relative;
+      background: transparent;
+      width: 200rem;
+      height: 200rem;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: -10rem;
+        left: -100rem;
+        width: 100%;
+        height: 100%;
+        animation: animStarRotate 90s linear infinite;
+        background-image: radial-gradient(#ffffff 1px, transparent 1%);
+        background-size: 50px 50px;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -50%;
+        width: 170%;
+        height: 500%;
+        animation: animStar 60s linear infinite;
+        background-image: radial-gradient(#ffffff 1px, transparent 1%);
+        background-size: 50px 50px;
+        opacity: 0.5;
+      }
+    }
+  }
+
+  & strong {
+    z-index: 2;
+    font-size: 16px;
+    letter-spacing: 5px;
+    color: #ffffff;
+    text-shadow: 0 0 4px white;
+  }
+
+  & .glow {
+    position: absolute;
+    display: flex;
+    width: 12rem;
+  }
+
+  & .circle {
+    width: 100%;
+    height: 30px;
+    filter: blur(2rem);
+    animation: pulse_3011 4s infinite;
+    z-index: -1;
+
+    &:nth-of-type(1) {
+      background: rgba(254, 83, 186, 0.636);
+    }
+
+    &:nth-of-type(2) {
+      background: rgba(142, 81, 234, 0.704);
+    }
+  }
+
+  &:hover {
+    transform: scale(1.1);
+
+    & .containerStars {
+      z-index: 1;
+      background-color: transparent;
+    }
+  }
+
+  &:active {
+    border: double 4px #fe53bb;
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    animation: none;
+
+    & .circle {
+      background: #fe53bb;
+    }
+  }
+
+  @media (max-width: $mantine-breakpoint-sm) {
+    width: 80%;
+    margin: auto;
+  }
+
+  @keyframes animStar {
+    from {
+      transform: translateY(0);
+    }
+
+    to {
+      transform: translateY(-135rem);
+    }
+  }
+
+  @keyframes animStarRotate {
+    from {
+      transform: rotate(360deg);
+    }
+
+    to {
+      transform: rotate(0);
+    }
+  }
+
+  @keyframes gradient_301 {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  @keyframes pulse_3011 {
+    0% {
+      transform: scale(0.75);
+      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+    }
+
+    70% {
+      transform: scale(1);
+      box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+    }
+
+    100% {
+      transform: scale(0.75);
+      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
     }
   }
 }

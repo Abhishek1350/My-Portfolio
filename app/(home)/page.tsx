@@ -48,17 +48,9 @@ export default async function Home() {
           <RecentWork />
           <MotionDiv direction="up">
             <Box mt={50}>
-              <Link href="/projects" style={{textDecoration:"none"}}>
+              <Link href="/projects" style={{ textDecoration: "none" }}>
                 <UnstyledButton className={styles.workBtn}>
-                  <strong>View All</strong>
-                  <div className={styles.containerStars}>
-                    <div className={styles.stars}></div>
-                  </div>
-
-                  <div className={styles.glow}>
-                    <div className={styles.circle}></div>
-                    <div className={styles.circle}></div>
-                  </div>
+                  View All
                 </UnstyledButton>
               </Link>
             </Box>

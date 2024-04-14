@@ -28,7 +28,7 @@ export default async function Blog({ params }: { params: { slug: string } }) {
                 return (
                     <Image
                         src={urlForImage(value.asset)}
-                        alt={value.alt}
+                        alt={value.alt ?? "Abhishek's Blog"}
                         className={styles.image}
                         layout="responsive"
                         width={300}
@@ -48,7 +48,7 @@ export default async function Blog({ params }: { params: { slug: string } }) {
                     </Title>
                     <Image
                         src={urlForImage(blog.heroImage.asset)}
-                        alt={urlForImage(blog.heroImage.asset)}
+                        alt={urlForImage(blog.heroImage.asset) ?? "Abhishek's Blog"}
                         className={styles.image}
                         layout="responsive"
                         width={300}
