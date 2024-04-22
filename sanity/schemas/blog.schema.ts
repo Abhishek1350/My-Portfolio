@@ -42,7 +42,12 @@ const schema = {
                 source: "title",
                 maxLength: 200, // will be ignored if slugify is set
                 slugify: (input: any) =>
-                    input.toLowerCase().replace(/\s+/g, "-").slice(0, 200),
+                    input
+                        .toLowerCase()
+                        .replace(/\s+/g, "-") // Replace spaces with dashes
+                        .replace(/['"]/g, "") // Remove single quotes and double quotes
+                        .replace(/[^a-z0-9-]/g, "") // Remove characters that are not lowercase letters, numbers, or dashes
+                        .slice(0, 200), // Trim to first 200 characters
             },
         },
         {
