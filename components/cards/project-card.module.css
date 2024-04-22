@@ -3,7 +3,7 @@
     var(--mantine-color-white),
     var(--mantine-color-dark-7)
   );
-  min-height: 400px;
+  min-height: 460px;
   cursor: pointer;
   position: relative;
 

@@ -22,12 +22,12 @@ export function ProjectCard({ item }: { item: IProject }) {
                 <Image
                     src={urlForImage(item.heroImage.asset)}
                     alt={item.title}
-                    height={200}
+                    height={220}
                     className={classes.image}
                 />
             </Card.Section>
 
-            <Anchor href={item.liveUrl} target="_blank">
+            <Anchor href={item.liveUrl} target="_blank" className={classes.links}>
                 <Box className={classes.links}>
                     {item.githubUrl && (
                         <ActionIcon
@@ -58,16 +58,13 @@ export function ProjectCard({ item }: { item: IProject }) {
                 <Text fz="lg" fw={500}>
                     {item.title}
                 </Text>
-                <Text fz="sm" mt="xs" lineClamp={2}>
+                <Text fz="sm" mt="xs" lineClamp={4} >
                     {item.description}
                 </Text>
             </Card.Section>
 
             <Card.Section className={classes.section}>
-                <Text mt="md" className={classes.label} c="dimmed">
-                    Tech Stack
-                </Text>
-                <Group gap={7} mt={5}>
+                <Group gap={7} mt="md">
                     {item.technologies.map((badge: string, index: number) => (
                         <Badge variant="light" key={index}>
                             {badge}
