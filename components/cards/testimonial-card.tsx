@@ -8,7 +8,6 @@ export function TestimonialCard({ item }: { item: ITestimonial }) {
     <Paper
       withBorder
       p="lg"
-      mih={440}
       className={styles.card}
     >
       <Box className={styles.content}>

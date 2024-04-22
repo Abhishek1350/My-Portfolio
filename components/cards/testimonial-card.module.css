@@ -6,6 +6,7 @@
   overflow: hidden;
   border-radius: 20px;
   background: transparent;
+  min-height: 440px;
 
   &::before {
     content: "";
@@ -35,6 +36,9 @@
 }
 
 .content {
+  position: relative;
+  min-height: 430px;
+  top: 0;
   z-index: 1;
 }
 

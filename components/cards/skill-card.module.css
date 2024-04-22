@@ -64,7 +64,9 @@
   min-height: 115px;
 
   & img {
-    height: 100%;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
   }
 
   z-index: 1;
