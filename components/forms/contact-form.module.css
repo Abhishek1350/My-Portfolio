@@ -1,65 +1,58 @@
 .submitBtn {
-  --border-radius: 8px;
-  --border-width: 4px;
-  appearance: none;
-  position: relative;
-  border: 0;
-  background-color: #212121;
-  font-family: "Roboto", Arial, "Segoe UI", sans-serif;
-  font-size: 18px;
-  font-weight: 700;
-  color: #fff;
-  z-index: 2;
-  width: 100%;
-  padding: 12px;
+  font-size: 20px;
+  background: royalblue;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  overflow: hidden;
+  transition: all 0.2s;
   cursor: pointer;
-  border-radius: 12px;
+  font-weight: 700;
+  height: 3rem;
+  padding: 12px;
+  gap: 5px;
+  border-radius: 8px;
   text-transform: uppercase;
   letter-spacing: 5px;
+  width: 100%;
 
-  &::after {
-    --m-i: linear-gradient(#000, #000);
-    --m-o: content-box, padding-box;
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    padding: var(--border-width);
-    border-radius: var(--border-radius);
-    background-image: conic-gradient(
-      #488cfb,
-      #29dbbc,
-      #ddf505,
-      #ff9f0e,
-      #e440bb,
-      #655adc,
-      #488cfb
-    );
-    -webkit-mask-image: var(--m-i), var(--m-i);
-    mask-image: var(--m-i), var(--m-i);
-    -webkit-mask-origin: var(--m-o);
-    mask-origin: var(--m-o);
-    -webkit-mask-clip: var(--m-o);
-    mask-composite: exclude;
-    -webkit-mask-composite: destination-out;
-    filter: hue-rotate(0);
-    animation: rotate-hue linear 500ms infinite;
-    animation-play-state: paused;
+  & span {
+    display: block;
+    margin-left: 0.3em;
+    transition: all 0.3s ease-in-out;
   }
 
-  &:hover::after {
-    animation-play-state: running;
+  & svg {
+    display: block;
+    transform-origin: center center;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &:hover .svgWrapper {
+    animation: fly-1 0.6s ease-in-out infinite alternate;
+  }
+
+  &:hover svg {
+    transform: translateX(2em) rotate(45deg) scale(1.1);
+  }
+
+  &:hover span {
+    transform: translateX(100rem);
   }
 
   &:active {
-    --border-width: 5px;
+    transform: scale(0.95);
   }
-}
 
-@keyframes rotate-hue {
-  to {
-    filter: hue-rotate(1turn);
+  @keyframes fly-1 {
+    from {
+      transform: translateY(0.1em);
+    }
+
+    to {
+      transform: translateY(-0.1em);
+    }
   }
 }
