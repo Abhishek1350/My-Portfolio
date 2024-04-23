@@ -2,7 +2,7 @@ import {
   TextAppearAnimation,
   ContactForm,
   ContactIconsList,
-  StaggerItem
+  StaggerItem,
 } from "@/components";
 import {
   Title,
@@ -21,6 +21,13 @@ import {
 import styles from "./styles.module.css";
 import { getContactPageData } from "@/sanity/lib/actions";
 import { ISocialLink } from "@/sanity/lib/types";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Get in Touch | Contact Abhishek Bhardwaj",
+  description:
+    "Connect with Abhishek Bhardwaj, a talented ReactJS Developer/NextJS Developer. Reach out for collaborations, inquiries, or just to say hello. Use the contact form or find social media links to stay updated and engage in meaningful discussions about web development, ReactJS, NextJS, Redux, Material UI, TailwindCSS, and more.",
+};
 
 interface ContactPage {
   socialLinks: ISocialLink[];
@@ -29,7 +36,7 @@ interface ContactPage {
     phoneNumber: string;
     address: string;
     workingHours: string;
-  }
+  };
 }
 
 export const revalidate = 3600;
@@ -87,24 +94,26 @@ export default async function ContactPage() {
     }
   };
 
-  const socialLinksList = socialLinks.map((link: ISocialLink, index: number) => {
-    return (
-      <StaggerItem index={index} key={link._id}>
-        <ActionIcon
-          size="lg"
-          radius="xl"
-          component="a"
-          href={link.url}
-          target="_black"
-          rel="noopener noreferrer"
-          variant="gradient"
-          gradient={getGradient(link.title)}
-        >
-          {getSocialIcons(link.title)}
-        </ActionIcon>
-      </StaggerItem>
-    );
-  });
+  const socialLinksList = socialLinks.map(
+    (link: ISocialLink, index: number) => {
+      return (
+        <StaggerItem index={index} key={link._id}>
+          <ActionIcon
+            size="lg"
+            radius="xl"
+            component="a"
+            href={link.url}
+            target="_black"
+            rel="noopener noreferrer"
+            variant="gradient"
+            gradient={getGradient(link.title)}
+          >
+            {getSocialIcons(link.title)}
+          </ActionIcon>
+        </StaggerItem>
+      );
+    }
+  );
 
   return (
     <main className={styles.section}>
@@ -127,7 +136,7 @@ export default async function ContactPage() {
             <Group mt="xl">{socialLinksList}</Group>
           </div>
           <div className={styles.form}>
-            <ContactForm currentEmail={contactDetails?.email}/>
+            <ContactForm currentEmail={contactDetails?.email} />
           </div>
         </SimpleGrid>
       </Container>

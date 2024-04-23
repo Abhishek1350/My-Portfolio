@@ -14,6 +14,15 @@ import Link from "next/link";
 import { Suspense } from "react";
 import { fetchData } from "@/sanity/lib/actions";
 import { IPersonalInfo, ISkill, IExperience } from "@/sanity/lib/types";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title:
+    "Abhishek Bhardwaj | Expert Software Developer based in Himachal Pradesh, India",
+  description:
+    "Explore the portfolio of Abhishek Bhardwaj based in Himachal Pradesh, a skilled ReactJS Developer/NextJS Developer. Discover expertise in ReactJS, NextJS, Redux, Material UI, and TailwindCSS showcased through innovative web development projects.",
+};
+
 
 export const revalidate = 3600;
 

@@ -1,18 +1,24 @@
 import type { Metadata } from "next";
 import "@mantine/core/styles.css";
 import { ColorSchemeScript, MantineProvider } from "@mantine/core";
-import { Header, Footer, ScrollProgress, ScrollToTop, MainLoader } from "@/components";
+import {
+  Header,
+  Footer,
+  ScrollProgress,
+  ScrollToTop,
+  MainLoader,
+} from "@/components";
 import "./globals.css";
 import { Libre_Franklin } from "next/font/google";
 import { Suspense } from "react";
-import { Analytics } from '@vercel/analytics/react';
-import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title:
-    "Abhishek Bhardwaj | Expert Software Engineer | Chamba, Himachal Pradesh, India",
+    "Abhishek Bhardwaj | Expert Software Developer based in Himachal Pradesh, India",
   description:
-    "Abhishek Bhardwaj, a top Software Engineer from Chamba, Himachal Pradesh, India. Expert in crafting lightning-fast, responsive, and modern websites. Explore now!",
+    "Explore the portfolio of Abhishek Bhardwaj based in Himachal Pradesh, a skilled ReactJS Developer/NextJS Developer. Discover expertise in ReactJS, NextJS, Redux, Material UI, and TailwindCSS showcased through innovative web development projects.",
 };
 
 const font = Libre_Franklin({
@@ -42,8 +48,8 @@ export default function RootLayout({
             <Footer />
           </Suspense>
         </MantineProvider>
-        <Analytics/>
-        <SpeedInsights/>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

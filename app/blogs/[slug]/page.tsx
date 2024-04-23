@@ -7,6 +7,22 @@ import { PortableText, PortableTextReactComponents } from "next-sanity";
 import { urlForImage } from "@/sanity/lib/image";
 import Image from "next/image";
 import { redirect } from "next/navigation";
+import type { Metadata } from "next";
+
+export async function generateMetadata({
+    params,
+}: {
+    params: { slug: string };
+}): Promise<Metadata> {
+    const { slug } = params;
+
+    const blog: IBlog = await getBlogBySlug(slug);
+
+    return {
+        title: `${blog?.title}| Abhishek's Blog`,
+        description: blog?.metadesc,
+    };
+}
 
 export const revalidate = 3600;
 
@@ -22,7 +38,6 @@ export default async function Blog({ params }: { params: { slug: string } }) {
     if (!blog) {
         redirect("/404");
     }
-
 
     const myPortableTextComponents: Partial<PortableTextReactComponents> = {
         types: {

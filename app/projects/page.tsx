@@ -1,8 +1,15 @@
-import { TextAppearAnimation, ProjectCard, StaggerItem  } from "@/components";
+import { TextAppearAnimation, ProjectCard, StaggerItem } from "@/components";
 import { Container, Title, SimpleGrid } from "@mantine/core";
 import styles from "./styles.module.css";
 import { getProjects } from "@/sanity/lib/actions";
 import { IProject } from "@/sanity/lib/types";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Projects Showcase | Abhishek's Portfolio",
+    description:
+        "Explore a diverse collection of cutting-edge projects crafted by Abhishek Bhardwaj, a proficient ReactJS Developer/NextJS developer. Delve into web applications built with ReactJS, NextJS, Redux, Material UI, TailwindCSS, and other modern technologies. From innovative UI/UX designs to seamless user experiences, discover the expertise and creativity behind each project showcased in this portfolio.",
+};
 
 export const revalidate = 3600;
 
