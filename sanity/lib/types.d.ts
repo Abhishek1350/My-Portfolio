@@ -19,6 +19,11 @@ export interface IPersonalInfo {
     moreInfo: string;
     phoneNumber: string;
     _id: string;
+    setupImage: {
+        asset: {
+            url: string;
+        };
+    };
 }
 
 export interface ISkill {
