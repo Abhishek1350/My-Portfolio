@@ -83,6 +83,11 @@ const schema = {
             },
         },
         {
+            name: "setupImage",
+            title: "Setup Image",
+            type: "image",
+        },
+        {
             name: "moreInfo",
             title: "More Information",
             type: "text",

@@ -51,14 +51,15 @@
 
 .image {
   width: 100%;
-  object-fit: contain;
+  object-fit: cover;
   display: block;
   margin: auto;
-  border-radius: 50%;
-  @media (max-width: $mantine-breakpoint-sm) {
-    margin-bottom: max(var(--mantine-spacing-xl));
-    height: 85%;
-    width: 85%;
+  border-radius: 10% 15%;
+  max-height: 340px;
+  @media (max-width: $mantine-breakpoint-md) {
+    margin-bottom: max(var(--mantine-spacing-lg));
+    max-width: 275px;
+    max-height: 300px;
   }
 }
 
