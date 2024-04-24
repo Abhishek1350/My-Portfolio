@@ -12,7 +12,7 @@ import styles from "./styles.module.css";
 import { Box, Title, Container, UnstyledButton } from "@mantine/core";
 import Link from "next/link";
 import { Suspense } from "react";
-import { fetchData } from "@/sanity/lib/actions";
+import { fetchData, getFileUrl } from "@/sanity/lib/actions";
 import { IPersonalInfo, ISkill, IExperience } from "@/sanity/lib/types";
 import type { Metadata } from "next";
 
@@ -23,7 +23,6 @@ export const metadata: Metadata = {
     "Explore the portfolio of Abhishek Bhardwaj based in Himachal Pradesh, a skilled ReactJS Developer/NextJS Developer. Discover expertise in ReactJS, NextJS, Redux, Material UI, and TailwindCSS showcased through innovative web development projects.",
 };
 
-
 export const revalidate = 3600;
 
 export default async function Home() {
@@ -31,12 +30,13 @@ export default async function Home() {
   const heroData: IPersonalInfo = fullData.personalInfo;
   const skillsData: ISkill[] = fullData.skills;
   const experienceData: IExperience[] = fullData.experience;
+  const resumeUrl = await getFileUrl(heroData.resume);
 
   return (
     <main>
       <section className={styles.hero}>
         <Suspense fallback={<PageLoader />}>
-          <Hero data={heroData} />
+          <Hero data={heroData} resumeUrl={resumeUrl} />
         </Suspense>
       </section>
 

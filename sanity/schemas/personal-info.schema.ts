@@ -74,6 +74,14 @@ const schema = {
             type: "string",
         },
         {
+            name: "resume",
+            title: "Resume",
+            type: "file",
+            options: {
+                accept: ".pdf"
+            },
+        },
+        {
             name: "profleImage",
             title: "Profile Image",
             type: "image",

@@ -157,3 +157,8 @@ export async function getContactPageData() {
         contactDetails,
     };
 }
+
+export function getFileUrl(file: any) {
+    const query = groq`*[_id == $id][0].url`;
+    return client.fetch(query, { id: file.asset._ref });
+}
