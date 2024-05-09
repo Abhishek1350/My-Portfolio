@@ -19,6 +19,28 @@ export const metadata: Metadata = {
     "Abhishek Bhardwaj | Expert Software Developer based in Himachal Pradesh, India",
   description:
     "Explore the portfolio of Abhishek Bhardwaj based in Himachal Pradesh, a skilled ReactJS Developer/NextJS Developer. Discover expertise in ReactJS, NextJS, Redux, Material UI, and TailwindCSS showcased through innovative web development projects.",
+  keywords:
+    "Abhishek Bhardwaj, ReactJS Developer, NextJS Developer, ReactJS, NextJS, Redux, Material UI, TailwindCSS, Web Development, Portfolio, Himachal Pradesh, India",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    title:
+      "Abhishek Bhardwaj | Expert Software Developer based in Himachal Pradesh, India",
+    description:
+      "Explore the portfolio of Abhishek Bhardwaj based in Himachal Pradesh, a skilled ReactJS Developer/NextJS Developer. Discover expertise in ReactJS, NextJS, Redux, Material UI, and TailwindCSS showcased through innovative web development projects.",
+    images: [
+      {
+        url: "/home/profile.jpg",
+        alt: "Abhishek Bhardwaj | Expert Software Developer based in Himachal Pradesh, India",
+      },
+    ],
+  },
+  robots:
+    "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 const font = Libre_Franklin({
@@ -36,7 +58,6 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <ColorSchemeScript />
-        <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body className={font.className}>
         <MantineProvider defaultColorScheme="auto">
