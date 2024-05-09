@@ -24,9 +24,23 @@ import { ISocialLink } from "@/sanity/lib/types";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Get in Touch | Contact Abhishek Bhardwaj",
+  title: "Get in Touch | Contact Abhishek Bhardwaj | ReactJS Developer/NextJS Developer",
   description:
     "Connect with Abhishek Bhardwaj, a talented ReactJS Developer/NextJS Developer. Reach out for collaborations, inquiries, or just to say hello. Use the contact form or find social media links to stay updated and engage in meaningful discussions about web development, ReactJS, NextJS, Redux, Material UI, TailwindCSS, and more.",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    title:
+      "Get in Touch | Contact Abhishek Bhardwaj | ReactJS Developer/NextJS Developer",
+    description:
+      "Connect with Abhishek Bhardwaj, a talented ReactJS Developer/NextJS Developer. Reach out for collaborations, inquiries, or just to say hello. Use the contact form or find social media links to stay updated and engage in meaningful discussions about web development, ReactJS, NextJS, Redux, Material UI, TailwindCSS, and more.",
+    images: [
+      {
+        url: "/og-image.png",
+        alt: "Abhishek Bhardwaj | Expert Software Developer based in Himachal Pradesh, India",
+      },
+    ],
+  },
 };
 
 interface ContactPage {

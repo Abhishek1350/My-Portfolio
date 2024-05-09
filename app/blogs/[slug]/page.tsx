@@ -21,6 +21,18 @@ export async function generateMetadata({
     return {
         title: `${blog?.title}| Abhishek's Blog`,
         description: blog?.metadesc,
+        openGraph: {
+            type: "website",
+            locale: "en_US",
+            title:`${blog?.title}| Abhishek's Blog`,
+            description: blog?.metadesc,
+            images: [
+                {
+                    url: urlForImage(blog.heroImage.asset),
+                    alt: blog?.title ?? "Abhishek's Blog",
+                },
+            ],
+        },
     };
 }
 
