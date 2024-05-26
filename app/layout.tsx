@@ -15,12 +15,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
-  title:
-    "Abhishek Bhardwaj | Expert Software Developer based in Himachal Pradesh, India",
-  description:
-    "Explore the portfolio of Abhishek Bhardwaj based in Himachal Pradesh, a skilled ReactJS Developer/NextJS Developer. Discover expertise in ReactJS, NextJS, Redux, Material UI, and TailwindCSS showcased through innovative web development projects.",
-  keywords:
-    "Abhishek Bhardwaj, ReactJS Developer, NextJS Developer, ReactJS, NextJS, Redux, Material UI, TailwindCSS, Web Development, Portfolio, Himachal Pradesh, India",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_CURRENT_SITE_URL as string),
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -35,6 +30,12 @@ export const metadata: Metadata = {
       },
     ],
   },
+  title:
+    "Abhishek Bhardwaj | Expert Software Developer based in Himachal Pradesh, India",
+  description:
+    "Explore the portfolio of Abhishek Bhardwaj based in Himachal Pradesh, a skilled ReactJS Developer/NextJS Developer. Discover expertise in ReactJS, NextJS, Redux, Material UI, and TailwindCSS showcased through innovative web development projects.",
+  keywords:
+    "Abhishek Bhardwaj, ReactJS Developer, NextJS Developer, ReactJS, NextJS, Redux, Material UI, TailwindCSS, Web Development, Portfolio, Himachal Pradesh, India",
   robots:
     "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
   icons: {

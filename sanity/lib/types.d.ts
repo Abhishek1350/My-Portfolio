@@ -88,7 +88,7 @@ export interface ITestimonial {
     };
     _id: string;
     position: string;
-    priority: 1,
+    priority: number
     image: {
         asset: {
             url: string;
@@ -103,6 +103,7 @@ export interface ISocialLink {
     _id: string;
     title: string;
     url: string;
+    priority: number;
 }
 
 export interface IBlog {
