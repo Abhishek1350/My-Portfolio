@@ -13,7 +13,6 @@ import styles from "./contact-form.module.css";
 import { useState } from "react";
 import { CommonLoader, TextAppearAnimation } from "@/components";
 import { useDisclosure } from "@mantine/hooks";
-import { sendMail } from "@/actions";
 
 export function ContactForm({ currentEmail }: { currentEmail: string }) {
     const [loading, setLoading] = useState(false);
@@ -50,7 +49,19 @@ export function ContactForm({ currentEmail }: { currentEmail: string }) {
         if (loading) return;
         setLoading(true);
         try {
-            const data = await sendMail(form.values);
+            const response = await fetch("/api/send-email", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(form.values),
+            });
+
+            if (!response.ok) {
+                return setDialogMessage("Something went wrong, please try again later");
+            }
+
+            const data = await response.json();
 
             if (!data.success) {
                 return setDialogMessage(
