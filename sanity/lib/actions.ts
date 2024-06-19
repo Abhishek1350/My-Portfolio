@@ -137,7 +137,9 @@ export async function getBlogBySlug(slug: string) {
 
 export async function getBlogSlugs() {
     const query = groq`*[_type == "blogs"]{
-        "slug": slug.current
+        "slug": slug.current,
+        _updatedAt,
+        _createdAt
     }`;
     const blogs = await client.fetch(query);
     return blogs;
