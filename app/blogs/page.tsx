@@ -7,7 +7,7 @@ import { IBlog } from "@/sanity/lib/types";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Insights and Knowledge | Abhishek's Blog",
+    title: "Insights and Knowledge | Abhishek Bhardwaj's Blog",
     description:
         "Dive into a treasure trove of insights, tutorials, and reflections curated by Abhishek Bhardwaj, a seasoned ReactJS Developer/NextJS developer. Explore topics ranging from ReactJS, NextJS, Redux, Material UI, TailwindCSS, and beyond. Discover valuable resources and stay updated with the latest trends in web development through engaging articles and thought-provoking discussions.",
     openGraph: {
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
         images: [
             {
                 url: "/og-image.png",
-                alt: "Abhishek Bhardwaj | Expert Software Developer based in Himachal Pradesh, India",
+                alt: "Abhishek Bhardwaj | React/Next.js Developer based in Himachal Pradesh, India",
             },
         ],
     },

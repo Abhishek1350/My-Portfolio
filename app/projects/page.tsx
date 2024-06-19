@@ -6,20 +6,20 @@ import { IProject } from "@/sanity/lib/types";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Projects Showcase | Abhishek's Portfolio | ReactJS Developer/NextJS Developer",
+    title: "Projects Showcase | Abhishek Bhardwaj's Portfolio | React/NextJS Developer",
     description:
         "Explore a diverse collection of cutting-edge projects crafted by Abhishek Bhardwaj, a proficient ReactJS Developer/NextJS developer. Delve into web applications built with ReactJS, NextJS, Redux, Material UI, TailwindCSS, and other modern technologies. From innovative UI/UX designs to seamless user experiences, discover the expertise and creativity behind each project showcased in this portfolio.",
         openGraph: {
             type: "website",
             locale: "en_US",
             title:
-              "Projects Showcase | Abhishek's Portfolio | ReactJS Developer/NextJS Developer",
+              "Projects Showcase | Abhishek Bhardwaj's Portfolio | React/NextJS Developer",
             description:
               "Explore a diverse collection of cutting-edge projects crafted by Abhishek Bhardwaj, a proficient ReactJS Developer/NextJS developer. Delve into web applications built with ReactJS, NextJS, Redux, Material UI, TailwindCSS, and other modern technologies. From innovative UI/UX designs to seamless user experiences, discover the expertise and creativity behind each project showcased in this portfolio.",
             images: [
               {
                 url: "/og-image.png",
-                alt: "Abhishek Bhardwaj | Expert Software Developer based in Himachal Pradesh, India",
+                alt: "Projects Showcase | Abhishek Bhardwaj's Portfolio | React/NextJS Developer",
               },
             ],
           },

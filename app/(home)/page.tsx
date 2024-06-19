@@ -18,20 +18,18 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title:
-    "Abhishek Bhardwaj | Expert Software Developer based in Himachal Pradesh, India",
+    "Abhishek Bhardwaj | React/Next.js Developer based in Himachal Pradesh, India",
   description:
-    "Explore the portfolio of Abhishek Bhardwaj based in Himachal Pradesh, a skilled ReactJS Developer/NextJS Developer. Discover expertise in ReactJS, NextJS, Redux, Material UI, and TailwindCSS showcased through innovative web development projects.",
+    "Explore the portfolio of Abhishek Bhardwaj based in Himachal Pradesh, a skilled React/Next.js Developer. Discover expertise in ReactJS, NextJS, Redux, Material UI, and TailwindCSS showcased through innovative web development projects.",
   openGraph: {
-    type: "website",
-    locale: "en_US",
     title:
-      "Abhishek Bhardwaj | Expert Software Developer based in Himachal Pradesh, India",
+      "Abhishek Bhardwaj | React/Next.js Developer based in Himachal Pradesh, India",
     description:
-      "Explore the portfolio of Abhishek Bhardwaj based in Himachal Pradesh, a skilled ReactJS Developer/NextJS Developer. Discover expertise in ReactJS, NextJS, Redux, Material UI, and TailwindCSS showcased through innovative web development projects.",
+      "Explore the portfolio of Abhishek Bhardwaj based in Himachal Pradesh, a skilled React/Next.js Developer. Discover expertise in ReactJS, NextJS, Redux, Material UI, and TailwindCSS showcased through innovative web development projects.",
     images: [
       {
         url: "/og-image.png",
-        alt: "Abhishek Bhardwaj | Expert Software Developer based in Himachal Pradesh, India",
+        alt: "Abhishek Bhardwaj | React/Next.js Developer based in Himachal Pradesh, India",
       },
     ],
   },

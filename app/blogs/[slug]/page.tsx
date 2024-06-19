@@ -19,12 +19,12 @@ export async function generateMetadata({
     const blog: IBlog = await getBlogBySlug(slug);
 
     return {
-        title: `${blog?.title}| Abhishek's Blog`,
+        title: `${blog?.title}| Abhishek Bhardwaj's Blog`,
         description: blog?.metadesc,
         openGraph: {
             type: "website",
             locale: "en_US",
-            title:`${blog?.title}| Abhishek's Blog`,
+            title:`${blog?.title}| Abhishek Bhardwaj's Blog`,
             description: blog?.metadesc,
             images: [
                 {
