@@ -1,5 +1,0 @@
-export * from "./hero"
-export { RecentWork } from "./work"
-export * from "./skills-experience"
-export * from "./testimonials"
-export * from "./contact"
