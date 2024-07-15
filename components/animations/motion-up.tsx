@@ -4,9 +4,11 @@ import { motion } from "framer-motion";
 export function MotionUp({
     children,
     className,
+    delay=0
 }: {
     children: React.ReactNode;
-    className: string;
+    className?: string;
+    delay?: number;
 }) {
     return (
         <motion.div
@@ -19,6 +21,7 @@ export function MotionUp({
                 y: [100, -10, 0],
             }}
             transition={{
+                delay:delay,
                 duration: 1,
                 ease: [0.4, 0.0, 0.2, 1],
             }}
