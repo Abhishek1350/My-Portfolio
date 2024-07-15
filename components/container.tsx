@@ -3,10 +3,10 @@ export function Container({
     className,
 }: {
     children: React.ReactNode;
-    className: string;
+    className?: string;
 }) {
     return (
-        <div className={`max-w-7xl w-full mx-auto ${className}`}>
+        <div className={`max-w-6xl w-full mx-auto px-6 sm:px-0 ${className}`}>
             {children}
         </div>
     );
