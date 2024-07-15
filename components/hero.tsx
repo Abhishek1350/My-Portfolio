@@ -23,44 +23,48 @@ export function Hero() {
         <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black-100 bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
       </div>
 
-      <MotionUp className="flex justify-center relative my-20 z-10 w-full">
+      <div className="flex justify-center relative my-20 z-10 w-full">
         <div className="flex flex-col items-center justify-center w-full">
 
-          <p className="uppercase md:tracking-wider text-[16px] mb-1 sm:text-2xl text-center font-bold text-blue-100">
-            Hi, This is <Highlight>Abhishek Bhardwaj</Highlight>
-          </p>
+          <MotionUp>
+            <p className="uppercase md:tracking-wider text-[16px] mb-1 sm:text-2xl text-center font-bold text-blue-100">
+              Hi, This is <Highlight delay={0.6}>Abhishek Bhardwaj</Highlight>
+            </p>
+          </MotionUp>
 
-          <h1 className="text-3xl md:text-6xl text-neutral-700 dark:text-white max-w-4xl !leading-snug text-center mx-auto font-[900]">
-            I'm a Professional
-            <br />
-            <Highlight>Software Developer</Highlight>
-          </h1>
+          <MotionUp delay={1.9}>
+            <h1 className="text-3xl md:text-6xl text-neutral-700 dark:text-white max-w-4xl !leading-snug text-center mx-auto font-[900]">
+              I'm a Professional
+              <br />
+              <Highlight delay={2.6}>Software Developer</Highlight>
+            </h1>
+          </MotionUp>
 
-          <MotionUp delay={1.8}>
+          <MotionUp delay={3.8}>
             <p className="text-center leading-5 md:tracking-wider font-semibold my-4 text-sm md:text-lg lg:text-2xl max-w-[500px] text-blue-100">
               Based in Himachal Pradesh, India,
               <br />
               Specialized in React and Next.js.
             </p>
+          </MotionUp>
 
-            <div className="flex items-center gap-3 mt-5">
-              <MagicButton
-                title="Read More"
-                icon={<FaLocationArrow />}
-                position="right"
-                className="w-fit text-lg"
-              />
+          <MotionUp delay={4.2} className="flex items-center gap-3 mt-5">
+            <MagicButton
+              title="Read More"
+              icon={<FaLocationArrow />}
+              position="right"
+              className="w-fit text-lg"
+            />
 
-              <MagicButton
-                title="Resume"
-                icon={<FaLocationArrow />}
-                position="right"
-                className="w-fit text-lg"
-              />
-            </div>
+            <MagicButton
+              title="Resume"
+              icon={<FaLocationArrow />}
+              position="right"
+              className="w-fit text-lg"
+            />
           </MotionUp>
         </div>
-      </MotionUp>
+      </div>
     </div>
   );
 }

@@ -5,9 +5,11 @@ import { motion } from "framer-motion";
 export function Highlight({
     children,
     className,
+    delay=1
 }: {
     children: React.ReactNode;
     className?: string;
+    delay?:number
 }) {
     return (
         <motion.span
@@ -20,7 +22,7 @@ export function Highlight({
             transition={{
                 duration: 1.3,
                 ease: "linear",
-                delay: 0.5,
+                delay: delay
             }}
             style={{
                 backgroundRepeat: "no-repeat",
