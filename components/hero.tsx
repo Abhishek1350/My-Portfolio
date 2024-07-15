@@ -5,10 +5,11 @@ import {
   MotionUp,
   Highlight,
 } from "./animations/index";
+import { Container } from "./container";
 
 export function Hero() {
   return (
-    <div className="py-20 h-screen w-full">
+    <section className="py-20 h-screen w-full">
       <Spotlight
         className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"
         fill="white"
@@ -23,7 +24,7 @@ export function Hero() {
         <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black-100 bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
       </div>
 
-      <div className="flex justify-center relative my-20 z-10 w-full">
+      <Container className="flex justify-center relative my-20 z-10 w-full">
         <div className="flex flex-col items-center justify-center w-full">
 
           <MotionUp>
@@ -64,7 +65,7 @@ export function Hero() {
             />
           </MotionUp>
         </div>
-      </div>
-    </div>
+      </Container>
+    </section>
   );
 }
