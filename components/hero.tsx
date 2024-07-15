@@ -11,12 +11,12 @@ import Image from "next/image";
 export function Hero() {
   return (
     <section>
-      <Spotlight
-        className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"
-        fill="white"
-      />
-      <Spotlight className="h-[80vh] w-[50vw] top-10 left-full" fill="purple" />
-      <Spotlight className="left-80 top-28 h-[80vh] w-[50vw]" fill="blue" />
+        <Spotlight
+          className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"
+          fill="black"
+        />
+        <Spotlight className="h-[80vh] w-[50vw] top-10 left-full" fill="black" />
+        <Spotlight className="left-80 top-28 h-[80vh] w-[50vw]" fill="#e4ecff" />
 
       <div
         className="h-full w-full dark:bg-black-100 bg-white
@@ -34,7 +34,7 @@ export function Hero() {
           </MotionUp>
 
           <MotionUp delay={0.3}>
-            <h1 className="text-3xl md:text-6xl text-neutral-700 dark:text-white max-w-4xl !leading-snug text-center mx-auto font-[900]">
+            <h1 className="text-3xl md:text-6xl text-neutral-700 dark:text-blue-100  max-w-4xl !leading-snug text-center mx-auto font-[900]">
               I'm a Professional
               <br />
               <Highlight delay={1.8}>Software Developer</Highlight>
@@ -42,7 +42,7 @@ export function Hero() {
           </MotionUp>
 
           <MotionUp delay={0.6}>
-            <p className="text-center leading-5 md:tracking-wider font-semibold my-4 text-sm md:text-lg lg:text-2xl max-w-[500px] text-blue-100 ">
+            <p className="text-center leading-5 md:tracking-wider font-semibold my-4 text-sm md:text-lg lg:text-2xl max-w-[500px] text-white ">
               Based in Himachal Pradesh, India,
               <br />
               Specialized in React and Next.js.
