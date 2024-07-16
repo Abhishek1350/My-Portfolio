@@ -29,7 +29,7 @@ export function Highlight({
                 backgroundPosition: "left center",
                 display: "inline",
             }}
-            className={`relative inline-block pb-1 px-1 rounded-lg bg-gradient-to-r from-green-300 via-lime-400 to-emerald-500 dark:from-red-700 dark:via-red-700 dark:to-orange-600 ${className}`}
+            className={`relative inline-block py-1 px-2 rounded-md bg-gradient-to-r from-green-300 via-lime-400 to-emerald-500 dark:from-red-700 dark:via-red-700 dark:to-orange-600 ${className}`}
         >
             {children}
         </motion.span>
