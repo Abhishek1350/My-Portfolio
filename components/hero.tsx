@@ -10,7 +10,7 @@ import Image from "next/image";
 
 export function Hero() {
   return (
-    <section className="py-20">
+    <section className="pt-20">
       <Spotlight
         className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"
         fill="black"
@@ -19,7 +19,7 @@ export function Hero() {
       <Spotlight className="left-80 top-28 h-[80vh] w-[50vw]" fill="#e4ecff" />
 
       <div
-        className="h-full w-full dark:bg-black-100 bg-white
+        className="h-[100vh] w-full dark:bg-black-100 bg-white
        absolute top-0 left-0 flex items-center justify-center dark:bg-dot-white/[0.2] bg-dot-black/[0.2]"
       >
         <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black-100 bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
@@ -27,9 +27,9 @@ export function Hero() {
 
       <Container className="flex justify-center relative z-10 w-full">
         <div className="flex flex-col items-center justify-center w-full">
-          <MotionUp delay={0}>
-            <p className="uppercase md:tracking-wider text-lg mb-1 sm:text-2xl text-center font-bold text-blue-100">
-              Hi, This is <Highlight delay={1.8}>Abhishek Bhardwaj</Highlight>
+          <MotionUp delay={0} className="mb-2 md:mb-1">
+            <p className="uppercase md:tracking-wider text-lg sm:text-2xl text-center font-bold text-blue-100">
+              Hi, This is <Highlight delay={1.8}>Abhishek</Highlight>
             </p>
           </MotionUp>
 
@@ -41,8 +41,8 @@ export function Hero() {
             </h1>
           </MotionUp>
 
-          <MotionUp delay={0.6}>
-            <p className="text-center leading-7  font-semibold my-4 text-lg lg:text-2xl max-w-xl  text-blue-100 ">
+          <MotionUp delay={0.6} className="my-4">
+            <p className="text-center !leading-7 md:!leading-9  font-semibold text-lg lg:text-2xl max-w-xl  text-blue-100 ">
               Based in Himachal Pradesh, India,
               <br />
               Specialized in <Highlight delay={1.8}>React</Highlight> and{" "}
@@ -68,7 +68,7 @@ export function Hero() {
         </div>
       </Container>
 
-      <Container className="my-12 lg:my-16 z-20 relative">
+      <Container className="mt-12 lg:mt-16 z-20 relative">
         <MotionUp delay={1.2}>
           <div
             className="p-20 rounded-lg"
