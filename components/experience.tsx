@@ -1,8 +1,9 @@
 import { Container } from "./container";
-import Lottie from "@/data/code.json";
+import expLottie from "@/data/experience.json";
 import { AnimationLottie, MovingBorder } from "./animations";
 import Image from "next/image";
 import Link from "next/link";
+import Marquee from "react-fast-marquee";
 
 export const experiences = [
     {
@@ -37,6 +38,57 @@ export const experiences = [
     },
 ];
 
+export const skills = [
+    {
+        id: 1,
+        title: "React",
+        img: "/logo.webp",
+        url: "freegameshub.fun",
+    },
+    {
+        id: 2,
+        title: "React",
+        img: "/logo.webp",
+        url: "freegameshub.fun",
+    },
+    {
+        id: 3,
+        title: "React",
+        img: "/logo.webp",
+        url: "freegameshub.fun",
+    },
+    {
+        id: 4,
+        title: "React",
+        img: "/logo.webp",
+        url: "freegameshub.fun",
+    },
+    {
+        id: 5,
+        title: "React",
+        img: "/logo.webp",
+        url: "freegameshub.fun",
+    },
+    {
+        id: 6,
+        title: "React",
+        img: "/logo.webp",
+        url: "freegameshub.fun",
+    },
+    {
+        id: 7,
+        title: "React",
+        img: "/logo.webp",
+        url: "freegameshub.fun",
+    },
+    {
+        id: 8,
+        title: "React",
+        img: "/logo.webp",
+        url: "freegameshub.fun",
+    },
+];
+
 export function Experience() {
     return (
         <section className="py-20 relative w-full dark:bg-grid-white/[0.05] bg-grid-black-100/[0.2]">
@@ -54,7 +106,7 @@ export function Experience() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 mt-12">
                     <div className="flex justify-center items-start">
                         <div className="w-full h-full">
-                            <AnimationLottie animationData={Lottie} />
+                            <AnimationLottie animationData={expLottie} />
                         </div>
                     </div>
 
@@ -102,6 +154,51 @@ export function Experience() {
                             </MovingBorder>
                         ))}
                     </div>
+                </div>
+
+                <div className="mt-20">
+                    <div className="flex justify-center">
+                        <div className="flex  items-center">
+                            <span className="w-24 h-[2px] bg-slate-800"></span>
+                            <h6 className="bg-slate-900 w-fit font-bold text-3xl text-blue-100 p-2 px-5 rounded-md">
+                                Skills
+                            </h6>
+                            <span className="w-24 h-[2px] bg-slate-800"></span>
+                        </div>
+                    </div>
+
+                    <Marquee speed={90} pauseOnHover className="mt-12">
+                        {skills.map((skill) => (
+                            <MovingBorder
+                                key={skill.id}
+                                duration={Math.floor(Math.random() * 10000) + 10000}
+                                borderRadius="1rem"
+                                style={{
+                                    borderRadius: `calc(1rem* 0.96)`,
+                                }}
+                                className="text-black w-40 h-40 dark:text-blue-100 border-neutral-200 dark:border-slate-800"
+                            >
+                                <div className="flex flex-col items-center w-full">
+                                    <Image
+                                        src={skill.img}
+                                        alt={skill.title}
+                                        width={80}
+                                        height={80}
+                                        className="rounded-full w-14 object-cover"
+                                    />
+                                    <h3 className="text-start text-lg md:text-2xl font-bold">
+                                        <Link
+                                            target="_blank"
+                                            href={skill.url}
+                                            className="hover:underline"
+                                        >
+                                            {skill.title}
+                                        </Link>
+                                    </h3>
+                                </div>
+                            </MovingBorder>
+                        ))}
+                    </Marquee>
                 </div>
             </Container>
         </section>
