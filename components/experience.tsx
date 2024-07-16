@@ -2,6 +2,7 @@ import { Container } from "./container";
 import Lottie from "@/data/code.json";
 import { AnimationLottie, MovingBorder } from "./animations";
 import Image from "next/image";
+import Link from "next/link";
 
 export const experiences = [
     {
@@ -10,6 +11,9 @@ export const experiences = [
         company: "FAB Web Studio",
         duration: "Jan 2024 - Present",
         img: "/logo.webp",
+        compnayUrl: "freegameshub.fun",
+        companyType: "Service",
+        desc: "Building and managing interactive frontend UIs using React and Next.js. Integrating with backend APIs and services to fetch and manipulate data. Participating in client meetings to gather requirements, provide updates,and address feedback",
     },
     {
         id: 2,
@@ -17,6 +21,9 @@ export const experiences = [
         company: "Edvolve",
         duration: "Jan 2023 - Jan 2024",
         img: "/logo.webp",
+        compnayUrl: "freegameshub.fun",
+        companyType: "Product",
+        desc: "Designed and developed 2 web applications from scratch using React and its ecosystem. Coordinated directly with the founding team to plan the roadmap and prioritize feature development. Participated in sprint planning and agile ceremonies to deliver features in iterative cycles",
     },
     {
         id: 3,
@@ -24,6 +31,9 @@ export const experiences = [
         company: "Edvolve",
         duration: "Aug 2022 - Jan 2023",
         img: "/logo.webp",
+        compnayUrl: "freegameshub.fun",
+        companyType: "Product",
+        desc: "Transforming high-quality Figma designs into responsive web pages using React and it's ecosystem. Integrated with backend APIs and services to fetch and manage data effectively. Stayed updated with industry trends and best practices to drive innovation and product excellence",
     },
 ];
 
@@ -34,7 +44,7 @@ export function Experience() {
                 <div className="flex justify-center">
                     <div className="flex  items-center">
                         <span className="w-24 h-[2px] bg-slate-800"></span>
-                        <h6 className="bg-slate-800 w-fit font-bold text-3xl text-blue-100 p-2 px-5 rounded-md">
+                        <h6 className="bg-slate-900 w-fit font-bold text-3xl text-blue-100 p-2 px-5 rounded-md">
                             Experiences
                         </h6>
                         <span className="w-24 h-[2px] bg-slate-800"></span>
@@ -71,13 +81,21 @@ export function Experience() {
                                         <h3 className="text-start text-lg md:text-2xl font-bold">
                                             {experience.title}
                                         </h3>
-                                        <p className="text-start text-white mt-1 font-semibold">
-                                            {experience.company} | {experience.duration}
-                                        </p>
+                                        <h6 className="text-start text-white mt-1 font-semibold">
+                                            <Link
+                                                target="_blank"
+                                                href={experience.compnayUrl}
+                                                className="hover:underline"
+                                            >
+                                                {experience.company}
+                                            </Link>{" "}
+                                            <span className="inline-flex relative bottom-[0.5px] h-2 w-2 rounded-full bg-blue-100 mx-1 "></span>{" "}
+                                            <span>{experience.companyType}</span>{" "}
+                                            <span className="inline-flex relative bottom-[0.5px] h-2 w-2 rounded-full bg-blue-100 mx-1 "></span>{" "}
+                                            <span>{experience.duration}</span>
+                                        </h6>
                                         <p className="text-start text-sm mt-2 font-normal">
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                            Ad similique deserunt et magnam saepe est hic molestiae
-                                            placeat ducimus culpa!
+                                            {experience.desc}
                                         </p>
                                     </div>
                                 </div>

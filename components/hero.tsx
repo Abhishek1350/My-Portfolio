@@ -27,30 +27,24 @@ export function Hero() {
 
       <Container className="flex justify-center relative z-10 w-full">
         <div className="flex flex-col items-center justify-center w-full">
-          <MotionUp delay={0} className="mb-2 md:mb-1">
-            <p className="uppercase md:tracking-wider text-lg sm:text-2xl text-center font-bold text-blue-100">
-              Hi, This is <Highlight delay={1.8}>Abhishek</Highlight>
-            </p>
-          </MotionUp>
-
-          <MotionUp delay={0.3}>
+          <MotionUp delay={0}>
             <h1 className="text-3xl  md:text-6xl text-neutral-700 dark:text-blue-100 !leading-snug text-center mx-auto font-[900]">
-              I'm a Professional
+              Hi, I'm Abhishek, a Self Taught
               <br />
               <Highlight delay={1.8}>Software Developer</Highlight>
             </h1>
           </MotionUp>
 
-          <MotionUp delay={0.6} className="my-4">
-            <p className="text-center !leading-7 md:!leading-9  font-semibold text-lg lg:text-2xl max-w-xl  text-blue-100 ">
+          <MotionUp delay={0.3} className="my-4">
+            <h6 className="text-center !leading-7 md:!leading-10  font-semibold text-2 lg:text-3xl max-w-xl  text-blue-100 ">
               Based in Himachal Pradesh, India,
               <br />
               Specialized in <Highlight delay={1.8}>React</Highlight> and{" "}
               <Highlight delay={1.8}>Next.js</Highlight>
-            </p>
+            </h6>
           </MotionUp>
 
-          <MotionUp delay={0.9} className="flex items-center gap-3 mt-5">
+          <MotionUp delay={0.6} className="flex items-center gap-3 mt-5">
             <MagicButton
               title="Say Hi"
               icon={<FaLocationArrow />}
@@ -69,9 +63,9 @@ export function Hero() {
       </Container>
 
       <Container className="mt-12 lg:mt-16 z-20 relative">
-        <MotionUp delay={1.2}>
+        <MotionUp delay={0.9}>
           <div
-            className="p-20 rounded-lg"
+            className="p-0 py-10 md:p-14 rounded-lg"
             style={{
               background:
                 "linear-gradient(90deg, rgba(4,7,29,0.85) 0%, rgba(12,14,35,0.80) 100%), url('https://cdn.sanity.io/images/y178r8ab/production/4737240c5a75234b9edca2e6f795273abb0f55a8-2276x1707.jpg?fit=max&auto=format')",
@@ -80,11 +74,11 @@ export function Hero() {
               backgroundRepeat: "no-repeat",
             }}
           >
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 overflow-hidden">
-              <div className="order-2 lg:order-1 col-span-12  lg:col-span-8 px-3">
-                <p className="font-bold mb-5 text-red-500 text-2xl uppercase">
+            <div className="flex gap-8 flex-wrap lg:flex-nowrap lg:gap-16 overflow-hidden">
+              <div className="order-2 lg:order-1 w-full  lg:w-[70%]">
+                <h4 className="font-bold mb-5 text-purple text-3xl uppercase">
                   My Journey
-                </p>
+                </h4>
                 <p className="text-blue-100 text-normal sm:text-lg sm:text-justify">
                   Starting in June 2021 during the lockdown, I embarked on my
                   journey to become a software developer alone, without any
@@ -96,7 +90,8 @@ export function Hero() {
                   and Next.js and am capable of creating software independently.
                 </p>
               </div>
-              <div className="flex justify-center order-1 lg:order-2 col-span-12 lg:col-span-4">
+
+              <div className="flex justify-center order-1 lg:order-2 w-full  lg:w-[30%]">
                 <Image
                   src="https://cdn.sanity.io/images/y178r8ab/production/98e49e7e5d2f0581919cc01b7816aff4b9bebd24-934x1073.jpg?fit=max&auto=format"
                   width={300}
