@@ -1,6 +1,6 @@
 import { Container } from "./container";
 import expLottie from "@/data/experience.json";
-import { AnimationLottie, MovingBorder } from "./animations";
+import { AnimationLottie, MovingBorder, MagicCard } from "./animations";
 import Image from "next/image";
 import Link from "next/link";
 import Marquee from "react-fast-marquee";
@@ -156,7 +156,20 @@ export function Experience() {
                     </div>
                 </div>
 
-                <div className="mt-20">
+                {/* <div
+                    className="p-0 py-10 md:p-14 rounded-lg"
+
+                ></div> */}
+
+                <div className="mt-20 p-0 py-14 rounded-lg bg-black"
+                    // style={{
+                    //     background:
+                    //         "linear-gradient(90deg, rgba(0,0,0,0.85) 50%, rgba(0,0,0,0.80) 100%), url('https://cdn.sanity.io/images/y178r8ab/production/4737240c5a75234b9edca2e6f795273abb0f55a8-2276x1707.jpg?fit=max&auto=format')",
+                    //     backgroundSize: "cover",
+                    //     backgroundPosition: "center",
+                    //     backgroundRepeat: "no-repeat",
+                    // }}
+                >
                     <div className="flex justify-center">
                         <div className="flex  items-center">
                             <span className="w-24 h-[2px] bg-slate-800"></span>
@@ -167,18 +180,14 @@ export function Experience() {
                         </div>
                     </div>
 
-                    <Marquee speed={90} pauseOnHover className="mt-12">
+                    <Marquee speed={90} pauseOnHover className="mt-12 py-5">
                         {skills.map((skill) => (
-                            <MovingBorder
+                            <MagicCard
+                                className="hover:scale-105 transition-all duration-500 w-40 h-40 ms-10 flex-col items-center justify-center shadow-2xl whitespace-nowrap text-4xl"
+                                gradientColor="#262626"
                                 key={skill.id}
-                                duration={Math.floor(Math.random() * 10000) + 10000}
-                                borderRadius="1rem"
-                                style={{
-                                    borderRadius: `calc(1rem* 0.96)`,
-                                }}
-                                className="text-black w-40 h-40 dark:text-blue-100 border-neutral-200 dark:border-slate-800"
                             >
-                                <div className="flex flex-col items-center w-full">
+                                <div className="flex flex-col items-center w-full gap-2">
                                     <Image
                                         src={skill.img}
                                         alt={skill.title}
@@ -186,7 +195,7 @@ export function Experience() {
                                         height={80}
                                         className="rounded-full w-14 object-cover"
                                     />
-                                    <h3 className="text-start text-lg md:text-2xl font-bold">
+                                    <h6 className="text-start text-lg font-bold">
                                         <Link
                                             target="_blank"
                                             href={skill.url}
@@ -194,9 +203,9 @@ export function Experience() {
                                         >
                                             {skill.title}
                                         </Link>
-                                    </h3>
+                                    </h6>
                                 </div>
-                            </MovingBorder>
+                            </MagicCard>
                         ))}
                     </Marquee>
                 </div>
