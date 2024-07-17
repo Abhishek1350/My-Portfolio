@@ -1,11 +1,11 @@
-import { Container } from "./container";
+import { Container } from "../container";
 import expLottie from "@/data/experience.json";
 import {
     AnimationLottie,
     MovingBorder,
     MagicCard,
     MotionUp,
-} from "./animations";
+} from "../animations";
 import Image from "next/image";
 import Link from "next/link";
 import Marquee from "react-fast-marquee";
@@ -94,7 +94,7 @@ export const skills = [
     },
 ];
 
-export function Experience() {
+export function ExperienceSkills() {
     return (
         <section className="py-20 relative w-full dark:bg-grid-white/[0.05] bg-grid-black-100/[0.2]">
             <Container>

@@ -4,8 +4,8 @@ import {
   Spotlight,
   MotionUp,
   Highlight,
-} from "./animations/index";
-import { Container } from "./container";
+} from "../animations";
+import { Container } from "../container";
 import Image from "next/image";
 
 export function Hero() {
