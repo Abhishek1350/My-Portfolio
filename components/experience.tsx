@@ -1,6 +1,11 @@
 import { Container } from "./container";
 import expLottie from "@/data/experience.json";
-import { AnimationLottie, MovingBorder, MagicCard } from "./animations";
+import {
+    AnimationLottie,
+    MovingBorder,
+    MagicCard,
+    MotionUp,
+} from "./animations";
 import Image from "next/image";
 import Link from "next/link";
 import Marquee from "react-fast-marquee";
@@ -93,83 +98,72 @@ export function Experience() {
     return (
         <section className="py-20 relative w-full dark:bg-grid-white/[0.05] bg-grid-black-100/[0.2]">
             <Container>
-                <div className="flex justify-center">
-                    <div className="flex  items-center">
-                        <span className="w-24 h-[2px] bg-slate-800"></span>
-                        <h6 className="bg-slate-900 w-fit font-bold text-3xl text-blue-100 p-2 px-5 rounded-md">
-                            Experiences
-                        </h6>
-                        <span className="w-24 h-[2px] bg-slate-800"></span>
-                    </div>
-                </div>
-
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 mt-12">
-                    <div className="flex justify-center items-start">
-                        <div className="w-full h-full">
-                            <AnimationLottie animationData={expLottie} />
+                <MotionUp delay={0.2}>
+                    <div className="flex justify-center">
+                        <div className="flex  items-center">
+                            <span className="w-24 h-[2px] bg-slate-800"></span>
+                            <h6 className="bg-slate-900 w-fit font-bold text-3xl text-blue-100 p-2 px-5 rounded-md">
+                                Experiences
+                            </h6>
+                            <span className="w-24 h-[2px] bg-slate-800"></span>
                         </div>
                     </div>
 
-                    <div className="flex flex-col gap-6">
-                        {experiences.map((experience) => (
-                            <MovingBorder
-                                key={experience.id}
-                                duration={Math.floor(Math.random() * 10000) + 10000}
-                                borderRadius="1rem"
-                                style={{
-                                    borderRadius: `calc(1rem* 0.96)`,
-                                }}
-                                className="flex-1 text-black dark:text-blue-100 border-neutral-200 dark:border-slate-800"
-                            >
-                                <div className="flex w-full p-4 py-6  gap-2">
-                                    <Image
-                                        src={experience.img}
-                                        alt={experience.title}
-                                        width={300}
-                                        height={300}
-                                        className="lg:w-20 w-16 rounded-full h-fit"
-                                    />
-                                    <div className="ms-2 sm:ms-5">
-                                        <h3 className="text-start text-lg md:text-2xl font-bold">
-                                            {experience.title}
-                                        </h3>
-                                        <h6 className="text-start text-white mt-1 font-semibold">
-                                            <Link
-                                                target="_blank"
-                                                href={experience.compnayUrl}
-                                                className="hover:underline"
-                                            >
-                                                {experience.company}
-                                            </Link>{" "}
-                                            <span className="inline-flex relative bottom-[0.5px] h-2 w-2 rounded-full bg-blue-100 mx-1 "></span>{" "}
-                                            <span>{experience.companyType}</span>{" "}
-                                            <span className="inline-flex relative bottom-[0.5px] h-2 w-2 rounded-full bg-blue-100 mx-1 "></span>{" "}
-                                            <span>{experience.duration}</span>
-                                        </h6>
-                                        <p className="text-start text-sm mt-2 font-normal">
-                                            {experience.desc}
-                                        </p>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 mt-12">
+                        <div className="flex justify-center items-start">
+                            <div className="w-full h-full">
+                                <AnimationLottie animationData={expLottie} />
+                            </div>
+                        </div>
+
+                        <div className="flex flex-col gap-6">
+                            {experiences.map((experience) => (
+                                <MovingBorder
+                                    key={experience.id}
+                                    duration={Math.floor(Math.random() * 10000) + 10000}
+                                    borderRadius="1rem"
+                                    style={{
+                                        borderRadius: `calc(1rem* 0.96)`,
+                                    }}
+                                    className="flex-1 text-black dark:text-blue-100 border-neutral-200 dark:border-slate-800"
+                                >
+                                    <div className="flex w-full p-4 py-6  gap-2">
+                                        <Image
+                                            src={experience.img}
+                                            alt={experience.title}
+                                            width={300}
+                                            height={300}
+                                            className="lg:w-20 w-16 rounded-full h-fit"
+                                        />
+                                        <div className="ms-2 sm:ms-5">
+                                            <h3 className="text-start text-lg md:text-2xl font-bold">
+                                                {experience.title}
+                                            </h3>
+                                            <h6 className="text-start text-white mt-1 font-semibold">
+                                                <Link
+                                                    target="_blank"
+                                                    href={experience.compnayUrl}
+                                                    className="hover:underline"
+                                                >
+                                                    {experience.company}
+                                                </Link>{" "}
+                                                <span className="inline-flex relative bottom-[0.5px] h-2 w-2 rounded-full bg-blue-100 mx-1 "></span>{" "}
+                                                <span>{experience.companyType}</span>{" "}
+                                                <span className="inline-flex relative bottom-[0.5px] h-2 w-2 rounded-full bg-blue-100 mx-1 "></span>{" "}
+                                                <span>{experience.duration}</span>
+                                            </h6>
+                                            <p className="text-start text-sm mt-2 font-normal">
+                                                {experience.desc}
+                                            </p>
+                                        </div>
                                     </div>
-                                </div>
-                            </MovingBorder>
-                        ))}
+                                </MovingBorder>
+                            ))}
+                        </div>
                     </div>
-                </div>
+                </MotionUp>
 
-                {/* <div
-                    className="p-0 py-10 md:p-14 rounded-lg"
-
-                ></div> */}
-
-                <div className="mt-20 p-0 py-14 rounded-lg bg-black"
-                    // style={{
-                    //     background:
-                    //         "linear-gradient(90deg, rgba(0,0,0,0.85) 50%, rgba(0,0,0,0.80) 100%), url('https://cdn.sanity.io/images/y178r8ab/production/4737240c5a75234b9edca2e6f795273abb0f55a8-2276x1707.jpg?fit=max&auto=format')",
-                    //     backgroundSize: "cover",
-                    //     backgroundPosition: "center",
-                    //     backgroundRepeat: "no-repeat",
-                    // }}
-                >
+                <MotionUp className="mt-12 p-0 py-14 rounded-lg" delay={0.2}>
                     <div className="flex justify-center">
                         <div className="flex  items-center">
                             <span className="w-24 h-[2px] bg-slate-800"></span>
@@ -208,7 +202,7 @@ export function Experience() {
                             </MagicCard>
                         ))}
                     </Marquee>
-                </div>
+                </MotionUp>
             </Container>
         </section>
     );

@@ -30,7 +30,7 @@ export function MagicCard({
                 mouseY.set(e.clientY - top);
             }}
             className={cn(
-                "group relative flex size-full overflow-hidden rounded-xl bg-neutral-100 dark:bg-slate-950 border text-black dark:text-white",
+                "group relative flex size-full overflow-hidden rounded-xl bg-neutral-100 dark:bg-slate-900 border text-black dark:text-white",
                 className
             )}
         >
