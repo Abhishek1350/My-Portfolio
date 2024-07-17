@@ -9,6 +9,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import Marquee from "react-fast-marquee";
+import { GridBackground } from "../"
 
 export const experiences = [
     {
@@ -96,7 +97,7 @@ export const skills = [
 
 export function ExperienceSkills() {
     return (
-        <section className="py-20 relative w-full dark:bg-grid-white/[0.05] bg-grid-black-100/[0.2]">
+        <GridBackground className="py-20">
             <Container>
                 <MotionUp delay={0.2}>
                     <div className="flex justify-center">
@@ -204,6 +205,6 @@ export function ExperienceSkills() {
                     </Marquee>
                 </MotionUp>
             </Container>
-        </section>
+        </GridBackground>
     );
 }
