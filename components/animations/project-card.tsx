@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import { ModalTrigger } from "./animated-modal";
 
 interface Props {
   title: string;
@@ -12,6 +13,7 @@ interface Props {
   liveUrl: string;
   gitUrl?: string;
   techStack: string[];
+  setModalContent?: Function
 }
 
 export function ProjectCard({
@@ -21,9 +23,17 @@ export function ProjectCard({
   liveUrl,
   gitUrl,
   techStack,
+  setModalContent
 }: Props) {
+
+  const handleSetModalContent = () => {
+    if (setModalContent) {
+      setModalContent({ title, img, description, liveUrl, gitUrl, techStack })
+    }
+  }
+
   return (
-    <PinContainer title="Read More" href="https://twitter.com/mannupaaji">
+    <PinContainer title="Read More" href="https://twitter.com/mannupaaji" onClick={handleSetModalContent}>
       <div className="tracking-tight text-blue-100 w-[18rem] sm:w-[20rem] h-[360px]">
         <Image
           src={img}
@@ -49,12 +59,14 @@ function PinContainer({
   href,
   className,
   containerClassName,
+  onClick
 }: {
   children: React.ReactNode;
   title?: string;
   href?: string;
   className?: string;
   containerClassName?: string;
+  onClick?: Function
 }) {
   const [transform, setTransform] = useState(
     "translate(-50%,-50%) rotateX(0deg)"
@@ -68,32 +80,40 @@ function PinContainer({
   };
 
   return (
-    <button
-      className={cn(
-        "relative group/pin z-50  cursor-pointer w-full block text-left h-[400px]",
-        containerClassName
-      )}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-    >
-      <div
-        style={{
-          perspective: "1000px",
-          transform: "rotateX(70deg) translateZ(0deg)",
+    <ModalTrigger>
+      <button
+        className={cn(
+          "relative group/pin z-50  cursor-pointer w-full block text-left h-[400px]",
+          containerClassName
+        )}
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
+        onClick={() => {
+          if (onClick) {
+            onClick()
+          }
         }}
-        className="absolute left-1/2 top-1/2 ml-[0.09375rem] mt-4 -translate-x-1/2 -translate-y-1/2"
       >
         <div
           style={{
-            transform: transform,
+            perspective: "1000px",
+            transform: "rotateX(70deg) translateZ(0deg)",
           }}
-          className="absolute left-1/2 p-4 top-1/2  flex justify-start items-start  rounded-2xl  shadow-[0_8px_16px_rgb(0_0_0/0.4)] bg-slate-950 border border-white/[0.2] group-hover/pin:border-white/[0.5] transition duration-700 overflow-hidden"
+          className="absolute left-1/2 top-1/2 ml-[0.09375rem] mt-4 -translate-x-1/2 -translate-y-1/2"
         >
-          <div className={cn(" relative z-50 ", className)}>{children}</div>
+          <div
+            style={{
+              transform: transform,
+            }}
+            className="absolute left-1/2 p-4 top-1/2  flex justify-start items-start  rounded-2xl  shadow-[0_8px_16px_rgb(0_0_0/0.4)] bg-slate-950 border border-white/[0.2] group-hover/pin:border-white/[0.5] transition duration-700 overflow-hidden"
+          >
+            <div className={cn(" relative z-50 ", className)}>{children}</div>
+          </div>
         </div>
-      </div>
-      <PinPerspective title={title} href={href} />
-    </button>
+        <PinPerspective title={title} href={href} />
+      </button>
+    </ModalTrigger>
+
   );
 }
 

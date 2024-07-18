@@ -1,7 +1,15 @@
 "use client";
 
 import { Container } from "../container";
-import { MotionUp, ProjectCard, MagicButton } from "../animations";
+import {
+    MotionUp,
+    ProjectCard,
+    MagicButton,
+    Modal,
+    ModalBody,
+    ModalContent,
+    ModalFooter,
+} from "../animations";
 import { SmallGridBackground } from "../bg-patterns";
 import { useState } from "react";
 
@@ -39,6 +47,7 @@ const INITIAL_ITEMS = 3;
 export function Projects() {
     const [items, setItems] = useState(projects.slice(0, INITIAL_ITEMS));
     const [showAll, setShowAll] = useState(false);
+    const [modalContent, setModalContent] = useState<any>(null)
 
     function handleShowMore() {
         if (!showAll) {
@@ -66,16 +75,30 @@ export function Projects() {
 
                     <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                         {items.map((project, index) => (
-                            <ProjectCard key={index} {...project} />
+                            <ProjectCard key={index} {...project} setModalContent={setModalContent} />
                         ))}
                     </div>
+                    {projects.length > INITIAL_ITEMS && (
+                        <MagicButton
+                            title={showAll ? "Show Less" : "Show More"}
+                            handleClick={handleShowMore}
+                            className="mx-auto !block mt-12"
+                        />
+                    )}
                     {
-                        projects.length > INITIAL_ITEMS && (
-                            <MagicButton
-                                title={showAll ? "Show Less" : "Show More"}
-                                handleClick={handleShowMore}
-                                className="mx-auto !block mt-12"
-                            />
+                        modalContent && (
+                            <Modal>
+                                <ModalBody>
+                                    <ModalContent>
+                                        <h3>
+                                            {modalContent?.title}
+                                        </h3>
+                                        <p className="text-sm">
+                                            {modalContent?.description}
+                                        </p>
+                                    </ModalContent>
+                                </ModalBody>
+                            </Modal>
                         )
                     }
                 </MotionUp>
