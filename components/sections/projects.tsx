@@ -60,7 +60,7 @@ export function Projects() {
     }
 
     return (
-        <SmallGridBackground className="py-20">
+        <SmallGridBackground className="py-20" id="projects">
             <Container>
                 <MotionUp delay={0.2}>
                     <div className="flex justify-center relative z-20">

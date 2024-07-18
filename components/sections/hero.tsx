@@ -71,6 +71,9 @@ export function Hero() {
                   without taking any formal courses. Now, I specialize in React
                   and Next.js and am capable of creating software independently.
                 </p>
+                <h6 className="text-blue-100 font-semibold text-xl mt-5 uppercase animate-pulse">
+                Strongly uphold the concept of Karma
+                </h6>
               </div>
 
               <div className="flex justify-center order-1 lg:order-2 w-full  lg:w-[30%]">

@@ -96,7 +96,7 @@ export const skills = [
 
 export function ExperienceSkills() {
     return (
-        <section className="w-full pt-20">
+        <section className="w-full pt-20" id="about">
             <Container>
                 <MotionUp delay={0.2}>
                     <div className="flex justify-center">
