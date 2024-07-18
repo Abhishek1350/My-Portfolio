@@ -9,7 +9,6 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import Marquee from "react-fast-marquee";
-import { GridBackground } from "../"
 
 export const experiences = [
     {
@@ -97,14 +96,14 @@ export const skills = [
 
 export function ExperienceSkills() {
     return (
-        <GridBackground className="py-20">
+        <section className="pt-20">
             <Container>
                 <MotionUp delay={0.2}>
                     <div className="flex justify-center">
                         <div className="flex  items-center">
                             <span className="w-24 h-[2px] bg-slate-800"></span>
                             <h6 className="bg-slate-900 w-fit font-bold text-3xl text-blue-100 p-2 px-5 rounded-md">
-                                Experiences
+                                My work experience
                             </h6>
                             <span className="w-24 h-[2px] bg-slate-800"></span>
                         </div>
@@ -205,6 +204,6 @@ export function ExperienceSkills() {
                     </Marquee>
                 </MotionUp>
             </Container>
-        </GridBackground>
+        </section>
     );
 }
