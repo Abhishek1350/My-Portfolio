@@ -8,8 +8,8 @@ export function MagicButton({
     className,
 }: {
     title: string;
-    icon: React.ReactNode;
-    position: string;
+    icon?: React.ReactNode;
+    position?: string;
     handleClick?: () => void;
     className?: string;
 }) {

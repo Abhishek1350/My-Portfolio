@@ -1,7 +1,9 @@
-import { Container } from "../container";
-import { MotionUp, ProjectCard } from "../animations";
-import { SmallGridBackground } from "../bg-patterns";
+"use client";
 
+import { Container } from "../container";
+import { MotionUp, ProjectCard, MagicButton } from "../animations";
+import { SmallGridBackground } from "../bg-patterns";
+import { useState } from "react";
 
 const projects = [
     {
@@ -32,7 +34,22 @@ const projects = [
     },
 ];
 
+const INITIAL_ITEMS = 3;
+
 export function Projects() {
+    const [items, setItems] = useState(projects.slice(0, INITIAL_ITEMS));
+    const [showAll, setShowAll] = useState(false);
+
+    function handleShowMore() {
+        if (!showAll) {
+            setShowAll(true);
+            setItems(projects);
+        } else {
+            setShowAll(false);
+            setItems(projects.slice(0, INITIAL_ITEMS));
+        }
+    }
+
     return (
         <SmallGridBackground className="py-20">
             <Container>
@@ -48,10 +65,19 @@ export function Projects() {
                     </div>
 
                     <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                        {projects.map((project, index) => (
+                        {items.map((project, index) => (
                             <ProjectCard key={index} {...project} />
                         ))}
                     </div>
+                    {
+                        projects.length > INITIAL_ITEMS && (
+                            <MagicButton
+                                title={showAll ? "Show Less" : "Show More"}
+                                handleClick={handleShowMore}
+                                className="mx-auto !block mt-12"
+                            />
+                        )
+                    }
                 </MotionUp>
             </Container>
         </SmallGridBackground>
