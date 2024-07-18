@@ -8,10 +8,10 @@ import {
     Modal,
     ModalBody,
     ModalContent,
-    ModalFooter,
 } from "../animations";
 import { SmallGridBackground } from "../bg-patterns";
 import { useState } from "react";
+import { useModal } from "@/context";
 
 const projects = [
     {
@@ -47,7 +47,7 @@ const INITIAL_ITEMS = 3;
 export function Projects() {
     const [items, setItems] = useState(projects.slice(0, INITIAL_ITEMS));
     const [showAll, setShowAll] = useState(false);
-    const [modalContent, setModalContent] = useState<any>(null)
+    const { modalData } = useModal();
 
     function handleShowMore() {
         if (!showAll) {
@@ -75,9 +75,10 @@ export function Projects() {
 
                     <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                         {items.map((project, index) => (
-                            <ProjectCard key={index} {...project} setModalContent={setModalContent} />
+                            <ProjectCard key={index} {...project} />
                         ))}
                     </div>
+
                     {projects.length > INITIAL_ITEMS && (
                         <MagicButton
                             title={showAll ? "Show Less" : "Show More"}
@@ -85,24 +86,17 @@ export function Projects() {
                             className="mx-auto !block mt-12"
                         />
                     )}
-                    {
-                        modalContent && (
-                            <Modal>
-                                <ModalBody>
-                                    <ModalContent>
-                                        <h3>
-                                            {modalContent?.title}
-                                        </h3>
-                                        <p className="text-sm">
-                                            {modalContent?.description}
-                                        </p>
-                                    </ModalContent>
-                                </ModalBody>
-                            </Modal>
-                        )
-                    }
                 </MotionUp>
             </Container>
+
+            <Modal>
+                <ModalBody>
+                    <ModalContent>
+                        <h3>{modalData?.title}</h3>
+                        <p className="text-sm">{modalData?.description}</p>
+                    </ModalContent>
+                </ModalBody>
+            </Modal>
         </SmallGridBackground>
     );
 }

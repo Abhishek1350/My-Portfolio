@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { ModalTrigger } from "./animated-modal";
+import { useModal } from "@/context";
 
 interface Props {
   title: string;
@@ -13,7 +14,7 @@ interface Props {
   liveUrl: string;
   gitUrl?: string;
   techStack: string[];
-  setModalContent?: Function
+  setModalContent?: Function;
 }
 
 export function ProjectCard({
@@ -23,17 +24,19 @@ export function ProjectCard({
   liveUrl,
   gitUrl,
   techStack,
-  setModalContent
 }: Props) {
+  const { setModalData } = useModal();
 
   const handleSetModalContent = () => {
-    if (setModalContent) {
-      setModalContent({ title, img, description, liveUrl, gitUrl, techStack })
-    }
-  }
+    setModalData({ title, img, description, liveUrl, gitUrl, techStack });
+  };
 
   return (
-    <PinContainer title="Read More" href="https://twitter.com/mannupaaji" onClick={handleSetModalContent}>
+    <PinContainer
+      title="Read More"
+      href="https://twitter.com/mannupaaji"
+      onClick={handleSetModalContent}
+    >
       <div className="tracking-tight text-blue-100 w-[18rem] sm:w-[20rem] h-[360px]">
         <Image
           src={img}
@@ -59,14 +62,14 @@ function PinContainer({
   href,
   className,
   containerClassName,
-  onClick
+  onClick,
 }: {
   children: React.ReactNode;
   title?: string;
   href?: string;
   className?: string;
   containerClassName?: string;
-  onClick?: Function
+  onClick?: Function;
 }) {
   const [transform, setTransform] = useState(
     "translate(-50%,-50%) rotateX(0deg)"
@@ -90,7 +93,7 @@ function PinContainer({
         onMouseLeave={onMouseLeave}
         onClick={() => {
           if (onClick) {
-            onClick()
+            onClick();
           }
         }}
       >
@@ -113,7 +116,6 @@ function PinContainer({
         <PinPerspective title={title} href={href} />
       </button>
     </ModalTrigger>
-
   );
 }
 

@@ -10,15 +10,18 @@ import {
 interface ModalContextType {
   open: boolean;
   setOpen: (open: boolean) => void;
+  modalData:any;
+  setModalData: (data: any) => void;
 }
 
 const ModalContext = createContext<ModalContextType | undefined>(undefined);
 
 export function ModalProvider({ children }: { children: ReactNode }) {
   const [open, setOpen] = useState(false);
+  const [modalData, setModalData] = useState<any>(null);
 
   return (
-    <ModalContext.Provider value={{ open, setOpen }}>
+    <ModalContext.Provider value={{ open, setOpen, modalData, setModalData }}>
       {children}
     </ModalContext.Provider>
   );

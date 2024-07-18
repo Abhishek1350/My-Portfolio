@@ -2,11 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
-import {
-  ReactNode,
-  useEffect,
-  useRef,
-} from "react";
+import { ReactNode, useEffect, useRef } from "react";
 import { useOutsideClick } from "@/lib/hooks";
 import { useModal } from "@/context";
 
@@ -23,10 +19,7 @@ export function ModalTrigger({
 }) {
   const { setOpen } = useModal();
   return (
-    <div
-      className={className}
-      onClick={() => setOpen(true)}
-    >
+    <div className={className} onClick={() => setOpen(true)}>
       {children}
     </div>
   );
@@ -39,7 +32,7 @@ export function ModalBody({
   children: ReactNode;
   className?: string;
 }) {
-  const { open } = useModal();
+  const { open, setModalData } = useModal();
 
   useEffect(() => {
     if (open) {
@@ -49,9 +42,14 @@ export function ModalBody({
     }
   }, [open]);
 
+  function handleClose() {
+    setModalData(null);
+    setOpen(false);
+  }
+
   const modalRef = useRef(null);
   const { setOpen } = useModal();
-  useOutsideClick(modalRef, () => setOpen(false));
+  useOutsideClick(modalRef, handleClose);
 
   return (
     <AnimatePresence>
@@ -163,12 +161,15 @@ function Overlay({ className }: { className?: string }) {
 }
 
 function CloseIcon() {
-  const { setOpen } = useModal();
+  const { setOpen, setModalData } = useModal();
+
+  function handleClose() {
+    setModalData(null);
+    setOpen(false);
+  }
+
   return (
-    <button
-      onClick={() => setOpen(false)}
-      className="absolute top-4 right-4 group"
-    >
+    <button onClick={handleClose} className="absolute top-4 right-4 group">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"
