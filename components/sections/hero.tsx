@@ -1,5 +1,10 @@
 import { FaLocationArrow, FaDownload } from "react-icons/fa6";
-import { MagicButton, MotionUp, Highlight } from "../animations";
+import {
+  MagicButton,
+  MotionUp,
+  Highlight,
+  TextAppearAnimation,
+} from "../animations";
 import { Container } from "../container";
 import Image from "next/image";
 import { DotBackground } from "../";
@@ -71,9 +76,10 @@ export function Hero() {
                   without taking any formal courses. Now, I specialize in React
                   and Next.js and am capable of creating software independently.
                 </p>
-                <h6 className="text-blue-100 font-semibold text-xl mt-5 uppercase animate-pulse">
-                Strongly uphold the concept of Karma
-                </h6>
+                <TextAppearAnimation
+                  className="text-white italic font-semibold text-xl mt-5 uppercase animate-pulse"
+                  text="Strongly believe in Karma"
+                />
               </div>
 
               <div className="flex justify-center order-1 lg:order-2 w-full  lg:w-[30%]">
