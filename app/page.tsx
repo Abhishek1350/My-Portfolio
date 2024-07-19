@@ -1,4 +1,4 @@
-import { Hero, ExperienceSkills, Projects } from "@/components/index";
+import { Hero, ExperienceSkills, Projects, Testimonials } from "@/components/index";
 import { ModalProvider } from "@/context";
 
 export default function page() {
@@ -9,6 +9,7 @@ export default function page() {
       <ModalProvider>
         <Projects />
       </ModalProvider>
+      <Testimonials/>
     </main>
   );
 }
