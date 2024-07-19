@@ -12,7 +12,6 @@ export const testimonials = [
         company: "Edvolve",
         img: "https://cdn.sanity.io/images/y178r8ab/production/886b2ff056399fc3089aed457410bfa4e4f8ec4e-724x752.webp?fit=max&auto=format",
         compnayUrl: "https://www.linkedin.com/company/edvolvein/",
-        companyType: "Product",
         content:
             "Abhishek worked with us and he was quite the problem solver. His ability to learn quickly and eagerness to learn new things was super helpful since we were a high velocity team and expected quick results. Would happily work with him again to develop good products, and recommend him to other employers looking for a fast learner in your team!",
     },
@@ -23,7 +22,6 @@ export const testimonials = [
         company: "Edvolve",
         img: "https://cdn.sanity.io/images/y178r8ab/production/57cc03d9cf78cf1d413854bb4293a33a6531977d-413x531.jpg?fit=max&auto=format",
         compnayUrl: "https://www.linkedin.com/company/edvolvein/",
-        companyType: "Product",
         content:
             "Abhishek is a hardworking, driven and dedicated person. He will be an asset wherever he goes.",
     },
@@ -82,10 +80,10 @@ export function Testimonials() {
                                                 {item.name}
                                             </span>
                                             <span className="text-gray-500 text-sm">
-                                                {item.company} | {item.companyType}
+                                                {item.designation}
                                             </span>
                                             <span className="text-gray-500 text-sm">
-                                                {item.designation}
+                                                {item.company}
                                             </span>
                                         </p>
                                     </Link>
