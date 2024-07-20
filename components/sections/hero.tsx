@@ -37,6 +37,7 @@ export function Hero() {
               icon={<FaLocationArrow />}
               position="right"
               className="w-[150px] text-lg"
+              scroll="#contact"
             />
 
             <MagicButton
