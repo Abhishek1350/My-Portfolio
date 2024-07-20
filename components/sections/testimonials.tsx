@@ -3,6 +3,7 @@ import { MovingBorder, MotionUp } from "../animations";
 import Image from "next/image";
 import Link from "next/link";
 import { GridBackground } from "../bg-patterns";
+import { Heading } from "../";
 
 export const testimonials = [
     {
@@ -32,15 +33,7 @@ export function Testimonials() {
         <GridBackground className="py-20">
             <Container>
                 <MotionUp delay={0.2}>
-                    <div className="flex justify-center">
-                        <div className="flex items-center relative z-30">
-                            <span className="w-24 h-[2px] bg-slate-800"></span>
-                            <h6 className="bg-slate-900 w-fit font-bold text-3xl text-blue-100 p-2 px-5 rounded-md">
-                                Few nice words
-                            </h6>
-                            <span className="w-24 h-[2px] bg-slate-800"></span>
-                        </div>
-                    </div>
+                    <Heading text="Few Nice Words" />
 
                     <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 mt-12">
                         {testimonials.map((item) => (

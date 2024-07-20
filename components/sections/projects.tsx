@@ -15,6 +15,7 @@ import { useModal } from "@/context";
 import Image from "next/image";
 import Link from "next/link";
 import { FaEye, FaGithub } from "react-icons/fa";
+import { Heading } from "../";
 
 const projects = [
     {
@@ -65,16 +66,8 @@ export function Projects() {
     return (
         <SmallGridBackground className="py-20" id="projects">
             <Container>
-                <MotionUp delay={0.2}>
-                    <div className="flex justify-center relative z-20">
-                        <div className="flex  items-center">
-                            <span className="w-24 h-[2px] bg-slate-800"></span>
-                            <h6 className="bg-slate-900 w-fit font-bold text-3xl text-blue-100 p-2 px-5 rounded-md">
-                                A small selection of recent projects
-                            </h6>
-                            <span className="w-24 h-[2px] bg-slate-800"></span>
-                        </div>
-                    </div>
+                <MotionUp delay={0.1}>
+                    <Heading text="A Small Selection of Recent Projects" />
 
                     <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                         {items.map((project, index) => (

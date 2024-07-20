@@ -4,6 +4,7 @@ import { SmallGridBackground } from "../bg-patterns";
 import { ContactForm } from "../form";
 import { FaGithub, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import Link from "next/link";
+import { Heading } from "../";
 
 const getSocialIcons = (title: string) => {
     switch (title) {
@@ -54,16 +55,8 @@ export function Contact() {
     return (
         <SmallGridBackground className="py-20" mask={false} id="contact">
             <Container>
-                <MotionUp delay={0.2}>
-                    <div className="flex justify-center">
-                        <div className="flex items-center relative z-30">
-                            <span className="w-24 h-[2px] bg-slate-800"></span>
-                            <h6 className="bg-slate-900 w-fit font-bold text-3xl text-blue-100 p-2 px-5 rounded-md">
-                                Reach out to me
-                            </h6>
-                            <span className="w-24 h-[2px] bg-slate-800"></span>
-                        </div>
-                    </div>
+                <MotionUp delay={0.1}>
+                    <Heading text="Let's Have a Chat" />
 
                     <div className="flex sm:flex-nowrap flex-wrap mt-12">
                         <div
@@ -78,12 +71,8 @@ export function Contact() {
                         >
                             <div className="relative flex flex-wrap justify-center items-center w-full shadow-md">
                                 <div className="w-full px-6">
-                                    <h6
-                                        className="text-blue-100 italic font-bold text-xl uppercase"
-                                    >
-                                        believe in <span className="text-purple">
-                                        Karma
-                                        </span>
+                                    <h6 className="text-blue-100 italic font-bold text-xl uppercase">
+                                        believe in <span className="text-purple">Karma</span>
                                     </h6>
                                 </div>
 
@@ -103,9 +92,7 @@ export function Contact() {
                                     <h6 className="title-font font-semibold text-blue-100 tracking-widest text-xs">
                                         WORKING HOURS
                                     </h6>
-                                    <p
-                                        className="text-blue-100 leading-relaxed"
-                                    >
+                                    <p className="text-blue-100 leading-relaxed">
                                         9:00 AM - 1:00 AM
                                     </p>
                                 </div>
@@ -114,7 +101,9 @@ export function Contact() {
                                     <h6 className="title-font font-semibold text-blue-100  tracking-widest text-xs">
                                         ADDRESS
                                     </h6>
-                                    <p className="mt-1 text-blue-100 leading-relaxed">Himachal Pradesh, India</p>
+                                    <p className="mt-1 text-blue-100 leading-relaxed">
+                                        Himachal Pradesh, India
+                                    </p>
                                 </div>
 
                                 <div className="w-full lg:w-1/2 px-6 mt-4 gap-2 sm:mt-8 flex items-center">

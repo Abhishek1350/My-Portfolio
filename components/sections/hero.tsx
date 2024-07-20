@@ -7,7 +7,7 @@ import {
 } from "../animations";
 import { Container } from "../container";
 import Image from "next/image";
-import { DotBackground } from "../";
+import { DotBackground, Heading } from "../";
 
 export function Hero() {
   return (
@@ -64,9 +64,7 @@ export function Hero() {
           >
             <div className="flex gap-8 flex-wrap lg:flex-nowrap lg:gap-16 overflow-hidden">
               <div className="order-2 lg:order-1 w-full  lg:w-[70%]">
-                <h4 className="font-bold mb-5 text-purple text-3xl uppercase">
-                  My Journey
-                </h4>
+                <Heading text="My Journey" className="uppercase mb-5 text-left text-purple" />
                 <p className="text-blue-100 text-normal sm:text-lg sm:text-justify">
                   Starting in June 2021 during the lockdown, I embarked on my
                   journey to become a software developer alone, without any

@@ -9,6 +9,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import Marquee from "react-fast-marquee";
+import { Heading } from "../";
 
 export const experiences = [
     {
@@ -96,18 +97,10 @@ export const skills = [
 
 export function ExperienceSkills() {
     return (
-        <section className="w-full pt-20" id="about">
+        <section className="w-full py-20" id="about">
             <Container>
-                <MotionUp delay={0.2}>
-                    <div className="flex justify-center">
-                        <div className="flex  items-center">
-                            <span className="w-24 h-[2px] bg-slate-800"></span>
-                            <h6 className="bg-slate-900 w-fit font-bold text-3xl text-blue-100 p-2 px-5 rounded-md">
-                                My work experience
-                            </h6>
-                            <span className="w-24 h-[2px] bg-slate-800"></span>
-                        </div>
-                    </div>
+                <MotionUp delay={0.1}>
+                    <Heading text="Career History" />
 
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 mt-12">
                         <div className="flex justify-center items-start">
@@ -163,18 +156,10 @@ export function ExperienceSkills() {
                     </div>
                 </MotionUp>
 
-                <MotionUp className="mt-12 p-0 py-14 rounded-lg" delay={0.2}>
-                    <div className="flex justify-center">
-                        <div className="flex  items-center">
-                            <span className="w-24 h-[2px] bg-slate-800"></span>
-                            <h6 className="bg-slate-900 w-fit font-bold text-3xl text-blue-100 p-2 px-5 rounded-md">
-                                Skills
-                            </h6>
-                            <span className="w-24 h-[2px] bg-slate-800"></span>
-                        </div>
-                    </div>
+                <MotionUp className="mt-10 p-0 py-10 rounded-lg" delay={0.1}>
+                    <Heading text="Expertise" />
 
-                    <Marquee speed={90} pauseOnHover className="mt-12 py-5">
+                    <Marquee speed={90} pauseOnHover className="mt-10">
                         {skills.map((skill) => (
                             <MagicCard
                                 className="hover:scale-105 transition-all duration-500 w-40 h-40 ms-10 flex-col items-center justify-center shadow-2xl whitespace-nowrap text-4xl"
