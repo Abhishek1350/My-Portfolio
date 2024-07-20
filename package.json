@@ -12,6 +12,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@radix-ui/react-label": "^2.1.0",
     "clsx": "^2.1.0",
     "framer-motion": "^11.0.25",
     "lottie-react": "^2.4.0",
