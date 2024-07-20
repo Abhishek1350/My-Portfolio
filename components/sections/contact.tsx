@@ -1,7 +1,54 @@
 import { Container } from "../container";
-import { MotionUp, MagicButton } from "../animations";
+import { MotionUp } from "../animations";
 import { SmallGridBackground } from "../bg-patterns";
-import { IoSendSharp } from "react-icons/io5";
+import { ContactForm } from "../form";
+import { FaGithub, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import Link from "next/link";
+
+const getSocialIcons = (title: string) => {
+    switch (title) {
+        case "GitHub":
+            return <FaGithub size={25} />;
+        case "Twitter":
+            return <FaTwitter size={25} />;
+        case "Instagram":
+            return <FaInstagram size={25} />;
+        default:
+            return <FaLinkedinIn size={25} />;
+    }
+};
+
+const getIconColors = (title: string) => {
+    switch (title) {
+        case "GitHub":
+            return "text-gray-200 hover:text-gray-700";
+        case "Twitter":
+            return "text-blue-500 hover:text-blue-700";
+        case "Instagram":
+            return "text-pink-500 hover:text-pink-700";
+        default:
+            return "text-blue-500 hover:text-blue-700";
+    }
+};
+
+const socialLinks = [
+    {
+        title: "GitHub",
+        link: "https://github.com",
+    },
+    {
+        title: "Twitter",
+        link: "https://twitter.com",
+    },
+    {
+        title: "Instagram",
+        link: "https://instagram.com",
+    },
+    {
+        title: "LinkedIn",
+        link: "https://linkedin.com",
+    },
+];
 
 export function Contact() {
     return (
@@ -19,7 +66,7 @@ export function Contact() {
                     </div>
 
                     <div className="flex sm:flex-nowrap flex-wrap mt-12">
-                        <div className="w-full md:w-[60%]  bg-gray-900 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
+                        <div className="order-2 sm:order-1 w-full md:w-[60%]  bg-gray-900 rounded-lg overflow-hidden sm:mr-10 p-5 md:p-10 flex items-end justify-start relative">
                             <div className="bg-gray-900 relative flex flex-wrap py-6 rounded shadow-md">
                                 <div className="lg:w-1/2 px-6">
                                     <h2 className="title-font font-semibold text-white tracking-widest text-xs">
@@ -27,6 +74,7 @@ export function Contact() {
                                     </h2>
                                     <p className="mt-1">Himachal Pradesh, India</p>
                                 </div>
+
                                 <div className="lg:w-1/2 px-6 mt-4 lg:mt-0">
                                     <h2 className="title-font font-semibold text-white tracking-widest text-xs">
                                         EMAIL
@@ -39,70 +87,37 @@ export function Contact() {
                                     </a>
                                 </div>
 
-                                <div className="px-6 mt-4">
+                                <div className="lg:w-1/2 px-6 mt-4">
                                     <h2 className="title-font font-semibold text-white tracking-widest text-xs">
-                                        social icons
+                                        WORKING HOURS
                                     </h2>
+                                    <a
+                                        href="mailto:hello@imabhishek.online"
+                                        className="text-indigo-400 leading-relaxed"
+                                    >
+                                        9:00 AM - 1:00 AM
+                                    </a>
+                                </div>
+                                <div className="lg:w-1/2 px-6 mt-4 flex items-center">
+                                    {socialLinks.map((item) => (
+                                        <Link
+                                            key={item.title}
+                                            href={item.link}
+                                            target="_blank"
+                                            className={`inline-flex items-center mr-4 ${getIconColors(
+                                                item.title
+                                            )}`}
+                                        >
+                                            {getSocialIcons(item.title)}
+                                        </Link>
+                                    ))}
                                 </div>
                             </div>
                         </div>
 
-                        <div className="w-full md:w-[40%] flex flex-col md:ml-auto mt-8 md:mt-0">
-                            <h2 className="text-white text-lg mb-1 font-medium title-font">
-                                Let's Talk
-                            </h2>
-                            <p className="leading-relaxed mb-5">
-                                Leave your email and I will get back to you within 24 hours
-                            </p>
-                            <div className="relative mb-4">
-                                <label
-                                    htmlFor="name"
-                                    className="leading-7 text-sm text-gray-400"
-                                >
-                                    Name
-                                </label>
-                                <input
-                                    type="text"
-                                    id="name"
-                                    name="name"
-                                    className="w-full bg-gray-800 rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                                />
-                            </div>
-                            <div className="relative mb-4">
-                                <label
-                                    htmlFor="email"
-                                    className="leading-7 text-sm text-gray-400"
-                                >
-                                    Email
-                                </label>
-                                <input
-                                    type="email"
-                                    id="email"
-                                    name="email"
-                                    className="w-full bg-gray-800 rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                                />
-                            </div>
-                            <div className="relative mb-4">
-                                <label
-                                    htmlFor="message"
-                                    className="leading-7 text-sm text-gray-400"
-                                >
-                                    Message
-                                </label>
-                                <textarea
-                                    id="message"
-                                    name="message"
-                                    className="w-full bg-gray-800 rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 h-32 text-base outline-none text-gray-100 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
-                                ></textarea>
-                            </div>
-
-                            <MagicButton
-                                title="Sumit"
-                                icon={<IoSendSharp />}
-                                position="right"
-                                className="!w-full text-lg !bg-red-500"
-                            />
-                            <p className="text-xs text-center text-gray-400 text-opacity-90 mt-3">
+                        <div className="order-1 sm:order-2 w-full md:w-[40%] flex flex-col md:ml-auto mt-8 md:mt-0">
+                            <ContactForm />
+                            <p className="text-sm text-center text-gray-400 text-opacity-90 mb-5">
                                 Leave your email and I will get back to you within 24 hours
                             </p>
                         </div>
