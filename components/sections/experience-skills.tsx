@@ -159,7 +159,7 @@ export function ExperienceSkills() {
                 <MotionUp className="mt-10 p-0 py-10 rounded-lg" delay={0.1}>
                     <Heading text="Expertise" />
 
-                    <Marquee speed={90} pauseOnHover className="mt-10">
+                    <Marquee speed={90} pauseOnHover className="mt-5 overflow-hidden py-5">
                         {skills.map((skill) => (
                             <MagicCard
                                 className="hover:scale-105 transition-all duration-500 w-40 h-40 ms-10 flex-col items-center justify-center shadow-2xl whitespace-nowrap text-4xl"
