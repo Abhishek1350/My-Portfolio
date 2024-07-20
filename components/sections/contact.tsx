@@ -8,13 +8,13 @@ import Link from "next/link";
 const getSocialIcons = (title: string) => {
     switch (title) {
         case "GitHub":
-            return <FaGithub size={25} />;
+            return <FaGithub size={30} />;
         case "Twitter":
-            return <FaTwitter size={25} />;
+            return <FaTwitter size={30} />;
         case "Instagram":
-            return <FaInstagram size={25} />;
+            return <FaInstagram size={30} />;
         default:
-            return <FaLinkedinIn size={25} />;
+            return <FaLinkedinIn size={30} />;
     }
 };
 
@@ -66,39 +66,58 @@ export function Contact() {
                     </div>
 
                     <div className="flex sm:flex-nowrap flex-wrap mt-12">
-                        <div className="order-2 sm:order-1 w-full md:w-[60%]  bg-gray-900 rounded-lg overflow-hidden sm:mr-10 p-5 md:p-10 flex items-end justify-start relative">
-                            <div className="bg-gray-900 relative flex flex-wrap py-6 rounded shadow-md">
-                                <div className="lg:w-1/2 px-6">
-                                    <h2 className="title-font font-semibold text-white tracking-widest text-xs">
-                                        ADDRESS
-                                    </h2>
-                                    <p className="mt-1">Himachal Pradesh, India</p>
+                        <div
+                            className="order-2 sm:order-1 w-full md:w-[60%]  rounded-lg overflow-hidden sm:mr-10 p-5 md:p-10 flex items-end justify-start relative"
+                            style={{
+                                background:
+                                    "linear-gradient(90deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.70) 100%), url('https://cdn.sanity.io/images/y178r8ab/production/4737240c5a75234b9edca2e6f795273abb0f55a8-2276x1707.jpg?fit=max&auto=format')",
+                                backgroundSize: "cover",
+                                backgroundPosition: "center",
+                                backgroundRepeat: "no-repeat",
+                            }}
+                        >
+                            <div className="relative flex flex-wrap justify-center items-center w-full shadow-md">
+                                <div className="w-full px-6">
+                                    <h6
+                                        className="text-blue-100 italic font-bold text-xl uppercase"
+                                    >
+                                        believe in <span className="text-purple">
+                                        Karma
+                                        </span>
+                                    </h6>
                                 </div>
 
-                                <div className="lg:w-1/2 px-6 mt-4 lg:mt-0">
-                                    <h2 className="title-font font-semibold text-white tracking-widest text-xs">
+                                <div className="w-full lg:w-1/2 px-6 mt-4">
+                                    <h6 className="title-font font-semibold text-blue-100  tracking-widest text-xs">
                                         EMAIL
-                                    </h2>
+                                    </h6>
                                     <a
                                         href="mailto:hello@imabhishek.online"
-                                        className="text-indigo-400 leading-relaxed"
+                                        className="text-blue-100 leading-relaxed"
                                     >
                                         hello@imabhishek.online
                                     </a>
                                 </div>
 
-                                <div className="lg:w-1/2 px-6 mt-4">
-                                    <h2 className="title-font font-semibold text-white tracking-widest text-xs">
+                                <div className="w-full lg:w-1/2 px-6 mt-4">
+                                    <h6 className="title-font font-semibold text-blue-100 tracking-widest text-xs">
                                         WORKING HOURS
-                                    </h2>
-                                    <a
-                                        href="mailto:hello@imabhishek.online"
-                                        className="text-indigo-400 leading-relaxed"
+                                    </h6>
+                                    <p
+                                        className="text-blue-100 leading-relaxed"
                                     >
                                         9:00 AM - 1:00 AM
-                                    </a>
+                                    </p>
                                 </div>
-                                <div className="lg:w-1/2 px-6 mt-4 flex items-center">
+
+                                <div className="w-full lg:w-1/2 px-6 mt-4">
+                                    <h6 className="title-font font-semibold text-blue-100  tracking-widest text-xs">
+                                        ADDRESS
+                                    </h6>
+                                    <p className="mt-1 text-blue-100 leading-relaxed">Himachal Pradesh, India</p>
+                                </div>
+
+                                <div className="w-full lg:w-1/2 px-6 mt-4 gap-2 sm:mt-8 flex items-center">
                                     {socialLinks.map((item) => (
                                         <Link
                                             key={item.title}
@@ -117,7 +136,7 @@ export function Contact() {
 
                         <div className="order-1 sm:order-2 w-full md:w-[40%] flex flex-col md:ml-auto mt-8 md:mt-0">
                             <ContactForm />
-                            <p className="text-sm text-center text-gray-400 text-opacity-90 mb-5">
+                            <p className="text-sm text-center text-gray-400 text-opacity-90 mb-5 sm:mb-1">
                                 Leave your email and I will get back to you within 24 hours
                             </p>
                         </div>
