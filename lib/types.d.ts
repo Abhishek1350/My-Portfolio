@@ -17,7 +17,7 @@ export type WorkExperience ={
 }
 
 export type Skill ={
-    name: string;
+    title: string;
     image: string;
     url?: string;
 }

@@ -11,6 +11,8 @@ export const metadata: Metadata = {
   description: "Abhishek Bhardwaj",
 };
 
+export const revalidate = Number(process.env.REVALIDATE_INTERVAL) || 600;
+
 export default function RootLayout({
   children,
 }: Readonly<{
