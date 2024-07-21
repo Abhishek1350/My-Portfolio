@@ -1,8 +1,8 @@
 
-import personalInfo from "./personal-info.shema";
+import portfolioV4Data from "./data.schema"
 
 const schemas = [
-    personalInfo
+    portfolioV4Data
 ];
 
 export default schemas;
