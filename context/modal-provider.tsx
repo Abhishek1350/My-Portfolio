@@ -1,5 +1,6 @@
 "use client";
 
+import { Project } from "@/lib/types";
 import {
   ReactNode,
   createContext,
@@ -10,7 +11,7 @@ import {
 interface ModalContextType {
   open: boolean;
   setOpen: (open: boolean) => void;
-  modalData:any;
+  modalData: Project | null;
   setModalData: (data: any) => void;
 }
 

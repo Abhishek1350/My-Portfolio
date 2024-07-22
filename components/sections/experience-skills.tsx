@@ -13,6 +13,12 @@ import { Heading } from "../";
 import { WorkExperience, Skill } from "@/lib/types";
 import { formatDate } from "@/lib/utils";
 
+function sortByStartDate(arr: WorkExperience[]): WorkExperience[] {
+    return arr.sort(
+        (a, b) => new Date(b.startDate).getTime() - new Date(a.startDate).getTime()
+    );
+}
+
 interface Props {
     experiences: WorkExperience[];
     skills: Skill[];
@@ -33,7 +39,7 @@ export function ExperienceSkills({ experiences, skills }: Props) {
                         </div>
 
                         <div className="flex flex-col gap-6">
-                            {experiences.map((experience, index) => (
+                            {sortByStartDate(experiences).map((experience, index) => (
                                 <MovingBorder
                                     key={index}
                                     duration={Math.floor(Math.random() * 10000) + 10000}
@@ -66,7 +72,9 @@ export function ExperienceSkills({ experiences, skills }: Props) {
                                                 <span className="inline-flex relative bottom-[0.5px] h-2 w-2 rounded-full bg-blue-100 mx-1 "></span>{" "}
                                                 <span>
                                                     {formatDate(experience.startDate)} - {" "}
-                                                    {experience.endDate ? formatDate(experience.startDate) : "Present"}
+                                                    {experience.endDate
+                                                        ? formatDate(experience.startDate)
+                                                        : "Present"}
                                                 </span>
                                             </h6>
                                             <p className="text-start text-sm mt-2 font-normal">
@@ -97,10 +105,10 @@ export function ExperienceSkills({ experiences, skills }: Props) {
                                 <div className="flex flex-col items-center w-full gap-2">
                                     <Image
                                         src={skill.image}
-                                        alt={skill.title}
+                                        alt={skill.name}
                                         width={80}
                                         height={80}
-                                        className="rounded-full w-14 object-cover"
+                                        className="h-16 w-16 rounded-full object-cover"
                                     />
                                     <h6 className="text-start text-lg font-bold">
                                         {skill.url ? (
@@ -109,10 +117,10 @@ export function ExperienceSkills({ experiences, skills }: Props) {
                                                 href={skill.url}
                                                 className="hover:underline"
                                             >
-                                                {skill.title}
+                                                {skill.name}
                                             </Link>
                                         ) : (
-                                            skill.title
+                                            skill.name
                                         )}
                                     </h6>
                                 </div>

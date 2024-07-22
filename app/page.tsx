@@ -19,10 +19,10 @@ export default async function page() {
             <Hero data={data.personalInfo} />
             <ExperienceSkills experiences={data.workExperience} skills={data.skills} />
             <ModalProvider>
-              <Projects />
+              <Projects projects={data.projects}/>
             </ModalProvider>
-            <Testimonials />
-            <Contact />
+            <Testimonials data={data.testimonials}/>
+            <Contact personalInfo={data.personalInfo} socialLinks={data.socialLinks}/>
           </>
         ) : null
       }

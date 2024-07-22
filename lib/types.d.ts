@@ -1,7 +1,7 @@
 import { SanityDocument } from "next-sanity";
 
 export type SocialLink = {
-    name: string;
+    title: string;
     url: string;
     priority: number;
 };
@@ -17,7 +17,7 @@ export type WorkExperience ={
 }
 
 export type Skill ={
-    title: string;
+    name: string;
     image: string;
     url?: string;
 }
