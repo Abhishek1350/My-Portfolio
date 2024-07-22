@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "./theme-provider";
 import { FloatingNav } from "@/components/index";
 import { GoogleAnalytics } from '@next/third-parties/google'
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,6 +32,7 @@ export default function RootLayout({
           {children}
           <FloatingNav />
         </ThemeProvider>
+        <Analytics />
         <GoogleAnalytics gaId={process.env.GOOGLE_ANALYTICS_ID as string} />
       </body>
     </html>
