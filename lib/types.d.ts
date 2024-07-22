@@ -12,8 +12,8 @@ export type WorkExperience ={
     companyName: string;
     companyUrl: string;
     companyLogo: string;
-    startDate: Date
-    endDate?: Date;
+    startDate: string
+    endDate: string;
 }
 
 export type Skill ={
