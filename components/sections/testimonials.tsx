@@ -55,10 +55,10 @@ export function Testimonials({ data }: Props) {
                                             <span className="title-font font-medium text-white mb-1">
                                                 {item.authorName}
                                             </span>
-                                            <span className="text-gray-500 text-sm">
+                                            <span className="text-slate-400 text-sm">
                                                 {item.position}
                                             </span>
-                                            <span className="text-gray-500 text-sm">
+                                            <span className="text-slate-400 text-sm">
                                                 {item.companyName}
                                             </span>
                                         </p>

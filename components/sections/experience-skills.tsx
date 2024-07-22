@@ -58,10 +58,10 @@ export function ExperienceSkills({ experiences, skills }: Props) {
                                             className="lg:w-20 lg:h-20 h-16 w-16 rounded-full object-cover"
                                         />
                                         <div className="ms-2 sm:ms-5">
-                                            <h3 className="text-start text-lg md:text-2xl font-bold">
+                                            <h3 className="text-start text-blue-100 text-lg md:text-2xl font-bold">
                                                 {experience.position}
                                             </h3>
-                                            <h6 className="text-start text-white mt-1 font-semibold">
+                                            <h6 className="text-start text-slate-300 mt-1 font-semibold">
                                                 <Link
                                                     target="_blank"
                                                     href={experience.companyUrl}
@@ -69,15 +69,15 @@ export function ExperienceSkills({ experiences, skills }: Props) {
                                                 >
                                                     {experience.companyName}
                                                 </Link>{" "}
-                                                <span className="inline-flex relative bottom-[0.5px] h-2 w-2 rounded-full bg-blue-100 mx-1 "></span>{" "}
-                                                <span>
+                                                <span className="inline-flex relative bottom-[0.5px] h-2 w-2 rounded-full bg-slate-300 mx-1 "></span>{" "}
+                                                <span className="text-slate-300">
                                                     {formatDate(experience.startDate)} - {" "}
                                                     {experience.endDate
-                                                        ? formatDate(experience.startDate)
+                                                        ? formatDate(experience.endDate)
                                                         : "Present"}
                                                 </span>
                                             </h6>
-                                            <p className="text-start text-sm mt-2 font-normal">
+                                            <p className="text-start text-slate-400 text-sm mt-2 font-normal">
                                                 {experience.jobDescription}
                                             </p>
                                         </div>
@@ -110,7 +110,7 @@ export function ExperienceSkills({ experiences, skills }: Props) {
                                         height={80}
                                         className="h-16 w-16 rounded-full object-cover"
                                     />
-                                    <h6 className="text-start text-lg font-bold">
+                                    <h6 className="text-start text-lg font-bold text-blue-100">
                                         {skill.url ? (
                                             <Link
                                                 target="_blank"

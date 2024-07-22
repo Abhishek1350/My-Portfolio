@@ -37,7 +37,7 @@ export function ProjectCard({ data }: Props) {
           {data.title}
         </h3>
         <div className="text-base !m-0 !p-0 font-normal">
-          <p className="text-slate-500 line-clamp-4 ">{data.description}</p>
+          <p className="text-slate-400 line-clamp-4 ">{data.description}</p>
         </div>
       </div>
     </PinContainer>
