@@ -5,6 +5,13 @@ import { ContactForm } from "../form";
 import { FaGithub, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import Link from "next/link";
 import { Heading } from "../";
+import { PersonalInfo, SocialLink } from "@/lib/types";
+import { sortByPriority } from "@/lib/utils";
+
+interface Props {
+    personalInfo: PersonalInfo;
+    socialLinks: SocialLink[];
+}
 
 const getSocialIcons = (title: string) => {
     switch (title) {
@@ -32,26 +39,7 @@ const getIconColors = (title: string) => {
     }
 };
 
-const socialLinks = [
-    {
-        title: "GitHub",
-        link: "https://github.com",
-    },
-    {
-        title: "Twitter",
-        link: "https://twitter.com",
-    },
-    {
-        title: "Instagram",
-        link: "https://instagram.com",
-    },
-    {
-        title: "LinkedIn",
-        link: "https://linkedin.com",
-    },
-];
-
-export function Contact() {
+export function Contact({ personalInfo, socialLinks }: Props) {
     return (
         <SmallGridBackground className="py-20" mask={false} id="contact">
             <Container>
@@ -62,8 +50,7 @@ export function Contact() {
                         <div
                             className="order-2 sm:order-1 w-full md:w-[60%]  rounded-lg overflow-hidden sm:mr-10 p-5 md:p-10 flex items-end justify-start relative"
                             style={{
-                                background:
-                                    "linear-gradient(90deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.70) 100%), url('https://cdn.sanity.io/images/y178r8ab/production/4737240c5a75234b9edca2e6f795273abb0f55a8-2276x1707.jpg?fit=max&auto=format')",
+                                background: `linear-gradient(90deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.70) 100%), url('${personalInfo.setupImage}')`,
                                 backgroundSize: "cover",
                                 backgroundPosition: "center",
                                 backgroundRepeat: "no-repeat",
@@ -81,10 +68,10 @@ export function Contact() {
                                         EMAIL
                                     </h6>
                                     <a
-                                        href="mailto:hello@imabhishek.online"
+                                        href={`mailto:${personalInfo.email}`}
                                         className="text-blue-100 leading-relaxed"
                                     >
-                                        hello@imabhishek.online
+                                        {personalInfo.email}
                                     </a>
                                 </div>
 
@@ -93,7 +80,7 @@ export function Contact() {
                                         WORKING HOURS
                                     </h6>
                                     <p className="text-blue-100 leading-relaxed">
-                                        9:00 AM - 1:00 AM
+                                        {personalInfo.workingHours}
                                     </p>
                                 </div>
 
@@ -102,15 +89,15 @@ export function Contact() {
                                         ADDRESS
                                     </h6>
                                     <p className="mt-1 text-blue-100 leading-relaxed">
-                                        Himachal Pradesh, India
+                                        {personalInfo.address}
                                     </p>
                                 </div>
 
                                 <div className="w-full lg:w-1/2 px-6 mt-4 gap-2 sm:mt-8 flex items-center">
-                                    {socialLinks.map((item) => (
+                                    {sortByPriority(socialLinks).map((item) => (
                                         <Link
                                             key={item.title}
-                                            href={item.link}
+                                            href={item.url}
                                             target="_blank"
                                             className={`inline-flex items-center mr-4 ${getIconColors(
                                                 item.title
