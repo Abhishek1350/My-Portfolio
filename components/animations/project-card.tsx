@@ -6,29 +6,17 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { ModalTrigger } from "./animated-modal";
 import { useModal } from "@/context";
+import { Project } from "@/lib/types";
 
 interface Props {
-  title: string;
-  img: string;
-  description: string;
-  liveUrl: string;
-  gitUrl?: string;
-  techStack: string[];
-  setModalContent?: Function;
+  data: Project
 }
 
-export function ProjectCard({
-  title,
-  img,
-  description,
-  liveUrl,
-  gitUrl,
-  techStack,
-}: Props) {
+export function ProjectCard({ data }: Props) {
   const { setModalData } = useModal();
 
   const handleSetModalContent = () => {
-    setModalData({ title, img, description, liveUrl, gitUrl, techStack });
+    setModalData(data);
   };
 
   return (
@@ -39,17 +27,17 @@ export function ProjectCard({
     >
       <div className="tracking-tight text-blue-100">
         <Image
-          src={img}
-          alt={title}
+          src={data.images[0]}
+          alt={data.title}
           height={300}
           width={500}
           className="rounded-lg h-[180px] max-w-full mb-5"
         />
         <h3 className="line-clamp-1 max-w-xs !pb-2 !m-0 font-bold  text-base text-blue-100">
-          {title}
+          {data.title}
         </h3>
         <div className="text-base !m-0 !p-0 font-normal">
-          <p className="text-slate-500 line-clamp-4 ">{description}</p>
+          <p className="text-slate-500 line-clamp-4 ">{data.description}</p>
         </div>
       </div>
     </PinContainer>

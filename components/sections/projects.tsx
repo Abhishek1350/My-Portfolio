@@ -16,40 +16,17 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaEye, FaGithub } from "react-icons/fa";
 import { Heading } from "../";
+import { Project } from "@/lib/types";
+import { sortByPriority } from "@/lib/utils";
 
-const projects = [
-    {
-        title: "Free Games Hub",
-        img: "https://cdn.sanity.io/images/y178r8ab/production/5933cfd9b21d92c48c57272648203199851d246d-1764x926.png?fit=max&auto=format",
-        description:
-            "Explore a world of free PC games and browser-based fun at FreeGamesHub. Download exciting titles and play online without any cost. Your go-to destination for endless gaming enjoyment!",
-        liveUrl: "https://www.freegameshub.fun",
-        gitUrl: "https://github.com/abhishek1350",
-        techStack: ["NextJS", "NextUI", "TailwindCSS", "TypeScript"],
-    },
-    {
-        title: "DOGE INU",
-        img: "https://cdn.sanity.io/images/y178r8ab/production/af233932d4dc9ba7a7dd6700e79278577cab2620-1902x914.png?fit=max&auto=format",
-        description:
-            "A community driven meme token on Dogechain! DINU was made to unleash the creativity and full potential of the DOGE community.",
-        liveUrl: "https://dogeinu.dog",
-        techStack: ["ReactJS", "TailwindCSS", "TypeScript"],
-    },
-    {
-        title: "My Portfolio",
-        img: "https://cdn.sanity.io/images/y178r8ab/production/da0932dc9508cfedb39af25ae07a710cdf5d978e-1896x921.png?fit=max&auto=format",
-        description:
-            "My personal portfolio, built with NextJS, TypeScript and Sanity CMS",
-        liveUrl: "https://www.imabhishek.online",
-        gitUrl: "https://github.com/abhishek1350",
-        techStack: ["NextJS", "TailwindCSS", "TypeScript"],
-    },
-];
+interface Props {
+    projects: Project[];
+}
 
 const INITIAL_ITEMS = 3;
 
-export function Projects() {
-    const [items, setItems] = useState(projects.slice(0, INITIAL_ITEMS));
+export function Projects({ projects }: Props) {
+    const [items, setItems] = useState(sortByPriority(projects).slice(0, INITIAL_ITEMS));
     const [showAll, setShowAll] = useState(false);
     const { modalData } = useModal();
 
@@ -71,7 +48,7 @@ export function Projects() {
 
                     <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                         {items.map((project, index) => (
-                            <ProjectCard key={index} {...project} />
+                            <ProjectCard key={index} data={project} />
                         ))}
                     </div>
 
@@ -133,32 +110,22 @@ export function Projects() {
                             ))}
                         </div>
                         <div className="flex flex-wrap gap-x-2 gap-y-5 mb-5">
-                            <Link
-                                className="w-full sm:w-[49%]"
-                                href={modalData?.img}
-                                target="_blank"
-                            >
-                                <Image
-                                    src={modalData?.img}
-                                    alt={modalData?.title}
-                                    height={500}
-                                    width={500}
-                                    className="rounded-lg w-full  max-h-48 cursor-pointer aspect-video object-cover"
-                                />
-                            </Link>
-                            <Link
-                                className="w-full sm:w-[49%]"
-                                href={modalData?.img}
-                                target="_blank"
-                            >
-                                <Image
-                                    src={modalData?.img}
-                                    alt={modalData?.title}
-                                    height={500}
-                                    width={500}
-                                    className="rounded-lg w-full max-h-48 cursor-pointer aspect-video object-cover"
-                                />
-                            </Link>
+                            {modalData?.images?.map((item) => (
+                                <Link
+                                    key={item}
+                                    className="w-full sm:w-[49%]"
+                                    href={item}
+                                    target="_blank"
+                                >
+                                    <Image
+                                        src={item}
+                                        alt={modalData.title}
+                                        height={500}
+                                        width={500}
+                                        className="rounded-lg w-full  max-h-48 cursor-pointer aspect-video object-cover"
+                                    />
+                                </Link>
+                            ))}
                         </div>
                     </ModalContent>
                 </ModalBody>
