@@ -1,19 +1,13 @@
 import type { Metadata } from "next";
-import "@mantine/core/styles.css";
-import { ColorSchemeScript, MantineProvider } from "@mantine/core";
-import {
-  Header,
-  Footer,
-  ScrollProgress,
-  ScrollToTop,
-  MainLoader,
-} from "@/components";
+import { Inter } from "next/font/google";
 import "./globals.css";
-import { Libre_Franklin } from "next/font/google";
-import { Suspense } from "react";
+import { ThemeProvider } from "./theme-provider";
+import { FloatingNav } from "@/components/index";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { GoogleAnalytics } from '@next/third-parties/google'
+
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_CURRENT_SITE_URL as string),
@@ -45,35 +39,28 @@ export const metadata: Metadata = {
   },
 };
 
-const font = Libre_Franklin({
-  weight: ["400", "500", "700", "900"] as const,
-  style: ["normal", "italic"],
-  subsets: ["latin"],
-});
+export const revalidate = Number(process.env.REVALIDATE_INTERVAL) || 600;
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
-    <html lang="en">
-      <head>
-        <ColorSchemeScript />
-      </head>
-      <body className={font.className}>
-        <MantineProvider defaultColorScheme="auto">
-          <Suspense fallback={<MainLoader />}>
-            <ScrollProgress />
-            <Header />
-            {children}
-            <ScrollToTop />
-            <Footer />
-          </Suspense>
-        </MantineProvider>
+    <html lang="en" suppressHydrationWarning>
+      <body className={inter.className}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+          <FloatingNav />
+        </ThemeProvider>
         <Analytics />
-        <SpeedInsights />
         <GoogleAnalytics gaId={process.env.GOOGLE_ANALYTICS_ID as string} />
+        <SpeedInsights/>
       </body>
     </html>
   );
