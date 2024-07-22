@@ -4,31 +4,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { GridBackground } from "../bg-patterns";
 import { Heading } from "../";
+import { Testimonial } from "@/lib/types";
+import { sortByPriority } from "@/lib/utils";
 
-export const testimonials = [
-    {
-        id: 1,
-        name: "Vikshak P",
-        designation: "Cofounder and Head of Operations",
-        company: "Edvolve",
-        img: "https://cdn.sanity.io/images/y178r8ab/production/886b2ff056399fc3089aed457410bfa4e4f8ec4e-724x752.webp?fit=max&auto=format",
-        compnayUrl: "https://www.linkedin.com/company/edvolvein/",
-        content:
-            "Abhishek worked with us and he was quite the problem solver. His ability to learn quickly and eagerness to learn new things was super helpful since we were a high velocity team and expected quick results. Would happily work with him again to develop good products, and recommend him to other employers looking for a fast learner in your team!",
-    },
-    {
-        id: 2,
-        name: "Shwetank Singh",
-        designation: "Technical Lead",
-        company: "Edvolve",
-        img: "https://cdn.sanity.io/images/y178r8ab/production/57cc03d9cf78cf1d413854bb4293a33a6531977d-413x531.jpg?fit=max&auto=format",
-        compnayUrl: "https://www.linkedin.com/company/edvolvein/",
-        content:
-            "Abhishek is a hardworking, driven and dedicated person. He will be an asset wherever he goes.",
-    },
-];
+interface Props {
+    data: Testimonial[];
+}
 
-export function Testimonials() {
+export function Testimonials({ data }: Props) {
     return (
         <GridBackground className="py-20">
             <Container>
@@ -36,9 +19,9 @@ export function Testimonials() {
                     <Heading text="Few Nice Words" />
 
                     <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 mt-12">
-                        {testimonials.map((item) => (
+                        {sortByPriority(data).map((item) => (
                             <MovingBorder
-                                key={item.id}
+                                key={item.authorName}
                                 duration={Math.floor(Math.random() * 10000) + 10000}
                                 borderRadius="1rem"
                                 style={{
@@ -58,25 +41,25 @@ export function Testimonials() {
                                     <p className="leading-relaxed mb-6">{item.content}</p>
                                     <Link
                                         className="inline-flex items-center"
-                                        href={item.compnayUrl}
+                                        href={item.companyUrl}
                                         target="_blank"
                                     >
                                         <Image
-                                            alt="testimonial"
-                                            src={item.img}
+                                            alt={item.authorName}
+                                            src={item.authorImage}
                                             className="w-24 h-24 rounded-full flex-shrink-0 object-cover object-center"
                                             height={100}
                                             width={100}
                                         />
                                         <p className="flex-grow flex flex-col pl-4">
                                             <span className="title-font font-medium text-white mb-1">
-                                                {item.name}
+                                                {item.authorName}
                                             </span>
                                             <span className="text-gray-500 text-sm">
-                                                {item.designation}
+                                                {item.position}
                                             </span>
                                             <span className="text-gray-500 text-sm">
-                                                {item.company}
+                                                {item.companyName}
                                             </span>
                                         </p>
                                     </Link>
