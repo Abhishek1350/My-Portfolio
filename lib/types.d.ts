@@ -47,14 +47,8 @@ export type PersonalInfo ={
     siteName: string;
     name: string;
     email: string;
-    phoneNumber?: string;
     address: string;
-    education: string;
-    dateOfBirth: string;
-    languages: string[];
     position: string;
-    oneLiner: string;
-    totalExperience: string;
     resume: string;
     profileImage: string;
     setupImage: string;

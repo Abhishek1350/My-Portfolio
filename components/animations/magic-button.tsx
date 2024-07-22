@@ -8,6 +8,7 @@ export function MagicButton({
     handleClick,
     className,
     scroll,
+    externalLink,
 }: {
     title: string;
     icon?: React.ReactNode;
@@ -15,10 +16,14 @@ export function MagicButton({
     handleClick?: () => void;
     className?: string;
     scroll?: string;
+    externalLink?: string;
 }) {
     const router = useRouter();
 
     function handleButtonClick() {
+        if (externalLink) {
+            window.open(externalLink, "_blank");
+        }
         if (scroll) {
             return router.push(scroll);
         }

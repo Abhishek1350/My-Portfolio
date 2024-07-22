@@ -8,23 +8,30 @@ import {
 import { Container } from "../container";
 import Image from "next/image";
 import { DotBackground, Heading } from "../";
+import { PersonalInfo } from "@/lib/types";
 
-export function Hero() {
+interface Props {
+  data: PersonalInfo;
+}
+
+export function Hero({ data }: Props) {
   return (
     <DotBackground className="pt-20" spotlight>
       <Container className="flex justify-center relative z-10 w-full">
         <div className="flex flex-col items-center justify-center w-full">
           <MotionUp delay={0}>
             <h1 className="text-3xl  md:text-6xl text-neutral-700 dark:text-blue-100 !leading-snug text-center mx-auto font-[900]">
-              Hi, I'm Abhishek, a Self Taught
+              Hi, I'm {data.name.split(" ")[0]}, a Self Taught
               <br />
-              <Highlight delay={1.8}>Software Developer</Highlight>
+              <Highlight delay={1.8}>
+                {data.position}
+              </Highlight>
             </h1>
           </MotionUp>
 
           <MotionUp delay={0.3} className="my-4">
             <h6 className="text-center !leading-7 md:!leading-10  font-semibold text-2 lg:text-3xl max-w-xl  text-blue-100 ">
-              Based in Himachal Pradesh, India,
+              Based in {data.address},
               <br />
               Specialized in <Highlight delay={1.8}>React</Highlight> and{" "}
               <Highlight delay={1.8}>Next.js</Highlight>
@@ -45,6 +52,7 @@ export function Hero() {
               icon={<FaDownload />}
               position="right"
               className="w-[150px] text-lg"
+              externalLink={data.resume}
             />
           </MotionUp>
         </div>
@@ -56,7 +64,7 @@ export function Hero() {
             className="p-0 py-10 md:p-14 rounded-lg"
             style={{
               background:
-                "linear-gradient(90deg, rgba(4,7,29,0.85) 0%, rgba(12,14,35,0.80) 100%), url('https://cdn.sanity.io/images/y178r8ab/production/4737240c5a75234b9edca2e6f795273abb0f55a8-2276x1707.jpg?fit=max&auto=format')",
+                `linear-gradient(90deg, rgba(4,7,29,0.85) 0%, rgba(12,14,35,0.80) 100%), url('${data.setupImage}')`,
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
@@ -64,16 +72,12 @@ export function Hero() {
           >
             <div className="flex gap-8 flex-wrap lg:flex-nowrap lg:gap-16 overflow-hidden">
               <div className="order-2 lg:order-1 w-full  lg:w-[70%]">
-                <Heading text="My Journey" className="uppercase mb-5 text-left text-purple" />
+                <Heading
+                  text="My Journey"
+                  className="uppercase mb-5 text-left text-purple"
+                />
                 <p className="text-blue-100 text-normal sm:text-lg sm:text-justify">
-                  Starting in June 2021 during the lockdown, I embarked on my
-                  journey to become a software developer alone, without any
-                  teacher or mentor. At that time, I had no prior knowledge of
-                  programming. I seized the opportunity to learn something new
-                  during the lockdown, and it turned out to be an incredible
-                  journey. I have learned extensively from online resources,
-                  without taking any formal courses. Now, I specialize in React
-                  and Next.js and am capable of creating software independently.
+                  {data.moreInfo}
                 </p>
                 <TextAppearAnimation
                   className="text-white italic font-semibold text-xl mt-5 uppercase animate-pulse"
@@ -83,10 +87,10 @@ export function Hero() {
 
               <div className="flex justify-center order-1 lg:order-2 w-full  lg:w-[30%]">
                 <Image
-                  src="https://cdn.sanity.io/images/y178r8ab/production/98e49e7e5d2f0581919cc01b7816aff4b9bebd24-934x1073.jpg?fit=max&auto=format"
+                  src={data.profileImage}
                   width={300}
                   height={800}
-                  alt="Abhishek"
+                  alt={data.name}
                   className="rounded-lg aspect-square overflow-hidden"
                 />
               </div>
