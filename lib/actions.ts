@@ -3,6 +3,16 @@
 import { groq } from "next-sanity";
 import { client } from "@/sanity/lib";
 import { CombinedData } from "./types";
+import { EmailTemplateForUser, EmailTemplateForAdmin } from "@/components/email-templates";
+import { Resend } from "resend";
+
+interface FormData {
+    name: string;
+    email: string;
+    subject: string;
+    message: string;
+    currentEmail: string;
+}
 
 export async function getSanityData(): Promise<CombinedData | null> {
     const query = groq`*[_type == "portfolioV4Data" && !(_id in path("drafts.**"))][0]{
@@ -68,5 +78,32 @@ export async function getSanityData(): Promise<CombinedData | null> {
     } catch (error) {
         console.error("Failed to fetch data from Sanity:", error);
         return null;
+    }
+}
+
+export async function sendMail(
+    formData: FormData
+): Promise<{ success: boolean; message?: string }> {
+    const resend = new Resend(process.env.RESEND_API_KEY);
+    try {
+        const { error } = await resend.emails.send({
+            from: formData.currentEmail,
+            to: [formData.email],
+            subject: "Contact Form Submission",
+            react: EmailTemplateForUser({ ...formData }) as React.ReactElement,
+        });
+
+        if (error) throw new Error();
+
+        resend.emails.send({
+            from: formData.currentEmail,
+            to: [formData.currentEmail],
+            subject: "New Inquiry from portfolio",
+            react: EmailTemplateForAdmin({ ...formData }) as React.ReactElement,
+        });
+
+        return { success: true };
+    } catch (error) {
+        return { success: false, message: "Something went wrong!" };
     }
 }

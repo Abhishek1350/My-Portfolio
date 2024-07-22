@@ -111,7 +111,7 @@ export function Contact({ personalInfo, socialLinks }: Props) {
                         </div>
 
                         <div className="order-1 sm:order-2 w-full md:w-[40%] flex flex-col md:ml-auto mt-8 md:mt-0">
-                            <ContactForm />
+                            <ContactForm currentEmail={personalInfo.email}/>
                             <p className="text-sm text-center text-gray-400 text-opacity-90 mb-5 sm:mb-1">
                                 Leave your email and I will get back to you within 24 hours
                             </p>

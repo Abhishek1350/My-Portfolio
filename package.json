@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@radix-ui/react-label": "^2.1.0",
+    "@react-email/components": "^0.0.21",
     "@sanity/vision": "^3.52.0",
     "clsx": "^2.1.0",
     "framer-motion": "^11.0.25",
@@ -25,6 +26,7 @@
     "react-dom": "^18",
     "react-fast-marquee": "^1.6.5",
     "react-icons": "^5.0.1",
+    "resend": "^3.4.0",
     "sanity": "^3.52.0",
     "tailwind-merge": "^2.2.2",
     "tailwindcss-animate": "^1.0.7"

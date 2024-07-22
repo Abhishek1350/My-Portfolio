@@ -2,10 +2,16 @@
 
 import { Label, Input, Textarea, LabelInputContainer } from "./";
 import { IoSendSharp } from "react-icons/io5";
-import { useReducer } from "react";
+import { useReducer, useState } from "react";
+import { sendMail } from "@/lib/actions";
+import { BsEmojiHeartEyesFill } from "react-icons/bs";
+import { motion } from "framer-motion";
+import { AnimationLottie } from "../animations";
+import contactLottie from "@/data/contact.json";
 
 interface Props {
     className?: string;
+    currentEmail: string;
 }
 
 interface FormData {
@@ -58,8 +64,9 @@ function inputReducer(state: FormData, action: Action) {
     }
 }
 
-export function ContactForm({ className }: Props) {
+export function ContactForm({ className, currentEmail }: Props) {
     const [state, dispatch] = useReducer(inputReducer, initialInputState);
+    const [sent, setSent] = useState(false);
 
     function handleInputChange(
         e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -83,7 +90,7 @@ export function ContactForm({ className }: Props) {
 
     async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
-        if (state.loading) return;
+        if (state.loading || sent) return;
 
         if (!isFormValid()) {
             return dispatch({
@@ -99,18 +106,35 @@ export function ContactForm({ className }: Props) {
             payload: { loading: true, error: { hasError: false, message: "" } },
         });
 
-        console.log(state);
+        const { success, message } = await sendMail({
+            ...state,
+            currentEmail,
+        });
 
-        setTimeout(() => {
+        if (success) {
+            setSent(true);
             dispatch({
                 type: ActionTypes.RESET_STATE,
                 payload: initialInputState,
             });
-        }, 2000);
+        }
+
+        if (message) {
+            dispatch({
+                type: ActionTypes.RESET_STATE,
+                payload: {
+                    loading: false,
+                    error: { hasError: true, message },
+                },
+            });
+        }
     }
 
     return (
-        <form className={className} onSubmit={handleSubmit}>
+        <form
+            className={`relative ${className} ${sent ? "p-5" : ""}`}
+            onSubmit={handleSubmit}
+        >
             <LabelInputContainer className="mb-4">
                 <Label htmlFor="name">Name</Label>
                 <Input
@@ -156,11 +180,15 @@ export function ContactForm({ className }: Props) {
             <button
                 className="group/btn relative h-12 w-full shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset] animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none"
                 type="submit"
-                disabled={state.loading}
+                disabled={state.loading || sent}
             >
                 {state.loading ? (
                     <span className="flex w-full justify-center items-center gap-2">
                         Wait! <LoadingIcon />
+                    </span>
+                ) : sent ? (
+                    <span className="flex w-full justify-center items-center gap-2">
+                        Sent! <BsEmojiHeartEyesFill />
                     </span>
                 ) : (
                     <span className="flex w-full justify-center items-center gap-2">
@@ -170,7 +198,13 @@ export function ContactForm({ className }: Props) {
                 <BottomGradient />
             </button>
 
-            <p className="mt-4 text-sm text-center text-red-500">
+            {sent && (
+                <div className={`absolute top-0 left-0 w-full h-full`}>
+                    <Overlay show={sent} className="flex justify-center" />
+                </div>
+            )}
+
+            <p className="mt-4 text-sm text-center text-red-500  relative z-30">
                 {state.error.hasError &&
                     (state.error.message
                         ? state.error.message
@@ -210,5 +244,32 @@ const LoadingIcon = () => {
                 fill="currentColor"
             ></path>
         </svg>
+    );
+};
+
+const Overlay = ({
+    show,
+    className,
+}: {
+    show: boolean;
+    className?: string;
+}) => {
+    return (
+        <motion.div
+            initial={{
+                opacity: 0,
+            }}
+            animate={
+                show
+                    ? {
+                        opacity: 1,
+                        backdropFilter: "blur(5px)",
+                    }
+                    : {}
+            }
+            className={`h-full w-full  z-50 ${className}`}
+        >
+            <AnimationLottie animationData={contactLottie} width="80%" />
+        </motion.div>
     );
 };
