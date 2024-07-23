@@ -41,7 +41,7 @@ export function Projects({ projects }: Props) {
     }
 
     return (
-        <SmallGridBackground className="py-20" id="projects">
+        <SmallGridBackground className="py-10" id="projects">
             <Container>
                 <MotionUp delay={0.1}>
                     <Heading text="A Small Selection of Recent Projects" />
