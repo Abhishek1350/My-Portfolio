@@ -26,7 +26,7 @@ interface Props {
 
 export function ExperienceSkills({ experiences, skills }: Props) {
     return (
-        <section className="w-full py-20" id="about">
+        <section className="w-full py-10" id="about">
             <Container>
                 <MotionUp delay={0.1}>
                     <Heading text="Career History" />
@@ -42,7 +42,6 @@ export function ExperienceSkills({ experiences, skills }: Props) {
                             {sortByStartDate(experiences).map((experience, index) => (
                                 <MovingBorder
                                     key={index}
-                                    duration={Math.floor(Math.random() * 10000) + 10000}
                                     borderRadius="1rem"
                                     style={{
                                         borderRadius: `calc(1rem* 0.96)`,
@@ -108,7 +107,7 @@ export function ExperienceSkills({ experiences, skills }: Props) {
                                         alt={skill.name}
                                         width={80}
                                         height={80}
-                                        className="h-16 w-16 rounded-full object-cover"
+                                        className="h-16 w-16 rounded-full object-cover border border-white bg-white"
                                     />
                                     <h6 className="text-start text-lg font-bold text-blue-100">
                                         {skill.url ? (

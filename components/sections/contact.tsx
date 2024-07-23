@@ -41,12 +41,12 @@ const getIconColors = (title: string) => {
 
 export function Contact({ personalInfo, socialLinks }: Props) {
     return (
-        <SmallGridBackground className="py-20" mask={false} id="contact">
+        <SmallGridBackground className="py-10" id="contact">
             <Container>
                 <MotionUp delay={0.1}>
                     <Heading text="Let's Have a Chat" />
 
-                    <div className="flex sm:flex-nowrap flex-wrap mt-12">
+                    <div className="flex sm:flex-nowrap flex-wrap mt-6 sm:mt-12">
                         <div
                             className="order-2 sm:order-1 w-full md:w-[60%]  rounded-lg overflow-hidden sm:mr-10 p-5 md:p-10 flex items-end justify-start relative"
                             style={{
@@ -112,9 +112,6 @@ export function Contact({ personalInfo, socialLinks }: Props) {
 
                         <div className="order-1 sm:order-2 w-full md:w-[40%] flex flex-col md:ml-auto mt-8 md:mt-0">
                             <ContactForm currentEmail={personalInfo.email}/>
-                            <p className="text-sm text-center text-gray-400 text-opacity-90 mb-5 sm:mb-1">
-                                Leave your email and I will get back to you within 24 hours
-                            </p>
                         </div>
                     </div>
                 </MotionUp>

@@ -9,6 +9,7 @@ import {
 } from "framer-motion";
 import { useRef } from "react";
 import { cn } from "@/lib/utils";
+import { BorderBeam } from "./border-beam";
 
 export function MovingBorder({
   borderRadius = "1.75rem",
@@ -18,6 +19,7 @@ export function MovingBorder({
   borderClassName,
   duration,
   className,
+  showBeam = true,
   ...otherProps
 }: {
   borderRadius?: string;
@@ -27,6 +29,7 @@ export function MovingBorder({
   borderClassName?: string;
   duration?: number;
   className?: string;
+  showBeam?: boolean;
   [key: string]: any;
 }) {
   return (
@@ -41,19 +44,7 @@ export function MovingBorder({
       }}
       {...otherProps}
     >
-      <div
-        className="absolute inset-0 rounde-[1.75rem]"
-        style={{ borderRadius: `calc(${borderRadius} * 0.96)` }}
-      >
-        <MovingBorderChild duration={duration} rx="30%" ry="30%">
-          <div
-            className={cn(
-              "h-20 w-20 opacity-[0.8] bg-[radial-gradient(#CBACF9_40%,transparent_60%)]",
-              borderClassName
-            )}
-          />
-        </MovingBorderChild>
-      </div>
+      {showBeam && <BorderBeam size={250} duration={15} delay={5} />}
 
       <div
         className={cn(

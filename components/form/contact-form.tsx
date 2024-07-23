@@ -132,9 +132,12 @@ export function ContactForm({ className, currentEmail }: Props) {
 
     return (
         <form
-            className={`relative ${className} ${sent ? "p-5" : ""}`}
+            className={`relative ${className}`}
             onSubmit={handleSubmit}
         >
+            <h6 className="text-center text-blue-100 font-semibold mb-5">
+                Leave your email and I will get back to you within 24 hours
+            </h6>
             <LabelInputContainer className="mb-4">
                 <Label htmlFor="name">Name</Label>
                 <Input
@@ -176,33 +179,30 @@ export function ContactForm({ className, currentEmail }: Props) {
                     onChange={handleInputChange}
                 />
             </LabelInputContainer>
-
-            <button
-                className="group/btn relative h-12 w-full shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset] animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none"
-                type="submit"
-                disabled={state.loading || sent}
-            >
-                {state.loading ? (
-                    <span className="flex w-full justify-center items-center gap-2">
-                        Wait! <LoadingIcon />
-                    </span>
-                ) : sent ? (
-                    <span className="flex w-full justify-center items-center gap-2">
-                        Sent! <BsEmojiHeartEyesFill />
-                    </span>
+            {
+                sent ? (
+                    <p className="text-center text-sm text-slate-400">
+                        Your message has been sent successfully!
+                    </p>
                 ) : (
-                    <span className="flex w-full justify-center items-center gap-2">
-                        Submit <IoSendSharp />
-                    </span>
-                )}
-                <BottomGradient />
-            </button>
-
-            {sent && (
-                <div className={`absolute top-0 left-0 w-full h-full`}>
-                    <Overlay show={sent} className="flex justify-center" />
-                </div>
-            )}
+                    <button
+                        className="group/btn relative h-12 w-full shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset] animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none"
+                        type="submit"
+                        disabled={state.loading || sent}
+                    >
+                        {state.loading ? (
+                            <span className="flex w-full justify-center items-center gap-2">
+                                Wait! <LoadingIcon />
+                            </span>
+                        ) : (
+                            <span className="flex w-full justify-center items-center gap-2">
+                                Submit <IoSendSharp />
+                            </span>
+                        )}
+                        <BottomGradient />
+                    </button>
+                )
+            }
 
             <p className="mt-4 text-sm text-center text-red-500  relative z-30">
                 {state.error.hasError &&
@@ -211,7 +211,7 @@ export function ContactForm({ className, currentEmail }: Props) {
                         : "Something went wrong! Please try again!")}
             </p>
 
-            <div className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-5 h-[1px] w-full" />
+            <div className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-10 sm:my-5 h-[1px] w-full" />
         </form>
     );
 }
@@ -244,32 +244,5 @@ const LoadingIcon = () => {
                 fill="currentColor"
             ></path>
         </svg>
-    );
-};
-
-const Overlay = ({
-    show,
-    className,
-}: {
-    show: boolean;
-    className?: string;
-}) => {
-    return (
-        <motion.div
-            initial={{
-                opacity: 0,
-            }}
-            animate={
-                show
-                    ? {
-                        opacity: 1,
-                        backdropFilter: "blur(5px)",
-                    }
-                    : {}
-            }
-            className={`h-full w-full  z-50 ${className}`}
-        >
-            <AnimationLottie animationData={contactLottie} width="80%" />
-        </motion.div>
     );
 };
