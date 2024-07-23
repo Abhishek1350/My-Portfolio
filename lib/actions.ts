@@ -2,8 +2,11 @@
 
 import { groq } from "next-sanity";
 import { client } from "@/sanity/lib";
-import { CombinedData } from "./types";
-import { EmailTemplateForUser, EmailTemplateForAdmin } from "@/components/email-templates";
+import { CombinedData, SocialLink } from "./types";
+import {
+    EmailTemplateForUser,
+    EmailTemplateForAdmin,
+} from "@/components/email-templates";
 import { Resend } from "resend";
 
 interface FormData {
@@ -105,5 +108,22 @@ export async function sendMail(
         return { success: true };
     } catch (error) {
         return { success: false, message: "Something went wrong!" };
+    }
+}
+
+export async function getSocialLinks(): Promise<SocialLink[] | null> {
+    const query = groq`*[_type == "portfolioV4Data" && !(_id in path("drafts.**"))][0]{
+        socialLinks[]{
+           "title": name,
+            url,
+            priority
+        },
+    }`;
+    try {
+        const { socialLinks } = await client.fetch(query);
+        return socialLinks;
+    } catch (error) {
+        console.error("Failed to fetch data from Sanity:", error);
+        return null;
     }
 }
