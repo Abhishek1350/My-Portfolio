@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./theme-provider";
-import { FloatingNav } from "@/components/index";
+import { FloatingNav, Loader } from "@/components/index";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Suspense } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
       "Explore the portfolio of Abhishek Bhardwaj based in Himachal Pradesh, a skilled React/Next.js Developer. Discover expertise in ReactJS, NextJS, Redux, Material UI, and TailwindCSS showcased through innovative web development projects.",
     images: [
       {
-        url: "/og-image.png",
+        url: "/og.webp",
         alt: "Abhishek Bhardwaj | React/Next.js Developer based in Himachal Pradesh, India",
       },
     ],
@@ -55,12 +56,14 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
-          <FloatingNav />
+          <main className="relative bg-black-100 flex justify-center items-center flex-col overflow-hidden">
+            <Suspense fallback={<Loader />}>{children}</Suspense>
+            <FloatingNav />
+          </main>
         </ThemeProvider>
         <Analytics />
         <GoogleAnalytics gaId={process.env.GOOGLE_ANALYTICS_ID as string} />
-        <SpeedInsights/>
+        <SpeedInsights />
       </body>
     </html>
   );

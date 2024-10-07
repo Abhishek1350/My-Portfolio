@@ -5,11 +5,11 @@ import { motion } from "framer-motion";
 export function Highlight({
     children,
     className,
-    delay=1
+    delay = 1,
 }: {
     children: React.ReactNode;
     className?: string;
-    delay?:number
+    delay?: number;
 }) {
     return (
         <motion.span
@@ -22,14 +22,14 @@ export function Highlight({
             transition={{
                 duration: 1.3,
                 ease: "linear",
-                delay: delay
+                delay: delay,
             }}
             style={{
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "left center",
                 display: "inline",
             }}
-            className={`relative inline-block py-1 px-2 rounded-md bg-gradient-to-r from-green-300 via-lime-400 to-emerald-500 dark:from-red-700 dark:via-red-700 dark:to-orange-600 ${className}`}
+            className={`relative inline-block py-1 px-2 rounded-md bg-gradient-to-r from-blue-900 via-indigo-900 to-indigo-500 ${className}`}
         >
             {children}
         </motion.span>

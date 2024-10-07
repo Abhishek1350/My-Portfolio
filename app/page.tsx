@@ -4,6 +4,7 @@ import {
   Projects,
   Testimonials,
   Contact,
+  Loader,
 } from "@/components/index";
 import { ModalProvider } from "@/context";
 import { getSanityData } from "@/lib/actions";
@@ -11,21 +12,21 @@ import { getSanityData } from "@/lib/actions";
 export default async function page() {
   const data = await getSanityData();
 
+  if (!data) return <Loader />;
+
   return (
-    <main className="relative bg-black-100 flex justify-center items-center flex-col overflow-hidden">
-      {
-        data ? (
-          <>
-            <Hero data={data.personalInfo} />
-            <ExperienceSkills experiences={data.workExperience} skills={data.skills} />
-            <ModalProvider>
-              <Projects projects={data.projects}/>
-            </ModalProvider>
-            <Testimonials data={data.testimonials}/>
-            <Contact personalInfo={data.personalInfo} socialLinks={data.socialLinks}/>
-          </>
-        ) : null
-      }
-    </main>
+    <ModalProvider>
+      <Hero data={data.personalInfo} />
+      <ExperienceSkills
+        experiences={data.workExperience}
+        skills={data.skills}
+      />
+      <Projects projects={data.projects} />
+      <Testimonials data={data.testimonials} />
+      <Contact
+        personalInfo={data.personalInfo}
+        socialLinks={data.socialLinks}
+      />
+    </ModalProvider>
   );
 }
