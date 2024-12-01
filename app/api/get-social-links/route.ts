@@ -1,6 +1,8 @@
 import { getSocialLinks } from "@/lib/actions";
 import { sortByPriority } from "@/lib/utils";
 
+export const revalidate = 3600;
+
 export async function GET() {
     try {
         const socialLinks = await getSocialLinks();
