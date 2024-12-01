@@ -1,5 +1,5 @@
 import { Container } from "../container";
-import { MotionUp } from "../animations";
+import { MotionUp, WorldMap } from "../animations";
 import { SmallGridBackground } from "../bg-patterns";
 import { ContactForm } from "../form";
 import { FaGithub, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
@@ -43,9 +43,53 @@ export function Contact({ personalInfo, socialLinks }: Props) {
     return (
         <SmallGridBackground className="py-10" id="contact">
             <Container>
-                <MotionUp delay={0.1}>
-                    <Heading text="Let's Have a Chat" />
+                <MotionUp delay={0.2}>
+                    <Heading text="Let's Have a Chat" className="mb-5" />
 
+                    <p className="text-sm md:text-lg relative leading-relaxed text-blue-100 max-w-2xl mx-auto text-center">
+                        Redefining creativity and freedom. Collaborate and create from
+                        anywhere, whether it's the comfort of your own space or on the go.
+                    </p>
+
+                    <div className="my-5">
+                        <WorldMap
+                            dots={[
+                                {
+                                    start: {
+                                        lat: 64.2008,
+                                        lng: -149.4937,
+                                    },
+                                    end: {
+                                        lat: 34.0522,
+                                        lng: -118.2437,
+                                    },
+                                },
+                                {
+                                    start: { lat: 64.2008, lng: -149.4937 },
+                                    end: { lat: -15.7975, lng: -47.8919 },
+                                },
+                                {
+                                    start: { lat: -15.7975, lng: -47.8919 },
+                                    end: { lat: 38.7223, lng: -9.1393 },
+                                },
+                                {
+                                    start: { lat: 51.5074, lng: -0.1278 },
+                                    end: { lat: 28.6139, lng: 77.209 },
+                                },
+                                {
+                                    start: { lat: 28.6139, lng: 77.209 },
+                                    end: { lat: 43.1332, lng: 131.9113 },
+                                },
+                                {
+                                    start: { lat: 28.6139, lng: 77.209 },
+                                    end: { lat: -1.2921, lng: 36.8219 },
+                                },
+                            ]}
+                        />
+                    </div>
+                </MotionUp>
+
+                <MotionUp delay={0.2}>
                     <div className="flex sm:flex-nowrap flex-wrap mt-6 sm:mt-12">
                         <div
                             className="order-2 sm:order-1 w-full md:w-[60%]  rounded-lg overflow-hidden sm:mr-10 p-5 md:p-10 flex items-end justify-start relative"
@@ -111,7 +155,7 @@ export function Contact({ personalInfo, socialLinks }: Props) {
                         </div>
 
                         <div className="order-1 sm:order-2 w-full md:w-[40%] flex flex-col md:ml-auto mt-8 md:mt-0">
-                            <ContactForm currentEmail={personalInfo.email}/>
+                            <ContactForm currentEmail={personalInfo.email} />
                         </div>
                     </div>
                 </MotionUp>
