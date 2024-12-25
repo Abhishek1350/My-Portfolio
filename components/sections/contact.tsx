@@ -41,7 +41,7 @@ const getIconColors = (title: string) => {
 
 export function Contact({ personalInfo, socialLinks }: Props) {
     return (
-        <SmallGridBackground className="py-10" id="contact">
+        <SmallGridBackground className="py-10 md:py-20" id="contact">
             <Container>
                 <MotionUp delay={0.1}>
                     <Heading text="Let's Have a Chat" />

@@ -1,11 +1,5 @@
 import { Container } from "../container";
-import expLottie from "@/data/experience.json";
-import {
-    AnimationLottie,
-    MovingBorder,
-    MagicCard,
-    MotionUp,
-} from "../animations";
+import { MovingBorder, MagicCard, MotionUp, Timeline } from "../animations";
 import Image from "next/image";
 import Link from "next/link";
 import Marquee from "react-fast-marquee";
@@ -14,7 +8,7 @@ import { WorkExperience, Skill } from "@/lib/types";
 import { formatDate } from "@/lib/utils";
 
 function sortByStartDate(arr: WorkExperience[]): WorkExperience[] {
-    return arr.sort(
+    return arr.toSorted(
         (a, b) => new Date(b.startDate).getTime() - new Date(a.startDate).getTime()
     );
 }
@@ -25,71 +19,18 @@ interface Props {
 }
 
 export function ExperienceSkills({ experiences, skills }: Props) {
+    const sortedExperiences = sortByStartDate(experiences);
+
     return (
-        <section className="w-full py-10" id="about">
+        <section className="w-full py-10 md:py-20" id="about">
             <Container>
                 <MotionUp delay={0.1}>
                     <Heading text="Career History" />
-
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 mt-12">
-                        <div className="flex justify-center items-start">
-                            <div className="w-full h-full">
-                                <AnimationLottie animationData={expLottie} />
-                            </div>
-                        </div>
-
-                        <div className="flex flex-col gap-6">
-                            {sortByStartDate(experiences).map((experience, index) => (
-                                <MovingBorder
-                                    key={index}
-                                    borderRadius="1rem"
-                                    style={{
-                                        borderRadius: `calc(1rem* 0.96)`,
-                                    }}
-                                    className="flex-1 text-black dark:text-blue-100 border-neutral-200 dark:border-slate-800"
-                                >
-                                    <div className="flex w-full p-4 py-6  gap-2">
-                                        <Image
-                                            src={experience.companyLogo}
-                                            alt={experience.companyName}
-                                            width={300}
-                                            height={300}
-                                            className="lg:w-20 lg:h-20 h-16 w-16 rounded-full object-cover"
-                                        />
-                                        <div className="ms-2 sm:ms-5">
-                                            <h3 className="text-start text-blue-100 text-lg md:text-2xl font-bold">
-                                                {experience.position}
-                                            </h3>
-                                            <h6 className="text-start text-slate-300 mt-1 font-semibold">
-                                                <Link
-                                                    target="_blank"
-                                                    href={experience.companyUrl}
-                                                    className="hover:underline"
-                                                >
-                                                    {experience.companyName}
-                                                </Link>{" "}
-                                                <span className="inline-flex relative bottom-[0.5px] h-2 w-2 rounded-full bg-slate-300 mx-1 "></span>{" "}
-                                                <span className="text-slate-300">
-                                                    {formatDate(experience.startDate)} - {" "}
-                                                    {experience.endDate
-                                                        ? formatDate(experience.endDate)
-                                                        : "Present"}
-                                                </span>
-                                            </h6>
-                                            <p className="text-start text-slate-400 text-sm mt-2 font-normal">
-                                                {experience.jobDescription}
-                                            </p>
-                                        </div>
-                                    </div>
-                                </MovingBorder>
-                            ))}
-                        </div>
-                    </div>
+                    <Timeline data={sortedExperiences} />
                 </MotionUp>
 
                 <MotionUp className="mt-10 p-0 py-10 rounded-lg" delay={0.1}>
                     <Heading text="Expertise" />
-
                     <Marquee
                         speed={90}
                         pauseOnHover
@@ -131,3 +72,58 @@ export function ExperienceSkills({ experiences, skills }: Props) {
         </section>
     );
 }
+
+const data = [
+    {
+        title: "2024",
+        content: (
+            <div>
+                <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+                    Built and launched Aceternity UI and Aceternity UI Pro from scratch
+                </p>
+            </div>
+        ),
+    },
+    {
+        title: "Early 2023",
+        content: (
+            <div>
+                <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+                    I usually run out of copy, but when I see content this big, I try to
+                    integrate lorem ipsum.
+                </p>
+                <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+                    Lorem ipsum is for people who are too lazy to write copy. But we are
+                    not. Here are some more example of beautiful designs I built.
+                </p>
+            </div>
+        ),
+    },
+    {
+        title: "Changelog",
+        content: (
+            <div>
+                <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4">
+                    Deployed 5 new components on Aceternity today
+                </p>
+                <div className="mb-8">
+                    <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
+                        ✅ Card grid component
+                    </div>
+                    <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
+                        ✅ Startup template Aceternity
+                    </div>
+                    <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
+                        ✅ Random file upload lol
+                    </div>
+                    <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
+                        ✅ Himesh Reshammiya Music CD
+                    </div>
+                    <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
+                        ✅ Salman Bhai Fan Club registrations open
+                    </div>
+                </div>
+            </div>
+        ),
+    },
+];

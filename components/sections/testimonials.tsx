@@ -13,7 +13,7 @@ interface Props {
 
 export function Testimonials({ data }: Props) {
     return (
-        <GridBackground className="py-10">
+        <GridBackground className="py-10 md:py-20">
             <Container>
                 <MotionUp delay={0.2}>
                     <Heading text="Few Nice Words" />

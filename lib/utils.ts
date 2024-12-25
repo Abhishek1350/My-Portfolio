@@ -20,3 +20,10 @@ export function sortByPriority<
 >(arr: T[]): T[] {
   return arr.sort((a, b) => a.priority - b.priority);
 }
+
+export function breakText(text: string): string[] {
+  return text
+    .split(/\.\s+/)
+    .map((sentence) => sentence.replace(/\.$/, ""))
+    .filter((sentence) => sentence !== "");
+}

@@ -4,10 +4,6 @@ import { Label, Input, Textarea, LabelInputContainer } from "./";
 import { IoSendSharp } from "react-icons/io5";
 import { useReducer, useState } from "react";
 import { sendMail } from "@/lib/actions";
-import { BsEmojiHeartEyesFill } from "react-icons/bs";
-import { motion } from "framer-motion";
-import { AnimationLottie } from "../animations";
-import contactLottie from "@/data/contact.json";
 
 interface Props {
     className?: string;
