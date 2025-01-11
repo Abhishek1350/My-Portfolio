@@ -23,9 +23,7 @@ export function Hero({ data }: Props) {
             <h1 className="text-3xl  md:text-6xl text-neutral-700 dark:text-blue-100 !leading-snug text-center mx-auto font-[900]">
               Hi, I'm {data.name.split(" ")[0]}, a Self Taught
               <br />
-              <Highlight delay={1.8}>
-                {data.position}
-              </Highlight>
+              <Highlight delay={1.8}>{data.position}</Highlight>
             </h1>
           </MotionUp>
 
@@ -63,10 +61,8 @@ export function Hero({ data }: Props) {
           <div
             className="p-0 py-10 md:p-14 rounded-lg"
             style={{
-              background:
-                `linear-gradient(90deg, rgba(4,7,29,0.85) 0%, rgba(12,14,35,0.80) 100%), url('${data.setupImage}')`,
+              background: `linear-gradient(90deg, rgba(0,0,0,0.90) 20%, rgba(0,1,2,0.50) 100%), url('${data.setupImage}')`,
               backgroundSize: "cover",
-              backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
             }}
           >
@@ -76,22 +72,27 @@ export function Hero({ data }: Props) {
                   text="My Journey"
                   className="uppercase mb-5 text-left text-purple"
                 />
-                <p className="text-blue-100 text-normal sm:text-lg sm:text-justify">
-                  {data.moreInfo}
-                </p>
+                {data.moreInfo.split("\n\n").map((paragraph, index) => (
+                  <p
+                    className="leading-relaxed mb-2 last:mb-0"
+                    key={index}
+                  >
+                    {paragraph}
+                  </p>
+                ))}
                 <TextAppearAnimation
                   className="text-white italic font-semibold text-xl mt-5 uppercase animate-pulse"
                   text="Strongly believe in Karma"
                 />
               </div>
 
-              <div className="flex justify-center order-1 lg:order-2 w-full  lg:w-[30%]">
+              <div className="flex justify-center order-1 lg:order-2 w-full max-h-[300px]  lg:w-[30%]">
                 <Image
                   src={data.profileImage}
-                  width={300}
-                  height={800}
+                  width={400}
+                  height={400}
                   alt={data.name}
-                  className="rounded-lg aspect-square overflow-hidden"
+                  className="rounded-lg aspect-square overflow-hidden max-w-full"
                 />
               </div>
             </div>

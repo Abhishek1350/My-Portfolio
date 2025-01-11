@@ -50,7 +50,7 @@ export function Contact({ personalInfo, socialLinks }: Props) {
                         <div
                             className="order-2 sm:order-1 w-full md:w-[60%]  rounded-lg overflow-hidden sm:mr-10 p-5 md:p-10 flex items-end justify-start relative"
                             style={{
-                                background: `linear-gradient(90deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.70) 100%), url('${personalInfo.setupImage}')`,
+                                background: `linear-gradient(45deg, rgba(0,0,0,0.70) 30%, rgba(1,2,3,0.50) 100%), url('${personalInfo.setupImage}')`,
                                 backgroundSize: "cover",
                                 backgroundPosition: "center",
                                 backgroundRepeat: "no-repeat",
