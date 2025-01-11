@@ -21,7 +21,7 @@ export const metadata: Metadata = {
       "Explore the portfolio of Abhishek Bhardwaj based in Himachal Pradesh, a skilled React/Next.js Developer. Discover expertise in ReactJS, NextJS, Redux, Material UI, and TailwindCSS showcased through innovative web development projects.",
     images: [
       {
-        url: "/og.webp",
+        url: "/og-image.webp",
         alt: "Abhishek Bhardwaj | React/Next.js Developer based in Himachal Pradesh, India",
       },
     ],
