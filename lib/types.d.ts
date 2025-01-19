@@ -6,7 +6,7 @@ export type SocialLink = {
     priority: number;
 };
 
-export type WorkExperience ={
+export type WorkExperience = {
     position: string;
     jobDescription: string;
     companyName: string;
@@ -16,13 +16,13 @@ export type WorkExperience ={
     endDate: string;
 }
 
-export type Skill ={
+export type Skill = {
     name: string;
     image: string;
     url?: string;
 }
 
-export type Project ={
+export type Project = {
     title: string;
     description: string;
     images: string[];
@@ -32,7 +32,7 @@ export type Project ={
     priority: number;
 }
 
-export type Testimonial ={
+export type Testimonial = {
     authorName: string;
     authorImage: string;
     companyName: string;
@@ -43,7 +43,7 @@ export type Testimonial ={
     priority: number;
 }
 
-export type PersonalInfo ={
+export type PersonalInfo = {
     siteName: string;
     name: string;
     email: string;
@@ -56,6 +56,12 @@ export type PersonalInfo ={
     workingHours: string;
 }
 
+export interface Certificate {
+    title: string;
+    image: string;
+    url?: string;
+}
+
 export type CombinedData = SanityDocument & {
     personalInfo: PersonalInfo;
     socialLinks: SocialLinks[];
@@ -63,4 +69,5 @@ export type CombinedData = SanityDocument & {
     skills: Skill[];
     projects: Project[];
     testimonials: Testimonial[];
+    certificates: Certificate[]
 };

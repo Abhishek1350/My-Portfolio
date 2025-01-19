@@ -20,6 +20,7 @@ export default async function page() {
       <ExperienceSkills
         experiences={data.workExperience}
         skills={data.skills}
+        certificates={data.certificates}
       />
       <Projects projects={data.projects} />
       <Testimonials data={data.testimonials} />

@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Marquee from "react-fast-marquee";
 import { Heading } from "../";
-import { WorkExperience, Skill } from "@/lib/types";
+import { WorkExperience, Skill, Certificate } from "@/lib/types";
 
 function sortByStartDate(arr: WorkExperience[]): WorkExperience[] {
     return arr.toSorted(
@@ -15,9 +15,10 @@ function sortByStartDate(arr: WorkExperience[]): WorkExperience[] {
 interface Props {
     experiences: WorkExperience[];
     skills: Skill[];
+    certificates: Certificate[];
 }
 
-export function ExperienceSkills({ experiences, skills }: Props) {
+export function ExperienceSkills({ experiences, skills, certificates }: Props) {
     const sortedExperiences = sortByStartDate(experiences);
 
     return (
@@ -66,6 +67,53 @@ export function ExperienceSkills({ experiences, skills }: Props) {
                             </MagicCard>
                         ))}
                     </Marquee>
+                </MotionUp>
+
+                <MotionUp className="mt-10 p-0 py-10 rounded-lg" delay={0.1}>
+                    {
+                        certificates.length > 1 ? (
+                            <Heading text="Certifications" />
+                        ) : (
+                            <Heading text={`${certificates[0].title} Certified`} />
+                        )
+                    }
+                    {certificates.length === 1 ? (
+                        <div className="max-w-4xl mx-auto mt-10 relative">
+                            <a
+                                href={certificates[0].url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                title={certificates[0].title}
+                            >
+                                <Image
+                                    src={certificates[0].image}
+                                    alt={certificates[0].title}
+                                    width={1280}
+                                    height={800}
+                                    className="rounded w-full h-full object-cover"
+                                />
+                            </a>
+                        </div>
+                    ) : (
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-10">
+                            {certificates.map((certificate, index) => (
+                                <a
+                                    href={certificate?.url || "#"}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    key={index}
+                                >
+                                    <Image
+                                        src={certificate.image}
+                                        alt={certificate.title}
+                                        width={1280}
+                                        height={720}
+                                        className="w-full max-h-[500px] aspect-square rounded"
+                                    />
+                                </a>
+                            ))}
+                        </div>
+                    )}
                 </MotionUp>
             </Container>
         </section>

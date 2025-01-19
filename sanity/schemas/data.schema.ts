@@ -350,5 +350,34 @@ export default {
                 },
             ],
         },
+        {
+            name: "certificates",
+            title: "Certificates",
+            type: "array",
+            of: [
+                {
+                    type: "object",
+                    fields: [
+                        {
+                            name: "title",
+                            title: "Title",
+                            type: "string",
+                            validation: (rule: Rule) => rule.required(),
+                        },
+                        {
+                            name: "image",
+                            title: "Image",
+                            type: "image",
+                            validation: (rule: Rule) => rule.required(),
+                        },
+                        {
+                            name: "url",
+                            title: "URL",
+                            type: "url",
+                        }
+                    ],
+                },
+            ],
+        },
     ],
 };

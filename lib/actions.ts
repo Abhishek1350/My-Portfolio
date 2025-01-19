@@ -73,6 +73,11 @@ export async function getSanityData(): Promise<CombinedData | null> {
             socialLink,
             content,
             priority
+        },
+        certificates[]{
+            title,
+            "image": image.asset->url,
+            url
         }
     }`;
     try {
