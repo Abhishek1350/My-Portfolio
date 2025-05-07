@@ -102,13 +102,14 @@ export function ExperienceSkills({ experiences, skills, certificates }: Props) {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     key={index}
+                                    title={certificate.title}
                                 >
                                     <Image
                                         src={certificate.image}
                                         alt={certificate.title}
                                         width={1280}
                                         height={720}
-                                        className="w-full max-h-[500px] aspect-square rounded"
+                                        className="w-full h-full  rounded-xl"
                                     />
                                 </a>
                             ))}
