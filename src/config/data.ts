@@ -1,4 +1,7 @@
+import { BsKeyboard } from "react-icons/bs";
 import { FaReact, FaNodeJs, FaGitAlt } from "react-icons/fa";
+import { FiCpu, FiHeadphones, FiMonitor } from "react-icons/fi";
+import { HiOutlineDesktopComputer } from "react-icons/hi";
 import {
   SiNextdotjs,
   SiTypescript,
@@ -226,3 +229,28 @@ export const projects = [
     ),
   },
 ];
+
+
+export const setupSpecs = [
+  {
+    title: "RGB PC Build",
+    subTitle: "Custom rig with 10C/16T, RTX 4060 and 32GB RAM for performance in dev & gaming.",
+    icon: FiCpu,
+  },
+  {
+    title: "Dual Monitor Setup",
+    subTitle: "Lenovo 1080p + MSI 2K, 27” screens for perfect mix of clarity and productivity.",
+    icon: FiMonitor,
+  },
+  {
+    title: "Audio & Peripherals",
+    subTitle: "Redragon speakers, Cosmic Byte keyboard & headphones, plus earbuds & neckband for ANS and Dolby audio.",
+    icon: FiHeadphones,
+  },
+  {
+    title: "Gaming Chair",
+    subTitle: "Ergonomic comfort for long coding sessions and all-night builds.",
+    icon: HiOutlineDesktopComputer,
+  },
+];
+
