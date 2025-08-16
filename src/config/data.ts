@@ -254,3 +254,25 @@ export const setupSpecs = [
   },
 ];
 
+export const certifications = [
+  {
+    title: "Al Fluency: Framework & Foundations - Anthropic",
+    image: "/images/certifications/ai-fluency.webp",
+    url:"https://verify.skilljar.com/c/ekmscej8qr5j"
+  },
+  {
+    title: "Fundamentals of AI and ML - AWS",
+    image: "/images/certifications/ai-ml.webp",
+    url:"/images/certifications/ai-ml.webp"
+  },
+  {
+    title: "Next.js - Vercel",
+    image: "/images/certifications/vercel-next.webp",
+    url:"https://nextjs.org/learn/certificate?course=dashboard-app&user=54220&certId=dashboard-app-54220-1746641465395"
+  },
+  {
+    title: "Frontend Developer (React) - HackerRank",
+    image: "/images/certifications/hacker-rank.webp",
+    url:"https://www.hackerrank.com/certificates/0b0a9b79a4a1"
+  },
+]
