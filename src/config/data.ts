@@ -179,3 +179,50 @@ export const techStack = [
     type: "Tools & DevOps",
   },
 ];
+
+export const projects = [
+  {
+    title: "SnapLoom",
+    description:
+      "A free AI-powered image editor with tools for background removal, recoloring, aspect ratio resizing, and image generation.",
+    image: "/images/projects/snaploom.webp",
+    liveUrl: "https://www.snaploom.space",
+    githubUrl: "https://github.com/Abhishek1350",
+    techStack: techStack.filter((item) =>
+      ["Next.js", "TypeScript", "Tailwind"].includes(item.name)
+    ),
+  },
+  {
+    title: "Free Games Hub",
+    description:
+      "A treasure trove of free PC games and browser-based delights. Discover thrilling titles ready for download and instant play.",
+    image: "/images/projects/free-games-hub.webp",
+    liveUrl: "https://www.freegameshub.xyz",
+    githubUrl: "https://github.com/Abhishek1350/FreeGamesHub",
+    techStack: techStack.filter((item) =>
+      ["Next.js", "TypeScript", "Tailwind"].includes(item.name)
+    ),
+  },
+  {
+    title: "CoinEcho",
+    description:
+      "Get AI insights and stay ahead in the fast-moving world of digital assets with real-time cryptocurrency updates and analysis.",
+    image: "/images/projects/coin-echo.webp",
+    liveUrl: "https://coinecho.pages.dev",
+    githubUrl: "https://github.com/Abhishek1350/CoinEcho",
+    techStack: techStack.filter((item) =>
+      ["React", "TypeScript", "Supabase"].includes(item.name)
+    ),
+  },
+  {
+    title: "FreeAIHub",
+    description:
+      "Discover a diverse range of AI tools for Text-to-Image, Automatic Speech Recognition, and more, all available at no cost.",
+    image: "/images/projects/free-ai-hub.webp",
+    liveUrl: "https://www.freeaihub.cloud/",
+    githubUrl: "https://github.com/Abhishek1350",
+    techStack: techStack.filter((item) =>
+      ["Next.js", "TypeScript"].includes(item.name)
+    ),
+  },
+];
