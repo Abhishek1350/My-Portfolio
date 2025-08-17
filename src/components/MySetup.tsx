@@ -52,12 +52,12 @@ export function MySetup() {
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
             viewport={{ once: true }}
             className="relative overflow-hidden rounded-sm bg-gradient-to-br from-blue-900/20 to-cyan-900/20   border-gray-800/50 hover:border-blue-500/30 block"
-            href="/images/about/abhishek-setup-1.jpg"
+            href="/images/about/abhishek-setup-1.webp"
             target="_blank"
             rel="noopener noreferrer"
           >
             <Image
-              src="/images/about/abhishek-setup-1.jpg"
+              src="/images/about/abhishek-setup-1.webp"
               alt="Abhishek's Development Setup - Main View"
               width={800}
               height={600}
@@ -72,12 +72,12 @@ export function MySetup() {
             transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
             viewport={{ once: true }}
             className="relative overflow-hidden rounded-sm bg-gradient-to-br from-cyan-900/20 to-blue-900/20 border-gray-800/50 hover:border-blue-500/30"
-            href="/images/about/abhishek-setup-1.jpg"
+            href="/images/about/abhishek-setup-1.webp"
             target="_blank"
             rel="noopener noreferrer"
           >
             <Image
-              src="/images/about/abhishek-setup-2.jpg"
+              src="/images/about/abhishek-setup-2.webp"
               alt="Abhishek's Development Setup - Alternative View"
               width={800}
               height={600}

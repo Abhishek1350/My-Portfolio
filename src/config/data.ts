@@ -49,7 +49,7 @@ export const socialLinks = [
 export const personalInfo = {
   name: "Abhishek Bhardwaj",
   title: "Software Developer | React, Next.js, Nest.js",
-  avatar: "/images/about/abhishek-bhardwaj.jpg",
+  avatar: "/images/about/abhishek-bhardwaj.webp",
   email: "hello@imabhishek.site",
   location: "Himachal Pradesh, India",
   description:
