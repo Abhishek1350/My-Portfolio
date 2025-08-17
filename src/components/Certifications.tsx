@@ -38,7 +38,7 @@ export function Certifications() {
         />
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl">
         {certifications.map((cert, index) => (
           <motion.a
             href={cert.url}

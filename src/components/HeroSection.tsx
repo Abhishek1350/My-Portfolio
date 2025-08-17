@@ -62,13 +62,13 @@ export function HeroSection() {
           transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
           className="flex w-full items-center gap-4 justify-between"
         >
-          {heroSection.socialLinks.map(({ title, url }) => (
+          {heroSection.socialLinks.map(({ title, url }, index) => (
             <motion.a
               key={title}
               title={title}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ duration: 0.2, ease: "easeOut" }}
+              initial={{ x: 5, scale: 0.2 }}
+              animate={{ x: 0, scale: 1 }}
+              transition={{ duration: 0.5, delay: index * 0.3 }}
               href={url}
               target="_blank"
               rel="noopener noreferrer"

@@ -55,9 +55,9 @@ export function WorkExperience() {
               <span className="text-gray-400">{job.period}</span>
             </div>
 
-            <p className="text-lg text-gray-200 mb-3">{job.shortDesc}</p>
+            <p className="text-lg text-gray-200 mb-2">{job.shortDesc}</p>
 
-            <ul className="space-y-4 mb-8 pl-3">
+            <ul className="space-y-2 mb-8 pl-3">
               {job.bulletPoints.map((item, index) => (
                 <motion.li
                   key={index}

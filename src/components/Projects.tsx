@@ -84,7 +84,7 @@ export function Projects() {
                   })}
                 </div>
               </div>
-              <p className="text-gray-300 mb-4 leading-relaxed">
+              <p className="text-gray-300 mb-4 leading-relaxed line-clamp-3">
                 {project.description}
               </p>
 
