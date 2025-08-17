@@ -6,7 +6,6 @@ import Image from "next/image";
 import { FiCode, FiExternalLink, FiGithub } from "react-icons/fi";
 
 export function Projects() {
-  console.log(projects);
   return (
     <section className="mb-16">
       <motion.div
