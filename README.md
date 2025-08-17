@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# imabhishek
 
-## Getting Started
+Welcome to **imabhishek** – a modern portfolio site built with Next.js and Tailwind CSS. This project showcases your skills, work experience, and projects with interactive animations and a clean, responsive design.
 
-First, run the development server:
+## 🚀 Overview
+
+imabhishek serves as a personal portfolio site to display your professional journey, technical abilities, and select projects. It leverages the power of Next.js for fast, scalable web applications and Tailwind CSS for elegant styling. Framer Motion powers smooth animations throughout the site.
+
+## 🛠️ Tech Stack
+
+- **Framework:** [Next.js](https://nextjs.org/)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **Animation:** [Framer Motion](https://www.framer.com/motion/)
+- **Analytics:** Google Analytics, Vercel Analytics, Speed Insights
+- **Languages:** TypeScript
+
+## ✨ Features
+
+- **Hero Section:** Brief intro and branding at the top.
+- **Work Experience:** Timeline of your professional roles, responsibilities, and achievements.
+- **Technical Skills:** Visual showcase of your tech stack, tools, and frameworks.
+- **Projects:** Gallery of featured projects with live demo and GitHub links.
+- **Certifications:** List of relevant certifications.
+- **Blog Posts:** Insightful articles and tutorials.
+- **Testimonials:** Endorsements and recommendations.
+- **Call To Action:** Contact and engagement section.
+- **My Setup:** Details on your development and work environment.
+- **Responsive Design:** Optimized for desktop and mobile.
+- **Dark Mode:** Stylish dark theme by default.
+
+## 📦 Getting Started
+
+Clone the repository:
+
+```bash
+git clone https://github.com/Abhishek1350/My-Portfolio.git
+cd My-Portfolio
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit [http://localhost:3000](http://localhost:3000) to view your portfolio.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🌐 Live Demo
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Check out the live site: [imabhishek.site](https://www.imabhishek.site)
 
-## Learn More
+## 📄 License
 
-To learn more about Next.js, take a look at the following resources:
+This project is licensed under the [Creative Commons Attribution-NonCommercial 4.0 International License](https://creativecommons.org/licenses/by-nc/4.0/).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Summary:**  
+You are free to share, adapt, and build upon this project for personal and educational use, **but not for commercial purposes**. Please give appropriate credit. For full license details, see the [LICENSE](LICENSE) file.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🤝 Contributing
 
-## Deploy on Vercel
+Contributions, suggestions, and issues are welcome!  
+Open an issue or submit a pull request to improve the portfolio.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📫 Contact
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Email:** hello@imabhishek.site
+- **Website:** [imabhishek.site](https://www.imabhishek.site)
+- **GitHub:** [Abhishek1350](https://github.com/Abhishek1350)
+
+---
+
+> Crafted with Next.js, Tailwind CSS, and passion by [Abhishek1350](https://github.com/Abhishek1350)
