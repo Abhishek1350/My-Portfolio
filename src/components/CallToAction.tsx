@@ -7,7 +7,7 @@ import { personalInfo } from "@/config/data";
 
 export function CallToAction() {
   return (
-    <motion.section
+    <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
@@ -72,6 +72,6 @@ export function CallToAction() {
           </a>
         </motion.div>
       </motion.div>
-    </motion.section>
+    </motion.div>
   );
 }

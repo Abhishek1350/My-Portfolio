@@ -6,7 +6,7 @@ import { FiBriefcase } from "react-icons/fi"
 
 export function WorkExperience() {
   return (
-    <section className="mb-16">
+    <div className="mb-16">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -81,6 +81,6 @@ export function WorkExperience() {
           </motion.div>
         ))}
       </div>
-    </section>
+    </div>
   )
 }

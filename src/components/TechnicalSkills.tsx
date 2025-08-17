@@ -6,7 +6,7 @@ import { FaReact } from "react-icons/fa";
 
 export function TechnicalSkills() {
   return (
-    <section className="mb-16">
+    <div className="mb-16">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -66,6 +66,6 @@ export function TechnicalSkills() {
           );
         })}
       </div>
-    </section>
+    </div>
   );
 }

@@ -28,7 +28,7 @@ function getSocialIcon(title: string) {
 
 export function HeroSection() {
   return (
-    <section className="flex flex-col lg:flex-row items-center lg:items-start gap-8 mb-16">
+    <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8 mb-16">
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -128,6 +128,6 @@ export function HeroSection() {
           {heroSection.personalInfo.description}
         </motion.p>
       </motion.div>
-    </section>
+    </div>
   );
 }
