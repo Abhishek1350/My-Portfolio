@@ -12,7 +12,7 @@ export const metaData: Metadata = {
             "Discover Abhishek Bhardwaj, a self-taught Full-Stack Developer from Himachal Pradesh, India. Masterfully crafting scalable web marvels with React, Next.js, Nest.js, Remix, and AI-driven innovations. Explore his portfolio showcasing expertise in Shopify apps, dynamic frontends, and robust backends using PostgreSQL, Strapi, Sanity, Supabase, and Appwrite.",
         images: [
             {
-                url: "/og-image.jpg",
+                url: "/og-image.webp",
                 alt: "Abhishek Bhardwaj | Software Developer | React, Next.js, Nest.js",
                 height: 630,
                 width: 1200,
