@@ -275,3 +275,24 @@ export const certifications = [
     url:"https://www.hackerrank.com/certificates/0b0a9b79a4a1"
   },
 ]
+
+export const testimonials = [
+  {
+    name: "Vikshak P",
+    company: "Edvolve",
+    linkedIn: "https://www.linkedin.com/in/vikshak/",
+    position: "Cofounder",
+    avatar: "/images/testimonials/vikshak.webp",
+    testimonial:
+      "Abhishek worked with us and he was quite the problem solver. His ability to learn quickly and eagerness to learn new things was super helpful since we were a high velocity team and expected quick results. Would happily work with him again to develop good products, and recommend him to other employers looking for a fast learner in your team!",
+  },
+  {
+    name: "Shwetank Singh",
+    company: "Edvolve",
+    linkedIn: "https://www.linkedin.com/in/singhshwetank/",
+    position: "Technical Lead",
+   avatar: "/images/testimonials/shwetank.webp",
+    testimonial:
+      "Abhishek is a hardworking, driven and dedicated person. He will be an asset wherever he goes.",
+  },
+];
