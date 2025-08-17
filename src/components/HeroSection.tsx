@@ -28,7 +28,7 @@ function getSocialIcon(title: string) {
 
 export function HeroSection() {
   return (
-    <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8 mb-16">
+    <section className="flex flex-col lg:flex-row items-center lg:items-start gap-8 mb-16">
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -65,6 +65,7 @@ export function HeroSection() {
           {heroSection.socialLinks.map(({ title, url }) => (
             <motion.a
               key={title}
+              title={title}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
               transition={{ duration: 0.2, ease: "easeOut" }}
@@ -127,6 +128,6 @@ export function HeroSection() {
           {heroSection.personalInfo.description}
         </motion.p>
       </motion.div>
-    </div>
+    </section>
   );
 }

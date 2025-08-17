@@ -1,4 +1,3 @@
-import { BsKeyboard } from "react-icons/bs";
 import { FaReact, FaNodeJs, FaGitAlt } from "react-icons/fa";
 import { FiCpu, FiHeadphones, FiMonitor } from "react-icons/fi";
 import { HiOutlineDesktopComputer } from "react-icons/hi";
