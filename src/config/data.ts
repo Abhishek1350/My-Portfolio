@@ -70,11 +70,11 @@ export const workExperience = [
       "Started as a ReactJS developer and gradually expanded into full-stack responsibilities, including backend development and AI integration. Working both independently and within teams to deliver scalable web applications. My full responsibilities include:",
     bulletPoints: [
       "Gathering client requirements and delivering tailored frontend and backend solutions",
-      "Integrating AI tools into internal projects to enhance automation and workflows",
       "Building and deploying custom Shopify apps using the Remix framework",
-      "Developing responsive user interfaces with React.js, Next.js, and TypeScript",
+      "Building dynamic frontends with React and Next.js",
       "Integrating headless CMS platforms such as Strapi, Sanity, Drupal, and WordPress",
       "Implementing backend systems using Node.js and NestJS with PostgreSQL",
+      "Integrating AI tools into internal projects to enhance automation and workflows",
       "Managing deployments on VPS and optimizing performance with Cloudflare and GraphQL",
     ],
   },
@@ -229,26 +229,29 @@ export const projects = [
   },
 ];
 
-
 export const setupSpecs = [
   {
     title: "RGB PC Build",
-    subTitle: "Custom rig with 10C/16T, RTX 4060 and 32GB RAM for performance in dev & gaming.",
+    subTitle:
+      "Custom rig with 10C/16T, RTX 4060 and 32GB RAM for performance in dev & gaming.",
     icon: FiCpu,
   },
   {
     title: "Dual Monitor Setup",
-    subTitle: "Lenovo 1080p + MSI 2K, 27” screens for perfect mix of clarity and productivity.",
+    subTitle:
+      "Lenovo 1080p + MSI 2K, 27” screens for perfect mix of clarity and productivity.",
     icon: FiMonitor,
   },
   {
     title: "Audio & Peripherals",
-    subTitle: "Redragon speakers, Cosmic Byte keyboard & headphones, plus earbuds & neckband for ANS and Dolby audio.",
+    subTitle:
+      "Redragon speakers, Cosmic Byte keyboard & headphones, plus earbuds & neckband for ANS and Dolby audio.",
     icon: FiHeadphones,
   },
   {
     title: "Gaming Chair",
-    subTitle: "Ergonomic comfort for long coding sessions and all-night builds.",
+    subTitle:
+      "Ergonomic comfort for long coding sessions and all-night builds.",
     icon: HiOutlineDesktopComputer,
   },
 ];
@@ -257,24 +260,34 @@ export const certifications = [
   {
     title: "Al Fluency: Framework & Foundations - Anthropic",
     image: "/images/certifications/ai-fluency.webp",
-    url:"https://verify.skilljar.com/c/ekmscej8qr5j"
+    url: "https://verify.skilljar.com/c/ekmscej8qr5j",
   },
   {
-    title: "Fundamentals of AI and ML - AWS",
-    image: "/images/certifications/ai-ml.webp",
-    url:"/images/certifications/ai-ml.webp"
+    title: "Subject Matter Expert - AWS",
+    image: "/images/certifications/sme-aws.webp",
+    url: "/images/certifications/sme-aws.webp",
   },
   {
     title: "Next.js - Vercel",
     image: "/images/certifications/vercel-next.webp",
-    url:"https://nextjs.org/learn/certificate?course=dashboard-app&user=54220&certId=dashboard-app-54220-1746641465395"
+    url: "https://nextjs.org/learn/certificate?course=dashboard-app&user=54220&certId=dashboard-app-54220-1746641465395",
   },
   {
     title: "Frontend Developer (React) - HackerRank",
     image: "/images/certifications/hacker-rank.webp",
-    url:"https://www.hackerrank.com/certificates/0b0a9b79a4a1"
+    url: "https://www.hackerrank.com/certificates/0b0a9b79a4a1",
   },
-]
+  {
+    title: "Fundamentals of AI and ML - AWS",
+    image: "/images/certifications/ai-ml.webp",
+    url: "/images/certifications/ai-ml.webp",
+  },
+  {
+    title: "Model Context Protocol - Anthropic",
+    image: "/images/certifications/mcp.webp",
+    url: "https://verify.skilljar.com/c/9ecfwypeucvc",
+  },
+];
 
 export const testimonials = [
   {
@@ -291,7 +304,7 @@ export const testimonials = [
     company: "Edvolve",
     linkedIn: "https://www.linkedin.com/in/singhshwetank/",
     position: "Technical Lead",
-   avatar: "/images/testimonials/shwetank.webp",
+    avatar: "/images/testimonials/shwetank.webp",
     testimonial:
       "Abhishek is a hardworking, driven and dedicated person. He will be an asset wherever he goes.",
   },
