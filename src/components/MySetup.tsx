@@ -72,7 +72,7 @@ export function MySetup() {
             transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
             viewport={{ once: true }}
             className="relative overflow-hidden rounded-sm bg-gradient-to-br from-cyan-900/20 to-blue-900/20 border-gray-800/50 hover:border-blue-500/30"
-            href="/images/about/abhishek-setup-1.webp"
+            href="/images/about/abhishek-setup-2.webp"
             target="_blank"
             rel="noopener noreferrer"
           >
