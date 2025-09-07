@@ -245,7 +245,7 @@ export const setupSpecs = [
   {
     title: "Audio & Peripherals",
     subTitle:
-      "Redragon speakers, Cosmic Byte keyboard & headphones, plus earbuds & neckband for ANS and Dolby audio.",
+      "Redragon speakers, Cosmic Byte keyboard & headphones, plus earbuds & neckband for Dolby audio and ANC.",
     icon: FiHeadphones,
   },
   {
