@@ -4,6 +4,7 @@ import { setupSpecs } from "@/config/data";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { FiSettings } from "react-icons/fi";
+import { VideoDialog } from "./ui/video-dialog";
 
 export function MySetup() {
   return (
@@ -46,25 +47,13 @@ export function MySetup() {
           viewport={{ once: true }}
           className="space-y-6"
         >
-          <motion.a
-            initial={{ opacity: 0, scale: 0.98 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-            viewport={{ once: true }}
-            className="relative overflow-hidden rounded-sm bg-gradient-to-br from-blue-900/20 to-cyan-900/20   border-gray-800/50 hover:border-blue-500/30 block"
-            href="/images/about/abhishek-setup-1.webp"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              src="/images/about/abhishek-setup-1.webp"
-              alt="Abhishek's Development Setup - Main View"
-              width={800}
-              height={600}
-              className="w-full h-auto rounded-sm object-cover hover:scale-102 transition-transform duration-700 ease-out"
-              priority
-            />
-          </motion.a>
+          <VideoDialog
+            animationStyle="from-center"
+            videoSrc="https://www.youtube.com/embed/nVIEqYuCkgA?si=lyPFyA7sbVo21iSy"
+            thumbnailSrc="/images/about/abhishek-setup-1.webp"
+            thumbnailAlt="Abhishek's Development Setup - Main View"
+            autoplay
+          />
 
           <motion.a
             initial={{ opacity: 0, scale: 0.98 }}
@@ -95,9 +84,9 @@ export function MySetup() {
         >
           <div className="mb-8">
             <p className="leading-relaxed">
-              Built for focus, creativity, and high performance.
-              This is where I code, build, and brainstorm, turning late-night sessions into polished projects
-              (with a few gaming breaks in between).
+              Built for focus, creativity, and high performance. This is where I
+              code, build, and brainstorm, turning late-night sessions into
+              polished projects (with a few gaming breaks in between).
             </p>
           </div>
 
@@ -121,7 +110,11 @@ export function MySetup() {
                     <motion.div
                       initial={{ scale: 0, rotate: -180 }}
                       whileInView={{ scale: 1, rotate: 0 }}
-                      transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                      transition={{
+                        duration: 0.6,
+                        delay: 0.2,
+                        ease: "easeOut",
+                      }}
                       viewport={{ once: true }}
                       className="w-12 h-12 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-xl flex items-center justify-center"
                     >
