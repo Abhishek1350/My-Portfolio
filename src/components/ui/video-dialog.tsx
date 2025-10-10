@@ -143,6 +143,7 @@ export function VideoDialog({
                                     playsInline
                                     controls
                                     muted
+                                    preload="auto"
                                 ></video>
                             </div>
                         </motion.div>
