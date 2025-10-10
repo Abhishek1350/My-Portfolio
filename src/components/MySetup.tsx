@@ -49,7 +49,7 @@ export function MySetup() {
         >
           <VideoDialog
             animationStyle="from-center"
-            videoSrc="https://www.youtube.com/embed/nVIEqYuCkgA?si=lyPFyA7sbVo21iSy"
+            videoSrc="/setup-video.mp4"
             thumbnailSrc="/images/about/abhishek-setup-1.webp"
             thumbnailAlt="Abhishek's Development Setup - Main View"
             autoplay

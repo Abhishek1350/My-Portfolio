@@ -74,17 +74,10 @@ export function VideoDialog({
     videoSrc,
     thumbnailSrc,
     thumbnailAlt = "Video thumbnail",
-    className,
-    autoplay = false,
+    className
 }: VideoDialogProps) {
     const [isVideoOpen, setIsVideoOpen] = useState(false);
     const selectedAnimation = animationVariants[animationStyle];
-
-    let videoUrl = videoSrc;
-    
-    if (autoplay) {
-        videoUrl += "&autoplay=1";
-    }
 
     return (
         <div className={cn("relative", className)}>
@@ -142,13 +135,15 @@ export function VideoDialog({
                                 <XIcon className="size-5" />
                             </motion.button>
                             <div className="relative isolate z-[1] size-full overflow-hidden rounded-2xl border-2 border-white">
-                                <iframe
-                                    src={videoUrl}
-                                    title={thumbnailAlt}
+                                <video
+                                    src={videoSrc}
                                     className="size-full rounded-2xl"
-                                    allowFullScreen
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                ></iframe>
+                                    autoPlay
+                                    loop
+                                    playsInline
+                                    controls
+                                    muted
+                                ></video>
                             </div>
                         </motion.div>
                     </motion.div>
