@@ -184,12 +184,21 @@ export const techStack = [
 
 export const projects = [
   {
+    title: "FAB Web Studio",
+    description:
+      "Redesigned and rebuilt FAB Web Studio’s outdated Drupal website into a sleek, modern, and high-performance platform using Next.js, TypeScript, Strapi, and Tailwind CSS. I handled everything independently, from UI/UX design and frontend development to backend setup, CMS integration, and deployment. The site features a fully dynamic CMS, SEO-optimized architecture, blazing-fast performance, and an AI-powered chatbot that answers intelligently based on site content.",
+    image: "/images/projects/fabwebstudio.webp",
+    liveUrl: "https://fabwebstudio.com",
+    techStack: techStack.filter((item) =>
+      ["Next.js", "Strapi", "TypeScript", "Tailwind"].includes(item.name)
+    ),
+  },
+  {
     title: "SnapLoom",
     description:
       "A free AI-powered image editor with tools for background removal, recoloring, aspect ratio resizing, and image generation.",
     image: "/images/projects/snaploom.webp",
     liveUrl: "https://www.snaploom.space",
-    githubUrl: "https://github.com/Abhishek1350",
     techStack: techStack.filter((item) =>
       ["Next.js", "TypeScript", "Tailwind"].includes(item.name)
     ),
@@ -211,7 +220,6 @@ export const projects = [
       "Get AI insights and stay ahead in the fast-moving world of digital assets with real-time cryptocurrency updates and analysis.",
     image: "/images/projects/coin-echo.webp",
     liveUrl: "https://coinecho.pages.dev",
-    githubUrl: "https://github.com/Abhishek1350/CoinEcho",
     techStack: techStack.filter((item) =>
       ["React", "TypeScript", "Supabase"].includes(item.name)
     ),
@@ -222,7 +230,6 @@ export const projects = [
       "Discover a diverse range of AI tools for Text-to-Image, Automatic Speech Recognition, and more, all available at no cost.",
     image: "/images/projects/free-ai-hub.webp",
     liveUrl: "https://www.freeaihub.cloud/",
-    githubUrl: "https://github.com/Abhishek1350",
     techStack: techStack.filter((item) =>
       ["Next.js", "TypeScript"].includes(item.name)
     ),
