@@ -27,7 +27,7 @@ export function MySetup() {
             <FiSettings className="w-6 h-6 text-blue-400" />
           </motion.div>
           <h2 className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-white via-blue-100 to-cyan-300 bg-clip-text text-transparent">
-            Where Ideas Come to Life
+            The Setup That Keeps Me Building
           </h2>
         </div>
         <motion.div
@@ -84,9 +84,7 @@ export function MySetup() {
         >
           <div className="mb-8">
             <p className="leading-relaxed">
-              Built for focus, creativity, and high performance. This is where I
-              code, build, and brainstorm, turning late-night sessions into
-              polished projects (with a few gaming breaks in between).
+              Built for focus, creativity, and long coding sessions. It’s where I write, build, and brainstorm ideas that often start small and end up turning into full projects (with a few gaming breaks in between).
             </p>
           </div>
 

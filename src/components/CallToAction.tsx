@@ -51,8 +51,7 @@ export function CallToAction() {
         viewport={{ once: true }}
         className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto"
       >
-        Ready to bring your ideas to life? I'm always excited to collaborate on
-        innovative projects and help transform your vision into reality.
+        Ready to bring your ideas to life? I’m always open to exciting projects, collaborations, or fresh challenges that push creative and technical boundaries.
       </motion.p>
 
       <motion.div

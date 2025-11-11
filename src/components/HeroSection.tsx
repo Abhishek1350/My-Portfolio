@@ -96,7 +96,7 @@ export function HeroSection() {
               href={`mailto:${heroSection.personalInfo.email}`}
             >
               <FiCalendar className="w-4 h-4 mr-2" />
-              <span>Schedule a call</span>
+              <span>Say Hi</span>
             </a>
           </motion.div>
         </div>

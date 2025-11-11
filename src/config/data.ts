@@ -14,9 +14,7 @@ import {
   SiRedux,
   SiSupabase,
   SiRemix,
-  SiSass,
-  SiBootstrap,
-  SiContentful,
+  SiShopify,
 } from "react-icons/si";
 
 export const socialLinks = [
@@ -48,12 +46,12 @@ export const socialLinks = [
 
 export const personalInfo = {
   name: "Abhishek Bhardwaj",
-  title: "Software Developer | React, Next.js, Nest.js",
+  title: "Software Developer | Next.js · Remix · NestJS · React.js",
   avatar: "/images/about/abhishek-bhardwaj.webp",
   email: "hello@imabhishek.site",
   location: "Himachal Pradesh, India",
   description:
-    "Self-taught Software Developer from Himachal Pradesh, India, crafting scalable and high-performance websites and applications. Skilled in React, Next.js, and NestJS, I started my journey during the lockdown and worked my way from complete beginner to building custom software solutions from scratch.",
+    "I'm a self-taught Software Developer from Himachal Pradesh who loves turning ideas into fast, reliable, and user-friendly web apps. I focus on smooth user experiences, strong backends, and finding ways to make products smarter with AI.",
 };
 
 export const heroSection = {
@@ -67,15 +65,15 @@ export const workExperience = [
     position: "ReactJS Developer",
     period: "Jan 2024 - Present",
     shortDesc:
-      "Started as a ReactJS developer and gradually expanded into full-stack responsibilities, including backend development and AI integration. Working both independently and within teams to deliver scalable web applications. My full responsibilities include:",
+      "Started as a ReactJS developer and gradually took on full-stack responsibilities, including backend development and AI integration. I work both independently and within teams to deliver scalable web applications that perform well and are easy to maintain.",
     bulletPoints: [
-      "Gathering client requirements and delivering tailored frontend and backend solutions",
-      "Building and deploying custom Shopify apps using the Remix framework",
-      "Building dynamic frontends with React and Next.js",
-      "Integrating headless CMS platforms such as Strapi, Sanity, Drupal, and WordPress",
-      "Implementing backend systems using Node.js and NestJS with PostgreSQL",
-      "Integrating AI tools into internal projects to enhance automation and workflows",
-      "Managing deployments on VPS and optimizing performance with Cloudflare and GraphQL",
+      "Gather and analyze client requirements to build tailored frontend and backend solutions",
+      "Develop and deploy custom Shopify apps using the Remix framework",
+      "Build dynamic frontends with React and Next.js",
+      "Integrate headless CMS platforms such as Strapi, Sanity, Drupal, and WordPress",
+      "Implement backend systems using Node.js and NestJS with PostgreSQL",
+      "Integrate AI tools into internal projects to enhance automation and workflows",
+      "Manage VPS deployments and optimize performance with Cloudflare and GraphQL",
     ],
   },
   {
@@ -83,28 +81,21 @@ export const workExperience = [
     position: "Software Engineer",
     period: "Aug 2022 - Jan 2024",
     shortDesc:
-      "Joined as an intern and quickly transitioned into a full-time Software Engineer role. Worked closely with the founding team to build and launch key products from the ground up. My full responsibilities included:",
+      "Joined as an intern and quickly transitioned into a full-time Software Engineer role. Worked closely with the founding team to plan, build, and launch core products from the ground up.",
     bulletPoints: [
       "Built and launched two full-scale web applications using React",
-      "Worked directly with the founders to define product roadmap and strategy",
-      "Led frontend development and collaborated across teams in an agile environment",
-      "Contributed to funding pitches by preparing live product demos and prototypes",
+      "Collaborated directly with the founders on product roadmap and feature planning",
+      "Led frontend development and coordinated with backend and design teams in an agile setup",
+      "Created live demos and interactive prototypes for investor presentations and funding pitches",
     ],
   },
 ];
 
 export const techStack = [
-  // === FRONTEND ===
   { name: "Next.js", icon: SiNextdotjs, color: "text-white", type: "Frontend" },
-  { name: "React", icon: FaReact, color: "text-blue-400", type: "Frontend" },
+  { name: "React", icon: FaReact, color: "text-sky-400", type: "Frontend" },
   { name: "Remix", icon: SiRemix, color: "text-indigo-500", type: "Frontend" },
-  {
-    name: "Redux",
-    icon: SiRedux,
-    color: "text-purple-700",
-    type: "Frontend",
-  },
-
+  { name: "Redux", icon: SiRedux, color: "text-purple-600", type: "Frontend" },
   {
     name: "TypeScript",
     icon: SiTypescript,
@@ -117,68 +108,31 @@ export const techStack = [
     color: "text-cyan-400",
     type: "Frontend",
   },
-  {
-    name: "Bootstrap",
-    icon: SiBootstrap,
-    color: "text-purple-600",
-    type: "Frontend",
-  },
-  { name: "SCSS", icon: SiSass, color: "text-pink-600", type: "Frontend" },
 
-  // === BACKEND & DATABASES ===
-  {
-    name: "Node.js",
-    icon: FaNodeJs,
-    color: "text-green-500",
-    type: "Backend & Databases",
-  },
-  {
-    name: "NestJS",
-    icon: SiNestjs,
-    color: "text-red-500",
-    type: "Backend & Databases",
-  },
-  {
-    name: "GraphQL",
-    icon: SiGraphql,
-    color: "text-pink-400",
-    type: "Backend & Databases",
-  },
-  {
-    name: "Supabase",
-    icon: SiSupabase,
-    color: "text-green-400",
-    type: "Backend & Databases",
-  },
+  { name: "Node.js", icon: FaNodeJs, color: "text-green-500", type: "Backend" },
+  { name: "NestJS", icon: SiNestjs, color: "text-red-500", type: "Backend" },
+  { name: "GraphQL", icon: SiGraphql, color: "text-pink-400", type: "Backend" },
   {
     name: "PostgreSQL",
     icon: SiPostgresql,
     color: "text-blue-400",
-    type: "Backend & Databases",
+    type: "Backend",
   },
 
-  // === CMS ===
   { name: "Sanity", icon: SiSanity, color: "text-red-500", type: "CMS" },
-  { name: "Strapi", icon: SiStrapi, color: "text-blue-700", type: "CMS" },
+  { name: "Strapi", icon: SiStrapi, color: "text-indigo-600", type: "CMS" },
+  { name: "Shopify", icon: SiShopify, color: "text-green-500", type: "CMS" },
   {
-    name: "Contentful",
-    icon: SiContentful,
-    color: "text-blue-500",
-    type: "CMS",
-  },
-
-  // === TOOLS & DEVOPS ===
-  {
-    name: "Git",
-    icon: FaGitAlt,
-    color: "text-orange-500",
-    type: "Tools & DevOps",
+    name: "Supabase",
+    icon: SiSupabase,
+    color: "text-emerald-400",
+    type: "Backend",
   },
   {
     name: "Cloudflare",
     icon: SiCloudflare,
     color: "text-orange-400",
-    type: "Tools & DevOps",
+    type: "Tools",
   },
 ];
 
@@ -186,7 +140,7 @@ export const projects = [
   {
     title: "FAB Web Studio",
     description:
-      "Redesigned and rebuilt FAB Web Studio’s outdated Drupal website into a sleek, modern, and high-performance platform using Next.js, TypeScript, Strapi, and Tailwind CSS. I handled everything independently, from UI/UX design and frontend development to backend setup, CMS integration, and deployment. The site features a fully dynamic CMS, SEO-optimized architecture, blazing-fast performance, and an AI-powered chatbot that answers intelligently based on site content.",
+      "Rebuilt FAB Web Studio’s old Drupal site into a modern, high-performance platform using Next.js, TypeScript, Strapi, and Tailwind CSS. I handled everything end-to-end — UI design, frontend, backend setup, CMS integration, and deployment. The site now runs on a fully dynamic CMS, with better SEO, faster performance, and an AI-powered chatbot that answers queries based on site content.",
     image: "/images/projects/fabwebstudio.webp",
     liveUrl: "https://fabwebstudio.com",
     techStack: techStack.filter((item) =>
@@ -196,7 +150,7 @@ export const projects = [
   {
     title: "SnapLoom",
     description:
-      "A free AI-powered image editor with tools for background removal, recoloring, aspect ratio resizing, and image generation.",
+      "A free AI-powered image editor with tools for background removal, color adjustments, aspect ratio resizing, and image generation. Designed for creators who need quick, smart edits in the browser.",
     image: "/images/projects/snaploom.webp",
     liveUrl: "https://www.snaploom.space",
     techStack: techStack.filter((item) =>
@@ -206,7 +160,7 @@ export const projects = [
   {
     title: "Free Games Hub",
     description:
-      "A treasure trove of free PC games and browser-based delights. Discover thrilling titles ready for download and instant play.",
+      "A collection of free PC and browser games curated for quick access and smooth play. Built to provide a clean and engaging experience for gamers without ads or clutter.",
     image: "/images/projects/free-games-hub.webp",
     liveUrl: "https://www.freegameshub.xyz",
     githubUrl: "https://github.com/Abhishek1350/FreeGamesHub",
@@ -217,7 +171,7 @@ export const projects = [
   {
     title: "CoinEcho",
     description:
-      "Get AI insights and stay ahead in the fast-moving world of digital assets with real-time cryptocurrency updates and analysis.",
+      "A real-time crypto dashboard that delivers live price updates, AI insights, and quick market analysis. Built for users who want fast and accurate information without complex interfaces.",
     image: "/images/projects/coin-echo.webp",
     liveUrl: "https://coinecho.pages.dev",
     techStack: techStack.filter((item) =>
@@ -227,7 +181,7 @@ export const projects = [
   {
     title: "FreeAIHub",
     description:
-      "Discover a diverse range of AI tools for Text-to-Image, Automatic Speech Recognition, and more, all available at no cost.",
+      "A simple and fast directory of free AI tools for text generation, image creation, speech recognition, and more. Made to help developers and creators explore AI capabilities easily.",
     image: "/images/projects/free-ai-hub.webp",
     liveUrl: "https://www.freeaihub.cloud/",
     techStack: techStack.filter((item) =>
@@ -258,7 +212,7 @@ export const setupSpecs = [
   {
     title: "Gaming Chair",
     subTitle:
-      "Ergonomic comfort for long coding sessions and all-night builds.",
+      "Ergonomic comfort that keeps me going through late-night builds and long creative stretches.",
     icon: HiOutlineDesktopComputer,
   },
 ];
