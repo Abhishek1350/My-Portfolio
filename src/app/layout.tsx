@@ -22,7 +22,7 @@ export default function RootLayout({
         <Header />
         {children}
         <GoogleAnalytics gaId={process.env.GOOGLE_ANALYTICS_ID as string} />
-        <Analytics />
+        <Analytics debug={false}/>
         <SpeedInsights />
       </body>
     </html>
