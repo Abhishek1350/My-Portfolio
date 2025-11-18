@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { FiCalendar, FiMapPin } from "react-icons/fi";
+import { FiMail, FiMapPin } from "react-icons/fi";
 import { FaGithub, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { heroSection } from "@/config/data";
@@ -85,27 +85,12 @@ export function HeroSection() {
         transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
         className="flex-1 text-center lg:text-left"
       >
-        <div className="flex justify-center lg:justify-start items-center gap-4 mb-6">
-          <motion.div
-            whileHover={{ scale: 1.02, y: -1 }}
-            whileTap={{ scale: 0.98 }}
-            transition={{ duration: 0.2, ease: "easeOut" }}
-          >
-            <a
-              className="flex items-center border border-blue-700/50 text-blue-300 hover:bg-blue-900/30 transition-all duration-300 py-2 px-4 rounded-sm"
-              href={`mailto:${heroSection.personalInfo.email}`}
-            >
-              <FiCalendar className="w-4 h-4 mr-2" />
-              <span>Say Hi</span>
-            </a>
-          </motion.div>
-        </div>
 
         <motion.h1
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-          className="text-4xl lg:text-6xl font-bold mb-3 tracking-tight"
+          className="text-4xl lg:text-5xl font-bold mb-2 tracking-tight"
         >
           {heroSection.personalInfo.name}
         </motion.h1>
@@ -114,7 +99,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-          className="text-xl text-gray-400 mb-5"
+          className="text-xl text-gray-400 mb-4"
         >
           {heroSection.personalInfo.title}
         </motion.p>
@@ -127,6 +112,25 @@ export function HeroSection() {
         >
           {heroSection.personalInfo.description}
         </motion.p>
+
+        <div className="flex justify-center lg:justify-start items-center gap-4 mt-6">
+          <motion.div
+            whileHover={{ scale: 1.02, y: -1 }}
+            whileTap={{ scale: 0.98 }}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
+          >
+            <a
+              className="flex items-center border border-blue-700/50 text-blue-300 hover:bg-blue-900/30 transition-all duration-300 py-2 px-4 rounded-sm"
+              href={`mailto:${heroSection.personalInfo.email}`}
+              title={heroSection.personalInfo.email}
+            >
+              <FiMail className="w-4 h-4 mr-2" />
+              <span>Work With Me</span>
+            </a>
+          </motion.div>
+        </div>
       </motion.div>
     </div>
   );

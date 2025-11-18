@@ -46,12 +46,12 @@ export const socialLinks = [
 
 export const personalInfo = {
   name: "Abhishek Bhardwaj",
-  title: "Software Developer | Next.js · Remix · NestJS · React.js",
+  title: "Software Developer | Next.js · Remix · NestJS · React",
   avatar: "/images/about/abhishek-bhardwaj.webp",
   email: "hello@imabhishek.site",
   location: "Himachal Pradesh, India",
   description:
-    "I'm a self-taught Software Developer from Himachal Pradesh who loves turning ideas into fast, reliable, and user-friendly web apps. I focus on smooth user experiences, strong backends, and finding ways to make products smarter with AI.",
+    "I build fast, maintainable web apps and custom Shopify apps that scale. I ship frontend, backend, and AI features that drive business metrics, engagement, and conversions. I believe in the power of code to turn ideas into reality, not just pixels.",
 };
 
 export const heroSection = {
@@ -62,18 +62,19 @@ export const heroSection = {
 export const workExperience = [
   {
     company: "FAB Web Studio",
-    position: "ReactJS Developer",
+    position: "Software Developer",
     period: "Jan 2024 - Present",
     shortDesc:
-      "Started as a ReactJS developer and gradually took on full-stack responsibilities, including backend development and AI integration. I work both independently and within teams to deliver scalable web applications that perform well and are easy to maintain.",
+      "Joined as a React developer and now take ownership of all modern, high-complexity engineering work, advanced JavaScript frameworks, custom Shopify apps, AI integrations, DevOps, and full-stack delivery. I handle architecture, development, and deployment across multiple projects and serve as the go-to engineer for building modern, scalable systems. (Key highlights below.)",
     bulletPoints: [
-      "Gather and analyze client requirements to build tailored frontend and backend solutions",
-      "Develop and deploy custom Shopify apps using the Remix framework",
-      "Build dynamic frontends with React and Next.js",
-      "Integrate headless CMS platforms such as Strapi, Sanity, Drupal, and WordPress",
-      "Implement backend systems using Node.js and NestJS with PostgreSQL",
-      "Integrate AI tools into internal projects to enhance automation and workflows",
-      "Manage VPS deployments and optimize performance with Cloudflare and GraphQL",
+      "Lead all modern stack projects: React, Next.js, Remix, NestJS, TypeScript, and GraphQL",
+      "Architect and build custom Shopify applications using Remix and modern tooling",
+      "Own full-stack delivery — database design, API layer, frontend UI, CI/CD, and deployment",
+      "Integrate and manage headless CMS platforms like Strapi, Sanity, Drupal (headless), and WordPress",
+      "Develop scalable backend systems with Node.js, NestJS, and PostgreSQL",
+      "Design and integrate AI-driven tools, automation, and workflow enhancements",
+      "Manage VPS deployments, maintain CI/CD pipelines, and optimize performance via Cloudflare, Nginx, and caching strategies",
+      "Collaborate directly with clients and leadership on architecture, feature planning, and technical decision-making",
     ],
   },
   {
@@ -81,7 +82,7 @@ export const workExperience = [
     position: "Software Engineer",
     period: "Aug 2022 - Jan 2024",
     shortDesc:
-      "Joined as an intern and quickly transitioned into a full-time Software Engineer role. Worked closely with the founding team to plan, build, and launch core products from the ground up.",
+      "Joined as an intern and quickly transitioned into a full-time Software Engineer role. Worked closely with the founding team to plan, build, and launch core products from the ground up. (Key highlights below.)",
     bulletPoints: [
       "Built and launched two full-scale web applications using React",
       "Collaborated directly with the founders on product roadmap and feature planning",

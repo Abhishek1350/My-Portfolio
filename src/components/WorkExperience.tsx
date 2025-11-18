@@ -45,7 +45,7 @@ export function WorkExperience() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="space-y-6"
+            className="space-y-3"
           >
             <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-2">
               <div>
@@ -55,7 +55,7 @@ export function WorkExperience() {
               <span className="text-gray-400">{job.period}</span>
             </div>
 
-            <p className="text-lg text-gray-200 mb-2">{job.shortDesc}</p>
+            <p className="text-lg text-gray-300 mb-2">{job.shortDesc}</p>
 
             <ul className="space-y-2 mb-8 pl-3">
               {job.bulletPoints.map((item, index) => (
@@ -65,7 +65,7 @@ export function WorkExperience() {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.4, delay: index * 0.1, ease: "easeOut" }}
                   viewport={{ once: true }}
-                  className="flex items-start gap-3 text-gray-300 text-lg"
+                  className="flex items-start gap-3 text-gray-300/90 text-[17px]"
                 >
                   <motion.div
                     initial={{ scale: 0 }}
