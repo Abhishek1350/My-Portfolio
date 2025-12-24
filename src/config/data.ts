@@ -1,4 +1,4 @@
-import { FaReact, FaNodeJs, FaGitAlt } from "react-icons/fa";
+import { FaReact, FaNodeJs } from "react-icons/fa";
 import { FiCpu, FiHeadphones, FiMonitor } from "react-icons/fi";
 import { HiOutlineDesktopComputer } from "react-icons/hi";
 import {
@@ -138,6 +138,16 @@ export const techStack = [
 ];
 
 export const projects = [
+  {
+    title: "TheZHub",
+    description:
+      "A free web platform that offers practical tools for career building, finance management, productivity, and everyday utilities. Everything works directly in the browser with no sign-up, no subscriptions, and no hidden limits. It is built to be simple, fast, and privacy-friendly, especially for students and early-career users.",
+    image: "/images/projects/thezhub.webp",
+    liveUrl: "https://thezhub.xyz/",
+    techStack: techStack.filter((item) =>
+      ["React", "TypeScript", "Tailwind"].includes(item.name)
+    ),
+  },
   {
     title: "FAB Web Studio",
     description:
