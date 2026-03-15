@@ -11,7 +11,7 @@ imabhishek serves as a personal portfolio site to display your professional jour
 - **Framework:** [Next.js](https://nextjs.org/)
 - **Styling:** [Tailwind CSS](https://tailwindcss.com/)
 - **Animation:** [Framer Motion](https://www.framer.com/motion/)
-- **Analytics:** Google Analytics, Vercel Analytics, Speed Insights
+- **Analytics:** Google Analytics, Vercel Analytics, Speed Insights, PostHog
 - **Languages:** TypeScript
 
 ## ✨ Features

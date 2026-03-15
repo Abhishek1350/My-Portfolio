@@ -15,7 +15,13 @@ import {
   SiSupabase,
   SiRemix,
   SiShopify,
+  SiReactrouter,
+  SiPrisma,
+  SiBootstrap,
+  SiExpress,
+  SiReactquery
 } from "react-icons/si";
+import { FaAws } from "react-icons/fa";
 
 export const socialLinks = [
   {
@@ -69,7 +75,7 @@ export const workExperience = [
     bulletPoints: [
       "Lead all modern stack projects: React, Next.js, Remix, NestJS, TypeScript, and GraphQL",
       "Architect and build custom Shopify applications using Remix and modern tooling",
-      "Own full-stack delivery — database design, API layer, frontend UI, CI/CD, and deployment",
+      "Own full-stack delivery, database design, API layer, frontend UI, CI/CD, and deployment",
       "Integrate and manage headless CMS platforms like Strapi, Sanity, Drupal (headless), and WordPress",
       "Develop scalable backend systems with Node.js, NestJS, and PostgreSQL",
       "Design and integrate AI-driven tools, automation, and workflow enhancements",
@@ -96,62 +102,83 @@ export const techStack = [
   { name: "Next.js", icon: SiNextdotjs, color: "text-white", type: "Frontend" },
   { name: "React", icon: FaReact, color: "text-sky-400", type: "Frontend" },
   { name: "Remix", icon: SiRemix, color: "text-indigo-500", type: "Frontend" },
-  { name: "Redux", icon: SiRedux, color: "text-purple-600", type: "Frontend" },
+  { name: "React Router", icon: SiReactrouter, color: "text-red-500", type: "Frontend" },
   {
     name: "TypeScript",
     icon: SiTypescript,
     color: "text-blue-500",
     type: "Frontend",
   },
-  {
-    name: "Tailwind",
-    icon: SiTailwindcss,
-    color: "text-cyan-400",
-    type: "Frontend",
-  },
 
   { name: "Node.js", icon: FaNodeJs, color: "text-green-500", type: "Backend" },
+  { name: "Express.js", icon: SiExpress, color: "text-gray-500", type: "Backend" },
   { name: "NestJS", icon: SiNestjs, color: "text-red-500", type: "Backend" },
+  { name: "Prisma", icon: SiPrisma, color: "text-green-400", type: "Backend" },
   { name: "GraphQL", icon: SiGraphql, color: "text-pink-400", type: "Backend" },
-  {
-    name: "PostgreSQL",
-    icon: SiPostgresql,
-    color: "text-blue-400",
-    type: "Backend",
-  },
-
-  { name: "Sanity", icon: SiSanity, color: "text-red-500", type: "CMS" },
-  { name: "Strapi", icon: SiStrapi, color: "text-indigo-600", type: "CMS" },
-  { name: "Shopify", icon: SiShopify, color: "text-green-500", type: "CMS" },
   {
     name: "Supabase",
     icon: SiSupabase,
     color: "text-emerald-400",
     type: "Backend",
   },
+
+  { name: "Strapi", icon: SiStrapi, color: "text-indigo-600", type: "CMS" },
+  { name: "Shopify", icon: SiShopify, color: "text-green-500", type: "CMS" },
+  { name: "Sanity", icon: SiSanity, color: "text-red-500", type: "CMS" },
+
   {
     name: "Cloudflare",
     icon: SiCloudflare,
     color: "text-orange-400",
     type: "Tools",
   },
+  {
+    name: "AWS",
+    icon: FaAws,
+    color: "text-[#ff9900]",
+    type: "Tools",
+  },
+  { name: "Redux", icon: SiRedux, color: "text-purple-600", type: "Frontend" },
+  { name: "React Query", icon: SiReactquery, color: "text-red-400", type: "Frontend" },
+  {
+    name: "Tailwind",
+    icon: SiTailwindcss,
+    color: "text-cyan-400",
+    type: "Frontend",
+  },
+  {
+    name: "Bootstrap",
+    icon: SiBootstrap,
+    color: "text-purple-500",
+    type: "Frontend",
+  },
 ];
 
 export const projects = [
   {
+    title: "LootPulse",
+    description:
+      "A web application that aggregates free PC and browser games into a single place so users can quickly browse and launch games without searching across multiple sites. I rebuilt the project from the ground up as an improved version of FreeGamesHub with a cleaner interface, faster navigation, and a structured backend using Prisma. The platform focuses on quick discovery and smooth browsing while avoiding ads and unnecessary UI elements.",
+    image: "/images/projects/lootpulse.webp",
+    liveUrl: "https://lootpulse.online",
+    techStack: techStack.filter((item) =>
+      ["React Router", "Prisma", "TypeScript", "Cloudflare", "Tailwind"].includes(item.name)
+    ),
+  },
+  {
     title: "TheZHub",
     description:
-      "A free web platform that offers practical tools for career building, finance management, productivity, and everyday utilities. Everything works directly in the browser with no sign-up, no subscriptions, and no hidden limits. It is built to be simple, fast, and privacy-friendly, especially for students and early-career users.",
+      "A browser based platform that provides practical tools for career planning, financial calculations, productivity, and everyday utilities. The goal of the project was to build a collection of lightweight tools that run instantly without accounts, subscriptions, or tracking. I focused on keeping the interface simple and responsive so students and early career users can access useful tools quickly from a single website.",
     image: "/images/projects/thezhub.webp",
     liveUrl: "https://thezhub.xyz/",
     techStack: techStack.filter((item) =>
-      ["React", "TypeScript", "Tailwind"].includes(item.name)
+      ["React Router", "TypeScript", "Tailwind"].includes(item.name)
     ),
   },
   {
     title: "FAB Web Studio",
     description:
-      "Rebuilt FAB Web Studio’s old Drupal site into a modern, high-performance platform using Next.js, TypeScript, Strapi, and Tailwind CSS. I handled everything end-to-end — UI design, frontend, backend setup, CMS integration, and deployment. The site now runs on a fully dynamic CMS, with better SEO, faster performance, and an AI-powered chatbot that answers queries based on site content.",
+      "Rebuilt the previous Drupal website of FAB Web Studio into a modern platform using Next.js, TypeScript, Strapi, and Tailwind CSS. I handled the full development process including UI design, frontend implementation, backend configuration, CMS setup, and deployment. The new system allows content to be managed through Strapi while improving page speed, SEO structure, and overall maintainability. The site also includes a chatbot that answers questions using the website’s content.",
     image: "/images/projects/fabwebstudio.webp",
     liveUrl: "https://fabwebstudio.com",
     techStack: techStack.filter((item) =>
@@ -161,20 +188,9 @@ export const projects = [
   {
     title: "SnapLoom",
     description:
-      "A free AI-powered image editor with tools for background removal, color adjustments, aspect ratio resizing, and image generation. Designed for creators who need quick, smart edits in the browser.",
+      "A browser based image editing tool that provides common editing features such as background removal, color adjustments, aspect ratio resizing, and AI image generation. The goal was to create a lightweight editor that runs entirely online so users can quickly edit images without installing software. The interface focuses on quick actions and minimal steps to perform common editing tasks.",
     image: "/images/projects/snaploom.webp",
-    liveUrl: "https://www.snaploom.space",
-    techStack: techStack.filter((item) =>
-      ["Next.js", "TypeScript", "Tailwind"].includes(item.name)
-    ),
-  },
-  {
-    title: "Free Games Hub",
-    description:
-      "A collection of free PC and browser games curated for quick access and smooth play. Built to provide a clean and engaging experience for gamers without ads or clutter.",
-    image: "/images/projects/free-games-hub.webp",
-    liveUrl: "https://www.freegameshub.xyz",
-    githubUrl: "https://github.com/Abhishek1350/FreeGamesHub",
+    liveUrl: "https://snaploom.vercel.app",
     techStack: techStack.filter((item) =>
       ["Next.js", "TypeScript", "Tailwind"].includes(item.name)
     ),
@@ -182,19 +198,19 @@ export const projects = [
   {
     title: "CoinEcho",
     description:
-      "A real-time crypto dashboard that delivers live price updates, AI insights, and quick market analysis. Built for users who want fast and accurate information without complex interfaces.",
+      "A cryptocurrency dashboard that displays live market prices, recent changes, and short AI generated insights for different coins. The application fetches and updates market data in real time and presents it through a simplified interface so users can quickly check price movements and market information without navigating complex trading platforms.",
     image: "/images/projects/coin-echo.webp",
     liveUrl: "https://coinecho.pages.dev",
     techStack: techStack.filter((item) =>
-      ["React", "TypeScript", "Supabase"].includes(item.name)
+      ["React", "React Query", "TypeScript", "Supabase"].includes(item.name)
     ),
   },
   {
     title: "FreeAIHub",
     description:
-      "A simple and fast directory of free AI tools for text generation, image creation, speech recognition, and more. Made to help developers and creators explore AI capabilities easily.",
+      "A website that collects and organizes free AI tools for tasks such as text generation, image creation, speech recognition, and other workflows. In addition to listing tools, the platform also allows users to run selected AI models directly on the site without creating accounts or paying for access. The goal of the project is to make AI tools easier to discover and experiment with from a single place.",
     image: "/images/projects/free-ai-hub.webp",
-    liveUrl: "https://www.freeaihub.cloud/",
+    liveUrl: "https://free-ai-hub.vercel.app",
     techStack: techStack.filter((item) =>
       ["Next.js", "TypeScript"].includes(item.name)
     ),
@@ -230,14 +246,14 @@ export const setupSpecs = [
 
 export const certifications = [
   {
+    title: "AWS Cloud Practitioner",
+    image: "/images/certifications/aws-cp.webp",
+    url: "https://www.credly.com/badges/02e6448f-e33a-43d9-9003-fb8f65d6bac9/linked_in_profile",
+  },
+  {
     title: "Al Fluency: Framework & Foundations - Anthropic",
     image: "/images/certifications/ai-fluency.webp",
     url: "https://verify.skilljar.com/c/ekmscej8qr5j",
-  },
-  {
-    title: "Subject Matter Expert - AWS",
-    image: "/images/certifications/sme-aws.webp",
-    url: "/images/certifications/sme-aws.webp",
   },
   {
     title: "Next.js - Vercel",

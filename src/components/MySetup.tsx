@@ -66,7 +66,7 @@ export function MySetup() {
             rel="noopener noreferrer"
           >
             <Image
-              src="/images/about/abhishek-setup-2.webp"
+              src="/images/about/abhishek-setup-3.webp"
               alt="Abhishek's Development Setup - Alternative View"
               width={800}
               height={600}

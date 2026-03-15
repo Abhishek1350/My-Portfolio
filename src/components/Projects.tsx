@@ -38,86 +38,140 @@ export function Projects() {
         />
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="flex flex-col gap-8">
         {projects.map((project, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ once: true }}
-            whileHover={{ scale: 1.01, y: -2 }}
-            className="rounded-xl overflow-hidden transition-all duration-500 ease-out border border-blue-500/30"
+            className="rounded-xl overflow-hidden border border-blue-500/30"
           >
-            <div className="aspect-video bg-gray-800 overflow-hidden">
-              <Image
-                src={project.image}
-                alt={project.title}
-                width={400}
-                height={300}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-              />
-            </div>
-            <div className="p-6">
-              <div className="flex  items-center justify-between mb-3">
-                <h3 className="text-xl font-bold text-white">
-                  {project.title}
-                </h3>
-                <div className="flex items-center gap-2">
-                  {project.techStack.map((tech, techIndex) => {
-                    const Icon = tech.icon;
-                    return (
-                      <motion.div
-                        key={techIndex}
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{
-                          duration: 0.3,
-                          delay: techIndex * 0.05,
-                          ease: "easeOut",
-                        }}
-                        viewport={{ once: true }}
-                      >
-                        <Icon className={`w-6 h-6 ${tech.color}`} />
-                      </motion.div>
-                    );
-                  })}
-                </div>
-              </div>
-              <p className="text-gray-300 mb-4 leading-relaxed line-clamp-3">
-                {project.description}
-              </p>
 
-              <div className="flex items-center gap-4">
-                <motion.a
-                  whileHover={{ scale: 1.02, x: 2 }}
-                  whileTap={{ scale: 0.98 }}
-                  transition={{ duration: 0.2, ease: "easeOut" }}
-                  href={project.liveUrl}
-                  className="flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors duration-300 text-sm font-medium"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FiExternalLink className="w-4 h-4" />
-                  Live Demo
-                </motion.a>
-                {project.githubUrl && (
+            <div className="flex flex-col md:flex-row">
+              <div className="w-full md:w-1/3 overflow-hidden">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  width={800}
+                  height={800}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-6 md:w-2/3">
+                <div className="flex items-center justify-between mb-3">
+                  <h3 className="text-xl font-bold text-white">
+                    {project.title}
+                  </h3>
+                  <div className="flex items-center gap-2">
+                    {project.techStack.map((tech, techIndex) => {
+                      const Icon = tech.icon;
+                      return (
+                        <motion.div
+                          key={techIndex}
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          transition={{
+                            duration: 0.3,
+                            delay: techIndex * 0.05,
+                            ease: "easeOut",
+                          }}
+                          viewport={{ once: true }}
+                        >
+                          <Icon className={`w-6 h-6 ${tech.color}`} />
+                        </motion.div>
+                      );
+                    })}
+                  </div>
+                </div>
+                <p className="text-gray-300 mb-4 leading-relaxed">
+                  {project.description}
+                </p>
+
+                <div className="flex items-center gap-4">
                   <motion.a
                     whileHover={{ scale: 1.02, x: 2 }}
                     whileTap={{ scale: 0.98 }}
                     transition={{ duration: 0.2, ease: "easeOut" }}
-                    href={project.githubUrl}
-                    className="flex items-center gap-2 text-gray-400 hover:text-gray-300 transition-colors duration-300 text-sm font-medium"
+                    href={project.liveUrl}
+                    className="flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors duration-300 text-sm font-medium"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <FiGithub className="w-4 h-4" />
-                    GitHub
+                    <FiExternalLink className="w-4 h-4" />
+                    Live Demo
                   </motion.a>
-                )}
+                </div>
               </div>
             </div>
+
           </motion.div>
+
+          // <motion.div
+          //   key={index}
+          //   initial={{ opacity: 0, y: 20 }}
+          //   whileInView={{ opacity: 1, y: 0 }}
+          //   transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
+          //   viewport={{ once: true }}
+          //   whileHover={{ scale: 1.01, y: -2 }}
+          //   className="rounded-xl overflow-hidden transition-all duration-500 ease-out border border-blue-500/30"
+          // >
+          //   <div className="aspect-video bg-gray-800 overflow-hidden">
+          //     <Image
+          //       src={project.image}
+          //       alt={project.title}
+          //       width={400}
+          //       height={300}
+          //       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+          //     />
+          //   </div>
+          //   <div className="p-6">
+          //     <div className="flex  items-center justify-between mb-3">
+          //       <h3 className="text-xl font-bold text-white">
+          //         {project.title}
+          //       </h3>
+          //       <div className="flex items-center gap-2">
+          //         {project.techStack.map((tech, techIndex) => {
+          //           const Icon = tech.icon;
+          //           return (
+          //             <motion.div
+          //               key={techIndex}
+          //               initial={{ opacity: 0, scale: 0.8 }}
+          //               whileInView={{ opacity: 1, scale: 1 }}
+          //               transition={{
+          //                 duration: 0.3,
+          //                 delay: techIndex * 0.05,
+          //                 ease: "easeOut",
+          //               }}
+          //               viewport={{ once: true }}
+          //             >
+          //               <Icon className={`w-6 h-6 ${tech.color}`} />
+          //             </motion.div>
+          //           );
+          //         })}
+          //       </div>
+          //     </div>
+          //     <p className="text-gray-300 mb-4 leading-relaxed">
+          //       {project.description}
+          //     </p>
+
+          //     <div className="flex items-center gap-4">
+          //       <motion.a
+          //         whileHover={{ scale: 1.02, x: 2 }}
+          //         whileTap={{ scale: 0.98 }}
+          //         transition={{ duration: 0.2, ease: "easeOut" }}
+          //         href={project.liveUrl}
+          //         className="flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors duration-300 text-sm font-medium"
+          //         target="_blank"
+          //         rel="noopener noreferrer"
+          //       >
+          //         <FiExternalLink className="w-4 h-4" />
+          //         Live Demo
+          //       </motion.a>
+          //     </div>
+          //   </div>
+          // </motion.div>
         ))}
       </div>
     </div>
